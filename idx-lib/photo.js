@@ -27,6 +27,7 @@
  * Only our own feed's links are served, so this is never a photo service for others.
  */
 import { shrinkJpeg } from "./shrink.js";
+import { sendRequests } from "./crm-requests.js";
 
 const ORIGIN = "https://api.cotality.com/trestle/Media/";
 // The feed's own segment in every photo link ("12192/13110/20", base64): only our listings.
@@ -179,7 +180,12 @@ export async function warm(context, url, listPage) {
       serving: st.lastSweepOkAt !== null && now - st.lastSweepOkAt <= FRESH_MS, legacy: st.legacy === "done" ? "done" : st.legacy ? "in progress" : "waiting for a finished sweep",
       toFetch: st.want.length, toDelete: st.del.length, crmCallsLast10Min: tenMin, runs: st.runs.slice(-8) };
   };
-  if (url.searchParams.get("status") === "1") { const st = await load(); return reply({ ok: true, ...(st ? summary(st) : { state: "none" }) }); }
+  if (url.searchParams.get("status") === "1") {
+    const st = await load();
+    let requests = null;
+    try { const o = await R2.get("state/crm-requests.json"); if (o) { const j = JSON.parse(await o.text()); requests = { sent: j.sent, checkedAt: j.checkedAt, threads: j.threads }; } } catch { requests = null; }
+    return reply({ ok: true, ...(st ? summary(st) : { state: "none" }), requests });
+  }
   if (!(await takeLock(R2, now, url.searchParams.get("run") === "now"))) return reply({ ok: true, skipped: "another_run" });
 
   let st = await load();
@@ -205,6 +211,8 @@ export async function warm(context, url, listPage) {
   } catch (e) {
     run.stop = run.stop || `error: ${String((e && e.message) || e).slice(0, 120)}`;
   }
+  // The CRM's request line (idx-lib/crm-requests.js): notes not sent yet go out once, after the deploy that carries them.
+  try { run.requests = await sendRequests(env, now); } catch { run.requests = { sent: [], stop: "error" }; }
   st.runs = [...(st.runs || []), run].filter((x) => now - x.at <= 24 * 3600_000).slice(-120);
   await R2.put(STATE, JSON.stringify(st), { httpMetadata: { contentType: "application/json" } });
   await R2.put(FRESH, JSON.stringify({ okAt: st.lastSweepOkAt, legacy: st.legacy === "done" ? "done" : "no" }), { httpMetadata: { contentType: "application/json" } });

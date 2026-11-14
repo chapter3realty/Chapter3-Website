@@ -16,6 +16,7 @@ import { readQuery } from "../idx-lib/query.js";
 import { nearbySales, flipMath, FLIP_DEFAULTS, repairTier } from "../idx-lib/deals.js";
 import { photo, photoUrl, warm, ourPhoto, crmParts, forgetFresh, FRESH, PAGES_PER_RUN, SWEEP_EVERY_MS, FRESH_MS } from "../idx-lib/photo.js";
 import { resetCatalog, filterCatalog } from "../idx-lib/catalog.js";
+import { sendRequests, POSTS } from "../idx-lib/crm-requests.js";
 import { SCRIPT, STYLE, PHOTO_FIX, PHOTO_HINT, hasPhoto, stripCards, NO_PHOTO } from "../idx-lib/render.js";
 const STYLE_OK = () => STYLE.includes(".hx-dialog form[hidden]{display:none}");
 import { MAP_SCRIPT } from "../idx-lib/map.js";
@@ -1079,6 +1080,35 @@ r = await run(homes, req("/homes/api/map?q=3+bed+house+in+conway&near=33.7,-78.9
   const has = (l) => l && l.features && l.features[0] && l.features[0].key === "pool";
   check("filter list: 100 isolates make one CRM call; after a 429 the last good copy is served by all, one try is made, none until retry-after passes, then one",
     firstCalls === 1 && first.every(has) && again.every(has) && calls429 === 1 && during.every(has) && callsWaiting === 0 && later.every(has) && callsAfter === 1);
+}
+
+// The CRM's request line (the CRM's docs/requests.md): each note goes out once, an answer finds its thread by title,
+// a 429 waits its retry-after, a 403 stops until the key changes, and nothing is sent without the key.
+{
+  const objs = new Map();
+  const R2 = { get: async (k) => (objs.has(k) ? { text: async () => objs.get(k) } : null), put: async (k, b) => { objs.set(k, String(b)); return {}; } };
+  const savedFetch = globalThis.fetch; const sent = []; let mode = "ok";
+  globalThis.fetch = async (u, init = {}) => {
+    if (!String(u).startsWith("https://app.chapter3realty.com/api/requests")) return savedFetch(u, init);
+    sent.push({ method: init.method, key: init.headers["x-request-key"], body: init.body ? JSON.parse(init.body) : null });
+    if (mode === "429") return new Response(JSON.stringify({ ok: false }), { status: 429, headers: { "retry-after": "600" } });
+    if (mode === "403") return new Response(JSON.stringify({ ok: false }), { status: 403 });
+    if (init.method === "GET") return new Response(JSON.stringify({ ok: true, threads: [{ id: "t42", title: "The filter list is called far more than once an hour", status: "new", next: "x", messages: [] }] }), { status: 200 });
+    return new Response(JSON.stringify({ ok: true, thread: init.body.includes('"thread"') ? "t42" : "t9" }), { status: 200 });
+  };
+  const t0 = Date.UTC(2026, 10, 14, 12);
+  const none = await sendRequests({ PHOTOS: R2 }, t0); const noneCalls = sent.length;
+  const env = { PHOTOS: R2, CRM_REQUEST_KEY: "c3r_testkey123" };
+  const a = await sendRequests(env, t0); const posts = sent.filter((x) => x.method === "POST");
+  const b = await sendRequests(env, t0 + 20 * 60_000); const postsAfter = sent.filter((x) => x.method === "POST").length;
+  const reply = posts.find((x) => x.body.thread);
+  objs.clear(); mode = "429"; const c = await sendRequests(env, t0); const n429 = sent.length; const d = await sendRequests(env, t0 + 5 * 60_000); const during = sent.length - n429;
+  objs.clear(); mode = "403"; await sendRequests(env, t0); const n403 = sent.length; const e = await sendRequests(env, t0 + 3600_000); const after403 = sent.length - n403;
+  globalThis.fetch = savedFetch;
+  check("CRM request line: nothing without the key; each note once (the test note, then the answer on the filter list thread by its title); a 429 waits its retry-after; a 403 stops; the key only in the header",
+    none.stop === "no_key" && noneCalls === 0 && a.sent.length === POSTS.length && posts.length === POSTS.length && reply && reply.body.thread === "t42" && /ab2ee29f/.test(reply.body.body)
+    && posts.some((x) => x.body.title === "Website AI connected") && b.sent.length === 0 && postsAfter === POSTS.length && sent.every((x) => !x.key || x.key === "c3r_testkey123")
+    && !JSON.stringify(posts.map((x) => x.body)).includes("c3r_") && c.stop === "429" && d.stop === "waiting" && during === 0 && e.stop === "key_refused" && after403 === 0);
 }
 
 console.log(fails ? `${fails} control(s) fail` : "all controls pass");
