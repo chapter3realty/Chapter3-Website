@@ -647,6 +647,36 @@ body.home #page-home>#ltr-teaser.az{padding:clamp(52px,7vw,96px) 0;
   body.home #page-home>section.band-ivory,body.home #page-home>section.band-ivory2{background:#fbf8f3}
   body.home header{background:rgba(250,247,242,.96)}
 }
+
+/* PHONE SPACING (owner, 2026-11-14: "everything needs to be farther apart from each other vertically" and "the search
+   ... is hugging the walls of the phone"). Panels 10px from the screen and 18px apart; content at least 20px inside
+   its panel; more room between a heading, its text, its button and its cards. */
+@media (max-width:640px){
+  body.home header{width:calc(100% - 20px);margin-top:10px;top:10px}
+  body.home #page-home>section,body.home footer{width:calc(100% - 20px);margin:18px auto}
+  body.home #page-home>section.cine{margin-bottom:0}
+  body.home #page-home>section.home-paths{margin-top:0}
+  body.home #page-home #home .cine-h1{margin-top:44px}
+  body.home #page-home #home .cine-ai{width:auto;margin:30px 20px 0}
+  body.home #page-home #home .cine-trust{margin:22px 20px 0;gap:10px 14px}
+  body.home #page-home #home .cine-sub{margin:28px 20px 0;padding-bottom:12px}
+  body.home #page-home>section.home-paths{padding:40px 0 44px}
+  body.home #page-home .cine-paths{margin-top:24px}
+  body.home #page-home .home-paths .tw-links{margin-top:22px}
+  body.home #page-home>section#ltr-teaser,body.home #page-home>section#reviews{padding-top:64px;padding-bottom:64px}
+  body.home #page-home .az-in,body.home #page-home .w2-in{width:calc(100% - 48px)}
+  body.home #page-home .az-card{margin-top:28px}
+  body.home #page-home .rv-stack{margin-top:22px}
+  body.home #page-home .why-stats-8{gap:14px;margin-top:40px}
+  body.home #page-home .why-stats-8 .why-stat{padding:20px 18px;gap:14px}
+  body.home #page-home .why-stats-8 .why-stat::before{left:18px;right:18px}
+  body.home #page-home .why-cta{margin-top:40px}
+  body.home #page-home>section.w2{padding:64px 0}
+  body.home #page-home .w2 .w2-p{margin-top:20px}
+  body.home #page-home .w2-cta{margin-top:30px;gap:18px}
+  body.home #page-home .w2-tiles{gap:14px;margin-top:10px}
+  body.home #page-home .faq-list .qa{margin-bottom:16px}
+}
 </style>
 </head>
 <body class="home">
