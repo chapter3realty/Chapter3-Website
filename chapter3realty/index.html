@@ -449,9 +449,9 @@ body.home::before{content:"";position:fixed;inset:-25vmax;z-index:-1;pointer-eve
     radial-gradient(40vmax 40vmax at 16% 86%,rgba(232,201,154,.60),transparent 62%),
     radial-gradient(30vmax 30vmax at 50% 50%,rgba(255,255,255,.55),transparent 70%),
     #efe8de;
-  animation:c3glass 48s ease-in-out infinite alternate}
-@keyframes c3glass{to{transform:translate3d(4vmax,-3vmax,0) rotate(4deg) scale(1.05)}}
-@media (prefers-reduced-motion:reduce){body.home::before{animation:none}}
+  }
+/* Speed (owner, 2026-11-14: "make sure ... the website is fast"): the background holds still, so the glass over it is
+   never redrawn while nothing moves; on a phone the large panels are tinted glass without a live blur. */
 
 /* The header: a frosted bar floating over the page. */
 body.home header{top:10px;width:min(1280px,calc(100% - 24px));margin:10px auto 0;border-radius:20px;
@@ -516,7 +516,7 @@ body.home footer{width:min(1280px,calc(100% - 24px));margin:16px auto 12px;borde
 body.home #page-home .cine-h1,body.home #page-home .cine-sub{text-align:center}
 body.home #page-home .cine-h1 .l2{padding-inline-start:0}
 body.home #page-home .cine-sub{margin-left:auto;margin-right:auto;max-width:34rem;text-wrap:balance}
-body.home #page-home .cine-ai{margin-left:auto;margin-right:auto;width:100%;max-width:620px}
+body.home #page-home .cine-ai{margin-left:auto;margin-right:auto;width:100%;max-width:580px}
 @media (min-width:1100px){
   body.home #page-home #home.cine .cine-copy{width:min(820px,calc(100% - 64px));margin-left:auto;margin-right:auto;justify-self:center;
     padding:48px 40px;border-radius:40px;background:radial-gradient(closest-side,rgba(20,24,32,.74),rgba(20,24,32,.52) 62%,rgba(20,24,32,0));text-shadow:0 2px 28px rgba(10,12,18,.65)}
@@ -536,22 +536,22 @@ body.home .cine-ai textarea::placeholder{color:rgba(244,239,232,.62)}
 }
 
 
+/* Credibility at a glance, under the hero search (owner, 2026-11-14: "is there a way for us to establish credibility
+   faster"). Facts the site states elsewhere: Tim Nash's 30+ years, the company licence, the MLS feed. */
+.cine-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:16px 0 0;padding:0;list-style:none}
+.cine-trust li{display:flex;align-items:center;gap:7px;font:500 13.5px/1.3 var(--sans);color:rgba(244,239,232,.86);text-shadow:0 1px 14px rgba(10,12,18,.8)}
+.cine-trust li::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:rgba(90,209,154,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.9' fill='none' stroke='%235ad19a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+@media (max-width:560px){.cine-trust{gap:6px 12px;margin-top:12px}.cine-trust li{font-size:12.5px}}
+
 /* THE ANALYZER: its own dark glass panel under the hero, with a glowing card (owner, 2026-11-14: "make the analyzer
    input area look premium and make it distinct"; "the ai analyzer is not shown in a tempting enough way"). */
 body.home #page-home>#ltr-teaser.az{padding:clamp(52px,7vw,96px) 0;
   background:radial-gradient(70% 90% at 92% 0%,rgba(196,120,58,.30),transparent 60%),radial-gradient(60% 80% at 0% 100%,rgba(70,140,150,.24),transparent 62%),linear-gradient(160deg,rgba(42,48,64,.93),rgba(22,26,34,.96))}
-.az-in{width:min(1136px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:center}
-#page-home #ltr-teaser .az-eb{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.1rem;padding:.5rem .9rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font:600 .72rem/1.2 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:#e8c99a}
-.az-dot{flex:none;width:8px;height:8px;border-radius:50%;background:#5ad19a;box-shadow:0 0 0 0 rgba(90,209,154,.55);animation:azPulse 2.2s infinite}
-@keyframes azPulse{70%{box-shadow:0 0 0 9px rgba(90,209,154,0)}100%{box-shadow:0 0 0 0 rgba(90,209,154,0)}}
-#ltr-teaser.az h2{margin:0;font-family:var(--disp,Fraunces),Georgia,serif;font-weight:300;font-size:clamp(2.3rem,4.4vw,3.7rem);line-height:1.02;letter-spacing:-.02em;color:#f4efe8;text-wrap:balance}
+.az-in{width:min(980px,calc(100% - 48px));margin:0 auto;display:grid;gap:clamp(22px,3vw,34px);justify-items:center;text-align:center}
+#ltr-teaser.az h2{margin:0;max-width:22ch;font-family:var(--disp,Fraunces),Georgia,serif;font-weight:300;font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.02;letter-spacing:-.02em;color:#f4efe8;text-wrap:balance}
 #ltr-teaser.az h2 .it{font-style:italic;color:#e8c99a}
-#page-home #ltr-teaser.az .az-text{margin:1.1rem 0 0;max-width:34rem;font-size:17px;line-height:1.6;color:rgba(244,239,232,.84)}
-.az-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.4rem 0 0;padding:0;list-style:none}
-.az-chips li{padding:.45rem .8rem;border-radius:999px;font-size:.82rem;color:#f4efe8;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
-.az-chips li::before{content:"\2713";margin-right:.4rem;color:#5ad19a;font-weight:700}
 @property --azA{syntax:"<angle>";inherits:false;initial-value:0deg}
-.az-card{position:relative;display:grid;gap:14px;padding:clamp(20px,3vw,30px);border-radius:28px;
+.az-card{position:relative;width:100%;display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1.3fr) minmax(0,.8fr) auto;align-items:end;gap:12px;padding:clamp(16px,2vw,22px);border-radius:28px;text-align:left;
   background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.2);
   -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 34px 90px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.28)}
 .az-card::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;
@@ -563,27 +563,34 @@ body.home #page-home>#ltr-teaser.az{padding:clamp(52px,7vw,96px) 0;
 .az-card input{width:100%;min-width:0;height:56px;padding:0 18px;border-radius:16px;border:1.5px solid rgba(255,255,255,.5);background:rgba(255,255,255,.94);color:#1c2028;font:400 17px/1.2 var(--sans);box-shadow:inset 0 1px 2px rgba(28,32,40,.08)}
 .az-card input::placeholder{color:rgba(28,32,40,.5)}
 .az-card input:focus{outline:none;border-color:#d4894a;box-shadow:0 0 0 4px rgba(212,137,74,.3)}
-.az-row{display:grid;grid-template-columns:minmax(0,1fr) 8.5rem;gap:12px}
-.az-go{margin-top:4px;height:60px;border:0;border-radius:999px;background:linear-gradient(135deg,#e0975a,#c4783a);color:#151a22;font:700 17px/1 var(--sans);letter-spacing:.01em;cursor:pointer;
+.az-row{display:contents}
+.az-card .az-err,.az-card .az-fine{grid-column:1/-1}
+.az-go{height:56px;padding:0 26px;white-space:nowrap;border:0;border-radius:999px;background:linear-gradient(135deg,#e0975a,#c4783a);color:#151a22;font:700 17px/1 var(--sans);letter-spacing:.01em;cursor:pointer;
   box-shadow:0 14px 34px rgba(196,120,58,.42),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s,box-shadow .2s}
 .az-go:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(196,120,58,.55),inset 0 1px 0 rgba(255,255,255,.35)}
 .az-go:focus-visible{outline:2px solid #f4efe8;outline-offset:3px}
 .az-go span{display:inline-block;transition:transform .2s}.az-go:hover span{transform:translateX(4px)}
 #page-home #ltr-teaser.az .az-fine{margin:0;font-size:.8rem;line-height:1.45;color:rgba(244,239,232,.72);text-align:center}
 #page-home #ltr-teaser.az .az-err{margin:0;font-size:.9rem;color:#ffc2b5}
-@media (prefers-reduced-motion:reduce){.az-dot,.az-card::before{animation:none}}
+@media (prefers-reduced-motion:reduce){.az-card::before{animation:none}}
 @media (max-width:860px){
-  .az-in{grid-template-columns:minmax(0,1fr);width:calc(100% - 40px)}
-  .az-chips{margin-top:1.1rem}
+  .az-in{width:calc(100% - 40px)}
+  .az-card{grid-template-columns:minmax(0,1fr) 8.5rem;padding:20px}
+  .az-card .az-street,.az-card .az-go{grid-column:1/-1}
+  .az-go{height:60px;font-size:17px}
 }
 @media (max-width:420px){
   .az-in{width:calc(100% - 28px)}
-  #page-home #ltr-teaser .az-eb{font-size:.6rem;letter-spacing:.06em;padding:.45rem .7rem;gap:.45rem}
-  .az-row{grid-template-columns:minmax(0,1fr) 6.6rem;gap:10px}
+  .az-card{grid-template-columns:minmax(0,1fr) 6.6rem;gap:10px;padding:16px}
   .az-card input{height:54px;padding:0 14px;font-size:16px}
-  #ltr-teaser.az h2{font-size:2.15rem}
+  #ltr-teaser.az h2{font-size:2.2rem}
 }
 
+@media (max-width:860px){
+  body.home #page-home>section,body.home footer,body.home .chooser-card{-webkit-backdrop-filter:none;backdrop-filter:none}
+  body.home #page-home>section.band-ivory,body.home #page-home>section.band-ivory2{background:rgba(255,255,255,.86)}
+  .az-card{-webkit-backdrop-filter:none;backdrop-filter:none;background:linear-gradient(150deg,rgba(255,255,255,.13),rgba(255,255,255,.05))}
+}
 /* No blur where the browser cannot: solid panels, the same colors. */
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   body.home #page-home>section.band-ivory,body.home #page-home>section.band-ivory2{background:#fbf8f3}
@@ -659,6 +666,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <h2 style="color:rgba(244,239,232,.86)" class="cine-sub">Buy, sell and invest in Myrtle Beach real estate with a specialized real estate agent.</h2>
 <form class="cine-ai" action="/homes/map/" method="get" role="search" aria-label="AI home search">
 <div class="cine-ai-row"><span class="cine-ai-k" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l1.9 5.6L19.5 9.5l-5.6 1.9L12 17l-1.9-5.6L4.5 9.5l5.6-1.9zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></span><textarea id="home-q" name="q" aria-label="AI home search: describe what you want in a home to see options" enterkeyhint="search" autocomplete="off" maxlength="400" rows="1" placeholder="Describe what you want in a home to see options"></textarea><button type="submit">Search</button></div>
+<ul class="cine-trust" role="list"><li>30+ years on the Grand Strand</li><li>Licensed South Carolina brokerage</li><li>Live MLS listings</li></ul>
 </form><script>(function(){var t=document.getElementById('home-q');if(!t)return;function fit(){t.style.height='auto';var h=Math.min(t.scrollHeight,76);t.style.height=Math.max(h,46)+'px'}t.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();if(t.value.trim()){t.form.requestSubmit?t.form.requestSubmit():t.form.submit()}}});t.addEventListener('input',fit);function ph(){if(!t.value){t.style.height='auto';t.style.height=Math.max(Math.min(t.scrollHeight,76),46)+'px'}}ph();addEventListener('resize',ph)})();</script>
 </div>
 <div class="tw-stage" data-plane="-79.62,34.2,0.832389639,1483.161062,1851.852,1601.814">
@@ -667,8 +675,8 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div class="tw-lod" data-lod="se" data-ext="-88.5,-69.5,27.5,39.5"><picture><source type="image/avif" data-srcset="/media/map/zoom-se-1600.avif 1600w,/media/map/zoom-se-3200.avif 3200w" sizes="(max-width:699px) 530px,1600px"><img data-srcset="/media/map/zoom-se-1600.webp 1600w,/media/map/zoom-se-3200.webp 3200w" sizes="(max-width:699px) 530px,1600px" width="1600" height="1216" alt="" decoding="async"></picture></div>
 <div class="tw-lod" data-lod="coast" data-ext="-81.9,-75.9,31.6,35.8"><picture><source type="image/avif" data-srcset="/media/map/zoom-coast-1600.avif 1600w,/media/map/zoom-coast-3200.avif 3200w" sizes="(max-width:699px) 530px,1600px"><img data-srcset="/media/map/zoom-coast-1600.webp 1600w,/media/map/zoom-coast-3200.webp 3200w" sizes="(max-width:699px) 530px,1600px" width="1600" height="1347" alt="" decoding="async"></picture></div>
 <div class="tw-plane"><picture>
-<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w,/media/map/strand-dark-3072.avif 3072w,/media/map/strand-dark-4096.avif 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,760px">
-<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w,/media/map/strand-dark-3072.webp 3072w,/media/map/strand-dark-4096.webp 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,760px" width="2048" height="1771" alt="" decoding="async">
+<source type="image/avif" srcset="/media/map/strand-dark-1400.avif 1400w,/media/map/strand-dark-2048.avif 2048w,/media/map/strand-dark-3072.avif 3072w,/media/map/strand-dark-4096.avif 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,620px">
+<img src="/media/map/strand-dark-2048.webp" srcset="/media/map/strand-dark-1400.webp 1400w,/media/map/strand-dark-2048.webp 2048w,/media/map/strand-dark-3072.webp 3072w,/media/map/strand-dark-4096.webp 4096w" sizes="(min-width:1100px) 1850px,(min-width:900px) 1500px,(min-width:700px) 1300px,620px" width="2048" height="1771" alt="" decoding="async">
 </picture></div>
 <div class="tw-fog"></div>
 </div>
@@ -830,10 +838,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <section id="ltr-teaser" class="band band-navy az" aria-labelledby="ltr-h">
 <div class="az-in">
 <div class="az-copy">
-<p class="az-eb"><span class="az-dot" aria-hidden="true"></span>AI rental analyzer &middot; live MLS data &middot; free</p>
-<h2 id="ltr-h">What would this house <span class="it">earn as a rental?</span></h2>
-<p class="az-text">Type an address. We pull the home from the MLS and the county tax record, then ask two quick questions while it runs. You get the cash flow, the cap rate and what the home may be worth in five years.</p>
-<ul class="az-chips" role="list"><li>Listing price from the MLS</li><li>County property tax</li><li>HOA fee from the MLS</li><li>No signup</li></ul>
+<h2 id="ltr-h">See what any Myrtle Beach home <span class="it">earns as a rental.</span></h2>
 </div>
 <form class="az-card" action="/invest/long-term-rental/" method="get" novalidate aria-label="Analyze a home">
 <input type="hidden" name="go" value="1">
