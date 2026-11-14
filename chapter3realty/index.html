@@ -545,13 +545,11 @@ body.home .cine-ai textarea::placeholder{color:rgba(244,239,232,.62)}
 
 /* BUYERS, THEN SELLERS: two panels of their own (owner, 2026-11-14: "two separate sections one for buyers one for sellers
    that sell people on our service in the sleekest frosted glass ... way possible"). Every line is something the site
-   already offers or a client said. Buyers: dark glass with a sea-glass glow; sellers: white glass with a brass glow. */
+   already offers or a client said. Both the same layout (owner, 2026-11-14: "the same format"); buyers dark glass, sellers white glass. */
 body.home #page-home>section.w2{padding:clamp(56px,7.5vw,104px) 0}
 body.home #page-home>section.w2-buy{background:radial-gradient(70% 90% at 100% 0%,rgba(70,160,160,.30),transparent 62%),radial-gradient(60% 70% at 0% 100%,rgba(196,120,58,.18),transparent 60%),linear-gradient(160deg,rgba(38,46,60,.93),rgba(20,25,33,.96))}
 body.home #page-home>section.w2-sell{background:radial-gradient(70% 90% at 0% 0%,rgba(232,201,154,.55),transparent 62%),radial-gradient(60% 70% at 100% 100%,rgba(196,120,58,.18),transparent 60%),rgba(255,255,255,.74)}
 .w2-in{width:min(1136px,calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center}
-.w2-sell .w2-in{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
-.w2-sell .w2-lead{order:2}
 #page-home .w2 .w2-k{display:inline-flex;margin:0 0 14px;padding:7px 12px;border-radius:999px;font:700 .7rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
 #page-home .w2-buy .w2-k{color:#9fe0d6;background:rgba(159,224,214,.1);border:1px solid rgba(159,224,214,.28)}
 #page-home .w2-sell .w2-k{color:#91592b;background:rgba(196,120,58,.1);border:1px solid rgba(196,120,58,.28)}
@@ -585,11 +583,10 @@ body.home #page-home>section.w2-sell{background:radial-gradient(70% 90% at 0% 0%
 #page-home .w2-buy .w2-t p{color:rgba(244,239,232,.78)}
 #page-home .w2-sell .w2-t p{color:rgba(28,32,40,.74)}
 @media (max-width:900px){
-  .w2-in,.w2-sell .w2-in{grid-template-columns:minmax(0,1fr);width:calc(100% - 40px)}
-  .w2-sell .w2-lead{order:0}
+  .w2-in{grid-template-columns:minmax(0,1fr);width:calc(100% - 40px)}
 }
 @media (max-width:560px){
-  .w2-in,.w2-sell .w2-in{width:calc(100% - 28px)}
+  .w2-in{width:calc(100% - 28px)}
   .w2-tiles{grid-template-columns:minmax(0,1fr);gap:10px}
   .w2-t{grid-template-rows:none;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px}
   .w2-cta{margin-top:22px}
@@ -950,12 +947,14 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <p class="w2-k">For buyers</p>
 <h2 id="w2-buy-h">Find the right home. <span class="it">Know what you are buying.</span></h2>
 <p class="w2-p">Tell us what you want. We find it, check what is being built around it, and tell you the truth about it.</p>
-<div class="w2-cta"><a class="w2-go" href="/homes/map/">Search homes <span aria-hidden="true">&rarr;</span></a><a class="w2-more" href="/buyers/">Buyer guides</a></div>
+<div class="w2-cta"><a class="w2-go" href="/homes/map/">Search homes <span aria-hidden="true">&rarr;</span></a><a class="w2-more" href="/contact/">Talk to an agent</a></div>
 </div>
 <ul class="w2-tiles" role="list">
 <li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zM20 20l-4.8-4.8"/></svg><div><h3>Search the way you talk</h3><p>Our AI search reads each home’s description and photos, so “a screened porch and a dock” finds the homes that have them.</p></div></li>
 <li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h8M7 20V5l11 3M7 5l4 9h-4M18 8v5m-1.5 0h3"/></svg><div><h3>See what is being built nearby</h3><p>We pull the building permits near a home before you make an offer.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v18H6zM9 7h6M9 11h1M12 11h1M15 11h0M9 14h1M12 14h1M9 17h1M12 17h1M15 14v3"/></svg><div><h3>The full cost, before you offer</h3><p>Our free tools show a home’s flood zone, taxes and insurance.</p></div></li>
 <li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h11v10H4zM15 10.5l5-3v9l-5-3"/></svg><div><h3>Buy from out of state</h3><p>We walk the home with you on video.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4.5 20.5c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/></svg><div><h3>One agent, start to finish</h3><p>A dedicated agent from your first search to the closing.</p></div></li>
 <li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6zM9 12l2.2 2.2L15.5 10"/></svg><div><h3>A straight answer</h3><p>We tell you when a home is not worth it.</p></div></li>
 </ul>
 </div>
@@ -964,15 +963,17 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"){w.classList
 <div class="w2-in">
 <div class="w2-lead">
 <p class="w2-k">For sellers</p>
-<h2 id="w2-sell-h">Sell for the most it can bring. <span class="it">Or sell fast.</span></h2>
-<p class="w2-p">We show you what your home brings listed and sold as is for cash, explain every number, and answer the same day.</p>
-<div class="w2-cta"><a class="w2-go" href="/sell/home-value/">What is my home worth? <span aria-hidden="true">&rarr;</span></a><a class="w2-more" href="/sell/">Selling guide</a></div>
+<h2 id="w2-sell-h">Sell for the most it can bring. <span class="it">On your timeline.</span></h2>
+<p class="w2-p">We price your home from the sales around it, get it in front of buyers, and walk you through each offer.</p>
+<div class="w2-cta"><a class="w2-go" href="/sell/home-value/">What is my home worth? <span aria-hidden="true">&rarr;</span></a><a class="w2-more" href="/contact/">Talk to an agent</a></div>
 </div>
 <ul class="w2-tiles" role="list">
-<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M5 20h14M6 8h12M6 8l-3 6a3 3 0 0 0 6 0zM18 8l-3 6a3 3 0 0 0 6 0z"/></svg><div><h3>Two prices, side by side</h3><p>We price your home listed, and sold as is for cash, so you can choose.</p></div></li>
-<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V4M4 20h16M8 16l3.5-4 3 2.5L19 9"/></svg><div><h3>Every comparable sale explained</h3><p>We walk you through the recent sales and the city projects that move your price.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4M8 14h3M8 17h6"/></svg><div><h3>30+ years on the Grand Strand</h3><p>Our team has sold homes here for more than 30 years, from Pawleys Island to the North Carolina line.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12V4h8l10 10-8 8zM7.5 7.5h.01"/></svg><div><h3>A price, with its reasons</h3><p>We compare your home with recent sales, the homes for sale now and the listings that did not sell.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h3.5L9 6h6l1.5 2H20v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><div><h3>Professional photos</h3><p>We book the photographer, and your home goes live on the MLS and the home search sites it feeds.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h6v16H5zM13 4h6v16h-6zM7.5 8h1M15.5 8h1M7.5 12h1M15.5 12h1"/></svg><div><h3>Every offer compared</h3><p>Price, the buyer’s loan, the inspection terms and the closing date, side by side.</p></div></li>
 <li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg><div><h3>Cash buyers when speed matters</h3><p>We bring offers from buyers who close on your date.</p></div></li>
-<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4z M8 9.5h8M8 12.5h5"/></svg><div><h3>Instant replies</h3><p>Weekends included.</p></div></li>
+<li class="w2-t"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><div><h3>On the phone day, night or weekends</h3><p>Our team is always happy to get on the phone with you.</p></div></li>
 </ul>
 </div>
 </section>
