@@ -545,7 +545,7 @@ module.exports = G.page({
       side(
         partH3(U, "the university and the hospital"),
         h.p(`Along US 501 toward the beach, the city reaches past Coastal Carolina University. Conway Medical Center, on Singleton Ridge Road, and the Conway campus of Horry-Georgetown Technical College are in this part too.`),
-        h.p(`Wild Wing, Coastal Point West, Kiskadee Parke and Aviary Village are the largest subdivisions, with about ${homesAbout(U)} homes in all, on lots of ${lot(U.a.median_acres_houses)}. Homes here resold for about ${r5k(U.a.resales_not_condo.median)}. Only the north edge was higher.`),
+        h.p(`Wild Wing, Coastal Point West, Kiskadee Parke and Aviary Village are the largest subdivisions, with about ${homesAbout(U)} homes in all, on lots of ${lot(U.a.median_acres_houses)}. Homes here resold for about ${r5k(U.a.resales_not_condo.median)}. Only the north edge was higher. Wild Wing has ${h.a("/submarkets/conway/wild-wing-plantation/", "a guide of its own")}.`),
         KIMBEL_PHOTO) +
       strip(U) +
 

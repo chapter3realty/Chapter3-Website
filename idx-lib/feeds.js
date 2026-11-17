@@ -275,6 +275,31 @@ const LAND = { head: "Land for sale in Horry County", q: [{ type: "land", status
 const HOUSE_LOW_HOA = { head: "Houses with an HOA fee under $100 a month", q: towns(["Myrtle Beach", "Conway", "Little River", "Longs", "Murrells Inlet"], H({ min: "250000", hoaMax: "99" })), link: "type=house&hoaMax=100", fallback: NEWEST };
 const PLANTATION_POINT = { head: "For sale now in Plantation Point", q: [{ subdivision: "Plantation Point", status: "active" }], post: { minPhotos: 6, yearMin: 1960 }, link: "subdivision=Plantation%20Point", withStrips: true, fallback: townTop("Myrtle Beach") };
 const PALACE = { head: "Palace Resort condos for sale now", q: [{ subdivision: "Palace", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1980 }, link: "subdivision=Palace&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+/* Batch 2026-11-e: one feed per building and neighborhood page, on the same search as the page's first strip.
+ The building or the subdivision is the filter, so the price and size floors are off (floors: false). */
+const BAY_VIEW = { head: "Bay View Resort condos for sale now", q: [{ subdivision: "Bay View Resort", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Bay%20View%20Resort&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const BEACH_COVE = { head: "Beach Cove Resort condos for sale now", q: [{ subdivision: "Beach Cove", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Beach%20Cove&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const CARAVELLE = { head: "Caravelle Resort condos for sale now", q: [{ subdivision: "Caravelle", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Caravelle&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const CAROLINIAN = { head: "Carolinian Beach Resort condos for sale now", q: [{ subdivision: "Carolinian", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Carolinian", withStrips: true, fallback: OCEAN_UNITS };
+const GRAND_ATLANTIC = { head: "Grand Atlantic condos for sale now", q: [{ subdivision: "Grand Atlantic", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Grand%20Atlantic&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const GRANDE_SHORES = { head: "Grande Shores condos for sale now", q: [{ subdivision: "Grande Shores", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Grande%20Shores", withStrips: true, fallback: OCEAN_UNITS };
+const HOLIDAY_SANDS_SOUTH = { head: "Holiday Sands South condos for sale now", q: [{ subdivision: "Holiday Sands", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Holiday%20Sands", withStrips: true, fallback: OCEAN_UNITS };
+const LANDMARK = { head: "Landmark Resort condos for sale now", q: [{ subdivision: "Landmark", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Landmark", withStrips: true, fallback: OCEAN_UNITS };
+const MAISONS = { head: "Maisons Sur Mer condos for sale now", q: [{ subdivision: "Maisons Sur-Mer", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Maisons%20Sur-Mer", withStrips: true, fallback: OCEAN_UNITS };
+const MAR_VISTA = { head: "Mar Vista Grande condos for sale now", q: [{ subdivision: "Mar Vista Grande", type: "condo", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Mar%20Vista%20Grande&type=condo", withStrips: true, fallback: OCEAN_UNITS };
+const OCEAN_FOREST_VILLAS = { head: "Ocean Forest Villas condos for sale now", q: [{ subdivision: "Ocean Forest Villas", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Ocean%20Forest%20Villas", withStrips: true, fallback: CONDOS_WIDE };
+const PARADISE = { head: "Paradise Resort condos for sale now", q: [{ subdivision: "Paradise Resort", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Paradise%20Resort", withStrips: true, fallback: OCEAN_UNITS };
+const PATRICIA_GRAND = { head: "Patricia Grand condos for sale now", q: [{ subdivision: "Patricia Grand", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Patricia%20Grand", withStrips: true, fallback: OCEAN_UNITS };
+const PRINCE = { head: "Prince Resort condos for sale now", q: [{ subdivision: "Prince Resort", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Prince%20Resort", withStrips: true, fallback: OCEAN_UNITS };
+const SEA_MIST = { head: "Sea Mist Resort condos for sale now", q: [{ subdivision: "Sea Mist Resort", near: "33.67498,-78.898459", miles: "0.3", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Sea%20Mist%20Resort&near=33.67498%2C-78.898459&miles=0.3", withStrips: true, fallback: OCEAN_UNITS };
+const RIVER_OAKS = { head: "For sale now in River Oaks", q: [{ subdivision: "River Oaks Condos", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=River%20Oaks%20Condos", withStrips: true, fallback: townTop("Myrtle Beach") };
+const WILD_WING = { head: "For sale now in Wild Wing Plantation", q: [{ subdivision: "Wild Wing Plantation", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Wild%20Wing%20Plantation", withStrips: true, fallback: townTop("Conway") };
+const GRANDE_DUNES = { head: "For sale now in Grande Dunes", q: [{ subdivision: "Grande Dunes", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Grande%20Dunes", withStrips: true, fallback: townTop("Myrtle Beach") };
+const KINGSTON = { head: "For sale now in Kingston Plantation", q: [{ subdivision: "Kingston Plantation", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Kingston%20Plantation", withStrips: true, fallback: OCEAN_UNITS };
+const OAK_FOREST = { head: "For sale now in and near Oak Forest", q: [{ subdivision: "Oak Forest", status: "active" }, { type: "house", near: "33.67669,-78.96186", miles: "1", status: "active", min: "200000" }], post: { minPhotos: 6, yearMin: 1900 }, link: "subdivision=Oak%20Forest", withStrips: true, fallback: townTop("Myrtle Beach") };
+const RIVERWALK = { head: "For sale now in Riverwalk", q: [{ subdivision: "Riverwalk", status: "active" }], post: { minPhotos: 6, yearMin: 1900, floors: false }, link: "subdivision=Riverwalk", withStrips: true, fallback: townTop("Myrtle Beach") };
+const BRIARCLIFFE = { head: "Houses for sale in and around Briarcliffe Acres", q: [{ near: "33.79068,-78.75036", miles: "1.5", type: "house", status: "active" }], post: { minPhotos: 6 }, link: "near=33.79068%2C-78.75036&miles=1.5&type=house", withStrips: true, fallback: townTop("North Myrtle Beach") };
+const WILLBROOK = { head: "For sale now in and near Willbrook Plantation", q: [{ subdivision: "Willbrook Plantation", status: "active" }, { type: "house", near: "33.48923,-79.12668", miles: "1.5", status: "active", min: "300000" }], post: { minPhotos: 6, yearMin: 1900 }, link: "subdivision=Willbrook%20Plantation", withStrips: true, fallback: townTop("Pawleys Island") };
 const FLOOD_CHECK = { ...NEWEST, head: "Just listed. Check any of them in our flood zone lookup" };
 
 export const FEEDS = {
@@ -290,6 +315,29 @@ export const FEEDS = {
   "/buyers/relocating/myrtle-beach-vs-charleston/": { ...MORE_HOUSE, head: "4+ bedrooms under $400,000, here on the Grand Strand", withStrips: true },
   "/submarkets/myrtle-beach/plantation-point/": PLANTATION_POINT,
   "/invest/condo-buildings/palace-resort/": PALACE,
+  "/invest/condo-buildings/bay-view-resort/": BAY_VIEW,
+  "/invest/condo-buildings/beach-cove-resort/": BEACH_COVE,
+  "/invest/condo-buildings/caravelle-resort/": CARAVELLE,
+  "/invest/condo-buildings/carolinian-beach-resort/": CAROLINIAN,
+  "/invest/condo-buildings/grand-atlantic/": GRAND_ATLANTIC,
+  "/invest/condo-buildings/grande-shores/": GRANDE_SHORES,
+  "/invest/condo-buildings/holiday-sands-south/": HOLIDAY_SANDS_SOUTH,
+  "/invest/condo-buildings/landmark-resort/": LANDMARK,
+  "/invest/condo-buildings/maisons-sur-mer/": MAISONS,
+  "/invest/condo-buildings/mar-vista-grande/": MAR_VISTA,
+  "/invest/condo-buildings/ocean-forest-villas/": OCEAN_FOREST_VILLAS,
+  "/invest/condo-buildings/paradise-resort/": PARADISE,
+  "/invest/condo-buildings/patricia-grand/": PATRICIA_GRAND,
+  "/invest/condo-buildings/prince-resort/": PRINCE,
+  "/invest/condo-buildings/sea-mist-resort/": SEA_MIST,
+  "/submarkets/carolina-forest/river-oaks/": RIVER_OAKS,
+  "/submarkets/conway/wild-wing-plantation/": WILD_WING,
+  "/submarkets/myrtle-beach/grande-dunes/": GRANDE_DUNES,
+  "/submarkets/myrtle-beach/kingston-plantation/": KINGSTON,
+  "/submarkets/myrtle-beach/oak-forest/": OAK_FOREST,
+  "/submarkets/myrtle-beach/riverwalk/": RIVERWALK,
+  "/submarkets/north-myrtle-beach/briarcliffe-acres/": BRIARCLIFFE,
+  "/submarkets/pawleys-island/willbrook-plantation/": WILLBROOK,
   /* Owner, 2026-11-08: "the idx for almost every buyer page to be one of the first things". The pages with
      their own strips above get the feed on top too (withStrips); these had none. The long-term rental
      analyzer gets none: it is an app, and it shows homes like the reader's own after a run. */

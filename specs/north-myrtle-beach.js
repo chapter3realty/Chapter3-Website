@@ -610,6 +610,7 @@ module.exports = G.page({
       h.h3("Is North Myrtle Beach changing its rental rules?") +
       h.p(`The city has held workshops and public sessions on possible new short-term rental rules. Its rental page lists no new rental ordinance adopted, and the license rule is the one in force. Earlier tries, a moratorium on large rental houses and a draft ordinance, failed.`) +
       h.p(`Our pages on ${h.a("/invest/str-rules/", "short-term rental rules by town")}, ${h.a("/invest/accommodations-tax/", "filing the lodging taxes")} and ${h.a("/invest/airbnb-income/", "what a nightly rental earns")} go further.`) +
+      h.p(`Three oceanfront condo buildings here have a guide of their own, with fees by unit size and what units sold for: ${h.a("/invest/condo-buildings/beach-cove-resort/", "Beach Cove Resort")}, ${h.a("/invest/condo-buildings/mar-vista-grande/", "Mar Vista Grande")} and ${h.a("/invest/condo-buildings/prince-resort/", "Prince Resort")}. The small town just south of the city, ${h.a("/submarkets/north-myrtle-beach/briarcliffe-acres/", "Briarcliffe Acres")}, has one too.`) +
       h.cta("Know a building's rental rules before you offer", "Send us the condo or the house. We read the HOA's rules and the deed for rental limits, and count the parking spaces the city will ask for.", "Have us read the rental rules", "/contact/", bg) },
 
     { h2: "What are the pros and cons of living in North Myrtle Beach?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>

@@ -494,7 +494,7 @@ module.exports = G.page({
       ask("Pawleys Island", "Get the homes for sale behind Pawleys Island") +
 
       place("west-of-17", "West of US 17", "Most of the homes, most of the golf, the lowest prices") +
-      h.p(`West of US 17 are most of the homes with a Pawleys Island address: about 4,800 houses, and most are their owner's main home. Most of ${h.a("/buyers/golf-communities/", "the area's golf courses")} are here. We count nine on the map, among them Caledonia, True Blue, Heritage and Litchfield Country Club.`) +
+      h.p(`West of US 17 are most of the homes with a Pawleys Island address: about 4,800 houses, and most are their owner's main home. Most of ${h.a("/buyers/golf-communities/", "the area's golf courses")} are here. We count nine on the map, among them Caledonia, True Blue, Heritage and Litchfield Country Club. One golf neighborhood, ${h.a("/submarkets/pawleys-island/willbrook-plantation/", "Willbrook Plantation")}, has a guide of its own.`) +
       h.p(`The grocery store nearest the island is on this side of the highway, less than 5 minutes by car from Town Hall. Only about 1 in 20 houses here is in a high-risk flood zone.`) +
       h.p(`A house here sold for about $580,000 at the middle in the past year, and a condo for about $320,000.`) +
       ask("Pawleys Island", "Get the homes for sale west of US 17 in Pawleys Island") },

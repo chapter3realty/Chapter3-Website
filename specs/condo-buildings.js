@@ -226,7 +226,17 @@ const strip = (slug, head) => {
   return G.homes(id(slug), name, G.offer(name, { label: `Get the condos for sale at ${name}` }), head);
 };
 /* Each entry: the name, the wow and the facts, then its homes strip under its own bold, true title (owner, 2026-11-10). */
-const entry = (slug, head, paras) => `<h3 id="${id(slug)}" class="c3-cb-h3">${B(slug).name}</h3>` + paras.map((p) => h.p(p)).join("") + strip(slug, head);
+/* Buildings with a page of their own (batch 2026-11-e). The table name and the entry link to it. */
+const PAGE = {
+  "palace": "/invest/condo-buildings/palace-resort/", "landmark": "/invest/condo-buildings/landmark-resort/",
+  "sea-mist": "/invest/condo-buildings/sea-mist-resort/", "bay-view": "/invest/condo-buildings/bay-view-resort/",
+  "caravelle": "/invest/condo-buildings/caravelle-resort/", "beach-cove": "/invest/condo-buildings/beach-cove-resort/",
+  "prince": "/invest/condo-buildings/prince-resort/", "maisons-sur-mer": "/invest/condo-buildings/maisons-sur-mer/",
+  "carolinian": "/invest/condo-buildings/carolinian-beach-resort/", "patricia-grand": "/invest/condo-buildings/patricia-grand/",
+  "mar-vista-grande": "/invest/condo-buildings/mar-vista-grande/", "holiday-sands": "/invest/condo-buildings/holiday-sands-south/",
+};
+const PAGE_LINE = (slug) => (PAGE[slug] && slug !== "palace" ? h.p(`For its fee by unit size, what it pays and the units that sold, see ${h.a(PAGE[slug], `${B(slug).name} condos for sale`)}.`) : "");
+const entry = (slug, head, paras) => `<h3 id="${id(slug)}" class="c3-cb-h3">${B(slug).name}</h3>` + paras.map((p) => h.p(p)).join("") + PAGE_LINE(slug) + strip(slug, head);
 
 /* Shares in words (owner, PLAIN-2: few numbers). Row 4: under 8 listings, the count is said instead. */
 const WORD = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
@@ -502,7 +512,7 @@ const cellFlag = (b, k) => {
 const ALLORDER = (town) => F.buildings.filter((b) => b.city === town).sort((a, b) => (a.lat || 99) - (b.lat || 99) || a.name.localeCompare(b.name));
 must(F.buildings.filter((b) => b.lat === null).map((b) => b.slug).sort().join() === "island-vista,ocean-drive-beach-golf", "every building with units has a point");
 const row = (b) => {
-  const nm = PLACE[b.slug] ? h.a(`#${PLACE[b.slug]}`, b.name) : b.name;
+  const nm = PAGE[b.slug] ? h.a(PAGE[b.slug], b.name) : PLACE[b.slug] ? h.a(`#${PLACE[b.slug]}`, b.name) : b.name;
   const c = b.for_sale ? `<span class="c">${b.for_sale} for sale</span>` : "";
   const td = (lab, v, word) => `<td${word ? ' class="w"' : ""}><span class="l">${lab}</span>${v}</td>`;
   if (!b.fee) return `<tr class="none"><th scope="row">${nm}</th><td colspan="5" class="w">No units for sale this week</td></tr>`;
@@ -592,6 +602,7 @@ module.exports = G.page({
       /* Row 9 (VERIFIED), said once, here. */
       h.p(`A fee looks different next to the price. At ${go("coral-beach", "Coral Beach")}, a year of fees comes to about a fifth of what a unit sold for. At ${go("sea-mist", "Sea Mist")} and ${go("landmark", "Landmark")}, it is about a tenth or more. At ${go("margate", "Margate Tower")} and ${go("north-beach-towers", "North Beach Towers")}, it is about 2 in 100.`) +
       TABLE +
+      h.p(`Four more buildings have a page of their own: ${h.a("/invest/condo-buildings/grande-shores/", "Grande Shores")}, ${h.a("/invest/condo-buildings/paradise-resort/", "Paradise Resort")}, ${h.a("/invest/condo-buildings/grand-atlantic/", "the Grand Atlantic")} and ${h.a("/invest/condo-buildings/ocean-forest-villas/", "Ocean Forest Villas")}.`) +
       h.p(`The fee and the asking price are typical of the units for sale this week. "Fee pays power" and "Pets allowed" say how many of those units list it. The sale price is typical of the past year's one-unit sales. Myrtle Beach Resort and Ocean Creek record their towers under several names, so we do not count their sales.`) },
 
     { h2: "What does an oceanfront condo HOA fee pay for?", toc: "What fees pay", id: "what-fees-pay", html: (bg) =>
