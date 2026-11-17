@@ -1,0 +1,741 @@
+{
+ "read": "2026-11-17T10:13:23.283331+00:00",
+ "strips": {
+  "all": {
+   "q": "near=33.83434,-78.62798&miles=0.8",
+   "map": {
+    "ok": true,
+    "total": 78,
+    "n_pins": 78,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 78,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "houses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house",
+   "map": {
+    "ok": true,
+    "total": 30,
+    "n_pins": 30,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 30,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "condos": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=condo",
+   "map": {
+    "ok": true,
+    "total": 37,
+    "n_pins": 37,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 37,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "townhouses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=townhouse",
+   "map": {
+    "ok": true,
+    "total": 0,
+    "n_pins": 48,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 0,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "land": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=land",
+   "map": {
+    "ok": true,
+    "total": 3,
+    "n_pins": 3,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 3,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "dock": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=private_dock",
+   "map": {
+    "ok": true,
+    "total": 7,
+    "n_pins": 7,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 7,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "dock_houses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&has=private_dock",
+   "map": {
+    "ok": true,
+    "total": 7,
+    "n_pins": 7,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 7,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "waterfront_houses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&waterfront=1",
+   "map": {
+    "ok": true,
+    "total": 13,
+    "n_pins": 13,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 13,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "waterfront_condos": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=condo&waterfront=1",
+   "map": {
+    "ok": true,
+    "total": 7,
+    "n_pins": 7,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 7,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "new2026": {
+   "q": "near=33.83434,-78.62798&miles=0.8&yearMin=2026",
+   "map": {
+    "ok": true,
+    "total": 6,
+    "n_pins": 6,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 6,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "new2026_houses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&yearMin=2026",
+   "map": {
+    "ok": true,
+    "total": 6,
+    "n_pins": 6,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 6,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "oceanfront": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=oceanfront",
+   "map": {
+    "ok": true,
+    "total": 78,
+    "n_pins": 78,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 78,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "ocean_view": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=ocean_view",
+   "map": {
+    "ok": true,
+    "total": 33,
+    "n_pins": 33,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 33,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "condos_under_300": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=condo&max=300000",
+   "map": {
+    "ok": true,
+    "total": 19,
+    "n_pins": 19,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 19,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "condos_under_250": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=condo&max=250000",
+   "map": {
+    "ok": true,
+    "total": 15,
+    "n_pins": 15,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 15,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "houses_under_600": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&max=600000",
+   "map": {
+    "ok": true,
+    "total": 7,
+    "n_pins": 7,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 7,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "houses_over_1m": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&min=1000000",
+   "map": {
+    "ok": true,
+    "total": 6,
+    "n_pins": 6,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 6,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "pool": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=pool",
+   "map": {
+    "ok": true,
+    "total": 21,
+    "n_pins": 21,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 21,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "boat_lift": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=boat_lift_any",
+   "map": {
+    "ok": true,
+    "total": 1,
+    "n_pins": 1,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 1,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "elevator": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=home_elevator",
+   "map": {
+    "ok": true,
+    "total": 16,
+    "n_pins": 16,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 16,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "hoa0_houses": {
+   "q": "near=33.83434,-78.62798&miles=0.8&type=house&hoa=0",
+   "map": {
+    "ok": true,
+    "total": 24,
+    "n_pins": 24,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 24,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "rental_ok": {
+   "q": "near=33.83434,-78.62798&miles=0.8&has=short_term_rental_ok",
+   "map": {
+    "ok": true,
+    "total": 78,
+    "n_pins": 78,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 78,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  },
+  "subdivision": {
+   "q": "subdivision=Cherry+Grove",
+   "map": {
+    "ok": true,
+    "total": 31,
+    "n_pins": 31,
+    "keys": [
+     "ok",
+     "total",
+     "meta",
+     "params",
+     "chips",
+     "labels",
+     "left",
+     "q",
+     "closest",
+     "foot"
+    ]
+   },
+   "strip": {
+    "ok": true,
+    "total": 31,
+    "n_pins": null,
+    "keys": [
+     "ok",
+     "total",
+     "link",
+     "labels",
+     "note"
+    ]
+   }
+  }
+ }
+}

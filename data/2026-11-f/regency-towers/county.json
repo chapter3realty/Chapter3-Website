@@ -1,0 +1,333 @@
+{
+ "read": "2026-11-17T07:08:05.691616+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Regency Towers in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, every parcel whose\n   LegalDescr starts \"THE PALACE;\" (the regime name /invest/condo-buildings/ used). Units = parcels with a building value.\n   Kept: units per floor (floor = the unit number less its last two digits), door numbers per floor, the count of units at\n   each county market value (the assessor's unit types), the year of each unit's last recorded sale (counts), owner mailing\n   state (counts), units taxed at the 4% legal-residence ratio. Never kept: a PIN, an owner, a unit's own record.\n2. Sales: the deed sales /invest/condo-buildings/ used (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json,\n   AcclaimWeb DEED (001) recorded 2025-10-01 to 2026-09-30, kept sales only), plus the later window 2025-11-01 to 2026-10-31\n   (data/2026-11-n/buyers-builders/raw/deeds-co.json, Consideration > 0). Kept: count, median, quartiles, range, by floor band,\n   and buyers' tax-bill state (in or out of South Carolina) for the first window.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 120,
+ "units": 119,
+ "parcels_without_building_value": 1,
+ "landuse_first_digit": {
+  "1xx": 119
+ },
+ "unparsed_unit_numbers": 3,
+ "floors": {
+  "numbers": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   14,
+   15,
+   16,
+   17,
+   18
+  ],
+  "top": 18,
+  "count": 17,
+  "missing_between": [
+   13
+  ],
+  "units_per_floor": {
+   "1": 5,
+   "2": 6,
+   "3": 7,
+   "4": 7,
+   "5": 7,
+   "6": 7,
+   "7": 7,
+   "8": 7,
+   "9": 7,
+   "10": 7,
+   "11": 7,
+   "12": 7,
+   "14": 7,
+   "15": 7,
+   "16": 7,
+   "17": 7,
+   "18": 7
+  },
+  "doors_per_floor": {
+   "1": [
+    1,
+    7,
+    5
+   ],
+   "2": [
+    2,
+    7,
+    6
+   ],
+   "3": [
+    1,
+    7,
+    7
+   ],
+   "4": [
+    1,
+    7,
+    7
+   ],
+   "5": [
+    1,
+    7,
+    7
+   ],
+   "6": [
+    1,
+    7,
+    7
+   ],
+   "7": [
+    1,
+    7,
+    7
+   ],
+   "8": [
+    1,
+    7,
+    7
+   ],
+   "9": [
+    1,
+    7,
+    7
+   ],
+   "10": [
+    1,
+    7,
+    7
+   ],
+   "11": [
+    1,
+    7,
+    7
+   ],
+   "12": [
+    1,
+    7,
+    7
+   ],
+   "14": [
+    1,
+    7,
+    7
+   ],
+   "15": [
+    1,
+    7,
+    7
+   ],
+   "16": [
+    1,
+    7,
+    7
+   ],
+   "17": [
+    1,
+    7,
+    7
+   ],
+   "18": [
+    1,
+    7,
+    7
+   ]
+  }
+ },
+ "county_market_value_groups": [
+  [
+   349900.0,
+   77
+  ],
+  [
+   412900.0,
+   33
+  ],
+  [
+   340000.0,
+   3
+  ]
+ ],
+ "county_market_value_groups_under_3": 6,
+ "last_sale_year": {
+  "1993": 2,
+  "1995": 1,
+  "1997": 2,
+  "1998": 2,
+  "2000": 2,
+  "2002": 1,
+  "2003": 1,
+  "2004": 2,
+  "2006": 1,
+  "2007": 2,
+  "2008": 3,
+  "2009": 3,
+  "2010": 3,
+  "2011": 2,
+  "2012": 3,
+  "2013": 2,
+  "2015": 4,
+  "2016": 2,
+  "2017": 1,
+  "2018": 5,
+  "2019": 3,
+  "2020": 5,
+  "2021": 4,
+  "2022": 8,
+  "2023": 7,
+  "2024": 7,
+  "2025": 7,
+  "2026": 7,
+  "None": 27
+ },
+ "owner_state_top": [
+  [
+   "SC",
+   55
+  ],
+  [
+   "VA",
+   15
+  ],
+  [
+   "NC",
+   11
+  ],
+  [
+   "NY",
+   8
+  ],
+  [
+   "PA",
+   7
+  ],
+  [
+   "FL",
+   4
+  ],
+  [
+   "OH",
+   4
+  ],
+  [
+   "TN",
+   3
+  ]
+ ],
+ "owner_out_of_sc": 64,
+ "taxed_as_home_4pct": 13,
+ "sales": {
+  "hub_window": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 4,
+    "median": 358500.0,
+    "p25": 329875.0,
+    "p75": 402500.0,
+    "min": 322500.0,
+    "max": 415000.0
+   },
+   "floors_1_to_10": {
+    "n": 2,
+    "median": 358500.0,
+    "p25": null,
+    "p75": null,
+    "min": 352000.0,
+    "max": 365000.0
+   },
+   "floors_11_up": {
+    "n": 2,
+    "median": 368750.0,
+    "p25": null,
+    "p75": null,
+    "min": 322500.0,
+    "max": 415000.0
+   },
+   "buyer_tax_bill_in_sc": 1,
+   "buyer_tax_bill_out_of_sc": 3,
+   "buyer_states_out_of_sc": [
+    [
+     "TN",
+     1
+    ],
+    [
+     "NJ",
+     1
+    ],
+    [
+     "PA",
+     1
+    ]
+   ],
+   "buyer_is_company": 2,
+   "by_quarter": {
+    "2026Q1": 2,
+    "2026Q2": 2
+   }
+  },
+  "later_window": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 5,
+    "median": 352000.0,
+    "p25": 186250.0,
+    "p75": 390000.0,
+    "min": 50000.0,
+    "max": 415000.0
+   },
+   "floors_1_to_10": {
+    "n": 3,
+    "median": 352000.0,
+    "p25": null,
+    "p75": null,
+    "min": 50000.0,
+    "max": 365000.0
+   },
+   "floors_11_up": {
+    "n": 2,
+    "median": 368750.0,
+    "p25": null,
+    "p75": null,
+    "min": 322500.0,
+    "max": 415000.0
+   },
+   "zero_dollar_deeds": 2,
+   "commercial_unit_deeds": 0,
+   "note": "Commercial units left out. Consideration as indexed; deeds under $1,000 are transfers, not sales",
+   "under_1000": 0
+  }
+ },
+ "sales_by_value": {
+  "read": "2026-11-17T07:08:06.326111+00:00",
+  "rule": "Regency Towers: recorded sales split by the county's own market value for the unit (a stand-in for unit size, since deeds carry no\nbedrooms): units the county values under $200,000 (the one-bedroom size; the one-bedrooms for sale ask $119,900 to $194,900) and units it\nvalues at $300,000 or more (two- and three-bedrooms; those for sale ask $362,500 to $532,500). Sources: Horry County GIS layer 24\n(PIN, MarketProp, LegalDescr 'REGENCY TOWER%'), joined by PIN to the deed files named in pull_county.py (window 1: out-of-state-buyers.json,\n2025-10-01 to 2026-09-30; window 2: data/2026-11-n/buyers-builders/raw/deeds-co.json, 2025-11-01 to 2026-10-31, Consideration >= 1000).\nKept: per group the count, median, lowest and highest price. A group of fewer than 3 is not kept. Never kept: a PIN, a unit, a buyer, a date of a single deed.\nRun: python3 -I pull_sales_by_value.py <this dir> <website root>. Merges \"sales_by_value\" into county.json.",
+  "units_by_county_value": {
+   "300k_up": 119,
+   "under_300k": 1
+  },
+  "window_1": {
+   "window": "2025-10-01 to 2026-09-30",
+   "300k_up": {
+    "n": 4,
+    "median": 358500.0,
+    "min": 322500.0,
+    "max": 415000.0
+   }
+  },
+  "window_2": {
+   "window": "2025-11-01 to 2026-10-31",
+   "300k_up": {
+    "n": 5,
+    "median": 352000.0,
+    "min": 50000.0,
+    "max": 415000.0
+   }
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "hub_window_2025-10-01_to_2026-09-30": {
+  "floors_1_to_10": {
+   "n": 6,
+   "median": 144950.0,
+   "min": 132500.0,
+   "max": 329000.0
+  },
+  "floors_11_up": {
+   "n": 2,
+   "median": 215000.0,
+   "min": 180000.0,
+   "max": 250000.0
+  },
+  "penthouse": {
+   "n": 1,
+   "median": 950000.0,
+   "min": 950000.0,
+   "max": 950000.0
+  },
+  "other": {
+   "n": 0,
+   "median": null,
+   "min": null,
+   "max": null
+  },
+  "numbered_units_only": {
+   "n": 8,
+   "median": 147500.0,
+   "min": 132500.0,
+   "max": 329000.0
+  },
+  "all": {
+   "n": 9,
+   "median": 150000.0,
+   "min": 132500.0,
+   "max": 950000.0
+  }
+ },
+ "later_window_2025-11-01_to_2026-10-31": {
+  "floors_1_to_10": {
+   "n": 5,
+   "median": 144900.0,
+   "min": 132500.0,
+   "max": 329000.0
+  },
+  "floors_11_up": {
+   "n": 1,
+   "median": 180000.0,
+   "min": 180000.0,
+   "max": 180000.0
+  },
+  "penthouse": {
+   "n": 0,
+   "median": null,
+   "min": null,
+   "max": null
+  },
+  "other": {
+   "n": 0,
+   "median": null,
+   "min": null,
+   "max": null
+  },
+  "numbered_units_only": {
+   "n": 6,
+   "median": 147450.0,
+   "min": 132500.0,
+   "max": 329000.0
+  },
+  "all": {
+   "n": 6,
+   "median": 147450.0,
+   "min": 132500.0,
+   "max": 329000.0
+  }
+ }
+}

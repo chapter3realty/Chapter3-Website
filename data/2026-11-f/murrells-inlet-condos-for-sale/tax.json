@@ -1,0 +1,33 @@
+{
+ "rule": "Yearly property tax on a condo in the Murrells Inlet area, at 6 and 4 percent, by side of the county line. Rows 15 to 17 of batches/2026-11-a/submarkets-murrells-inlet/facts.md (VERIFIED).\nHorry side (tax district 610; Garden City too): 4%: price x 0.04 x 0.0982 + 89.40 fees. 6%: price x 0.06 x 0.2073 + 89.40.\nGeorgetown side (district 41, the county's calculator, tax year not stated): 4%: price x 0.04 x 0.1289 + 96. 6%: price x 0.06 x 0.2520 + 96 (ledger row 17's method).\nBefore credits and the 15 percent cap. Run from inside this dir. Writes tax.json.",
+ "tax": {
+  "horry": {
+   "200000": {
+    "four": 875.0,
+    "six": 2577.0
+   },
+   "250000": {
+    "four": 1071.4,
+    "six": 3198.9
+   },
+   "350000": {
+    "four": 1464.2,
+    "six": 4442.7
+   }
+  },
+  "georgetown": {
+   "200000": {
+    "four": 1127.2,
+    "six": 3120.0
+   },
+   "250000": {
+    "four": 1385.0,
+    "six": 3876.0
+   },
+   "350000": {
+    "four": 1900.6,
+    "six": 5388.0
+   }
+  }
+ }
+}

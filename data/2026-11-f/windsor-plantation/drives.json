@@ -1,0 +1,178 @@
+{
+ "pulled": "2026-11-17T07:36:18.088263+00:00",
+ "rule": "Drive times from the middle of Windsor Plantation (detached houses; mean of parcel centre points, findings.json \"center\") and Berwick townhomes (\"center_berwick\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Windsor Plantation (middle of the detached houses)": [
+   33.65222,
+   -78.99641
+  ],
+  "Berwick (middle)": [
+   33.65556,
+   -78.99547
+  ]
+ },
+ "drives": {
+  "Windsor Plantation (middle of the detached houses)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 15.8,
+    "miles": 8.45,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99641,33.65222;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 16.4,
+    "miles": 9.62,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99641,33.65222;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 12.9,
+    "miles": 7.12,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99641,33.65222;-78.9223169,33.7027515?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 8.9,
+    "miles": 4.21,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99641,33.65222;-78.96163072891693,33.616562229718404?overview=false",
+    "name": "SURFSIDE BEACH 31",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "SURFSIDE BEACH 32",
+     9.4,
+     4.28
+    ],
+    [
+     "SURFSIDE BEACH 31",
+     8.9,
+     4.21
+    ],
+    [
+     "SURFSIDE BEACH 30",
+     9.0,
+     4.27
+    ],
+    [
+     "SURFSIDE BEACH 29",
+     9.2,
+     4.32
+    ],
+    [
+     "SURFSIDE BEACH 28",
+     9.3,
+     4.38
+    ],
+    [
+     "SURFSIDE BEACH 27",
+     9.4,
+     4.44
+    ],
+    [
+     "SURFSIDE BEACH 26",
+     9.7,
+     4.56
+    ],
+    [
+     "SURFSIDE BEACH 25",
+     9.9,
+     4.62
+    ],
+    [
+     "SURFSIDE BEACH 24",
+     10.0,
+     4.68
+    ],
+    [
+     "SURFSIDE BEACH 23",
+     10.1,
+     4.73
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 106.7,
+    "miles": 4.97,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.99641,33.65222;-78.96163072891693,33.616562229718404?overview=false"
+   }
+  },
+  "Berwick (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 15.6,
+    "miles": 8.4,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99547,33.65556;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 16.2,
+    "miles": 9.57,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99547,33.65556;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 12.7,
+    "miles": 7.06,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99547,33.65556;-78.9223169,33.7027515?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 8.7,
+    "miles": 4.16,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.99547,33.65556;-78.96163072891693,33.616562229718404?overview=false",
+    "name": "SURFSIDE BEACH 31",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "SURFSIDE BEACH 32",
+     9.2,
+     4.22
+    ],
+    [
+     "SURFSIDE BEACH 31",
+     8.7,
+     4.16
+    ],
+    [
+     "SURFSIDE BEACH 30",
+     8.8,
+     4.22
+    ],
+    [
+     "SURFSIDE BEACH 29",
+     9.0,
+     4.27
+    ],
+    [
+     "SURFSIDE BEACH 28",
+     9.1,
+     4.33
+    ],
+    [
+     "SURFSIDE BEACH 27",
+     9.2,
+     4.39
+    ],
+    [
+     "SURFSIDE BEACH 26",
+     9.5,
+     4.51
+    ],
+    [
+     "SURFSIDE BEACH 25",
+     9.7,
+     4.57
+    ],
+    [
+     "SURFSIDE BEACH 24",
+     9.8,
+     4.63
+    ],
+    [
+     "SURFSIDE BEACH 23",
+     9.9,
+     4.68
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 104.3,
+    "miles": 4.86,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.99547,33.65556;-78.96163072891693,33.616562229718404?overview=false"
+   }
+  }
+ }
+}

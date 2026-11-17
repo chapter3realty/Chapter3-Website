@@ -1,0 +1,57 @@
+has=area_garden_city&domMax=30
+has=area_garden_city&type=house&domMax=30
+has=area_garden_city&type=condo&domMax=30
+has=area_garden_city&type=house&max=749999
+has=area_garden_city&type=house&min=750000&max=1499999
+has=area_garden_city&type=house&min=1500000
+has=area_garden_city&type=condo&max=249999
+has=area_garden_city&type=condo&min=250000&max=399999
+has=area_garden_city&type=condo&min=400000
+has=area_garden_city&type=house&beds=5
+has=area_garden_city&type=house&beds=4
+has=area_garden_city&type=condo&beds=2
+has=area_garden_city&type=condo&beds=3
+has=area_garden_city&type=house&yearMin=2015
+has=area_garden_city&type=condo&has=oceanfront_unit
+has=area_garden_city&type=condo&has=oceanfront_unit&max=299999
+has=area_garden_city&type=condo&has=ocean_view
+has=area_garden_city&type=house&waterfront=1
+has=area_garden_city&type=house&has=marsh_view
+has=area_garden_city&type=house&has=private_dock
+has=area_garden_city&type=house&has=pool
+has=area_garden_city&type=house&has=raised_home
+has=area_garden_city&type=house&has=home_elevator
+has=area_garden_city&type=condo&has=elevator
+has=area_garden_city&type=condo&has=indoor_pool
+has=area_garden_city&type=house&has=hot_tub
+has=area_garden_city&type=house&has=walk_to_beach
+has=area_garden_city&type=condo&has=walk_to_beach
+has=area_garden_city&type=house&has=golf_cart_ok
+has=area_garden_city&type=house&has=str_allowed
+has=area_garden_city&type=condo&has=str_allowed
+has=area_garden_city&type=condo&has=furnished
+has=area_garden_city&type=condo&has=vacation_rental_program
+has=area_garden_city&type=condo&has=hoa_includes_insurance
+has=area_garden_city&type=condo&hoaMax=499
+has=area_garden_city&type=house&hoa=0
+has=area_garden_city&type=house&has=county_georgetown
+has=area_garden_city&type=house&has=county_horry
+has=area_garden_city&type=condo&has=county_horry
+near=33.58000,-78.99250&miles=0.45&type=condo
+near=33.57600,-79.01000&miles=0.7&type=house
+near=33.59200,-78.99850&miles=0.5
+near=33.59600,-79.01500&miles=0.6
+near=33.54800,-79.02000&miles=1
+subdivision=Jasmine Lake&type=condo&has=area_garden_city
+subdivision=WATERS EDGE&type=condo&has=area_garden_city
+subdivision=ROYAL GARDEN&type=condo&has=area_garden_city
+subdivision=SANDY SHORES I&type=condo&has=area_garden_city
+subdivision=SANDY SHORES II&type=condo&has=area_garden_city
+subdivision=Garden Sands&type=condo&has=area_garden_city
+subdivision=Sweetwater - Indian Wells&type=condo&has=area_garden_city
+subdivision=Duneside I&type=condo&has=area_garden_city
+subdivision=SURFMASTER I&type=condo&has=area_garden_city
+subdivision=SEA MASTER&type=condo&has=area_garden_city
+subdivision=Beach House&type=condo&has=area_garden_city
+subdivision=Inlet Pointe&type=house&has=area_garden_city
+subdivision=Myrtle Dunes&type=house&has=area_garden_city

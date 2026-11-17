@@ -1,0 +1,28 @@
+{
+ "read": "2026-11-17T04:43:11.165230+00:00",
+ "rule": "Flood zone under every condo for sale in Myrtle Beach (MLS city), in aggregate. The map API's pins (price slices, as in pull_listings.py) give a\npoint for each listing; FEMA NFHL MapServer layer 28 gives FLD_ZONE and SFHA_TF at that point. Kept: counts by zone, by waterfront tag.\nNot kept: a point, address or MLS number. Run: python3 -I pull_flood.py <this dir>. Writes flood.json.",
+ "pins": 1712,
+ "failed": 0,
+ "all": {
+  "X": 1219,
+  "AE:SFHA": 395,
+  "VE:SFHA": 97,
+  "none": 1
+ },
+ "waterfront_tag": {
+  "X": 345,
+  "AE:SFHA": 175,
+  "VE:SFHA": 63
+ },
+ "not_waterfront_tag": {
+  "X": 874,
+  "AE:SFHA": 220,
+  "VE:SFHA": 34,
+  "none": 1
+ },
+ "in_high_risk": {
+  "all": 492,
+  "waterfront": 238,
+  "not_waterfront": 254
+ }
+}

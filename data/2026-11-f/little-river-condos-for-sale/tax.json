@@ -1,0 +1,17 @@
+{
+ "rule": "Yearly property tax on a Little River condo outside the City of North Myrtle Beach, 2026 levy, at 4 and 6 percent, at three prices.\nLevy from batches/2026-11-a/submarkets-little-river/facts.md rows 5 and 6 (VERIFIED there): 4 percent net 91.9 mills; 6 percent 201.0 mills; county fee $89.40 (some new-home bills show $0).\nAssumes the county values the condo at its price; leaves out the 65-and-older exemption. Writes tax.json.",
+ "tax": {
+  "150000": {
+   "four": 640.8,
+   "six": 1898.4
+  },
+  "190000": {
+   "four": 787.84,
+   "six": 2380.8
+  },
+  "250000": {
+   "four": 1008.4,
+   "six": 3104.4
+  }
+ }
+}

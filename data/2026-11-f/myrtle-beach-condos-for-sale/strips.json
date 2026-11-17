@@ -1,0 +1,277 @@
+{
+ "read": "2026-11-17T04:50:24.165892+00:00",
+ "strips": {
+  "newest": {
+   "q": "type=condo&city=Myrtle+Beach",
+   "total": 1695
+  },
+  "under150": {
+   "q": "type=condo&city=Myrtle+Beach&max=150000",
+   "total": 508
+  },
+  "150-300": {
+   "q": "type=condo&city=Myrtle+Beach&min=150000&max=300000",
+   "total": 866
+  },
+  "300plus": {
+   "q": "type=condo&city=Myrtle+Beach&min=300000",
+   "total": 339
+  },
+  "500plus": {
+   "q": "type=condo&city=Myrtle+Beach&min=500000",
+   "total": 95
+  },
+  "under100": {
+   "q": "type=condo&city=Myrtle+Beach&max=100000",
+   "total": 164
+  },
+  "studio": {
+   "q": "type=condo&city=Myrtle+Beach&beds=0",
+   "total": 1695
+  },
+  "beds1": {
+   "q": "type=condo&city=Myrtle+Beach&beds=1",
+   "total": 1441
+  },
+  "beds2": {
+   "q": "type=condo&city=Myrtle+Beach&beds=2",
+   "total": 908
+  },
+  "beds3": {
+   "q": "type=condo&city=Myrtle+Beach&beds=3",
+   "total": 338
+  },
+  "beds4": {
+   "q": "type=condo&city=Myrtle+Beach&beds=4",
+   "total": 29
+  },
+  "oceanfront": {
+   "q": "type=condo&city=Myrtle+Beach&has=water_ocean",
+   "total": 926
+  },
+  "oceanfront_under150": {
+   "q": "type=condo&city=Myrtle+Beach&has=water_ocean&max=150000",
+   "total": 335
+  },
+  "oceanfront_2bed": {
+   "q": "type=condo&city=Myrtle+Beach&has=water_ocean&beds=2",
+   "total": 304
+  },
+  "oceanfront_3bed": {
+   "q": "type=condo&city=Myrtle+Beach&has=water_ocean&beds=3",
+   "total": 117
+  },
+  "oceanview": {
+   "q": "type=condo&city=Myrtle+Beach&has=ocean_view",
+   "total": 973
+  },
+  "not_oceanfront": {
+   "q": "type=condo&city=Myrtle+Beach&not=water_ocean",
+   "total": 839
+  },
+  "not_oceanfront_2bed": {
+   "q": "type=condo&city=Myrtle+Beach&not=water_ocean&beds=2",
+   "total": 630
+  },
+  "new2022": {
+   "q": "type=condo&city=Myrtle+Beach&yearMin=2022",
+   "total": 27
+  },
+  "new2015": {
+   "q": "type=condo&city=Myrtle+Beach&yearMin=2015",
+   "total": 53
+  },
+  "dom14": {
+   "q": "type=condo&city=Myrtle+Beach&domMax=14",
+   "total": 171
+  },
+  "hoa500": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=500",
+   "total": 471
+  },
+  "hoa400": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=400",
+   "total": 205
+  },
+  "hoa600": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=600",
+   "total": 627
+  },
+  "pool_golf": {
+   "q": "type=condo&city=Myrtle+Beach&has=golf_course",
+   "total": 1695
+  },
+  "beach_walk": {
+   "q": "type=condo&city=Myrtle+Beach&has=beach_25mi",
+   "total": 1692
+  },
+  "icw": {
+   "q": "type=condo&city=Myrtle+Beach&has=water_view",
+   "total": 1111
+  },
+  "sub:Landmark Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Landmark+Resort",
+   "total": 88
+  },
+  "sub:Coral Beach": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Coral+Beach",
+   "total": 43
+  },
+  "sub:Caravelle Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Caravelle+Resort",
+   "total": 42
+  },
+  "sub:Sea Mist Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Sea+Mist+Resort",
+   "total": 34
+  },
+  "sub:Monterey Bay Suites Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Monterey+Bay+Suites+Resort",
+   "total": 31
+  },
+  "sub:Compass Cove Pinnacle Oceanfront Tower": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Compass+Cove+Pinnacle+Oceanfront+Tower",
+   "total": 27
+  },
+  "sub:PALACE, THE": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=PALACE%2C+THE",
+   "total": 26
+  },
+  "sub:Bay View Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Bay+View+Resort",
+   "total": 10
+  },
+  "sub:Grande Cayman Resort (formerly Long Bay Resort)": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Grande+Cayman+Resort+%28formerly+Long+Bay+Resort%29",
+   "total": 22
+  },
+  "sub:Beach Colony": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Beach+Colony",
+   "total": 23
+  },
+  "sub:Dunes Village Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Dunes+Village+Resort",
+   "total": 18
+  },
+  "sub:OCEAN FOREST VILLAS": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=OCEAN+FOREST+VILLAS",
+   "total": 17
+  },
+  "sub:Holiday Sands": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Holiday+Sands",
+   "total": 15
+  },
+  "sub:Maisons Sur-Mer": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Maisons+Sur-Mer",
+   "total": 13
+  },
+  "sub:Carolinian Beach Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Carolinian+Beach+Resort",
+   "total": 12
+  },
+  "sub:Paradise Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Paradise+Resort",
+   "total": 12
+  },
+  "sub:Patricia Grand I": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Patricia+Grand+I",
+   "total": 9
+  },
+  "sub:Grand Atlantic": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Grand+Atlantic",
+   "total": 9
+  },
+  "sub:Mar Vista Grande": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Mar+Vista+Grande",
+   "total": 0
+  },
+  "sub:Grande Shores": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Grande+Shores",
+   "total": 10
+  },
+  "sub:Bluewater Resort - Hi rise": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Bluewater+Resort+-+Hi+rise",
+   "total": 30
+  },
+  "sub:Magnolia Place": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Magnolia+Place",
+   "total": 37
+  },
+  "sub:Magnolia Pointe": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Magnolia+Pointe",
+   "total": 39
+  },
+  "sub:Magnolia North": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Magnolia+North",
+   "total": 32
+  },
+  "sub:RIVER OAKS CONDOS": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=RIVER+OAKS+CONDOS",
+   "total": 30
+  },
+  "sub:SAND DUNES PHII": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=SAND+DUNES+PHII",
+   "total": 31
+  },
+  "sub:Kingston Plantation - South Hampton": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Kingston+Plantation+-+South+Hampton",
+   "total": 13
+  },
+  "sub:Royale Palms": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Royale+Palms",
+   "total": 13
+  },
+  "sub:OCEAN REEF RESORT NORTH TOWER": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=OCEAN+REEF+RESORT+NORTH+TOWER",
+   "total": 17
+  },
+  "sub:Margaritaville Vacation Residences Myrtle Beach": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach",
+   "total": 9
+  },
+  "sub:Sands Ocean": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Sands+Ocean",
+   "total": 18
+  },
+  "sub:SANDS OCEAN": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=SANDS+OCEAN",
+   "total": 18
+  },
+  "sub:Forest Dunes": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Forest+Dunes",
+   "total": 18
+  },
+  "sub:Carolina Winds": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Carolina+Winds",
+   "total": 13
+  },
+  "sub:Dunes Pointe": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Dunes+Pointe",
+   "total": 14
+  },
+  "sub:MB Resort I - 16J": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=MB+Resort+I+-+16J",
+   "total": 17
+  },
+  "sub:Savannah Shores - MB Arcadian": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Savannah+Shores+-+MB+Arcadian",
+   "total": 15
+  },
+  "sub:Landmark Resort Phase II": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Landmark+Resort+Phase+II",
+   "total": 17
+  },
+  "sub:Ocean Creek I": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Ocean+Creek+I",
+   "total": 22
+  },
+  "sub:Kingston Plantation": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Kingston+Plantation",
+   "total": 63
+  },
+  "sub:Grande Dunes": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Grande+Dunes",
+   "total": 17
+  }
+ }
+}

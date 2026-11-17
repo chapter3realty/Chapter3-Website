@@ -1,0 +1,18 @@
+{
+ "pulled": "2026-11-17T05:16:02.943296+00:00",
+ "rule": "Homes for sale now in Myrtle Beach (MLS city \"Myrtle Beach\") in aggregate from the site's public map API and card lookup. Saves counts, ranges, subdivision names with counts. No address, MLS number, firm or photo is saved. Run: python3 -I pull_mb.py <dir>",
+ "totals": {
+  "house": 1037,
+  "condo": 1695,
+  "townhouse": 145,
+  "manufactured": 145,
+  "multi": 13,
+  "land": 132,
+  "all": 3233
+ },
+ "mls_collected": {
+  "house": 1032,
+  "townhouse": 145
+ },
+ "cards_with_price": 597
+}

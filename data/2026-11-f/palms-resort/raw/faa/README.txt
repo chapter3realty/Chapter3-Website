@@ -1,0 +1,1 @@
+FAA Digital Obstacle File (DOF.DAT, currency 11/12/26) was searched within 0.0012 degrees of the Palms footprint center: no obstacle line. DOF.DAT removed (15 MB). Result: the FAA file has no height for the Palms.

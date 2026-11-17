@@ -1,0 +1,298 @@
+[
+ {
+  "q": "has=area_garden_city&type=house&domMax=30",
+  "ok": true,
+  "total": 12,
+  "link": "/homes/?type=house&has=area_garden_city&domMax=30",
+  "note": "",
+  "cards": 11
+ },
+ {
+  "q": "has=area_garden_city&type=condo&domMax=30",
+  "ok": true,
+  "total": 19,
+  "link": "/homes/?type=condo&has=area_garden_city&domMax=30",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&max=249999",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=condo&max=249999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&min=250000&max=399999",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=condo&min=250000&max=399999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&min=400000",
+  "ok": true,
+  "total": 15,
+  "link": "/homes/?type=condo&min=400000&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&max=749999",
+  "ok": true,
+  "total": 18,
+  "link": "/homes/?type=house&max=749999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&min=750000&max=1499999",
+  "ok": true,
+  "total": 23,
+  "link": "/homes/?type=house&min=750000&max=1499999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&min=1500000",
+  "ok": true,
+  "total": 14,
+  "link": "/homes/?type=house&min=1500000&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=oceanfront_unit",
+  "ok": true,
+  "total": 27,
+  "link": "/homes/?type=condo&has=area_garden_city%2Coceanfront_unit",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=oceanfront_unit&max=299999",
+  "ok": true,
+  "total": 9,
+  "link": "/homes/?type=condo&max=299999&has=area_garden_city%2Coceanfront_unit",
+  "note": "",
+  "cards": 9
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=ocean_view",
+  "ok": true,
+  "total": 46,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cocean_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&waterfront=1",
+  "ok": true,
+  "total": 14,
+  "link": "/homes/?type=house&waterfront=1&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=marsh_view",
+  "ok": true,
+  "total": 21,
+  "link": "/homes/?type=house&has=area_garden_city%2Cmarsh_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=private_dock",
+  "ok": true,
+  "total": 8,
+  "link": "/homes/?type=house&has=area_garden_city%2Cprivate_dock",
+  "note": "",
+  "cards": 8
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=str_allowed",
+  "ok": true,
+  "total": 52,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cstr_allowed",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=furnished",
+  "ok": true,
+  "total": 60,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cfurnished",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=pool",
+  "ok": true,
+  "total": 27,
+  "link": "/homes/?type=house&has=area_garden_city%2Cpool",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=walk_to_beach",
+  "ok": true,
+  "total": 47,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwalk_to_beach",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&hoa=0",
+  "ok": true,
+  "total": 40,
+  "link": "/homes/?type=house&hoa=0&has=area_garden_city",
+  "note": "No HOA, as listed by the listing agent. Confirm before you buy.",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&beds=5",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=house&beds=5&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&yearMin=2015",
+  "ok": true,
+  "total": 12,
+  "link": "/homes/?type=house&has=area_garden_city&yearMin=2015",
+  "note": "",
+  "cards": 12
+ },
+ {
+  "q": "has=area_garden_city&type=condo&beds=3",
+  "ok": true,
+  "total": 20,
+  "link": "/homes/?type=condo&beds=3&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Jasmine Lake&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 10,
+  "link": "/homes/?type=condo&subdivision=Jasmine+Lake&has=area_garden_city",
+  "note": "",
+  "cards": 10
+ },
+ {
+  "q": "subdivision=WATERS EDGE&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?type=condo&subdivision=WATERS+EDGE&has=area_garden_city",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "subdivision=ROYAL GARDEN&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?type=condo&subdivision=ROYAL+GARDEN&has=area_garden_city",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "subdivision=SANDY SHORES I&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?type=condo&subdivision=SANDY+SHORES+I&has=area_garden_city",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "subdivision=SANDY SHORES II&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 4,
+  "link": "/homes/?type=condo&subdivision=SANDY+SHORES+II&has=area_garden_city",
+  "note": "",
+  "cards": 4
+ },
+ {
+  "q": "subdivision=Garden Sands&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 4,
+  "link": "/homes/?type=condo&subdivision=Garden+Sands&has=area_garden_city",
+  "note": "",
+  "cards": 4
+ },
+ {
+  "q": "subdivision=Sweetwater - Indian Wells&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 4,
+  "link": "/homes/?type=condo&subdivision=Sweetwater+-+Indian+Wells&has=area_garden_city",
+  "note": "",
+  "cards": 4
+ },
+ {
+  "q": "subdivision=Duneside I&type=condo&has=area_garden_city",
+  "ok": true,
+  "total": 4,
+  "link": "/homes/?type=condo&subdivision=Duneside+I&has=area_garden_city",
+  "note": "",
+  "cards": 4
+ },
+ {
+  "q": "subdivision=Inlet Pointe&type=house&has=area_garden_city",
+  "ok": true,
+  "total": 4,
+  "link": "/homes/?type=house&subdivision=Inlet+Pointe&has=area_garden_city",
+  "note": "",
+  "cards": 4
+ },
+ {
+  "q": "near=33.58000,-78.99250&miles=0.45&type=condo",
+  "ok": true,
+  "total": 46,
+  "link": "/homes/?type=condo&near=33.580000%2C-78.992500&miles=0.5",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "near=33.57600,-79.01000&miles=0.7&type=house",
+  "ok": true,
+  "total": 22,
+  "link": "/homes/?type=house&near=33.576000%2C-79.010000&miles=0.7",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "near=33.59200,-78.99850&miles=0.5&type=house",
+  "ok": true,
+  "total": 11,
+  "link": "/homes/?type=house&near=33.592000%2C-78.998500&miles=0.5",
+  "note": "",
+  "cards": 11
+ },
+ {
+  "q": "near=33.59600,-79.01500&miles=0.6&type=house",
+  "ok": true,
+  "total": 7,
+  "link": "/homes/?type=house&near=33.596000%2C-79.015000&miles=0.6",
+  "note": "",
+  "cards": 7
+ },
+ {
+  "q": "near=33.59600,-79.01500&miles=0.6&type=condo",
+  "ok": true,
+  "total": 21,
+  "link": "/homes/?type=condo&near=33.596000%2C-79.015000&miles=0.6",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "near=33.54800,-79.02000&miles=1&type=house",
+  "ok": true,
+  "total": 11,
+  "link": "/homes/?type=house&near=33.548000%2C-79.020000&miles=1",
+  "note": "",
+  "cards": 11
+ }
+]

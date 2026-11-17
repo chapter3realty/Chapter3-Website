@@ -1,0 +1,70 @@
+{
+ "rule": "Photo records for /submarkets/conway/shaftesbury-glen/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "shaftesbury-glen",
+   "file": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-600w.webp",
+    "1200": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Shaftesbury Glen from above",
+   "what": "Part of Shaftesbury Glen from above (USDA NAIP aerial photo, 2023): the golf club's fairways and greens beside curving streets of houses, with the row of The Villas beside the road. The Preserve, the newest section, was not built yet.",
+   "caption": "The golf club's fairways beside the streets of The Landing and the older sections, from before The Preserve was built.",
+   "alt": "Aerial photo of part of Shaftesbury Glen near Conway: golf fairways and greens beside curving streets of houses, a row of villas along a road and a pond between the houses and the course",
+   "place": {
+    "city": "Conway",
+    "sublocation": "Shaftesbury Glen"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023 (flight tile m_3307801_se_17_060_20230410), natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling) on 2026-11-17; the exact request is in source_request. The image service identify call at the frame returns the 2023 tile.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service (4:3)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8783997.4%2C4014538.0%2C-8782997.4%2C4015288.0&bboxSR=3857&imageSR=3857&size=1800%2C1350&format=jpg&interpolation=RSP_CubicConvolution&f=image&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.90799,
+     33.8937,
+     -78.89901,
+     33.8993
+    ],
+    "ground_m_per_px_1200w": 0.83
+   },
+   "original_size": "1800x1350 (NAIP export), then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/conway/shaftesbury-glen/ on 2026-11-17. The houses in the frame are on Shaftesbury Glen lots (The Landing, the older sections and The Villas). No person; cars in one parking lot are too small to read a plate at page size; no house number or sign readable.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/shaftesbury-glen/shaftesbury-glen-golf-and-houses-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "The 1x1, 4x3 and 16x9 share crops are center crops of the same 1800x1350 export."
+  }
+ ]
+}

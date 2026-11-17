@@ -1,0 +1,161 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "book and page on one deed only": 18375,
+  "parcel in county layer": 18278,
+  "county address layer ZIP 29579": 1672,
+  "tax district 100, 600 or 800 (county levy only, no city)": 1573
+ },
+ "land_use_counts": {
+  "101": 1180,
+  "109": 160,
+  "100": 161,
+  "121": 2,
+  "120": 10,
+  "397": 1,
+  "126": 9,
+  "300": 4,
+  "108": 1,
+  "110": 4,
+  "135": 3,
+  "325": 2,
+  "374": 2,
+  "348": 1,
+  "349": 2,
+  "396": 1,
+  "130": 9,
+  "353": 1,
+  "373": 1,
+  "332": 3,
+  "343": 1,
+  "337": 1,
+  "102": 4,
+  "317": 2,
+  "398": 1,
+  "107": 3,
+  "123": 2,
+  "314": 1,
+  "211": 1
+ },
+ "houses": {
+  "count": 1340,
+  "median": 400000.0,
+  "p25": 303000.0,
+  "p75": 540000.0,
+  "min": 20000.0,
+  "max": 1900000.0
+ },
+ "houses_seller_business": {
+  "count": 479,
+  "median": 409900.0,
+  "p25": 287990.0,
+  "p75": 540000.0,
+  "min": 117000.0,
+  "max": 1900000.0
+ },
+ "houses_seller_person": {
+  "count": 861,
+  "median": 395000.0,
+  "p25": 308000.0,
+  "p75": 540000.0,
+  "min": 20000.0,
+  "max": 1875000.0
+ },
+ "condos": {
+  "count": 3,
+  "median": 264900.0,
+  "p25": 246900.0,
+  "p75": 275000.0,
+  "min": 246900.0,
+  "max": 275000.0
+ },
+ "condos_seller_business": null,
+ "house_price_bands": {
+  "0-300000": 327,
+  "300000-400000": 337,
+  "400000-500000": 274,
+  "500000-600000": 159,
+  "600000-1000000000": 243
+ },
+ "houses_by_tax_district": {
+  "800": 584,
+  "100": 339,
+  "600": 417
+ },
+ "houses_by_quarter": {
+  "2025-Q4": {
+   "count": 242,
+   "median": 410000.0
+  },
+  "2026-Q1": {
+   "count": 327,
+   "median": 410000.0
+  },
+  "2026-Q2": {
+   "count": 368,
+   "median": 399945.0
+  },
+  "2026-Q3": {
+   "count": 316,
+   "median": 392000.0
+  },
+  "2026-Q4": {
+   "count": 87,
+   "median": 365000.0
+  }
+ },
+ "houses_by_seller": {
+  "other business": 434,
+  "person": 861,
+  "D.R. Horton": 45
+ },
+ "dr_horton_share_pct": 3.4,
+ "business_sellers_top": [
+  [
+   "LENNAR CAROLINAS",
+   74
+  ],
+  [
+   "DR HORTON",
+   44
+  ],
+  [
+   "BANBURY SC",
+   43
+  ],
+  [
+   "NVR",
+   42
+  ],
+  [
+   "CLAYTON PROPERTIES GROUP",
+   41
+  ],
+  [
+   "ASHTON CHARLESTON RESIDENTIAL",
+   33
+  ],
+  [
+   "MERITAGE HOMES OF THE CAROLINA",
+   31
+  ],
+  [
+   "PULTE HOME",
+   31
+  ],
+  [
+   "WATERBRIDGE SC",
+   31
+  ],
+  [
+   "DRB GROUP SOUTH CAROLINA",
+   10
+  ]
+ ],
+ "mode": "zip"
+}

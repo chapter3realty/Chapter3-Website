@@ -1,0 +1,93 @@
+{
+ "pulled": "2026-11-17T07:32:21.200726+00:00",
+ "rule": "Drive times from the middle of The Preserve at Pine Lakes (mean of parcel centre points, findings.json \"center\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "The Preserve at Pine Lakes (middle)": [
+   33.73524,
+   -78.84863
+  ]
+ },
+ "drives": {
+  "The Preserve at Pine Lakes (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 15.7,
+    "miles": 7.57,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.84863,33.73524;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 7.1,
+    "miles": 2.77,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.84863,33.73524;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 11.5,
+    "miles": 5.46,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.84863,33.73524;-78.9223169,33.7027515?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 5.6,
+    "miles": 1.2,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.84863,33.73524;-78.83834820245357,33.72578453602052?overview=false",
+    "name": "MYRTLE BEACH 108",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 108",
+     5.6,
+     1.2
+    ],
+    [
+     "MYRTLE BEACH 109",
+     5.8,
+     1.29
+    ],
+    [
+     "MYRTLE BEACH 107",
+     6.0,
+     1.42
+    ],
+    [
+     "MYRTLE BEACH 110",
+     6.1,
+     1.39
+    ],
+    [
+     "MYRTLE BEACH 105",
+     5.8,
+     1.38
+    ],
+    [
+     "MYRTLE BEACH 106",
+     5.7,
+     1.36
+    ],
+    [
+     "MYRTLE BEACH 111",
+     6.3,
+     1.47
+    ],
+    [
+     "MYRTLE BEACH 104",
+     5.8,
+     1.46
+    ],
+    [
+     "MYRTLE BEACH 112",
+     6.4,
+     1.4
+    ],
+    [
+     "MYRTLE BEACH 103",
+     5.9,
+     1.79
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 25.7,
+    "miles": 1.2,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.84863,33.73524;-78.83834820245357,33.72578453602052?overview=false"
+   }
+  }
+ }
+}

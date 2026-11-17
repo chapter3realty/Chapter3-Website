@@ -1,0 +1,76 @@
+{
+ "Loris": {
+  "houses_with_acreage": 356,
+  "acres": {
+   "count": 356,
+   "median": 0.26,
+   "p25": 0.22,
+   "p75": 0.6
+  },
+  "one_acre_or_more": 61,
+  "two_acres_or_more": 20,
+  "under_half_acre": 244
+ },
+ "Conway": {
+  "houses_with_acreage": 2155,
+  "acres": {
+   "count": 2155,
+   "median": 0.17,
+   "p25": 0.0,
+   "p75": 0.23
+  },
+  "one_acre_or_more": 110,
+  "two_acres_or_more": 44,
+  "under_half_acre": 1958
+ },
+ "Longs": {
+  "houses_with_acreage": 1260,
+  "acres": {
+   "count": 1260,
+   "median": 0.16,
+   "p25": 0.12,
+   "p75": 0.22
+  },
+  "one_acre_or_more": 10,
+  "two_acres_or_more": 2,
+  "under_half_acre": 1241
+ },
+ "Loris_inside_city_220": {
+  "count": 40,
+  "median": 260885.0,
+  "p25": 233400.0,
+  "p75": 280000.0
+ },
+ "Loris_outside_city": {
+  "count": 316,
+  "median": 282300.0,
+  "p25": 250000.0,
+  "p75": 340000.0
+ },
+ "Loris_by_acres_price": {
+  "under 0.5": {
+   "count": 244,
+   "median": 269950.0,
+   "p25": 246000.0,
+   "p75": 304965.0
+  },
+  "0.5 to 1": {
+   "count": 51,
+   "median": 308500.0,
+   "p25": 229900.0,
+   "p75": 344997.0
+  },
+  "1 to 2": {
+   "count": 41,
+   "median": 345000.0,
+   "p25": 304000.0,
+   "p75": 399900.0
+  },
+  "2 and up": {
+   "count": 20,
+   "median": 395000.0,
+   "p25": 250000.0,
+   "p75": 435000.0
+  }
+ }
+}

@@ -1,0 +1,651 @@
+{
+ "totals": {
+  "house": 1037,
+  "condo": 1695,
+  "townhouse": 145,
+  "manufactured": 145,
+  "multi": 13,
+  "land": 132,
+  "all": 3233
+ },
+ "mls_collected": {
+  "house": 1032,
+  "townhouse": 145
+ },
+ "house": {
+  "cards": 549,
+  "price": {
+   "n": 549,
+   "median": 428000,
+   "p25": 350000,
+   "p75": 516900,
+   "min": 120000,
+   "max": 2989000
+  },
+  "hoa": {
+   "n": 464,
+   "median": 100.0,
+   "p25": 80,
+   "p75": 125,
+   "min": 5,
+   "max": 811
+  },
+  "hoa_zero_or_none": 85,
+  "beds": {
+   "3": 266,
+   "2": 31,
+   "4": 185,
+   "5": 63,
+   "6": 3,
+   "7": 1
+  },
+  "yb_median": 2017,
+  "zip": {
+   "29579": 219,
+   "29588": 167,
+   "29577": 77,
+   "29575": 45,
+   "29572": 40,
+   "29578": 1
+  },
+  "bands": {
+   "<250": 24,
+   "250-350": 112,
+   "350-450": 205,
+   "450-650": 126,
+   "650+": 82
+  },
+  "zip_price": {
+   "29579": {
+    "n": 219,
+    "median": 428000,
+    "p25": 369000,
+    "p75": 511900,
+    "min": 169900,
+    "max": 2989000
+   },
+   "29588": {
+    "n": 167,
+    "median": 369999,
+    "p25": 324900,
+    "p75": 435000,
+    "min": 120000,
+    "max": 1849900
+   },
+   "29577": {
+    "n": 77,
+    "median": 484999,
+    "p25": 420000,
+    "p75": 629000,
+    "min": 242500,
+    "max": 1689000
+   },
+   "29575": {
+    "n": 45,
+    "median": 449000,
+    "p25": 359000,
+    "p75": 546500,
+    "min": 169900,
+    "max": 1039999
+   },
+   "29572": {
+    "n": 40,
+    "median": 684950.0,
+    "p25": 459900,
+    "p75": 874900,
+    "min": 135000,
+    "max": 2247000
+   },
+   "29578": {
+    "n": 1,
+    "median": 479900,
+    "p25": 479900,
+    "p75": 479900,
+    "min": 479900,
+    "max": 479900
+   }
+  },
+  "zip_hoa": {
+   "29579": {
+    "n": 212,
+    "median": 101.0,
+    "p25": 80,
+    "p75": 120,
+    "min": 27,
+    "max": 406
+   },
+   "29588": {
+    "n": 155,
+    "median": 86,
+    "p25": 60,
+    "p75": 105,
+    "min": 6,
+    "max": 399
+   },
+   "29577": {
+    "n": 52,
+    "median": 115.0,
+    "p25": 87,
+    "p75": 220,
+    "min": 25,
+    "max": 503
+   },
+   "29575": {
+    "n": 10,
+    "median": 132.5,
+    "p25": 67,
+    "p75": 197,
+    "min": 27,
+    "max": 400
+   },
+   "29572": {
+    "n": 34,
+    "median": 300.0,
+    "p25": 201,
+    "p75": 401,
+    "min": 5,
+    "max": 811
+   },
+   "29578": {
+    "n": 1,
+    "median": 87,
+    "p25": 87,
+    "p75": 87,
+    "min": 87,
+    "max": 87
+   }
+  },
+  "subs": [
+   [
+    "Ocean Lakes",
+    33
+   ],
+   [
+    "Clear Pond at Myrtle Beach National",
+    16
+   ],
+   [
+    "Not within a Subdivision",
+    14
+   ],
+   [
+    "Winfield Farms",
+    14
+   ],
+   [
+    "Grande Dunes - Del Webb",
+    14
+   ],
+   [
+    "Waterbridge",
+    12
+   ],
+   [
+    "Coopers Bluff",
+    11
+   ],
+   [
+    "Carolina Forest - Avalon",
+    10
+   ],
+   [
+    "Carolina Forest - The Farm",
+    10
+   ],
+   [
+    "The Parks of Carolina Forest",
+    10
+   ],
+   [
+    "Somerset",
+    9
+   ],
+   [
+    "Berkshire Forest-Carolina Forest",
+    9
+   ],
+   [
+    "North Cove",
+    9
+   ],
+   [
+    "Crescent Cove",
+    9
+   ],
+   [
+    "Myrtle Beach Golf & Yacht",
+    8
+   ],
+   [
+    "The Farm @ Timberlake",
+    8
+   ],
+   [
+    "Bella Vita",
+    8
+   ],
+   [
+    "Arcadia",
+    8
+   ],
+   [
+    "Arrowhead",
+    7
+   ],
+   [
+    "Landing at River Oaks",
+    7
+   ],
+   [
+    "The Bluffs On The Waterway",
+    7
+   ],
+   [
+    "Southcreek",
+    6
+   ],
+   [
+    "Forestbrook Estates",
+    6
+   ],
+   [
+    "The Villages at Withers Heights",
+    6
+   ],
+   [
+    "Waterway Palms Plantation",
+    6
+   ],
+   [
+    "The Lakes",
+    5
+   ],
+   [
+    "Cameron Village",
+    5
+   ],
+   [
+    "Emmens Preserve - Market Common",
+    5
+   ],
+   [
+    "Merrill Villas",
+    5
+   ],
+   [
+    "Arrowhead Grande",
+    5
+   ],
+   [
+    "Waterford Plantation",
+    5
+   ],
+   [
+    "Trieste at Bella Vita",
+    5
+   ],
+   [
+    "Plantation Lakes",
+    5
+   ],
+   [
+    "Walkers Woods",
+    4
+   ],
+   [
+    "Rosewood Estates",
+    4
+   ],
+   [
+    "Hidden Pines",
+    4
+   ],
+   [
+    "The Isles of Bella Vita",
+    4
+   ],
+   [
+    "Brandymill",
+    3
+   ],
+   [
+    "Fox Horn",
+    3
+   ],
+   [
+    "Bristol Pines",
+    3
+   ],
+   [
+    "Glenmere",
+    3
+   ],
+   [
+    "Island Green",
+    3
+   ],
+   [
+    "Oyster Bluff",
+    3
+   ],
+   [
+    "Brighton Woods",
+    3
+   ],
+   [
+    "Traditions at Carolina Forest",
+    3
+   ],
+   [
+    "Sago Plantation at Legends",
+    3
+   ],
+   [
+    "Carolina Forest - Covington Lake",
+    3
+   ],
+   [
+    "The Cloisters at Myrtlewood",
+    3
+   ],
+   [
+    "Belle Harbor - Market Common",
+    3
+   ],
+   [
+    "The Park",
+    3
+   ],
+   [
+    "Briarwood",
+    3
+   ],
+   [
+    "Carolina Forest - Covington Lake East",
+    3
+   ],
+   [
+    "Lauderdale Bay Estates",
+    3
+   ],
+   [
+    "Sweetgrass Square - Market Common",
+    3
+   ],
+   [
+    "SayeBrook",
+    3
+   ],
+   [
+    "Cypress River Plantation",
+    3
+   ],
+   [
+    "Pine Lakes",
+    3
+   ],
+   [
+    "Boardwalk on the Waterway",
+    3
+   ],
+   [
+    "Osprey Cove",
+    2
+   ],
+   [
+    "Inverness",
+    2
+   ]
+  ]
+ },
+ "townhouse": {
+  "cards": 48,
+  "price": {
+   "n": 48,
+   "median": 266750.0,
+   "p25": 225000,
+   "p75": 344900,
+   "min": 113000,
+   "max": 905000
+  },
+  "hoa": {
+   "n": 39,
+   "median": 325,
+   "p25": 200,
+   "p75": 423,
+   "min": 100,
+   "max": 850
+  },
+  "hoa_zero_or_none": 9,
+  "beds": {
+   "2": 25,
+   "4": 5,
+   "3": 17,
+   "8": 1
+  },
+  "yb_median": 2012.0,
+  "zip": {
+   "29577": 19,
+   "29579": 13,
+   "29588": 4,
+   "29572": 12
+  },
+  "bands": {
+   "<250": 18,
+   "250-350": 21,
+   "350-450": 2,
+   "450-650": 4,
+   "650+": 3
+  },
+  "zip_price": {
+   "29577": {
+    "n": 19,
+    "median": 265000,
+    "p25": 214000,
+    "p75": 347000,
+    "min": 149000,
+    "max": 585882
+   },
+   "29579": {
+    "n": 13,
+    "median": 243500,
+    "p25": 224999,
+    "p75": 279900,
+    "min": 113000,
+    "max": 319000
+   },
+   "29588": {
+    "n": 4,
+    "median": 253950.0,
+    "p25": 249900,
+    "p75": 334900,
+    "min": 219900,
+    "max": 334900
+   },
+   "29572": {
+    "n": 12,
+    "median": 316000.0,
+    "p25": 285000,
+    "p75": 659990,
+    "min": 169000,
+    "max": 905000
+   }
+  },
+  "zip_hoa": {
+   "29577": {
+    "n": 14,
+    "median": 325.0,
+    "p25": 200,
+    "p75": 450,
+    "min": 100,
+    "max": 650
+   },
+   "29579": {
+    "n": 13,
+    "median": 238,
+    "p25": 170,
+    "p75": 423,
+    "min": 150,
+    "max": 453
+   },
+   "29588": {
+    "n": 4,
+    "median": 343.5,
+    "p25": 288,
+    "p75": 425,
+    "min": 238,
+    "max": 425
+   },
+   "29572": {
+    "n": 8,
+    "median": 325.0,
+    "p25": 325,
+    "p75": 429,
+    "min": 100,
+    "max": 850
+   }
+  },
+  "subs": [
+   [
+    "Sawgrass East - Carolina Forest",
+    3
+   ],
+   [
+    "Grande Dunes - Promenade",
+    3
+   ],
+   [
+    "OAKLAND HEIGHTS",
+    3
+   ],
+   [
+    "Market Common - Market View",
+    3
+   ],
+   [
+    "Townes at Carolina Forest",
+    2
+   ],
+   [
+    "NORTHWIND",
+    2
+   ],
+   [
+    "PINEGROVE",
+    2
+   ],
+   [
+    "PARKVIEW SUBDIVISION - 17TH AVE. S",
+    2
+   ],
+   [
+    "Forestbrook Townhomes",
+    2
+   ],
+   [
+    "Brandywine N",
+    1
+   ],
+   [
+    "Courtyard at Yardarm",
+    1
+   ],
+   [
+    "Riverbend",
+    1
+   ],
+   [
+    "Not Within a Project/Section Code",
+    1
+   ],
+   [
+    "Wentworth Park - Market Common",
+    1
+   ],
+   [
+    "Forestbrook Village",
+    1
+   ],
+   [
+    "Tuscany - Carolina Forest Area - 31JJ21",
+    1
+   ],
+   [
+    "Parkview",
+    1
+   ],
+   [
+    "Brittany Park",
+    1
+   ],
+   [
+    "WILLIAMSBURG L",
+    1
+   ],
+   [
+    "Victory Point",
+    1
+   ],
+   [
+    "Forest Pines Townhomes",
+    1
+   ],
+   [
+    "MONTEGO INN",
+    1
+   ],
+   [
+    "Conerstone",
+    1
+   ],
+   [
+    "QUEENS COURT",
+    1
+   ],
+   [
+    "Market Common, The",
+    1
+   ],
+   [
+    "Belle Harbor Townhomes",
+    1
+   ],
+   [
+    "NORTHSIDE CO",
+    1
+   ],
+   [
+    "OLD TOWN VLG - Myrtle Beach",
+    1
+   ],
+   [
+    "Gulfstream Cottages",
+    1
+   ],
+   [
+    "The Diamond",
+    1
+   ],
+   [
+    "VIRIDIAN OAK",
+    1
+   ],
+   [
+    "Fairway Lakes",
+    1
+   ],
+   [
+    "Brandywine S",
+    1
+   ],
+   [
+    "Charleston Court",
+    1
+   ],
+   [
+    "Grande Dunes - Living Dunes",
+    1
+   ]
+  ]
+ }
+}

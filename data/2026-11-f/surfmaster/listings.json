@@ -1,0 +1,127 @@
+{
+ "pulled": "2026-11-17T06:46:03.060221+00:00",
+ "refreshedAt": "2026-11-17T06:40:11.259Z",
+ "rule": "Surfmaster (1690 N Waccamaw Dr = MLS SURFMASTER I; 1620 N Waccamaw Dr = MLS SURFMASTER II, Garden City Beach, Murrells Inlet mailing address):\ncondos for sale now, in aggregate, from https://chapter3realty.com/homes/api/map (subdivision=Surfmaster) and the listing card (/homes/api/lookup).\nKept: counts by building and bedrooms, asking range, size range, HOA fee range, year built, flag counts. Never saved: an MLS number, a unit, one listing's price or fee, a firm, a photo, a remark.\nCalls spaced 2.1 s. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "api_total": 3,
+ "pins": 3,
+ "subdivision_field": {
+  "SURFMASTER I": 2,
+  "SURFMASTER II": 1
+ },
+ "address_street_numbers": {
+  "1690": 2,
+  "1620": 1
+ },
+ "town_field": {
+  "Murrells Inlet": 3
+ },
+ "beds": {
+  "1": 2,
+  "3": 1
+ },
+ "asking": {
+  "min": 299900,
+  "max": 749999,
+  "median": 379900
+ },
+ "sqft": [
+  890,
+  1420
+ ],
+ "hoa_monthly_range": [
+  640,
+  896
+ ],
+ "year_built": {
+  "1984": 2,
+  "1994": 1
+ },
+ "waterfront_field": {
+  "True": 1,
+  "False": 2
+ },
+ "flood_zone_field": {
+  "None": 3
+ },
+ "by_building": {
+  "SURFMASTER I": {
+   "n": 2,
+   "beds": [
+    1,
+    1
+   ],
+   "asking": [
+    299900,
+    379900
+   ],
+   "hoa_range": [
+    640,
+    640
+   ],
+   "year_built": 1984,
+   "waterfront": true
+  },
+  "SURFMASTER II": {
+   "n": 1,
+   "beds": [
+    3
+   ],
+   "asking": [
+    749999,
+    749999
+   ],
+   "hoa_range": [
+    896,
+    896
+   ],
+   "year_built": 1994,
+   "waterfront": false
+  }
+ },
+ "flags": {
+  "str_allowed": 3,
+  "rentals_allowed": 3,
+  "vacation_rental_program": 1,
+  "furnished": 2,
+  "pets_allowed": 2,
+  "oceanfront_unit": 1,
+  "ocean_view": 1,
+  "oceanfront_building": 1,
+  "balcony": 3,
+  "covered_parking": 3,
+  "indoor_pool": 0,
+  "elevator_building": 3,
+  "flood_zone": 1,
+  "hoa_includes_trash": 3,
+  "hoa_includes_water_sewer": 3,
+  "hoa_includes_insurance": 1,
+  "hoa_includes_cable": 3,
+  "hoa_includes_internet": 2,
+  "security_service": 0
+ },
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=str_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=rentals_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=vacation_rental_program",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=furnished",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=oceanfront_unit",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=ocean_view",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=balcony",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=covered_parking",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=elevator_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=flood_zone",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=hoa_includes_trash",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=hoa_includes_water_sewer",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=hoa_includes_insurance",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=hoa_includes_cable",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=hoa_includes_internet",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Surfmaster&has=security_service"
+ ]
+}

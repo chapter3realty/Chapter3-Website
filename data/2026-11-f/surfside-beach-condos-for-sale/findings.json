@@ -1,0 +1,538 @@
+{
+ "refreshedAt": "2026-11-17T06:10:11.071Z",
+ "total": 83,
+ "cards": 83,
+ "types": {
+  "Condominium": 83
+ },
+ "cities": {
+  "Surfside Beach": 83
+ },
+ "price": {
+  "n": 83,
+  "min": 10000,
+  "p25": 155000.0,
+  "median": 189000,
+  "p75": 224999.0,
+  "max": 769000
+ },
+ "price_bands": {
+  "under_150k": 17,
+  "150k_300k": 48,
+  "300k_plus": 18,
+  "under_100k": 1,
+  "300k_500k": 9,
+  "500k_plus": 9,
+  "1m_plus": 0
+ },
+ "by_beds": {
+  "0": {
+   "n": 3,
+   "price": {
+    "n": 3,
+    "min": 111900,
+    "p25": 111900,
+    "median": 114900,
+    "p75": 114999,
+    "max": 114999
+   },
+   "sqft": {
+    "n": 3,
+    "min": 606,
+    "p25": 606,
+    "median": 606,
+    "p75": 660,
+    "max": 660
+   },
+   "hoa": {
+    "n": 3,
+    "min": 265,
+    "p25": 265,
+    "median": 346,
+    "p75": 346,
+    "max": 346
+   }
+  },
+  "1": {
+   "n": 8,
+   "price": {
+    "n": 8,
+    "min": 109000,
+    "p25": 131450.0,
+    "median": 143700.0,
+    "p75": 158000.0,
+    "max": 163900
+   },
+   "sqft": {
+    "n": 8,
+    "min": 624,
+    "p25": 727.0,
+    "median": 784.0,
+    "p75": 847.25,
+    "max": 1092
+   },
+   "hoa": {
+    "n": 8,
+    "min": 299,
+    "p25": 306.75,
+    "median": 354.0,
+    "p75": 406.75,
+    "max": 418
+   }
+  },
+  "2": {
+   "n": 48,
+   "price": {
+    "n": 48,
+    "min": 10000,
+    "p25": 156225.0,
+    "median": 182950.0,
+    "p75": 213650.0,
+    "max": 550000
+   },
+   "sqft": {
+    "n": 48,
+    "min": 762,
+    "p25": 908.0,
+    "median": 960.5,
+    "p75": 1098.75,
+    "max": 1276
+   },
+   "hoa": {
+    "n": 48,
+    "min": 90,
+    "p25": 360.5,
+    "median": 388.0,
+    "p75": 473.0,
+    "max": 1208
+   }
+  },
+  "3": {
+   "n": 24,
+   "price": {
+    "n": 24,
+    "min": 171000,
+    "p25": 195675.0,
+    "median": 221000.0,
+    "p75": 443975.0,
+    "max": 769000
+   },
+   "sqft": {
+    "n": 24,
+    "min": 1008,
+    "p25": 1170.0,
+    "median": 1300.0,
+    "p75": 1300.0,
+    "max": 1510
+   },
+   "hoa": {
+    "n": 24,
+    "min": 330,
+    "p25": 401.0,
+    "median": 449.0,
+    "p75": 833.75,
+    "max": 1269
+   }
+  },
+  "4": {
+   "n": 0,
+   "price": null,
+   "sqft": null,
+   "hoa": null
+  },
+  "4plus": {
+   "n": 0
+  }
+ },
+ "oceanfront": {
+  "n": 32,
+  "price": {
+   "n": 32,
+   "min": 10000,
+   "p25": 159900.0,
+   "median": 196860.5,
+   "p75": 532500.0,
+   "max": 769000
+  },
+  "hoa": {
+   "n": 32,
+   "min": 90,
+   "p25": 371.0,
+   "median": 409.5,
+   "p75": 800.75,
+   "max": 1269
+  },
+  "hoa_missing": 0,
+  "hoa_by_beds": {
+   "1": {
+    "n": 1,
+    "min": 363,
+    "p25": 363,
+    "median": 363,
+    "p75": 363,
+    "max": 363
+   },
+   "2": {
+    "n": 19,
+    "min": 90,
+    "p25": 366.0,
+    "median": 384,
+    "p75": 735.0,
+    "max": 1208
+   },
+   "3": {
+    "n": 12,
+    "min": 395,
+    "p25": 406.75,
+    "median": 449.0,
+    "p75": 986.5,
+    "max": 1269
+   }
+  }
+ },
+ "not_oceanfront": {
+  "n": 51,
+  "price": {
+   "n": 51,
+   "min": 109000,
+   "p25": 148977.0,
+   "median": 179000,
+   "p75": 209900.0,
+   "max": 457000
+  },
+  "hoa": {
+   "n": 51,
+   "min": 250,
+   "p25": 346.0,
+   "median": 395,
+   "p75": 447.0,
+   "max": 1100
+  },
+  "hoa_missing": 0,
+  "hoa_by_beds": {
+   "1": {
+    "n": 7,
+    "min": 299,
+    "p25": 300.0,
+    "median": 345,
+    "p75": 417.0,
+    "max": 418
+   },
+   "2": {
+    "n": 29,
+    "min": 250,
+    "p25": 359.5,
+    "median": 394,
+    "p75": 442.0,
+    "max": 890
+   },
+   "3": {
+    "n": 12,
+    "min": 330,
+    "p25": 396.25,
+    "median": 427.0,
+    "p75": 492.5,
+    "max": 1100
+   }
+  }
+ },
+ "hoa_all": {
+  "n": 83,
+  "min": 90,
+  "p25": 360.0,
+  "median": 400,
+  "p75": 479.0,
+  "max": 1269
+ },
+ "hoa_missing": 0,
+ "tags": {
+  "": 51,
+  "Waterfront": 32
+ },
+ "year_built": {
+  "n": 83,
+  "median": 1987,
+  "min": 1974,
+  "max": 2006,
+  "since_2015": 0,
+  "before_1990": 55,
+  "since_2022": 0
+ },
+ "new_construction": 0,
+ "subdivisions_top": [
+  [
+   "Golf Colony at Deerfield",
+   23
+  ],
+  [
+   "Retreat at Glenns Bay",
+   8
+  ],
+  [
+   "SOUTH BAY LAKES",
+   8
+  ],
+  [
+   "SOUTHBRIDGE",
+   8
+  ],
+  [
+   "Grand Palms Resort (formerly Plantation Resort)",
+   6
+  ],
+  [
+   "Hampton Greens at Deerfield",
+   3
+  ],
+  [
+   "SEA SHADOW",
+   3
+  ],
+  [
+   "Floral Villas",
+   2
+  ],
+  [
+   "SOUTH BAY EAST",
+   2
+  ],
+  [
+   "Villas On The Green",
+   2
+  ],
+  [
+   "Admiral Quarters II",
+   2
+  ],
+  [
+   "TRADEWINDS I",
+   2
+  ],
+  [
+   "Beachwalk Villas - Surfside Beach",
+   1
+  ],
+  [
+   "Cypress Point",
+   1
+  ],
+  [
+   "Colony III",
+   1
+  ],
+  [
+   "Plantation Golf Villas",
+   1
+  ],
+  [
+   "Islander - Surfside Beach",
+   1
+  ],
+  [
+   "SURFWATCH 2",
+   1
+  ],
+  [
+   "SURFBYSEA I",
+   1
+  ],
+  [
+   "Channel Marker-Surfside Beach",
+   1
+  ],
+  [
+   "Dolphin Cay",
+   1
+  ],
+  [
+   "Maddington Place",
+   1
+  ],
+  [
+   "Ocean Club at Surfside",
+   1
+  ],
+  [
+   "Hermitage",
+   1
+  ],
+  [
+   "SOUTHBRIDGE VILLAS - Hopkins Circle",
+   1
+  ],
+  [
+   "Lighthouse II",
+   1
+  ]
+ ],
+ "subdivisions_n": 26,
+ "sales": {
+  "horry_condo_deeds": 4479,
+  "horry": {
+   "n": 4479,
+   "min": 11019.0,
+   "p25": 148500.0,
+   "median": 215000.0,
+   "p75": 313900.0,
+   "max": 1981122.0
+  },
+  "city_limits": {
+   "n": 57,
+   "min": 75000.0,
+   "p25": 284750.0,
+   "median": 359900.0,
+   "p75": 492500.0,
+   "max": 750000.0
+  },
+  "outside_city": {
+   "n": 4422,
+   "min": 11019.0,
+   "p25": 147500.0,
+   "median": 215000.0,
+   "p75": 310000.0,
+   "max": 1981122.0
+  },
+  "surfside_district_660": {
+   "n": 57,
+   "min": 75000.0,
+   "p25": 284750.0,
+   "median": 359900.0,
+   "p75": 492500.0,
+   "max": 750000.0
+  }
+ },
+ "sales_by_regime_top": [
+  [
+   "SANDPEBBLE",
+   11,
+   356000.0
+  ],
+  [
+   "SURFSIDE BY THE SEA",
+   4,
+   289000.0
+  ],
+  [
+   "CAPE CODDAGES II",
+   3,
+   455000.0
+  ],
+  [
+   "BEACH TRAILS",
+   2,
+   287500.0
+  ],
+  [
+   "TROPICAL SANDS",
+   2,
+   282000.0
+  ],
+  [
+   "HERMITAGE ON MYRTLE LAKE",
+   2,
+   434500.0
+  ],
+  [
+   "SURFWATCH II",
+   2,
+   530000.0
+  ],
+  [
+   "ADMIRALS QUARTERS II",
+   2,
+   647500.0
+  ],
+  [
+   "COLONY III OF SURFSIDE",
+   2,
+   205000.0
+  ],
+  [
+   "FOSTER BUILDING COMPLEX COMMERCIAL",
+   2,
+   139750.0
+  ],
+  [
+   "SAND FIDDLER",
+   2,
+   327500.0
+  ],
+  [
+   "SEA SHADOW",
+   2,
+   552500.0
+  ],
+  [
+   "BOSTON GARDENS OF SURFSIDE",
+   2,
+   617500.0
+  ],
+  [
+   "CHANNEL MARKER",
+   1,
+   400000.0
+  ],
+  [
+   "SURFSIDE BUSINESS CENTER",
+   1,
+   75000.0
+  ],
+  [
+   "LAST RESORT",
+   1,
+   240000.0
+  ],
+  [
+   "ISLANDER",
+   1,
+   500000.0
+  ],
+  [
+   "BEACHWALK",
+   1,
+   385000.0
+  ],
+  [
+   "ISLANDER AT SURFSIDE BEACH",
+   1,
+   585000.0
+  ],
+  [
+   "OCEAN QUARTERS",
+   1,
+   685000.0
+  ],
+  [
+   "PRINCETON HOUSE",
+   1,
+   435000.0
+  ],
+  [
+   "SOUTH SHORES",
+   1,
+   540000.0
+  ],
+  [
+   "VANTAGE POINTE",
+   1,
+   346000.0
+  ],
+  [
+   "COLONY AT SURFSIDE",
+   1,
+   255000.0
+  ],
+  [
+   "POINTTE",
+   1,
+   270000.0
+  ]
+ ],
+ "sales_city_bands": {
+  "under_100k": 1,
+  "100_200k": 5,
+  "200_300k": 11,
+  "300_500k": 26,
+  "500k_plus": 14
+ }
+}

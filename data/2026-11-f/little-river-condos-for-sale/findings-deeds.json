@@ -1,0 +1,199 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "condo_deeds_kept_countywide": 4453,
+ "buildings": {
+  "Cypress Bay": {
+   "count": 42,
+   "median": 141250.0,
+   "p25": 132000.0,
+   "p75": 160000.0,
+   "min": 90000.0,
+   "max": 193000.0,
+   "postal_city": {
+    "(no address)": 42
+   },
+   "tax_district": {
+    "500": 42
+   },
+   "business_seller": 3
+  },
+  "Baytree": {
+   "count": 56,
+   "median": 134750.0,
+   "p25": 120000.0,
+   "p75": 162500.0,
+   "min": 32775.0,
+   "max": 214000.0,
+   "postal_city": {
+    "(no address)": 48,
+    "Little River": 8
+   },
+   "tax_district": {
+    "500": 56
+   },
+   "business_seller": 15
+  },
+  "Carolina Yacht Landing": {
+   "count": 27,
+   "median": 255000.0,
+   "p25": 220500.0,
+   "p75": 286000.0,
+   "min": 95418.23,
+   "max": 310000.0,
+   "postal_city": {
+    "(no address)": 27
+   },
+   "tax_district": {
+    "500": 27
+   },
+   "business_seller": 1
+  },
+  "Spinnaker Cove": {
+   "count": 23,
+   "median": 200000.0,
+   "p25": 159900.0,
+   "p75": 230000.0,
+   "min": 49800.0,
+   "max": 432500.0,
+   "postal_city": {
+    "(no address)": 23
+   },
+   "tax_district": {
+    "500": 20,
+    "550": 2,
+    "880": 1
+   },
+   "business_seller": 2
+  },
+  "Lightkeepers Village": {
+   "count": 22,
+   "median": 257999.5,
+   "p25": 235000.0,
+   "p75": 365000.0,
+   "min": 172500.0,
+   "max": 550000.0,
+   "postal_city": {
+    "(no address)": 22
+   },
+   "tax_district": {
+    "500": 22
+   },
+   "business_seller": 3
+  },
+  "Mariner's Pointe": {
+   "count": 13,
+   "median": 328000.0,
+   "p25": 279900.0,
+   "p75": 345000.0,
+   "min": 220000.0,
+   "max": 385000.0,
+   "postal_city": {
+    "(no address)": 13
+   },
+   "tax_district": {
+    "500": 13
+   },
+   "business_seller": 1
+  },
+  "Intercoastal Village": {
+   "count": 7,
+   "median": 126000.0,
+   "p25": 85500.0,
+   "p75": 132500.0,
+   "min": 82500.0,
+   "max": 133000.0,
+   "postal_city": {
+    "(no address)": 7
+   },
+   "tax_district": {
+    "500": 7
+   },
+   "business_seller": 2
+  },
+  "Village at the Glens": {
+   "count": 11,
+   "median": 196000.0,
+   "p25": 180000.0,
+   "p75": 210500.0,
+   "min": 165000.0,
+   "max": 230000.0,
+   "postal_city": {
+    "(no address)": 11
+   },
+   "tax_district": {
+    "500": 11
+   },
+   "business_seller": 0
+  },
+  "Coquina Harbour": {
+   "count": 6,
+   "median": 377500.0,
+   "p25": 349000.0,
+   "p75": 468000.0,
+   "min": 335000.0,
+   "max": 480000.0,
+   "postal_city": {
+    "(no address)": 6
+   },
+   "tax_district": {
+    "500": 6
+   },
+   "business_seller": 1
+  },
+  "Moorings at Eastport": {
+   "count": 6,
+   "median": 251750.0,
+   "p25": 201000.0,
+   "p75": 260000.0,
+   "min": 200000.0,
+   "max": 272000.0,
+   "postal_city": {
+    "(no address)": 6
+   },
+   "tax_district": {
+    "500": 6
+   },
+   "business_seller": 0
+  }
+ },
+ "named_buildings_all": {
+  "count": 213,
+  "median": 180000.0,
+  "p25": 135000.0,
+  "p75": 250000.0,
+  "min": 32775.0,
+  "max": 550000.0
+ },
+ "named_buildings_bands": {
+  "0-100000": 13,
+  "100000-150000": 65,
+  "150000-200000": 48,
+  "200000-250000": 33,
+  "250000-300000": 26,
+  "300000-1000000000": 28
+ },
+ "named_buildings_business_seller": 28,
+ "named_by_quarter": {
+  "2025-Q4": {
+   "count": 33,
+   "median": 178000.0
+  },
+  "2026-Q1": {
+   "count": 45,
+   "median": 165000.0
+  },
+  "2026-Q2": {
+   "count": 53,
+   "median": 193000.0
+  },
+  "2026-Q3": {
+   "count": 60,
+   "median": 173250.0
+  },
+  "2026-Q4": {
+   "count": 22,
+   "median": 199995.0
+  }
+ }
+}

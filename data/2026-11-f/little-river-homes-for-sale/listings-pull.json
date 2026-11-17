@@ -1,0 +1,19 @@
+{
+ "pulled": "2026-11-17T04:58:20.565733+00:00",
+ "rule": "Homes for sale now in Little River (MLS city \"Little River\") in aggregate from the site's public map API and card lookup. Saves counts, ranges, subdivision names with counts. No address, MLS number, firm or photo is saved. Run: python3 -I pull_conway.py <dir>",
+ "totals": {
+  "house": 187,
+  "condo": 184,
+  "townhouse": 30,
+  "manufactured": 16,
+  "multi": 2,
+  "land": 49,
+  "all": 473
+ },
+ "mls_collected": {
+  "house": 186,
+  "condo": 184,
+  "townhouse": 30
+ },
+ "cards_with_price": 251
+}

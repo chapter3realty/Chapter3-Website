@@ -1,0 +1,245 @@
+{
+ "house": {
+  "cards": 53,
+  "price": {
+   "n": 29,
+   "median": 944250,
+   "p25": 749900,
+   "p75": 1490000,
+   "min": 369600,
+   "max": 2500000
+  },
+  "hoa_nonzero": {
+   "n": 7,
+   "median": 233,
+   "p25": 64,
+   "p75": 700,
+   "min": 9,
+   "max": 1737
+  },
+  "hoa_zero": 22,
+  "hoa_none": 24,
+  "beds": {
+   "null": 24,
+   "4": 7,
+   "5": 10,
+   "6": 4,
+   "8": 1,
+   "2": 1,
+   "7": 2,
+   "3": 4
+  },
+  "newc": 0,
+  "yb_since_2010": 10,
+  "yb": {
+   "n": 29,
+   "median": 2004,
+   "p25": 1990,
+   "p75": 2015,
+   "min": 1945,
+   "max": 2026
+  },
+  "subs": [
+   [
+    "Not within a Subdivision",
+    14
+   ],
+   [
+    "Myrtle Dunes",
+    2
+   ],
+   [
+    "Cattail Cove",
+    2
+   ],
+   [
+    "Cypress Cove",
+    1
+   ],
+   [
+    "Bermuda Bay",
+    1
+   ],
+   [
+    "Oceanside Village",
+    1
+   ],
+   [
+    "Gulf Stream Estates",
+    1
+   ],
+   [
+    "Salters Cove",
+    1
+   ],
+   [
+    "Seaport Village",
+    1
+   ],
+   [
+    "Jamestowne Colony",
+    1
+   ],
+   [
+    "Inlet Harbour- Georgetown Cnty",
+    1
+   ],
+   [
+    "Retreat at Garden City, The",
+    1
+   ],
+   [
+    "Woodland Terrace",
+    1
+   ],
+   [
+    "Inlet Pointe",
+    1
+   ]
+  ],
+  "flood": {
+   "None": 53
+  },
+  "waterfront": 6
+ },
+ "condo": {
+  "cards": 77,
+  "price": {
+   "n": 57,
+   "median": 319900,
+   "p25": 219900,
+   "p75": 389000,
+   "min": 128000,
+   "max": 720000
+  },
+  "hoa_nonzero": {
+   "n": 57,
+   "median": 650,
+   "p25": 427,
+   "p75": 784,
+   "min": 320,
+   "max": 1107
+  },
+  "hoa_zero": 0,
+  "hoa_none": 20,
+  "beds": {
+   "null": 20,
+   "1": 15,
+   "3": 16,
+   "2": 25,
+   "5": 1
+  },
+  "newc": 0,
+  "yb_since_2010": 0,
+  "yb": {
+   "n": 57,
+   "median": 1984,
+   "p25": 1983,
+   "p75": 1986,
+   "min": 1980,
+   "max": 2008
+  },
+  "subs": [
+   [
+    "Jasmine Lake",
+    6
+   ],
+   [
+    "WATERS EDGE",
+    4
+   ],
+   [
+    "ROYAL GARDEN",
+    4
+   ],
+   [
+    "SANDY SHORES II",
+    4
+   ],
+   [
+    "Garden Sands",
+    3
+   ],
+   [
+    "Sweetwater - Indian Wells",
+    3
+   ],
+   [
+    "WHISPERING S I",
+    3
+   ],
+   [
+    "Duneside I",
+    3
+   ],
+   [
+    "SEA MASTER",
+    3
+   ],
+   [
+    "SURFMASTER I",
+    2
+   ],
+   [
+    "Horizon East",
+    2
+   ],
+   [
+    "SEASIDER",
+    2
+   ],
+   [
+    "Guest House",
+    2
+   ],
+   [
+    "Beach House",
+    2
+   ],
+   [
+    "WHISPERING S II",
+    2
+   ],
+   [
+    "SAND DOLLAR",
+    2
+   ],
+   [
+    "Carolina Shores - Garden City",
+    2
+   ],
+   [
+    "One Ocean Place",
+    2
+   ],
+   [
+    "SANDY SHORES I",
+    1
+   ],
+   [
+    "SEA WATCH LDG",
+    1
+   ],
+   [
+    "Kelly Court Villas",
+    1
+   ],
+   [
+    "Sea Watch - Garden City",
+    1
+   ],
+   [
+    "Cambridge Place - Garden City",
+    1
+   ],
+   [
+    "Atalaya Towers",
+    1
+   ]
+  ],
+  "flood": {
+   "None": 77
+  },
+  "waterfront": 27
+ }
+}

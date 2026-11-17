@@ -1,0 +1,107 @@
+{
+ "pulled": "2026-11-17T06:41:56.180345+00:00",
+ "refreshedAt": "2026-11-17T06:40:11.259Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 7,
+ "at_8500": 7,
+ "beds": {
+  "3": 4,
+  "4": 3
+ },
+ "asking": {
+  "all": {
+   "median": 1000000,
+   "min": 640000,
+   "max": 1690000
+  },
+  "3": {
+   "n": 4,
+   "median": 1015000.0,
+   "min": 799900,
+   "max": 1400000,
+   "sqft_median": 2318.0,
+   "sqft_range": [
+    1819,
+    2426
+   ]
+  },
+  "4": {
+   "n": 3,
+   "median": 724900,
+   "min": 640000,
+   "max": 1690000,
+   "sqft_median": 2638,
+   "sqft_range": [
+    2638,
+    2787
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-50 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 7,
+   "median_at_or_under": 1850,
+   "lowest_at_or_under": 1500,
+   "highest_at_or_under": 2100,
+   "middle_half": null
+  },
+  "zero_or_blank": 0,
+  "3": {
+   "n": 4,
+   "median_at_or_under": 1750.0,
+   "lowest_at_or_under": 1500,
+   "highest_at_or_under": 1850,
+   "middle_half": null
+  },
+  "4": {
+   "n": 3,
+   "median_at_or_under": 2000,
+   "lowest_at_or_under": 2000,
+   "highest_at_or_under": 2100,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 4,
+  "rentals_allowed": 7,
+  "long_term_rental_allowed": 7,
+  "vacation_rental_program": 3,
+  "has_rental_income": 3,
+  "furnished": 6,
+  "pets_allowed": 7,
+  "oceanfront_unit": 4,
+  "ocean_view": 6,
+  "oceanfront_building": 7,
+  "high_floor_unit": 3,
+  "low_floor_unit": 1,
+  "top_floor": 2,
+  "balcony": 5,
+  "parking_garage": 7,
+  "covered_parking": 7,
+  "indoor_pool": 1,
+  "sauna": 0,
+  "elevator_building": 7,
+  "flood_zone": 5,
+  "hoa_includes_trash": 7,
+  "hoa_includes_utilities": 6,
+  "hoa_includes_water_sewer": 6,
+  "hoa_includes_insurance": 7,
+  "hoa_includes_internet": 6,
+  "hoa_includes_pest": 7,
+  "hoa_includes_cable": 7,
+  "hoa_includes_electric": 0,
+  "security_service": 7
+ },
+ "year_built": {
+  "2004": 6,
+  "2006": 1
+ },
+ "flood_zone_field": {
+  "None": 7
+ },
+ "subdivision_field": {
+  "Kingston Plantation - Margate Tower": 7
+ }
+}

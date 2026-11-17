@@ -1,0 +1,92 @@
+{
+ "read": "2026-11-17T06:58:30.534462+00:00",
+ "layer19_fields": [
+  "OBJECTID",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "FLD_AR_ID",
+  "FLD_ZONE",
+  "FLOODWAY",
+  "SFHA_TF",
+  "STATIC_BFE",
+  "V_DATUM",
+  "DEPTH",
+  "LEN_UNIT",
+  "VELOCITY",
+  "VEL_UNIT",
+  "AR_REVERT",
+  "BFE_REVERT",
+  "DEP_REVERT",
+  "SOURCE_CIT"
+ ],
+ "footprint_parcels": 96,
+ "footprint_center": [
+  33.704262,
+  -78.866136
+ ],
+ "footprint_bounds": [
+  -78.866786,
+  33.703799,
+  -78.865484,
+  33.704754
+ ],
+ "zones_touching": [
+  {
+   "attributes": {
+    "FLD_ZONE": "AE",
+    "SFHA_TF": "T",
+    "STATIC_BFE": 14.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.11
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+    "SFHA_TF": "F",
+    "STATIC_BFE": -9999.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.351
+  }
+ ],
+ "center_point_zones": [],
+ "share_in_no_zone": 0.539
+}

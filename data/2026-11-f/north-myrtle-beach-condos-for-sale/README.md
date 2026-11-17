@@ -1,0 +1,2 @@
+# Data for /submarkets/north-myrtle-beach/condos-for-sale/ (batch 2026-11-f)
+Read 2026-11-17. Ledger: Blog-Brain batches/2026-11-f/north-myrtle-beach-condos-for-sale/facts.md. Scripts adapted from ../myrtle-beach-condos-for-sale (city "North Myrtle Beach"). Run `python3 -I <script> <this dir>` in order: pull_listings, pull_oceanfront, pull_flood, analyze, tax, check_strips. raw/sales-rows.json and raw/district-city.json are copies from the Myrtle Beach sibling (same county deed file); analyze.py uses district 550. No address, MLS number or key is stored.

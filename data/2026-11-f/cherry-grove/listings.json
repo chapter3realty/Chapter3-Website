@@ -1,0 +1,229 @@
+{
+ "pulled": "2026-11-17T10:11:07.079982+00:00",
+ "rule": "Cherry Grove homes for sale now, in aggregate, from the site's public map API (CCMLS active listings through the CRM).\nPlace = the site's Cherry Grove search: within 0.8 mile of 33.83434,-78.62798 (idx-lib/places.js \"cherry-grove\"). Counts, medians and ranges only.\nHOA fee: for each threshold T the call hoaMax=T returns listings whose fee is T or less, so each listing's fee is known to a bracket.\nNever saved: an MLS number, an address, one listing's price or fee, a firm or a photo.\nRun: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "refreshedAt": "2026-11-17T10:00:04.997Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "all": {
+  "n": 78,
+  "min": 79999,
+  "p25": 247400.0,
+  "median": 513000.0,
+  "p75": 775000.0,
+  "max": 3600000
+ },
+ "house": {
+  "asking": {
+   "n": 30,
+   "min": 329000,
+   "p25": 618674.75,
+   "median": 775000.0,
+   "p75": 961375.0,
+   "max": 3600000
+  },
+  "beds": {
+   "4": 16,
+   "6": 3,
+   "8": 2,
+   "2": 1,
+   "3": 4,
+   "5": 4
+  },
+  "sqft": {
+   "n": 30,
+   "min": 1034,
+   "p25": 1520.0,
+   "median": 2034.0,
+   "p75": 2401.75,
+   "max": 7649
+  },
+  "tag_waterfront": 13,
+  "tag_built_2026": 6,
+  "price_per_sqft": {
+   "n": 30,
+   "min": 218.51546391752578,
+   "p25": 306.9208452611814,
+   "median": 428.0059178036872,
+   "p75": 624.5040251370382,
+   "max": 967.1179883945841
+  }
+ },
+ "condo": {
+  "asking": {
+   "n": 37,
+   "min": 120000,
+   "p25": 217000.0,
+   "median": 268000,
+   "p75": 447000.0,
+   "max": 684900
+  },
+  "beds": {
+   "3": 4,
+   "2": 18,
+   "4": 3,
+   "5": 3,
+   "1": 6,
+   "0": 1,
+   "6": 2
+  },
+  "sqft": {
+   "n": 37,
+   "min": 340,
+   "p25": 740.0,
+   "median": 832,
+   "p75": 1577.0,
+   "max": 3030
+  },
+  "tag_waterfront": 7,
+  "tag_built_2026": 0,
+  "price_per_sqft": {
+   "n": 37,
+   "min": 151.8151815181518,
+   "p25": 247.66960470085468,
+   "median": 311.3181818181818,
+   "p75": 368.12820454942187,
+   "max": 470.98317914213624
+  }
+ },
+ "land": {
+  "asking": {
+   "n": 3,
+   "min": 125000,
+   "p25": null,
+   "median": 135000,
+   "p75": null,
+   "max": 569000
+  },
+  "beds": {
+   "None": 3
+  },
+  "sqft": {
+   "n": 0
+  },
+  "tag_waterfront": 1,
+  "tag_built_2026": 0,
+  "price_per_sqft": {
+   "n": 0
+  }
+ },
+ "dock_houses": {
+  "n": 7,
+  "asking": {
+   "n": 7,
+   "min": 570000,
+   "p25": 599999.0,
+   "median": 800000,
+   "p75": 949000.0,
+   "max": 998500
+  }
+ },
+ "waterfront_houses": {
+  "n": 13,
+  "asking": {
+   "n": 13,
+   "min": 599999,
+   "p25": 727500.0,
+   "median": 949000,
+   "p75": 1734450.0,
+   "max": 3600000
+  }
+ },
+ "new_2026_houses": {
+  "n": 6,
+  "asking": {
+   "n": 6,
+   "min": 329000,
+   "p25": 479675.0,
+   "median": 529900.0,
+   "p75": 711175.0,
+   "max": 775000
+  }
+ },
+ "houses_no_hoa": {
+  "n": 24,
+  "asking": {
+   "n": 24,
+   "min": 329000,
+   "p25": 664000.0,
+   "median": 837500.0,
+   "p75": 986125.0,
+   "max": 3600000
+  }
+ },
+ "pool": {
+  "n": 21,
+  "asking": {
+   "n": 21,
+   "min": 169900,
+   "p25": 289000.0,
+   "median": 559999,
+   "p75": 973750.0,
+   "max": 3600000
+  }
+ },
+ "ocean_view": {
+  "n": 33,
+  "asking": {
+   "n": 33,
+   "min": 159900,
+   "p25": 244900.0,
+   "median": 389900,
+   "p75": 533450.0,
+   "max": 2650000
+  }
+ },
+ "elevator": {
+  "n": 16,
+  "asking": {
+   "n": 16,
+   "min": 215000,
+   "p25": 319750.0,
+   "median": 437450.0,
+   "p75": 656750.0,
+   "max": 3600000
+  }
+ },
+ "hoa_cumulative_condo": {
+  "0": 0,
+  "50": 0,
+  "100": 0,
+  "150": 0,
+  "200": 0,
+  "250": 0,
+  "300": 1,
+  "350": 1,
+  "400": 2,
+  "450": 3,
+  "500": 4,
+  "550": 6,
+  "600": 11,
+  "700": 14,
+  "800": 23,
+  "900": 24,
+  "1000": 25,
+  "1200": 28,
+  "1500": 32,
+  "2000": 35
+ },
+ "hoa_cumulative_house": {
+  "0": 24,
+  "50": 24,
+  "100": 24,
+  "150": 27,
+  "200": 27,
+  "250": 28,
+  "300": 28,
+  "350": 28,
+  "400": 28,
+  "450": 29,
+  "500": 29,
+  "550": 30,
+  "600": 30,
+  "700": 30,
+  "800": 30,
+  "900": 30,
+  "1000": 30,
+  "1200": 30,
+  "1500": 30,
+  "2000": 30
+ }
+}

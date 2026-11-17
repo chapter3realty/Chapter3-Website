@@ -1,0 +1,289 @@
+{
+ "read": "2026-11-17T06:35:52.749025+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Roxanne Towers in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, every parcel whose\n   LegalDescr starts \"THE PALACE;\" (the regime name /invest/condo-buildings/ used). Units = parcels with a building value.\n   Kept: units per floor (floor = the unit number less its last two digits), door numbers per floor, the count of units at\n   each county market value (the assessor's unit types), the year of each unit's last recorded sale (counts), owner mailing\n   state (counts), units taxed at the 4% legal-residence ratio. Never kept: a PIN, an owner, a unit's own record.\n2. Sales: the deed sales /invest/condo-buildings/ used (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json,\n   AcclaimWeb DEED (001) recorded 2025-10-01 to 2026-09-30, kept sales only), plus the later window 2025-11-01 to 2026-10-31\n   (data/2026-11-n/buyers-builders/raw/deeds-co.json, Consideration > 0). Kept: count, median, quartiles, range, by floor band,\n   and buyers' tax-bill state (in or out of South Carolina) for the first window.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 76,
+ "units": 75,
+ "parcels_without_building_value": 1,
+ "landuse_first_digit": {
+  "1xx": 75
+ },
+ "unparsed_unit_numbers": 9,
+ "floors": {
+  "numbers": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "top": 12,
+  "count": 11,
+  "missing_between": [],
+  "units_per_floor": {
+   "2": 6,
+   "3": 6,
+   "4": 6,
+   "5": 6,
+   "6": 6,
+   "7": 6,
+   "8": 6,
+   "9": 6,
+   "10": 6,
+   "11": 6,
+   "12": 6
+  },
+  "doors_per_floor": {
+   "2": [
+    1,
+    6,
+    6
+   ],
+   "3": [
+    1,
+    6,
+    6
+   ],
+   "4": [
+    1,
+    6,
+    6
+   ],
+   "5": [
+    1,
+    6,
+    6
+   ],
+   "6": [
+    1,
+    6,
+    6
+   ],
+   "7": [
+    1,
+    6,
+    6
+   ],
+   "8": [
+    1,
+    6,
+    6
+   ],
+   "9": [
+    1,
+    6,
+    6
+   ],
+   "10": [
+    1,
+    6,
+    6
+   ],
+   "11": [
+    1,
+    6,
+    6
+   ],
+   "12": [
+    1,
+    6,
+    6
+   ]
+  }
+ },
+ "county_market_value_groups": [
+  [
+   209500.0,
+   38
+  ],
+  [
+   289900.0,
+   21
+  ],
+  [
+   212000.0,
+   5
+  ],
+  [
+   221000.0,
+   3
+  ],
+  [
+   2500.0,
+   3
+  ]
+ ],
+ "county_market_value_groups_under_3": 5,
+ "last_sale_year": {
+  "2004": 8,
+  "2007": 1,
+  "2008": 2,
+  "2009": 1,
+  "2010": 2,
+  "2012": 3,
+  "2013": 1,
+  "2014": 3,
+  "2015": 3,
+  "2017": 3,
+  "2018": 9,
+  "2019": 9,
+  "2020": 3,
+  "2021": 2,
+  "2022": 2,
+  "2023": 4,
+  "2024": 5,
+  "2025": 9,
+  "2026": 2,
+  "None": 3
+ },
+ "owner_state_top": [
+  [
+   "SC",
+   34
+  ],
+  [
+   "NC",
+   9
+  ],
+  [
+   "VA",
+   5
+  ],
+  [
+   "ON",
+   3
+  ],
+  [
+   "CA",
+   3
+  ],
+  [
+   "OH",
+   2
+  ],
+  [
+   "AL",
+   2
+  ],
+  [
+   "CT",
+   2
+  ]
+ ],
+ "owner_out_of_sc": 41,
+ "taxed_as_home_4pct": 1,
+ "sales": {
+  "hub_window": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 3,
+    "median": 215000.0,
+    "p25": null,
+    "p75": null,
+    "min": 185000.0,
+    "max": 215000.0
+   },
+   "floors_1_to_10": {
+    "n": 1,
+    "median": 215000.0,
+    "p25": null,
+    "p75": null,
+    "min": 215000.0,
+    "max": 215000.0
+   },
+   "floors_11_up": {
+    "n": 2,
+    "median": 200000.0,
+    "p25": null,
+    "p75": null,
+    "min": 185000.0,
+    "max": 215000.0
+   },
+   "buyer_tax_bill_in_sc": 0,
+   "buyer_tax_bill_out_of_sc": 3,
+   "buyer_states_out_of_sc": [
+    [
+     "TX",
+     1
+    ],
+    [
+     "ON",
+     1
+    ],
+    [
+     "OH",
+     1
+    ]
+   ],
+   "buyer_is_company": 2,
+   "by_quarter": {
+    "2025Q4": 1,
+    "2026Q2": 2
+   }
+  },
+  "later_window": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 3,
+    "median": 215000.0,
+    "p25": null,
+    "p75": null,
+    "min": 185000.0,
+    "max": 215000.0
+   },
+   "floors_1_to_10": {
+    "n": 1,
+    "median": 215000.0,
+    "p25": null,
+    "p75": null,
+    "min": 215000.0,
+    "max": 215000.0
+   },
+   "floors_11_up": {
+    "n": 2,
+    "median": 200000.0,
+    "p25": null,
+    "p75": null,
+    "min": 185000.0,
+    "max": 215000.0
+   },
+   "zero_dollar_deeds": 2,
+   "commercial_unit_deeds": 0,
+   "note": "Commercial units left out. Consideration as indexed; deeds under $1,000 are transfers, not sales",
+   "under_1000": 0
+  }
+ },
+ "sales_by_value": {
+  "read": "2026-11-17T06:35:56.408743+00:00",
+  "rule": "Roxanne Towers: recorded sales split by the county's own market value for the unit (a stand-in for unit size, since deeds carry no\nbedrooms): units the county values under $200,000 (the one-bedroom size; the one-bedrooms for sale ask $119,900 to $194,900) and units it\nvalues at $300,000 or more (two- and three-bedrooms; those for sale ask $362,500 to $532,500). Sources: Horry County GIS layer 24\n(PIN, MarketProp, LegalDescr 'ROXANNE TOWERS HPR;%'), joined by PIN to the deed files named in pull_county.py (window 1: out-of-state-buyers.json,\n2025-10-01 to 2026-09-30; window 2: data/2026-11-n/buyers-builders/raw/deeds-co.json, 2025-11-01 to 2026-10-31, Consideration >= 1000).\nKept: per group the count, median, lowest and highest price. A group of fewer than 3 is not kept. Never kept: a PIN, a unit, a buyer, a date of a single deed.\nRun: python3 -I pull_sales_by_value.py <this dir> <website root>. Merges \"sales_by_value\" into county.json.",
+  "units_by_county_value": {
+   "between": 69,
+   "under_200k": 6,
+   "300k_up": 1
+  },
+  "window_1": {
+   "window": "2025-10-01 to 2026-09-30",
+   "between": {
+    "n": 3,
+    "median": 215000.0,
+    "min": 185000.0,
+    "max": 215000.0
+   }
+  },
+  "window_2": {
+   "window": "2025-11-01 to 2026-10-31",
+   "between": {
+    "n": 3,
+    "median": 215000.0,
+    "min": 185000.0,
+    "max": 215000.0
+   }
+  }
+ }
+}

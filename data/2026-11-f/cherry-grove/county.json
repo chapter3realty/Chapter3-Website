@@ -1,0 +1,160 @@
+{
+ "read": "2026-11-17T07:12:18.257428+00:00",
+ "rule": "Cherry Grove's old plats (legal description starts CHERRY GROVE) in Horry County's public records, aggregate only.\nParcels: county GIS layer 24, LegalDescr LIKE 'CHERRY GROVE%'. House = building value over $0 and land use 101/106/109; lot = no building value;\ncondo = land use 107. Kept: counts, medians, ranges, tax-ratio counts, owner mailing state counts, flood zone counts.\nSales: deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json, AcclaimWeb DEED 001) whose ParcelNumber is a\nparcel of the old plats above (matched by parcel number, not by words); stated price over $10,000. No PIN, owner or address is written.\nRun: python3 -I pull_county.py <this dir> <website root>",
+ "parcels": 2033,
+ "by_kind": {
+  "house": 1544,
+  "lot": 225,
+  "other": 218,
+  "condo": 46
+ },
+ "name_counts": [
+  [
+   "CHERRY GROVE BEACH",
+   728
+  ],
+  [
+   "CHERRY GROVE",
+   691
+  ],
+  [
+   "CHERRY GROVE BCH",
+   493
+  ],
+  [
+   "CHERRY GROVE COTTAGES",
+   48
+  ],
+  [
+   "CHERRY GROVE VILLAS II",
+   27
+  ],
+  [
+   "CHERRY GROVE SECTION",
+   6
+  ],
+  [
+   "CHERRY GROVE SECT",
+   4
+  ],
+  [
+   "CHERRY GROVE BCH BLK X",
+   3
+  ],
+  [
+   "CHERRY GROVE BEACH BLOCK 1-F",
+   3
+  ],
+  [
+   "CHERRY GROVE BCH BLK 54",
+   2
+  ],
+  [
+   "CHERRY GROVE BLOCK 53",
+   2
+  ],
+  [
+   "CHERRY GROVE BEACH SECT",
+   1
+  ]
+ ],
+ "house_acres": {
+  "n": 25,
+  "min": 0.06,
+  "p25": 0.13,
+  "median": 0.15,
+  "p75": 0.23,
+  "max": 0.41
+ },
+ "house_county_value": {
+  "n": 1544,
+  "min": 254315.0,
+  "p25": 540470.25,
+  "median": 636248.0,
+  "p75": 745679.25,
+  "max": 5774871.0
+ },
+ "houses_taxed_4pct_legal_residence": 341,
+ "houses": 1544,
+ "houses_owner_mail_out_of_sc": 765,
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "house": {
+   "n": 80,
+   "min": 55000.0,
+   "p25": 562500.0,
+   "median": 695000.0,
+   "p75": 860000.0,
+   "max": 2725000.0
+  },
+  "other": {
+   "n": 13,
+   "min": 168293.75,
+   "p25": 362500.0,
+   "median": 640000.0,
+   "p75": 1074500.0,
+   "max": 1600000.0
+  },
+  "condo": {
+   "n": 5,
+   "min": 340000.0,
+   "p25": 407500.0,
+   "median": 480000.0,
+   "p75": 517500.0,
+   "max": 545000.0
+  },
+  "lot": {
+   "n": 8,
+   "min": 228474.0,
+   "p25": 262500.0,
+   "median": 432000.0,
+   "p75": 593750.0,
+   "max": 600000.0
+  }
+ },
+ "house_sales_by_quarter": {
+  "2025Q4": 12,
+  "2026Q1": 15,
+  "2026Q2": 28,
+  "2026Q3": 20,
+  "2026Q4": 5
+ },
+ "house_sales_by_name": {
+  "CHERRY GROVE": {
+   "n": 80,
+   "min": 55000.0,
+   "p25": 562500.0,
+   "median": 695000.0,
+   "p75": 860000.0,
+   "max": 2725000.0
+  },
+  "CHERRY GROVE BCH": {
+   "n": 20,
+   "min": 74168.0,
+   "p25": 625000.0,
+   "median": 717500.0,
+   "p75": 861875.0,
+   "max": 1643000.0
+  },
+  "CHERRY GROVE BEACH": {
+   "n": 24,
+   "min": 55000.0,
+   "p25": 469925.0,
+   "median": 695000.0,
+   "p75": 908750.0,
+   "max": 1935000.0
+  },
+  "CHERRY GROVE BCH BLK X": {
+   "n": 0
+  },
+  "CHERRY GROVE SECTION": {
+   "n": 1
+  },
+  "CHERRY GROVE BCH BL 54": {
+   "n": 0
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "rule": "NMB 2026 levy 221.2 mills (171.2 county+school, 50.0 city). 6%: price*0.06*0.2212. 4%: price*0.04*(0.2212-0.1091 school operations). No county fee on NMB bills ($0.00 per 2026 bill, district 550). No city credit applied (credit is Myrtle Beach only).",
+ "tax": {
+  "200000": {
+   "six": 2654.0,
+   "four": 897.0
+  },
+  "300000": {
+   "six": 3982.0,
+   "four": 1345.0
+  },
+  "450000": {
+   "six": 5972.0,
+   "four": 2018.0
+  }
+ }
+}

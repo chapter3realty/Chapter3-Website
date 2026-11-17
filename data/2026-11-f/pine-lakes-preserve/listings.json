@@ -1,0 +1,88 @@
+{
+ "pulled": "2026-11-17T07:31:37.390226+00:00",
+ "refreshedAt": "2026-11-17T07:20:05.367Z",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "rule": "Homes for sale now in The Preserve at Pine Lakes (MLS subdivision name \"The Preserve at Pine Lakes\"; the search\nsubdivision=The Preserve at Pine Lakes returns it), in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS active\nlistings) and listing card (/homes/api/lookup). Saved: counts, list-price median and range, beds, size, year built, HOA fee, lot size, HOA fee brackets\n(hoaMax=T). No MLS number, address, firm or photo is saved. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "all": {
+  "for_sale": 8,
+  "subdivision_names": [
+   "The Preserve at Pine Lakes"
+  ],
+  "types": [
+   "Detached",
+   "Townhouse"
+  ],
+  "list_price": {
+   "median": 594950.0,
+   "min": 399000,
+   "max": 679000
+  },
+  "year_built": [
+   2022,
+   2023
+  ],
+  "sqft_median": 2095.5,
+  "beds": [
+   3,
+   5
+  ],
+  "hoa_monthly_listed": [
+   95,
+   95,
+   96,
+   96,
+   96,
+   96,
+   98,
+   313
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "fee_at_or_under": {
+  "0": 47,
+  "25": 47,
+  "50": 47,
+  "75": 47,
+  "100": 7,
+  "125": 7,
+  "150": 7,
+  "175": 7,
+  "200": 7,
+  "225": 7,
+  "250": 7,
+  "275": 7,
+  "300": 7,
+  "325": 8
+ },
+ "listing_says_no_hoa": 47
+}

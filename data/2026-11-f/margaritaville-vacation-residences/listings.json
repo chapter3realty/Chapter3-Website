@@ -1,0 +1,213 @@
+{
+ "pulled": "2026-11-17T06:53:12.120670+00:00",
+ "refreshedAt": "2026-11-17T06:50:08.090Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "rule": "Margaritaville Vacation Residences Myrtle Beach (235 Fins Up Circle): condos for sale now, in aggregate, from the site's public map API\n(https://chapter3realty.com/homes/api/map, CCMLS active listings) and the listing card (/homes/api/lookup).\nA listing counts only if the MLS subdivision is \"Margaritaville Vacation Residences Myrtle Beach\" and the address is 235 Fins Up Circle.\nFee: the card's hoaMonthly, kept per size as range and median. Flags: has=<key> counts. Medians, ranges and counts only.\nNever saved: an MLS number, a unit number, a single listing's price or fee, a firm, a photo or a remark.\nRun: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "api_total": 9,
+ "at_235_fins_up": 9,
+ "beds": {
+  "1": 2,
+  "2": 4,
+  "3": 3
+ },
+ "asking_all": {
+  "median": 639900,
+  "min": 389900,
+  "max": 763900
+ },
+ "by_size": {
+  "1": {
+   "n": 2,
+   "asking_median": 444400.0,
+   "asking_min": 389900,
+   "asking_max": 498900,
+   "sqft_range": [
+    779,
+    811
+   ],
+   "sqft_median": 795.0,
+   "fee_n": 2,
+   "fee_range": [
+    413,
+    452
+   ],
+   "fee_median": 432.5
+  },
+  "2": {
+   "n": 4,
+   "asking_median": 586900.0,
+   "asking_min": 499900,
+   "asking_max": 639900,
+   "sqft_range": [
+    1042,
+    1042
+   ],
+   "sqft_median": 1042.0,
+   "fee_n": 4,
+   "fee_range": [
+    580,
+    580
+   ],
+   "fee_median": 580.0
+  },
+  "3": {
+   "n": 3,
+   "asking_median": 730900,
+   "asking_min": 725900,
+   "asking_max": 763900,
+   "sqft_range": [
+    1381,
+    1516
+   ],
+   "sqft_median": 1381,
+   "fee_n": 3,
+   "fee_range": [
+    580,
+    847
+   ],
+   "fee_median": 679
+  }
+ },
+ "fee_all": {
+  "n": 9,
+  "range": [
+   413,
+   847
+  ]
+ },
+ "fee_by_sqft_pairs_sorted": [
+  [
+   779,
+   413
+  ],
+  [
+   811,
+   452
+  ],
+  [
+   1042,
+   580
+  ],
+  [
+   1042,
+   580
+  ],
+  [
+   1042,
+   580
+  ],
+  [
+   1042,
+   580
+  ],
+  [
+   1381,
+   580
+  ],
+  [
+   1381,
+   679
+  ],
+  [
+   1516,
+   847
+  ]
+ ],
+ "ppsf_range": [
+  480,
+  615
+ ],
+ "year_built": {
+  "2026": 8,
+  "2027": 1
+ },
+ "flood_zone_field": {
+  "None": 9
+ },
+ "subdivision_field": {
+  "Margaritaville Vacation Residences Myrtle Beach": 9
+ },
+ "waterfront_field": {
+  "False": 9
+ },
+ "newConstruction_field": {
+  "False": 9
+ },
+ "type_field": {
+  "Condominium": 9
+ },
+ "flags": {
+  "str_allowed": 9,
+  "rentals_allowed": 9,
+  "long_term_rental_allowed": 9,
+  "vacation_rental_program": 0,
+  "has_rental_income": 0,
+  "furnished": 9,
+  "pets_allowed": 9,
+  "oceanfront_unit": 0,
+  "ocean_view": 0,
+  "oceanfront_building": 0,
+  "high_floor_unit": 0,
+  "low_floor_unit": 7,
+  "top_floor": 0,
+  "balcony": 9,
+  "parking_garage": 0,
+  "covered_parking": 0,
+  "indoor_pool": 0,
+  "sauna": 0,
+  "elevator_building": 9,
+  "flood_zone": 0,
+  "hoa_includes_trash": 9,
+  "hoa_includes_utilities": 0,
+  "hoa_includes_water_sewer": 0,
+  "hoa_includes_insurance": 9,
+  "hoa_includes_internet": 9,
+  "hoa_includes_pest": 0,
+  "hoa_includes_cable": 9,
+  "hoa_includes_electric": 0,
+  "security_service": 0,
+  "new_construction": 9
+ },
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=str_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=rentals_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=long_term_rental_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=vacation_rental_program",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=has_rental_income",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=furnished",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=oceanfront_unit",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=ocean_view",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=high_floor_unit",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=low_floor_unit",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=top_floor",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=balcony",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=parking_garage",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=covered_parking",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=sauna",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=elevator_building",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=flood_zone",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_trash",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_utilities",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_water_sewer",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_insurance",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_internet",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_pest",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_cable",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=security_service",
+  "https://chapter3realty.com/homes/api/map?subdivision=Margaritaville+Vacation+Residences+Myrtle+Beach&has=new_construction"
+ ]
+}

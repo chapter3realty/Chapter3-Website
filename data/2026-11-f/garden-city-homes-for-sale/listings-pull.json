@@ -1,0 +1,18 @@
+{
+ "pulled": "2026-11-17T05:37:42.586810+00:00",
+ "rule": "Homes for sale now in the CRM Garden City area (has=area_garden_city) in aggregate from the site map API and card lookup. Saves counts and ranges; no address, MLS number, firm or photo. Run: python3 -I pull_gc.py <dir>",
+ "totals": {
+  "house": 55,
+  "condo": 77,
+  "townhouse": 0,
+  "manufactured": 65,
+  "multi": 3,
+  "land": 3,
+  "all": 204
+ },
+ "mls_collected": {
+  "house": 53,
+  "condo": 77
+ },
+ "cards_with_price": 86
+}

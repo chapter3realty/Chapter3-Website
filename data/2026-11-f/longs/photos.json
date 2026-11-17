@@ -1,0 +1,71 @@
+{
+ "rule": "Photo records for /submarkets/myrtle-beach/plantation-point/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "longs",
+   "file": "images/2026-11-f/longs/longs-new-streets-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/longs/longs-new-streets-from-above-600w.webp",
+    "1200": "images/2026-11-f/longs/longs-new-streets-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Longs from above",
+   "what": "Part of Longs from above (USDA NAIP aerial photo, 2023): a divided highway crossing a county road at the top with a few shops, new streets of houses with ponds at the lower left, and fields and pine woods around them.",
+   "caption": "Part of Longs from the air: a highway crossroads at the top and new streets beside fields and woods.",
+   "alt": "Aerial photo of part of Longs, SC: a divided highway and a county road meet at the top, with new streets of houses at the lower left beside fields and pine woods",
+   "place": {
+    "city": "Longs",
+    "sublocation": "Longs, Horry County"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), natural color. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, WGS84) on 2026-11-17; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service and cropped it to 4:3",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-78.7400,33.9300,-78.7260,33.9390&bboxSR=4326&imageSR=4326&size=1800,1350&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.74,
+     33.93,
+     -78.726,
+     33.939
+    ],
+    "ground_m_per_px_1200w": 0.9
+   },
+   "original_size": "1800x1350 (NAIP export), resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/longs/ on 2026-11-17. Roads, shops, fields, woods and houses; no person, no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/longs/longs-new-streets-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/longs/longs-new-streets-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/longs/longs-new-streets-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Crops cut from the center of the same 1800 x 1350 export by tools/photos.js crops, for Article.image and the share image.",
+   "crop_source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-78.7400,33.9300,-78.7260,33.9390&bboxSR=4326&imageSR=4326&size=1800,1350&format=jpg&f=image"
+  }
+ ]
+}

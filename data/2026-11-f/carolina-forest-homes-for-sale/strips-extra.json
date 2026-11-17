@@ -1,0 +1,58 @@
+[
+ {
+  "q": "has=area_carolina_forest&type=condo&max=400000",
+  "ok": true,
+  "total": 117,
+  "link": "/homes/?type=condo&max=400000&has=area_carolina_forest",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_carolina_forest&type=condo&subdivision=RIVER OAKS CONDOS&max=400000",
+  "ok": true,
+  "total": 30,
+  "link": "/homes/?type=condo&max=400000&subdivision=RIVER+OAKS+CONDOS&has=area_carolina_forest",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_carolina_forest&type=townhouse&max=400000",
+  "ok": true,
+  "total": 28,
+  "link": "/homes/?type=townhouse&max=400000&has=area_carolina_forest",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_carolina_forest&type=house&subdivision=Landing at River Oaks",
+  "ok": true,
+  "total": 9,
+  "link": "/homes/?type=house&subdivision=Landing+at+River+Oaks&has=area_carolina_forest",
+  "note": "",
+  "cards": 9
+ },
+ {
+  "q": "has=area_carolina_forest&type=house&has=lake_view",
+  "ok": true,
+  "total": 97,
+  "link": "/homes/?type=house&has=area_carolina_forest%2Clake_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_carolina_forest&type=house&has=golf_course_view",
+  "ok": true,
+  "total": 298,
+  "link": "/homes/?type=house&has=area_carolina_forest",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_carolina_forest&type=house&has=home_office",
+  "ok": true,
+  "total": 122,
+  "link": "/homes/?type=house&has=area_carolina_forest%2Chome_office",
+  "note": "",
+  "cards": 14
+ }
+]

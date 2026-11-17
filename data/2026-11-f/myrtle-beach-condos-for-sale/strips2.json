@@ -1,0 +1,225 @@
+{
+ "read": "2026-11-17T04:51:38.842228+00:00",
+ "strips": {
+  "newest": {
+   "q": "type=condo&city=Myrtle+Beach",
+   "total": 1695
+  },
+  "oceanfront_unit": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_unit",
+   "total": 480
+  },
+  "oceanfront_building": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_building",
+   "total": 844
+  },
+  "oceanview_unit": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanview_unit",
+   "total": 553
+  },
+  "oceanfront_unit_under200": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_unit&max=200000",
+   "total": 285
+  },
+  "oceanfront_unit_2bed": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_unit&beds=2",
+   "total": 129
+  },
+  "oceanfront_unit_3bed": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_unit&beds=3",
+   "total": 61
+  },
+  "oceanfront_building_hoa700": {
+   "q": "type=condo&city=Myrtle+Beach&has=oceanfront_building&hoaMax=700",
+   "total": 193
+  },
+  "lazy_river": {
+   "q": "type=condo&city=Myrtle+Beach&has=lazy_river",
+   "total": 395
+  },
+  "indoor_pool": {
+   "q": "type=condo&city=Myrtle+Beach&has=indoor_pool",
+   "total": 892
+  },
+  "resort_pool": {
+   "q": "type=condo&city=Myrtle+Beach&has=resort_pool",
+   "total": 188
+  },
+  "golf_community": {
+   "q": "type=condo&city=Myrtle+Beach&has=golf_community",
+   "total": 132
+  },
+  "on_golf_course": {
+   "q": "type=condo&city=Myrtle+Beach&has=on_golf_course",
+   "total": 84
+  },
+  "elevator_building": {
+   "q": "type=condo&city=Myrtle+Beach&has=elevator_building",
+   "total": 1089
+  },
+  "pets": {
+   "q": "type=condo&city=Myrtle+Beach&has=pets_allowed",
+   "total": 946
+  },
+  "str": {
+   "q": "type=condo&city=Myrtle+Beach&has=str_allowed",
+   "total": 1288
+  },
+  "vrp": {
+   "q": "type=condo&city=Myrtle+Beach&has=vacation_rental_program",
+   "total": 993
+  },
+  "gated": {
+   "q": "type=condo&city=Myrtle+Beach&has=gated",
+   "total": 311
+  },
+  "hoa_water": {
+   "q": "type=condo&city=Myrtle+Beach&has=hoa_includes_water_sewer&hoaMax=600",
+   "total": 479
+  },
+  "walk_to_beach": {
+   "q": "type=condo&city=Myrtle+Beach&has=walk_to_beach",
+   "total": 1269
+  },
+  "inside_city": {
+   "q": "type=condo&city=Myrtle+Beach&has=inside_city_limits",
+   "total": 647
+  },
+  "furnished": {
+   "q": "type=condo&city=Myrtle+Beach&has=furnished",
+   "total": 1409
+  },
+  "price_reduced": {
+   "q": "type=condo&city=Myrtle+Beach&has=price_reduced",
+   "total": 844
+  },
+  "penthouse": {
+   "q": "type=condo&city=Myrtle+Beach&has=penthouse",
+   "total": 56
+  },
+  "corner": {
+   "q": "type=condo&city=Myrtle+Beach&has=corner_unit",
+   "total": 110
+  },
+  "newcon": {
+   "q": "type=condo&city=Myrtle+Beach&has=new_construction",
+   "total": 18
+  },
+  "still_built": {
+   "q": "type=condo&city=Myrtle+Beach&has=still_being_built",
+   "total": 15
+  },
+  "marsh_icw": {
+   "q": "type=condo&city=Myrtle+Beach&has=icw_community",
+   "total": 34
+  },
+  "near_marketcommon": {
+   "q": "type=condo&city=Myrtle+Beach&near=33.6713,-78.9214&miles=1",
+   "total": 134
+  },
+  "boardwalk": {
+   "q": "type=condo&city=Myrtle+Beach&near=33.6896,-78.8800&miles=1",
+   "total": 101
+  },
+  "beds2": {
+   "q": "type=condo&city=Myrtle+Beach&beds=2",
+   "total": 908
+  },
+  "beds3": {
+   "q": "type=condo&city=Myrtle+Beach&beds=3",
+   "total": 338
+  },
+  "beds4": {
+   "q": "type=condo&city=Myrtle+Beach&beds=4",
+   "total": 29
+  },
+  "under150": {
+   "q": "type=condo&city=Myrtle+Beach&max=150000",
+   "total": 508
+  },
+  "150-300": {
+   "q": "type=condo&city=Myrtle+Beach&min=150000&max=300000",
+   "total": 866
+  },
+  "300plus": {
+   "q": "type=condo&city=Myrtle+Beach&min=300000",
+   "total": 339
+  },
+  "under100": {
+   "q": "type=condo&city=Myrtle+Beach&max=100000",
+   "total": 164
+  },
+  "under75": {
+   "q": "type=condo&city=Myrtle+Beach&max=75000",
+   "total": 72
+  },
+  "500plus": {
+   "q": "type=condo&city=Myrtle+Beach&min=500000",
+   "total": 95
+  },
+  "hoa500": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=500",
+   "total": 471
+  },
+  "hoa400": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=400",
+   "total": 205
+  },
+  "hoa300": {
+   "q": "type=condo&city=Myrtle+Beach&hoaMax=300",
+   "total": 53
+  },
+  "dom14": {
+   "q": "type=condo&city=Myrtle+Beach&domMax=14",
+   "total": 171
+  },
+  "new2022": {
+   "q": "type=condo&city=Myrtle+Beach&yearMin=2022",
+   "total": 27
+  },
+  "sub:Grande Dunes": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Grande+Dunes",
+   "total": 17
+  },
+  "sub:Market Common": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Market+Common",
+   "total": 5
+  },
+  "sub:Kingston Plantation": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Kingston+Plantation",
+   "total": 63
+  },
+  "sub:Ocean Creek II": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Ocean+Creek+II",
+   "total": 9
+  },
+  "sub:Wave Rider Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Wave+Rider+Resort",
+   "total": 0
+  },
+  "sub:Yachtsman Resort South Tower": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Yachtsman+Resort+South+Tower",
+   "total": 0
+  },
+  "sub:Covenant Towers": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Covenant+Towers",
+   "total": 11
+  },
+  "sub:Tides": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Tides",
+   "total": 0
+  },
+  "sub:Sand Dunes Resort": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Sand+Dunes+Resort",
+   "total": 0
+  },
+  "sub:Margate Tower": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Margate+Tower",
+   "total": 7
+  },
+  "sub:Dunes Village": {
+   "q": "type=condo&city=Myrtle+Beach&subdivision=Dunes+Village",
+   "total": 29
+  }
+ }
+}

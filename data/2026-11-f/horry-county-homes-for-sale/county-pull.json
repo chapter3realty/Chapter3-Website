@@ -1,0 +1,144 @@
+{
+ "read": "2026-11-17T05:18:46.015067+00:00",
+ "rule": "Homes for sale inside Horry County, from the site's public map API (every pin, sliced by price so none is cut off), each pin placed by its coordinates against the Census TIGERweb Horry County boundary (GEOID 45051). Saves counts by kind, MLS city, zip and price band only. No address, MLS number or photo is saved. Usage: python3 -I pull_county.py <dir>",
+ "boundary": "TIGERweb State_County layer 11, Horry GEOID 45051",
+ "pins_collected": 6865,
+ "inside_by_kind": {
+  "house": 2932,
+  "condo": 2683,
+  "townhouse": 297
+ },
+ "inside_total": 5912,
+ "inside_by_mls_city": {
+  "Myrtle Beach": {
+   "house": 1035,
+   "condo": 1670,
+   "townhouse": 145
+  },
+  "North Myrtle Beach": {
+   "house": 254,
+   "condo": 574,
+   "townhouse": 32
+  },
+  "Conway": {
+   "house": 639,
+   "condo": 31,
+   "townhouse": 34
+  },
+  "Little River": {
+   "house": 183,
+   "condo": 180,
+   "townhouse": 30
+  },
+  "Longs": {
+   "house": 324,
+   "condo": 22,
+   "townhouse": 20
+  },
+  "Murrells Inlet": {
+   "house": 133,
+   "condo": 94,
+   "townhouse": 20
+  },
+  "Surfside Beach": {
+   "house": 84,
+   "condo": 79,
+   "townhouse": 16
+  },
+  "Loris": {
+   "house": 146
+  },
+  "Galivants Ferry": {
+   "house": 65
+  },
+  "Garden City Beach": {
+   "house": 12,
+   "condo": 33
+  },
+  "Aynor": {
+   "house": 41
+  },
+  "Nichols": {
+   "house": 15
+  },
+  "Green Sea": {
+   "house": 1
+  }
+ },
+ "inside_by_zip": {
+  "29577": 1110,
+  "29582": 859,
+  "29572": 662,
+  "29579": 563,
+  "29526": 498,
+  "29566": 393,
+  "29568": 367,
+  "29588": 348,
+  "29575": 345,
+  "29576": 292,
+  "29527": 206,
+  "29569": 146,
+  "29544": 67,
+  "29511": 39,
+  "29581": 15,
+  "29545": 1,
+  "29578": 1
+ },
+ "outside_by_mls_city": {
+  "Pawleys Island": 231,
+  "Georgetown": 176,
+  "Murrells Inlet": 126,
+  "Calabash": 71,
+  "Ash": 50,
+  "Tabor City": 38,
+  "Marion": 33,
+  "Sunset Beach": 24,
+  "Shallotte": 19,
+  "Andrews": 17,
+  "Mullins": 16,
+  "Supply": 15,
+  "Hemingway": 12,
+  "Lake City": 9,
+  "Kingstree": 9
+ },
+ "asking": {
+  "house": {
+   "n": 2932,
+   "median": 419000.0,
+   "min": 120000,
+   "max": 6609000,
+   "p25": 319880,
+   "p75": 599900
+  },
+  "condo": {
+   "n": 2683,
+   "median": 218000,
+   "min": 10000,
+   "max": 2500000,
+   "p25": 155000,
+   "p75": 319900
+  },
+  "townhouse": {
+   "n": 297,
+   "median": 265000,
+   "min": 113000,
+   "max": 4998000,
+   "p25": 229000,
+   "p75": 344900
+  }
+ },
+ "asking_bands_all_kinds": {
+  "0-200000": 1233,
+  "200000-300000": 1484,
+  "300000-400000": 1209,
+  "400000-600000": 1147,
+  "600000-1000000000": 839
+ },
+ "asking_bands_house": {
+  "0-200000": 19,
+  "200000-300000": 548,
+  "300000-400000": 832,
+  "400000-600000": 820,
+  "600000-1000000000": 713
+ }
+}

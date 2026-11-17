@@ -1,0 +1,214 @@
+{
+ "house": {
+  "cards": 297,
+  "price": {
+   "n": 276,
+   "med": 485950.0,
+   "p25": 399000,
+   "p75": 679900,
+   "min": 247500,
+   "max": 1799000
+  },
+  "hoa": {
+   "n": 275,
+   "med": 110,
+   "p25": 92,
+   "p75": 135,
+   "min": 27,
+   "max": 449
+  },
+  "hoa_zero": 0,
+  "hoa_none": 22
+ },
+ "townhouse": {
+  "cards": 28,
+  "price": {
+   "n": 14,
+   "med": 259450.0,
+   "p25": 229900,
+   "p75": 294990,
+   "min": 149000,
+   "max": 333500
+  },
+  "hoa": {
+   "n": 14,
+   "med": 321.5,
+   "p25": 235,
+   "p75": 423,
+   "min": 150,
+   "max": 486
+  },
+  "hoa_zero": 0,
+  "hoa_none": 14
+ },
+ "condo": {
+  "cards": 117,
+  "price": {
+   "n": 73,
+   "med": 169900,
+   "p25": 150000,
+   "p75": 193000,
+   "min": 109900,
+   "max": 299900
+  },
+  "hoa": {
+   "n": 73,
+   "med": 405,
+   "p25": 375,
+   "p75": 439,
+   "min": 293,
+   "max": 615
+  },
+  "hoa_zero": 0,
+  "hoa_none": 44
+ },
+ "condo_hoa_by_beds": {
+  "1": {
+   "n": 8,
+   "med": 398.0,
+   "p25": 398,
+   "p75": 398,
+   "min": 375,
+   "max": 399
+  },
+  "2": {
+   "n": 39,
+   "med": 405,
+   "p25": 373,
+   "p75": 439,
+   "min": 297,
+   "max": 505
+  },
+  "3": {
+   "n": 26,
+   "med": 430.0,
+   "p25": 373,
+   "p75": 440,
+   "min": 293,
+   "max": 615
+  }
+ },
+ "house_hoa_by_sub": {
+  "Carolina Forest - Avalon": {
+   "n": 12,
+   "med": 92.5,
+   "p25": 84,
+   "p75": 100,
+   "min": 58,
+   "max": 300
+  },
+  "Berkshire Forest-Carolina Forest": {
+   "n": 15,
+   "med": 116,
+   "p25": 107,
+   "p75": 116,
+   "min": 102,
+   "max": 246
+  },
+  "Carolina Forest - The Farm": {
+   "n": 13,
+   "med": 107,
+   "p25": 107,
+   "p75": 107,
+   "min": 107,
+   "max": 110
+  },
+  "Southcreek": {
+   "n": 8,
+   "med": 67.0,
+   "p25": 67,
+   "p75": 78,
+   "min": 67,
+   "max": 83
+  },
+  "Clear Pond at Myrtle Beach National": {
+   "n": 23,
+   "med": 105,
+   "p25": 105,
+   "p75": 105,
+   "min": 105,
+   "max": 107
+  },
+  "Waterford Plantation": {
+   "n": 9,
+   "med": 95,
+   "p25": 95,
+   "p75": 95,
+   "min": 95,
+   "max": 95
+  },
+  "Bella Vita": {
+   "n": 9,
+   "med": 110,
+   "p25": 110,
+   "p75": 110,
+   "min": 87,
+   "max": 116
+  },
+  "The Parks of Carolina Forest": {
+   "n": 12,
+   "med": 120.0,
+   "p25": 120,
+   "p75": 120,
+   "min": 120,
+   "max": 120
+  },
+  "North Cove": {
+   "n": 11,
+   "med": 50,
+   "p25": 50,
+   "p75": 50,
+   "min": 50,
+   "max": 50
+  },
+  "Landing at River Oaks": {
+   "n": 9,
+   "med": 80,
+   "p25": 80,
+   "p75": 81,
+   "min": 80,
+   "max": 81
+  },
+  "Waterbridge": {
+   "n": 25,
+   "med": 150,
+   "p25": 150,
+   "p75": 150,
+   "min": 149,
+   "max": 449
+  },
+  "Wild Wing Plantation": {
+   "n": 20,
+   "med": 135.0,
+   "p25": 135,
+   "p75": 135,
+   "min": 115,
+   "max": 135
+  },
+  "Plantation Lakes": {
+   "n": 13,
+   "med": 125,
+   "p25": 125,
+   "p75": 125,
+   "min": 108,
+   "max": 125
+  },
+  "The Bluffs On The Waterway": {
+   "n": 11,
+   "med": 154,
+   "p25": 153,
+   "p75": 154,
+   "min": 141,
+   "max": 308
+  },
+  "Waterway Palms Plantation": {
+   "n": 17,
+   "med": 156,
+   "p25": 137,
+   "p75": 157,
+   "min": 135,
+   "max": 157
+  }
+ },
+ "house_newc": 0
+}

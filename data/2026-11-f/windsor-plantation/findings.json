@@ -1,0 +1,429 @@
+{
+ "made": "2026-11-17",
+ "rule": "Findings for /submarkets/myrtle-beach/windsor-plantation/ (adapted from the Wild Wing script; no golf or lake layers: none exist here)\nOriginal doc follows.\n\nFindings for Windsor, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json,\nAcclaimWeb DEED (001); person names already blanked). A sale = a deed on a community parcel with a stated price over $10,000; a deed\ncovering several parcels is dropped. House = parcel with county building value over $0 and land use 101/109/106 (not 300 common land).\nGroups: \"houses\" = every section except FAIRWAYS (detached houses, The Sanctuary included); \"sanctuary\" = SANC @ WILD WING; \"fairways\" = FAIRWAYS @WILDWING (townhomes).\nSize = largest county 'Residential' footprint (layer 27, structures 2023): roof outline, not heated living area. Pool = 'Pool Inground' footprint on the lot (a floor).\nGolf lot = within 15 m of a county parcel with land use 394 (golf course) owned by FOUNDERS WILD WING LLC (PAR A and PAR V).\nLake lot = within 15 m of the Wild Wing POA's lake-and-wetland parcel (land use 300, owner WILD WING POA ASSOC INC).\nTax status: assessed/taxable 0.04 = legal residence ratio; 0.06 = other.\nWrites findings.json (counts, medians, ranges; no PIN, owner, address or deed book and page) and map-lots.json (points rounded to 4 decimals).\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-17T07:35:18.177981+00:00",
+ "all": {
+  "parcels": 476,
+  "houses": 422,
+  "vacant_lots": 22,
+  "lot_sqft": {
+   "n": 422,
+   "min": 4973,
+   "q1": 6615.0,
+   "median": 8392.5,
+   "q3": 10054.0,
+   "max": 36217
+  },
+  "house_footprint_sqft": {
+   "n": 301,
+   "min": 1553,
+   "q1": 2388.5,
+   "median": 2755,
+   "q3": 3019.5,
+   "max": 4157
+  },
+  "county_value": {
+   "n": 422,
+   "min": 250000.0,
+   "q1": 325000.0,
+   "median": 402389.5,
+   "q3": 462565.75,
+   "max": 684102.0
+  },
+  "pools": 10,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 43,
+  "assessed_at_4pct_legal_residence": 353,
+  "assessed_at_6pct": 69,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 476
+  },
+  "streets": {
+   "null": 152,
+   "DEVON ESTATE AVE": 106,
+   "SAINT DAVIDS AVE": 47,
+   "BRIGHTON HILL AVE": 37,
+   "CASTLEBERRY PL": 27,
+   "CORAL HARBOR DR": 23,
+   "DUNSCOMBE WAY": 17,
+   "CLOVE ESTATES CIR": 17,
+   "MACHRIE LP": 15,
+   "COLLECTORS CT": 10,
+   "AMELIA PL": 7,
+   "PARSONS POND DR": 6,
+   "MALABAR CT": 5,
+   "NAIRN DR": 4,
+   "CAMBERLY DR": 3
+  }
+ },
+ "detached": {
+  "parcels": 330,
+  "houses": 302,
+  "vacant_lots": 21,
+  "lot_sqft": {
+   "n": 302,
+   "min": 6512,
+   "q1": 8173.0,
+   "median": 9494.0,
+   "q3": 10666.25,
+   "max": 36217
+  },
+  "house_footprint_sqft": {
+   "n": 301,
+   "min": 1553,
+   "q1": 2388.5,
+   "median": 2755,
+   "q3": 3019.5,
+   "max": 4157
+  },
+  "county_value": {
+   "n": 302,
+   "min": 330116.0,
+   "q1": 397894.75,
+   "median": 447037.5,
+   "q3": 476599.0,
+   "max": 684102.0
+  },
+  "pools": 10,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 21,
+  "assessed_at_4pct_legal_residence": 265,
+  "assessed_at_6pct": 37,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 330
+  },
+  "streets": {
+   "DEVON ESTATE AVE": 106,
+   "SAINT DAVIDS AVE": 47,
+   "BRIGHTON HILL AVE": 37,
+   "CASTLEBERRY PL": 27,
+   "CORAL HARBOR DR": 23,
+   "null": 23,
+   "DUNSCOMBE WAY": 17,
+   "CLOVE ESTATES CIR": 17,
+   "COLLECTORS CT": 10,
+   "AMELIA PL": 7,
+   "PARSONS POND DR": 6,
+   "MALABAR CT": 5,
+   "MACHRIE LP": 5
+  }
+ },
+ "devonshire": {
+  "parcels": 188,
+  "houses": 177,
+  "vacant_lots": 11,
+  "lot_sqft": {
+   "n": 177,
+   "min": 6512,
+   "q1": 7795.5,
+   "median": 8362,
+   "q3": 9376.5,
+   "max": 21420
+  },
+  "house_footprint_sqft": {
+   "n": 177,
+   "min": 1553,
+   "q1": 2309.0,
+   "median": 2499,
+   "q3": 2806.0,
+   "max": 3294
+  },
+  "county_value": {
+   "n": 177,
+   "min": 330116.0,
+   "q1": 383252.5,
+   "median": 408616.0,
+   "q3": 450753.5,
+   "max": 502753.0
+  },
+  "pools": 7,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 9,
+  "assessed_at_4pct_legal_residence": 161,
+  "assessed_at_6pct": 16,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 188
+  },
+  "streets": {
+   "DEVON ESTATE AVE": 106,
+   "BRIGHTON HILL AVE": 37,
+   "CLOVE ESTATES CIR": 17,
+   "null": 12,
+   "COLLECTORS CT": 10,
+   "PARSONS POND DR": 6
+  }
+ },
+ "stdavids": {
+  "parcels": 27,
+  "houses": 26,
+  "vacant_lots": 1,
+  "lot_sqft": {
+   "n": 26,
+   "min": 8893,
+   "q1": 10146.0,
+   "median": 11260.0,
+   "q3": 13176.75,
+   "max": 23008
+  },
+  "house_footprint_sqft": {
+   "n": 26,
+   "min": 2633,
+   "q1": 3215.75,
+   "median": 3538.5,
+   "q3": 3733.75,
+   "max": 4157
+  },
+  "county_value": {
+   "n": 26,
+   "min": 412800.0,
+   "q1": 487545.5,
+   "median": 523467.5,
+   "q3": 561573.0,
+   "max": 673932.0
+  },
+  "pools": 2,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 1,
+  "assessed_at_4pct_legal_residence": 25,
+  "assessed_at_6pct": 1,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 27
+  },
+  "streets": {
+   "DUNSCOMBE WAY": 17,
+   "CASTLEBERRY PL": 9,
+   "null": 1
+  }
+ },
+ "core": {
+  "parcels": 115,
+  "houses": 99,
+  "vacant_lots": 9,
+  "lot_sqft": {
+   "n": 99,
+   "min": 8914,
+   "q1": 9677.0,
+   "median": 10643,
+   "q3": 11375.0,
+   "max": 36217
+  },
+  "house_footprint_sqft": {
+   "n": 98,
+   "min": 2181,
+   "q1": 2638.75,
+   "median": 3037.0,
+   "q3": 3355.75,
+   "max": 3799
+  },
+  "county_value": {
+   "n": 99,
+   "min": 339180.0,
+   "q1": 447866.0,
+   "median": 470613.0,
+   "q3": 515699.0,
+   "max": 684102.0
+  },
+  "pools": 1,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 11,
+  "assessed_at_4pct_legal_residence": 79,
+  "assessed_at_6pct": 20,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 115
+  },
+  "streets": {
+   "SAINT DAVIDS AVE": 47,
+   "CORAL HARBOR DR": 23,
+   "CASTLEBERRY PL": 18,
+   "null": 10,
+   "AMELIA PL": 7,
+   "MALABAR CT": 5,
+   "MACHRIE LP": 5
+  }
+ },
+ "berwick": {
+  "parcels": 146,
+  "houses": 120,
+  "vacant_lots": 1,
+  "lot_sqft": {
+   "n": 120,
+   "min": 4973,
+   "q1": 6615.0,
+   "median": 6615.0,
+   "q3": 6615.0,
+   "max": 6615
+  },
+  "house_footprint_sqft": {
+   "n": 0
+  },
+  "county_value": {
+   "n": 120,
+   "min": 250000.0,
+   "q1": 325000.0,
+   "median": 325000.0,
+   "q3": 325000.0,
+   "max": 328562.0
+  },
+  "pools": 0,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 22,
+  "assessed_at_4pct_legal_residence": 88,
+  "assessed_at_6pct": 32,
+  "in_city_limits": 0,
+  "zoning": {
+   "PDD": 146
+  },
+  "streets": {
+   "null": 129,
+   "MACHRIE LP": 10,
+   "NAIRN DR": 4,
+   "CAMBERLY DR": 3
+  }
+ },
+ "sections": {
+  "WINDSOR PLANTATION": 89,
+  "WINDSOR PLANTATION, PH 2": 22,
+  "DEVONSHIRE @ WINDSOR PLNTN PH 1A": 15,
+  "DEVONSHIRE @ WINDSOR PLNTN PH 1B": 25,
+  "DEVONSHIRE @ WINDSOR PLNTN PH 2": 38,
+  "WINDSOR PLANTATION PH 2": 2,
+  "SAINT DAVIDS @ WINDSOR PLANTATION PH 4": 27,
+  "WINDSOR PLANTATION PH 3": 1,
+  "DEVONSHIRE @ WINDSOR PLANTATION PH 3": 38,
+  "DEVONSHIRE @ WINDSOR PLANTATION PH 3 & 4": 3,
+  "DEVONSHIRE @ WINDSOR PLANTATION PH 4": 36,
+  "BERWICK @ WINDSOR PLANTATION HPR": 24,
+  "BERWICK@ WINDSOR PLANTATION": 8,
+  "BERWICK@ WINDSOR PLANTATION HPR": 4,
+  "BERWICK @ WINDSOR PLANTATION": 52,
+  "DEVONSHIRE @ WINDSOR PLANTATION PH": 33,
+  "BERWICK AT WINDSOR PLANTATION PH 2": 1,
+  "BERWICK AT WINDSOR PLANTATION": 9,
+  "BERWICK @ WINDSOR PLANTATION PH22": 4,
+  "BERWICK @ WINDSOR PLANTATION PH 4": 4,
+  "WINDSOR PLANTATION PH 3,4": 1,
+  "BERWICK @ WINDSOR PLANTATION PH 7": 4,
+  "BERWICK @ WINDSOR PLNTN": 6,
+  "BERWICK @ WINDSOR PLANTATION PH 8": 4,
+  "BERWICK @ WINDSOR PLANTATION PH 27": 1,
+  "BERWICK @ WINDSOR PLANTATION HPR PH 27": 4,
+  "BERWICK AT WINDSOR PLANTATION PH 12": 4,
+  "BERWICK @ WINDSOR PLANTATION BLDG 30 PH 30": 4,
+  "BERWICK @ WINDSOR PLANTATION BLDG 29 PH29": 4,
+  "BERWICK @ WINDSOR PLANTATION' OPEN SPACE 2": 1,
+  "BERWICK @ WINDSOR PLANTATION PH 11": 4,
+  "BERWICK @ WINDSOR PLANTATION BLDG 9 PH 9": 4
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "houses_detached": {
+   "count": 8,
+   "prices": {
+    "n": 8,
+    "min": 425000.0,
+    "q1": 480500.0,
+    "median": 522500.0,
+    "q3": 591875.0,
+    "max": 650000.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2025/12": 1,
+    "2026/03": 1,
+    "2026/07": 1,
+    "2026/08": 2,
+    "2026/10": 1
+   }
+  },
+  "devonshire": {
+   "count": 3,
+   "prices": {
+    "n": 3,
+    "min": 425000.0,
+    "q1": 425000.0,
+    "median": 479000.0,
+    "q3": 525000.0,
+    "max": 525000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/03": 1,
+    "2026/08": 1
+   }
+  },
+  "stdavids": {
+   "count": 1,
+   "prices": {
+    "n": 1,
+    "median": 650000.0
+   },
+   "by_month": {
+    "2026/08": 1
+   }
+  },
+  "core": {
+   "count": 4,
+   "prices": {
+    "n": 4,
+    "min": 485000.0,
+    "q1": 493750.0,
+    "median": 528750.0,
+    "q3": 591875.0,
+    "max": 610000.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2026/07": 1,
+    "2026/10": 1
+   }
+  },
+  "berwick": {
+   "count": 16,
+   "prices": {
+    "n": 16,
+    "min": 259500.0,
+    "q1": 270250.0,
+    "median": 316950.0,
+    "q3": 324750.0,
+    "max": 330000.0
+   },
+   "by_month": {
+    "2025/11": 1,
+    "2026/02": 1,
+    "2026/03": 2,
+    "2026/05": 2,
+    "2026/06": 2,
+    "2026/07": 5,
+    "2026/08": 1,
+    "2026/10": 2
+   }
+  },
+  "lots_detached": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  }
+ },
+ "center": [
+  33.65222,
+  -78.99641
+ ],
+ "center_berwick": [
+  33.65556,
+  -78.99547
+ ]
+}

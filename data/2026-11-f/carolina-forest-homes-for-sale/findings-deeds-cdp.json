@@ -1,0 +1,156 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "book and page on one deed only": 18375,
+  "parcel in county layer": 18278,
+  "parcel center inside the Carolina Forest outline": 786
+ },
+ "land_use_counts": {
+  "101": 495,
+  "109": 112,
+  "107": 89,
+  "120": 6,
+  "100": 50,
+  "126": 9,
+  "300": 6,
+  "108": 1,
+  "325": 3,
+  "374": 1,
+  "348": 1,
+  "349": 2,
+  "396": 1,
+  "130": 6,
+  "343": 1,
+  "337": 1,
+  "332": 1,
+  "211": 1
+ },
+ "houses": {
+  "count": 607,
+  "median": 395000.0,
+  "p25": 270000.0,
+  "p75": 570000.0,
+  "min": 20000.0,
+  "max": 1383000.0
+ },
+ "houses_seller_business": {
+  "count": 227,
+  "median": 373000.0,
+  "p25": 240000.0,
+  "p75": 593725.0,
+  "min": 117000.0,
+  "max": 1165000.0
+ },
+ "houses_seller_person": {
+  "count": 380,
+  "median": 395000.0,
+  "p25": 297000.0,
+  "p75": 565000.0,
+  "min": 20000.0,
+  "max": 1383000.0
+ },
+ "condos": {
+  "count": 89,
+  "median": 174500.0,
+  "p25": 165000.0,
+  "p75": 195000.0,
+  "min": 125000.0,
+  "max": 340000.0
+ },
+ "condos_seller_business": {
+  "count": 10,
+  "median": 180500.0,
+  "p25": 156000.0,
+  "p75": 200000.0,
+  "min": 125000.0,
+  "max": 262000.0
+ },
+ "house_price_bands": {
+  "0-300000": 198,
+  "300000-400000": 113,
+  "400000-500000": 78,
+  "500000-600000": 89,
+  "600000-1000000000": 129
+ },
+ "houses_by_tax_district": {
+  "800": 291,
+  "100": 237,
+  "600": 79
+ },
+ "houses_by_quarter": {
+  "2025-Q4": {
+   "count": 113,
+   "median": 440000.0
+  },
+  "2026-Q1": {
+   "count": 141,
+   "median": 445000.0
+  },
+  "2026-Q2": {
+   "count": 169,
+   "median": 385000.0
+  },
+  "2026-Q3": {
+   "count": 145,
+   "median": 359000.0
+  },
+  "2026-Q4": {
+   "count": 39,
+   "median": 392500.0
+  }
+ },
+ "houses_by_seller": {
+  "other business": 182,
+  "D.R. Horton": 45,
+  "person": 380
+ },
+ "dr_horton_share_pct": 7.4,
+ "business_sellers_top": [
+  [
+   "LENNAR CAROLINAS",
+   70
+  ],
+  [
+   "DR HORTON",
+   44
+  ],
+  [
+   "WATERBRIDGE SC",
+   31
+  ],
+  [
+   "NVR",
+   27
+  ],
+  [
+   "DRB GROUP SOUTH CAROLINA",
+   10
+  ],
+  [
+   "RS PARKER HOMES",
+   8
+  ],
+  [
+   "JALEN REALTY",
+   2
+  ],
+  [
+   "HPA III ACQUISITIONS 1",
+   2
+  ],
+  [
+   "DAVCO PROPERTY SOLUTIONS",
+   2
+  ],
+  [
+   "RS GLOBAL",
+   1
+  ]
+ ],
+ "mode": "cdp"
+}

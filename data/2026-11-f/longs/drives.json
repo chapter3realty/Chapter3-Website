@@ -1,0 +1,42 @@
+{
+ "cherry_grove_pier": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.632676,33.828732?overview=false",
+  "minutes": 18.7,
+  "miles": 10.4
+ },
+ "main_street_ocean_drive": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.673529,33.821138?overview=false",
+  "minutes": 17.0,
+  "miles": 10.6
+ },
+ "mcleod_seacoast": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.663710,33.865730?overview=false",
+  "minutes": 11.6,
+  "miles": 7.0
+ },
+ "barefoot_landing": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.742440,33.799875?overview=false",
+  "minutes": 24.3,
+  "miles": 14.2
+ },
+ "grand_strand_medical": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.819470,33.758080?overview=false",
+  "minutes": 28.6,
+  "miles": 18.4
+ },
+ "skywheel_myrtle_beach": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.877355,33.693851?overview=false",
+  "minutes": 37.2,
+  "miles": 25.8
+ },
+ "airport_terminal": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.922789,33.681467?overview=false",
+  "minutes": 42.5,
+  "miles": 29.3
+ },
+ "coastal_grand_mall": {
+  "url": "https://router.project-osrm.org/route/v1/driving/-78.733056,33.938611;-78.9371,33.7382?overview=false",
+  "minutes": 35.7,
+  "miles": 26.9
+ }
+}

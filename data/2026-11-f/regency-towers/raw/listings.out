@@ -1,0 +1,107 @@
+{
+ "pulled": "2026-11-17T07:04:08.276181+00:00",
+ "refreshedAt": "2026-11-17T07:00:05.151Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 4,
+ "at_504": 4,
+ "beds": {
+  "2": 2,
+  "3": 2
+ },
+ "asking": {
+  "all": {
+   "median": 409450.0,
+   "min": 127000,
+   "max": 519900
+  },
+  "2": {
+   "n": 2,
+   "median": 235450.0,
+   "min": 127000,
+   "max": 343900,
+   "sqft_median": 1305.0,
+   "sqft_range": [
+    1260,
+    1350
+   ]
+  },
+  "3": {
+   "n": 2,
+   "median": 497450.0,
+   "min": 475000,
+   "max": 519900,
+   "sqft_median": 1662.5,
+   "sqft_range": [
+    1600,
+    1725
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 3,
+   "median_at_or_under": 1050,
+   "lowest_at_or_under": 975,
+   "highest_at_or_under": 1350,
+   "middle_half": null
+  },
+  "zero_or_blank": 1,
+  "2": {
+   "n": 2,
+   "median_at_or_under": 1012.5,
+   "lowest_at_or_under": 975,
+   "highest_at_or_under": 1050,
+   "middle_half": null
+  },
+  "3": {
+   "n": 1,
+   "median_at_or_under": 1350,
+   "lowest_at_or_under": 1350,
+   "highest_at_or_under": 1350,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 3,
+  "rentals_allowed": 3,
+  "long_term_rental_allowed": 2,
+  "vacation_rental_program": 1,
+  "has_rental_income": 1,
+  "furnished": 3,
+  "pets_allowed": 3,
+  "oceanfront_unit": 4,
+  "ocean_view": 3,
+  "oceanfront_building": 3,
+  "high_floor_unit": 2,
+  "low_floor_unit": 1,
+  "top_floor": 0,
+  "balcony": 4,
+  "parking_garage": 0,
+  "covered_parking": 1,
+  "indoor_pool": 0,
+  "sauna": 0,
+  "elevator_building": 4,
+  "flood_zone": 1,
+  "hoa_includes_trash": 4,
+  "hoa_includes_utilities": 3,
+  "hoa_includes_water_sewer": 3,
+  "hoa_includes_insurance": 4,
+  "hoa_includes_internet": 2,
+  "hoa_includes_pest": 3,
+  "hoa_includes_cable": 3,
+  "hoa_includes_electric": 0,
+  "security_service": 4
+ },
+ "year_built": {
+  "1974": 4
+ },
+ "flood_zone_field": {
+  "None": 4
+ },
+ "subdivision_field": {
+  "REGENCY TOWERS": 3,
+  "Regency Towers": 1
+ }
+}

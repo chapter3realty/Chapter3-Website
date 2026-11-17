@@ -1,0 +1,70 @@
+{
+ "rule": "Photo records for /submarkets/myrtle-beach/windsor-plantation/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "windsor-plantation",
+   "file": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-600w.webp",
+    "1200": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Windsor Plantation from above",
+   "what": "Windsor Plantation from above (USDA NAIP aerial photo, 2023): curving streets of houses with dark ponds between the street loops, the Berwick townhomes along the top, a round island at the entrance road and what looks like a pool beside a parking area.",
+   "caption": "Windsor Plantation from the air. The Berwick townhomes are at the top, and ponds sit between the street loops.",
+   "alt": "Aerial photo of Windsor Plantation near Myrtle Beach: curving streets of houses, ponds between the street loops, and rows of townhomes along the top, with forest around",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Windsor Plantation"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023 (flight tile the 2023 tile the service returns for this frame), natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling) on 2026-11-17; the exact request is in source_request. The image service identify call at the frame returns the 2023 tile.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service (4:3)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8794638.9%2C3981531.8%2C-8792938.9%2C3982806.8&bboxSR=3857&imageSR=3857&size=1800%2C1350&format=jpg&interpolation=RSP_CubicConvolution&f=image&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -79.00359,
+     33.64723,
+     -78.98831,
+     33.65677
+    ],
+    "ground_m_per_px_1200w": 1.28
+   },
+   "original_size": "1800x1350 (NAIP export), then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/myrtle-beach/windsor-plantation/ on 2026-11-17. The frame is the whole community with forest around it. A different community under construction shows at the far upper left, and an office or care building at the right edge; neither is named. No person; no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/windsor-plantation/windsor-plantation-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "The 1x1, 4x3 and 16x9 share crops are center crops of the same 1800x1350 export."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+ "rule": "Yearly property tax in the City of Myrtle Beach, tax year 2026, at 6 and 4 percent, at three prices. Method and levy from ledger batches/2026-11-a/invest-condos/facts.md rows 20, 21 and C7:\n6%: price x 0.06 x 254.6 mills. 4%: price x 0.04 x (254.6 - 109.1 school operations = 145.5 mills), less the 53.4% credit on the city part (83.4 mills).\nNo county fee, no special district. Writes tax.json.",
+ "tax": {
+  "150000": {
+   "six": 2291.4,
+   "four": 605.79
+  },
+  "200000": {
+   "six": 3055.2,
+   "four": 807.72
+  },
+  "330000": {
+   "six": 5041.08,
+   "four": 1332.73
+  }
+ }
+}

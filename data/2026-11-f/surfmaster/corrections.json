@@ -1,0 +1,4 @@
+{"source":"Blog-Brain batches/2026-11-f/surfmaster/VERIFY.md rows 4, 5, 7, 16 (verifier, 2026-11-17): the pull scripts' LegalDescr patterns missed two units (SURFMASTER HPR UNIT 204 in tower I, SURFMASTER II UNIT 308 in tower II), found by a point query at each tower's center. county.json is kept as pulled; the spec applies these.",
+ "units":{"I":73,"II":72},"units_total":145,
+ "floor_fix":{"I":{"2":7},"II":{"3":7}},
+ "numbered_units":{"I":67,"II":66}}

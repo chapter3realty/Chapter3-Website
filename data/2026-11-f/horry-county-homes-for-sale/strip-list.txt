@@ -1,0 +1,42 @@
+# section 1: newest houses by town (houses listed in the last 7 days)
+city=Myrtle%20Beach&type=house&domMax=7
+city=Conway&type=house&domMax=7
+city=Longs&type=house&domMax=7
+zip=29579&type=house&domMax=7
+city=Little%20River&type=house&domMax=7
+# section 2: price bands, houses
+city=Longs&type=house&max=299999
+city=Loris&type=house&max=299999
+city=Myrtle%20Beach&type=house&max=299999
+city=Little%20River&type=house&min=300000&max=499999
+zip=29579&type=house&min=300000&max=499999
+city=Surfside%20Beach&type=house&min=300000&max=499999
+city=North%20Myrtle%20Beach&type=house&min=500000
+city=Myrtle%20Beach&type=house&min=500000
+# bedrooms
+zip=29579&type=house&beds=5
+city=Longs&type=house&beds=5
+# new construction
+city=Longs&type=house&has=new_construction
+city=Loris&type=house&has=new_construction
+zip=29579&type=house&has=new_construction
+# what the place has
+city=Myrtle%20Beach&type=house&waterfront=1
+city=Longs&type=house&waterfront=1
+city=Little%20River&type=house&waterfront=1
+city=Myrtle%20Beach&type=house&has=golf_community
+city=North%20Myrtle%20Beach&type=house&has=golf_community
+zip=29579&type=house&has=golf_community
+city=Loris&type=house&lotMin=1
+city=Aynor&type=house&lotMin=1
+city=Longs&type=house&lotMin=1
+city=Myrtle%20Beach&type=house&has=active_adult
+city=Little%20River&type=house&has=active_adult
+# condos and townhouses
+city=Myrtle%20Beach&type=condo&has=oceanfront_unit
+city=North%20Myrtle%20Beach&type=condo&has=oceanfront_unit
+near=33.5995,-79.0045&miles=2&type=condo
+city=Little%20River&type=condo
+city=Surfside%20Beach&type=condo
+# garden city houses
+near=33.5995,-79.0045&miles=2&type=house

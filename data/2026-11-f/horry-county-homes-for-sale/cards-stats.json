@@ -1,0 +1,158 @@
+{
+ "cards": 2691,
+ "by_type": {
+  "house": 1514,
+  "condo": 996,
+  "townhouse": 181
+ },
+ "house": {
+  "cards": 1514,
+  "asking": {
+   "n": 1514,
+   "median": 380000.0,
+   "p25": 296990,
+   "p75": 519000,
+   "min": 120000,
+   "max": 6609000
+  },
+  "hoa_monthly_positive": {
+   "n": 1160,
+   "median": 89.0,
+   "p25": 65,
+   "p75": 119,
+   "min": 5,
+   "max": 898
+  },
+  "hoa_zero": 351,
+  "hoa_missing": 3,
+  "new_construction": 0
+ },
+ "condo": {
+  "cards": 996,
+  "asking": {
+   "n": 996,
+   "median": 259000.0,
+   "p25": 159900,
+   "p75": 384900,
+   "min": 10000,
+   "max": 2500000
+  },
+  "hoa_monthly_positive": {
+   "n": 995,
+   "median": 692,
+   "p25": 481,
+   "p75": 1014,
+   "min": 90,
+   "max": 3312
+  },
+  "hoa_zero": 0,
+  "hoa_missing": 1,
+  "new_construction": 0
+ },
+ "townhouse": {
+  "cards": 181,
+  "asking": {
+   "n": 181,
+   "median": 267490,
+   "p25": 232400,
+   "p75": 339000,
+   "min": 113000,
+   "max": 4998000
+  },
+  "hoa_monthly_positive": {
+   "n": 164,
+   "median": 275.5,
+   "p25": 173,
+   "p75": 390,
+   "min": 26,
+   "max": 850
+  },
+  "hoa_zero": 17,
+  "hoa_missing": 0,
+  "new_construction": 0
+ },
+ "condo_hoa_by_beds": {
+  "1": {
+   "n": 206,
+   "median": 840.0,
+   "p25": 534,
+   "p75": 951,
+   "min": 159,
+   "max": 2095
+  },
+  "2": {
+   "n": 379,
+   "median": 589,
+   "p25": 446,
+   "p75": 1003,
+   "min": 90,
+   "max": 2034
+  },
+  "3": {
+   "n": 275,
+   "median": 725,
+   "p25": 525,
+   "p75": 1256,
+   "min": 200,
+   "max": 2123
+  }
+ },
+ "house_hoa_by_city": {
+  "Myrtle Beach": {
+   "n": 580,
+   "median": 100.0,
+   "p25": 80,
+   "p75": 137,
+   "min": 5,
+   "max": 811
+  },
+  "Conway": {
+   "n": 231,
+   "median": 75,
+   "p25": 54,
+   "p75": 95,
+   "min": 9,
+   "max": 364
+  },
+  "Longs": {
+   "n": 152,
+   "median": 80.0,
+   "p25": 65,
+   "p75": 103,
+   "min": 12,
+   "max": 341
+  },
+  "Loris": {
+   "n": 27,
+   "median": 78,
+   "p25": 61,
+   "p75": 90,
+   "min": 35,
+   "max": 149
+  },
+  "Little River": {
+   "n": 61,
+   "median": 105,
+   "p25": 74,
+   "p75": 124,
+   "min": 17,
+   "max": 397
+  },
+  "North Myrtle Beach": {
+   "n": 29,
+   "median": 192,
+   "p25": 100,
+   "p75": 231,
+   "min": 13,
+   "max": 898
+  },
+  "Surfside Beach": {
+   "n": 19,
+   "median": 75,
+   "p25": 60,
+   "p75": 167,
+   "min": 40,
+   "max": 489
+  }
+ }
+}

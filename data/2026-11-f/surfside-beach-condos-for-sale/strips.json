@@ -1,0 +1,413 @@
+{
+ "read": "2026-11-17T06:19:27.443921+00:00",
+ "strips": {
+  "newest": {
+   "q": "type=condo&city=Surfside+Beach",
+   "total": 83
+  },
+  "dom14": {
+   "q": "type=condo&city=Surfside+Beach&domMax=14",
+   "total": 4
+  },
+  "under75": {
+   "q": "type=condo&city=Surfside+Beach&max=75000",
+   "total": 1
+  },
+  "under100": {
+   "q": "type=condo&city=Surfside+Beach&max=100000",
+   "total": 1
+  },
+  "under150": {
+   "q": "type=condo&city=Surfside+Beach&max=150000",
+   "total": 17
+  },
+  "150-300": {
+   "q": "type=condo&city=Surfside+Beach&min=150000&max=300000",
+   "total": 48
+  },
+  "300plus": {
+   "q": "type=condo&city=Surfside+Beach&min=300000",
+   "total": 18
+  },
+  "300-500": {
+   "q": "type=condo&city=Surfside+Beach&min=300000&max=500000",
+   "total": 9
+  },
+  "500plus": {
+   "q": "type=condo&city=Surfside+Beach&min=500000",
+   "total": 9
+  },
+  "1mplus": {
+   "q": "type=condo&city=Surfside+Beach&min=1000000",
+   "total": 0
+  },
+  "beds1": {
+   "q": "type=condo&city=Surfside+Beach&beds=1",
+   "total": 80
+  },
+  "beds2": {
+   "q": "type=condo&city=Surfside+Beach&beds=2",
+   "total": 72
+  },
+  "beds3": {
+   "q": "type=condo&city=Surfside+Beach&beds=3",
+   "total": 24
+  },
+  "beds4": {
+   "q": "type=condo&city=Surfside+Beach&beds=4",
+   "total": 0
+  },
+  "oceanfront_unit": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit",
+   "total": 10
+  },
+  "oceanfront_building": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_building",
+   "total": 10
+  },
+  "oceanview_unit": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanview_unit",
+   "total": 8
+  },
+  "water_ocean": {
+   "q": "type=condo&city=Surfside+Beach&has=water_ocean",
+   "total": 10
+  },
+  "oceanfront_unit_under300": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit&max=300000",
+   "total": 0
+  },
+  "oceanfront_unit_under250": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit&max=250000",
+   "total": 0
+  },
+  "oceanfront_unit_2bed": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit&beds=2",
+   "total": 10
+  },
+  "oceanfront_unit_3bed": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit&beds=3",
+   "total": 5
+  },
+  "oceanfront_unit_500plus": {
+   "q": "type=condo&city=Surfside+Beach&has=oceanfront_unit&min=500000",
+   "total": 9
+  },
+  "hoa_water": {
+   "q": "type=condo&city=Surfside+Beach&has=hoa_includes_water_sewer",
+   "total": 67
+  },
+  "hoa500": {
+   "q": "type=condo&city=Surfside+Beach&hoaMax=500",
+   "total": 65
+  },
+  "hoa400": {
+   "q": "type=condo&city=Surfside+Beach&hoaMax=400",
+   "total": 43
+  },
+  "hoa600": {
+   "q": "type=condo&city=Surfside+Beach&hoaMax=600",
+   "total": 68
+  },
+  "hoa300": {
+   "q": "type=condo&city=Surfside+Beach&hoaMax=300",
+   "total": 7
+  },
+  "hoa350": {
+   "q": "type=condo&city=Surfside+Beach&hoaMax=350",
+   "total": 15
+  },
+  "under125": {
+   "q": "type=condo&city=Surfside+Beach&max=125000",
+   "total": 5
+  },
+  "under200": {
+   "q": "type=condo&city=Surfside+Beach&max=200000",
+   "total": 55
+  },
+  "200-300": {
+   "q": "type=condo&city=Surfside+Beach&min=200000&max=300000",
+   "total": 11
+  },
+  "under250": {
+   "q": "type=condo&city=Surfside+Beach&max=250000",
+   "total": 65
+  },
+  "250-400": {
+   "q": "type=condo&city=Surfside+Beach&min=250000&max=400000",
+   "total": 4
+  },
+  "400plus": {
+   "q": "type=condo&city=Surfside+Beach&min=400000",
+   "total": 14
+  },
+  "beds3p": {
+   "q": "type=condo&city=Surfside+Beach&beds=3",
+   "total": 24
+  },
+  "beds2only": {
+   "q": "type=condo&city=Surfside+Beach&beds=2&max=200000",
+   "total": 44
+  },
+  "has_ocean_view": {
+   "q": "type=condo&city=Surfside+Beach&has=ocean_view",
+   "total": 14
+  },
+  "lazy_river": {
+   "q": "type=condo&city=Surfside+Beach&has=lazy_river",
+   "total": 1
+  },
+  "lazy_river_building": {
+   "q": "type=condo&city=Surfside+Beach&has=lazy_river_building",
+   "total": 0
+  },
+  "indoor_pool": {
+   "q": "type=condo&city=Surfside+Beach&has=indoor_pool",
+   "total": 3
+  },
+  "outdoor_pool": {
+   "q": "type=condo&city=Surfside+Beach&has=outdoor_pool",
+   "total": 69
+  },
+  "resort_pool": {
+   "q": "type=condo&city=Surfside+Beach&has=resort_pool",
+   "total": 0
+  },
+  "golf_community": {
+   "q": "type=condo&city=Surfside+Beach&has=golf_community",
+   "total": 0
+  },
+  "on_golf_course": {
+   "q": "type=condo&city=Surfside+Beach&has=on_golf_course",
+   "total": 0
+  },
+  "golf_view": {
+   "q": "type=condo&city=Surfside+Beach&has=golf_view",
+   "total": 0
+  },
+  "elevator_building": {
+   "q": "type=condo&city=Surfside+Beach&has=elevator_building",
+   "total": 5
+  },
+  "pets": {
+   "q": "type=condo&city=Surfside+Beach&has=pets_allowed",
+   "total": 68
+  },
+  "str": {
+   "q": "type=condo&city=Surfside+Beach&has=str_allowed",
+   "total": 50
+  },
+  "vrp": {
+   "q": "type=condo&city=Surfside+Beach&has=vacation_rental_program",
+   "total": 22
+  },
+  "gated": {
+   "q": "type=condo&city=Surfside+Beach&has=gated",
+   "total": 3
+  },
+  "furnished": {
+   "q": "type=condo&city=Surfside+Beach&has=furnished",
+   "total": 37
+  },
+  "walk_to_beach": {
+   "q": "type=condo&city=Surfside+Beach&has=walk_to_beach",
+   "total": 19
+  },
+  "icw_community": {
+   "q": "type=condo&city=Surfside+Beach&has=icw_community",
+   "total": 0
+  },
+  "water_view": {
+   "q": "type=condo&city=Surfside+Beach&has=water_view",
+   "total": 32
+  },
+  "marsh_view": {
+   "q": "type=condo&city=Surfside+Beach&has=marsh_view",
+   "total": 0
+  },
+  "boat_slip": {
+   "q": "type=condo&city=Surfside+Beach&has=boat_slip",
+   "total": 0
+  },
+  "community_dock": {
+   "q": "type=condo&city=Surfside+Beach&has=community_dock",
+   "total": 4
+  },
+  "waterfront_community": {
+   "q": "type=condo&city=Surfside+Beach&has=waterfront_community",
+   "total": 10
+  },
+  "penthouse": {
+   "q": "type=condo&city=Surfside+Beach&has=penthouse",
+   "total": 0
+  },
+  "price_reduced": {
+   "q": "type=condo&city=Surfside+Beach&has=price_reduced",
+   "total": 47
+  },
+  "new_construction": {
+   "q": "type=condo&city=Surfside+Beach&has=new_construction",
+   "total": 0
+  },
+  "still_built": {
+   "q": "type=condo&city=Surfside+Beach&has=still_being_built",
+   "total": 0
+  },
+  "new2022": {
+   "q": "type=condo&city=Surfside+Beach&yearMin=2022",
+   "total": 0
+  },
+  "new2015": {
+   "q": "type=condo&city=Surfside+Beach&yearMin=2015",
+   "total": 0
+  },
+  "near_pier": {
+   "q": "type=condo&city=Surfside+Beach&near=33.6049921,-78.9717534&miles=1",
+   "total": 19
+  },
+  "near_pier_2": {
+   "q": "type=condo&city=Surfside+Beach&near=33.6049921,-78.9717534&miles=2",
+   "total": 78
+  },
+  "near_pier_05": {
+   "q": "type=condo&city=Surfside+Beach&near=33.6049921,-78.9717534&miles=0.5",
+   "total": 7
+  },
+  "tennis": {
+   "q": "type=condo&city=Surfside+Beach&has=tennis",
+   "total": 21
+  },
+  "fitness": {
+   "q": "type=condo&city=Surfside+Beach&has=fitness_center",
+   "total": 1
+  },
+  "beach_access": {
+   "q": "type=condo&city=Surfside+Beach&has=beach_access",
+   "total": 0
+  },
+  "balcony": {
+   "q": "type=condo&city=Surfside+Beach&has=balcony",
+   "total": 51
+  },
+  "low_rise": {
+   "q": "type=condo&city=Surfside+Beach&has=low_rise",
+   "total": 77
+  },
+  "high_rise": {
+   "q": "type=condo&city=Surfside+Beach&has=high_rise",
+   "total": 0
+  },
+  "ocean_view": {
+   "q": "type=condo&city=Surfside+Beach&has=ocean_view",
+   "total": 14
+  },
+  "sub:Golf Colony at Deerfield": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Golf+Colony+at+Deerfield",
+   "total": 23
+  },
+  "sub:Deerfield": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Deerfield",
+   "total": 26
+  },
+  "sub:Hampton Greens": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Hampton+Greens",
+   "total": 3
+  },
+  "sub:Retreat at Glenns Bay": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Retreat+at+Glenns+Bay",
+   "total": 8
+  },
+  "sub:Glenns Bay": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Glenns+Bay",
+   "total": 8
+  },
+  "sub:SOUTH BAY LAKES": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SOUTH+BAY+LAKES",
+   "total": 8
+  },
+  "sub:SOUTHBRIDGE": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SOUTHBRIDGE",
+   "total": 9
+  },
+  "sub:Grand Palms": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Grand+Palms",
+   "total": 6
+  },
+  "sub:Plantation": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Plantation",
+   "total": 7
+  },
+  "sub:SEA SHADOW": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SEA+SHADOW",
+   "total": 3
+  },
+  "sub:Floral Villas": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Floral+Villas",
+   "total": 2
+  },
+  "sub:SOUTH BAY EAST": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SOUTH+BAY+EAST",
+   "total": 2
+  },
+  "sub:Villas On The Green": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Villas+On+The+Green",
+   "total": 2
+  },
+  "sub:Admiral Quarters": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Admiral+Quarters",
+   "total": 2
+  },
+  "sub:TRADEWINDS": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=TRADEWINDS",
+   "total": 2
+  },
+  "sub:Beachwalk": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Beachwalk",
+   "total": 1
+  },
+  "sub:Cypress Point": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Cypress+Point",
+   "total": 1
+  },
+  "sub:Colony": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Colony",
+   "total": 24
+  },
+  "sub:Islander": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Islander",
+   "total": 1
+  },
+  "sub:SURFWATCH": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SURFWATCH",
+   "total": 1
+  },
+  "sub:SURFBYSEA": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=SURFBYSEA",
+   "total": 1
+  },
+  "sub:Channel Marker": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Channel+Marker",
+   "total": 1
+  },
+  "sub:Dolphin Cay": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Dolphin+Cay",
+   "total": 1
+  },
+  "sub:Maddington": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Maddington",
+   "total": 1
+  },
+  "sub:Ocean Club": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Ocean+Club",
+   "total": 1
+  },
+  "sub:Hermitage": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Hermitage",
+   "total": 1
+  },
+  "sub:Lighthouse": {
+   "q": "type=condo&city=Surfside+Beach&subdivision=Lighthouse",
+   "total": 1
+  }
+ }
+}

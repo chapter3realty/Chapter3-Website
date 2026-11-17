@@ -1,0 +1,8 @@
+[out:json][timeout:60];
+(
+ nwr(around:9000,33.938611,-78.733056)["leisure"~"golf_course|park|nature_reserve|marina|sports_centre|playground"]["name"];
+ nwr(around:9000,33.938611,-78.733056)["tourism"]["name"];
+ nwr(around:9000,33.938611,-78.733056)["amenity"~"library|community_centre|fire_station|post_office"]["name"];
+ nwr(around:9000,33.938611,-78.733056)["waterway"~"river|canal"]["name"];
+);
+out tags center;

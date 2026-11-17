@@ -1,0 +1,487 @@
+{
+ "read": "2026-11-17T06:16:03.129482+00:00",
+ "rule": "Oceanfront or not, for the condos for sale in Surfside Beach (MLS city), in aggregate. \"Oceanfront building\" = the site's feature key\noceanfront_building (the building sits on the ocean); \"oceanfront unit\" = oceanfront_unit (the unit faces the ocean). Slices by price like pull_listings.py,\njoins the MLS numbers of each group to the listing cards in memory, and keeps only counts, price, size and HOA fee quartiles by group and bedrooms.\nNot kept: an MLS number, address or single listing. Run: python3 -I pull_oceanfront.py <this dir>. Writes oceanfront.json.",
+ "all": {
+  "n": 83,
+  "price": {
+   "n": 83,
+   "min": 10000,
+   "p25": 155000.0,
+   "median": 189000,
+   "p75": 224999.0,
+   "max": 769000
+  },
+  "hoa": {
+   "n": 83,
+   "min": 90,
+   "p25": 360.0,
+   "median": 400,
+   "p75": 479.0,
+   "max": 1269
+  },
+  "year_built_median": 1987,
+  "by_beds": {
+   "0": {
+    "n": 3,
+    "price": {
+     "n": 3,
+     "min": 111900,
+     "p25": 111900,
+     "median": 114900,
+     "p75": 114999,
+     "max": 114999
+    },
+    "sqft": {
+     "n": 3,
+     "min": 606,
+     "p25": 606,
+     "median": 606,
+     "p75": 660,
+     "max": 660
+    },
+    "hoa": {
+     "n": 3,
+     "min": 265,
+     "p25": 265,
+     "median": 346,
+     "p75": 346,
+     "max": 346
+    }
+   },
+   "1": {
+    "n": 8,
+    "price": {
+     "n": 8,
+     "min": 109000,
+     "p25": 131450.0,
+     "median": 143700.0,
+     "p75": 158000.0,
+     "max": 163900
+    },
+    "sqft": {
+     "n": 8,
+     "min": 624,
+     "p25": 727.0,
+     "median": 784.0,
+     "p75": 847.25,
+     "max": 1092
+    },
+    "hoa": {
+     "n": 8,
+     "min": 299,
+     "p25": 306.75,
+     "median": 354.0,
+     "p75": 406.75,
+     "max": 418
+    }
+   },
+   "2": {
+    "n": 48,
+    "price": {
+     "n": 48,
+     "min": 10000,
+     "p25": 156225.0,
+     "median": 182950.0,
+     "p75": 213650.0,
+     "max": 550000
+    },
+    "sqft": {
+     "n": 48,
+     "min": 762,
+     "p25": 908.0,
+     "median": 960.5,
+     "p75": 1098.75,
+     "max": 1276
+    },
+    "hoa": {
+     "n": 48,
+     "min": 90,
+     "p25": 360.5,
+     "median": 388.0,
+     "p75": 473.0,
+     "max": 1208
+    }
+   },
+   "3": {
+    "n": 24,
+    "price": {
+     "n": 24,
+     "min": 171000,
+     "p25": 195675.0,
+     "median": 221000.0,
+     "p75": 443975.0,
+     "max": 769000
+    },
+    "sqft": {
+     "n": 24,
+     "min": 1008,
+     "p25": 1170.0,
+     "median": 1300.0,
+     "p75": 1300.0,
+     "max": 1510
+    },
+    "hoa": {
+     "n": 24,
+     "min": 330,
+     "p25": 401.0,
+     "median": 449.0,
+     "p75": 833.75,
+     "max": 1269
+    }
+   },
+   "4plus": {
+    "n": 0
+   }
+  }
+ },
+ "oceanfront_building": {
+  "n": 10,
+  "price": {
+   "n": 10,
+   "min": 449000,
+   "p25": 532500.0,
+   "median": 562000.0,
+   "p75": 719000.0,
+   "max": 769000
+  },
+  "hoa": {
+   "n": 10,
+   "min": 735,
+   "p25": 800.75,
+   "median": 943.5,
+   "p75": 1207.25,
+   "max": 1269
+  },
+  "year_built_median": 1985.0,
+  "by_beds": {
+   "0": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "1": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "2": {
+    "n": 5,
+    "price": {
+     "n": 5,
+     "min": 449000,
+     "p25": 479500.0,
+     "median": 540000,
+     "p75": 547500.0,
+     "max": 550000
+    },
+    "sqft": {
+     "n": 5,
+     "min": 825,
+     "p25": 913.5,
+     "median": 1008,
+     "p75": 1014.0,
+     "max": 1020
+    },
+    "hoa": {
+     "n": 5,
+     "min": 735,
+     "p25": 770.5,
+     "median": 855,
+     "p75": 1207.5,
+     "max": 1208
+    }
+   },
+   "3": {
+    "n": 5,
+    "price": {
+     "n": 5,
+     "min": 574000,
+     "p25": 584500.0,
+     "median": 719000,
+     "p75": 744000.0,
+     "max": 769000
+    },
+    "sqft": {
+     "n": 5,
+     "min": 1008,
+     "p25": 1101.5,
+     "median": 1400,
+     "p75": 1455.0,
+     "max": 1510
+    },
+    "hoa": {
+     "n": 5,
+     "min": 785,
+     "p25": 817.5,
+     "median": 1032,
+     "p75": 1150.5,
+     "max": 1269
+    }
+   },
+   "4plus": {
+    "n": 0
+   }
+  }
+ },
+ "not_oceanfront_building": {
+  "n": 73,
+  "price": {
+   "n": 73,
+   "min": 10000,
+   "p25": 153500.0,
+   "median": 179900,
+   "p75": 204950.0,
+   "max": 457000
+  },
+  "hoa": {
+   "n": 73,
+   "min": 90,
+   "p25": 357.5,
+   "median": 394,
+   "p75": 437.0,
+   "max": 1100
+  },
+  "year_built_median": 1987,
+  "by_beds": {
+   "0": {
+    "n": 3,
+    "price": {
+     "n": 3,
+     "min": 111900,
+     "p25": 111900,
+     "median": 114900,
+     "p75": 114999,
+     "max": 114999
+    },
+    "sqft": {
+     "n": 3,
+     "min": 606,
+     "p25": 606,
+     "median": 606,
+     "p75": 660,
+     "max": 660
+    },
+    "hoa": {
+     "n": 3,
+     "min": 265,
+     "p25": 265,
+     "median": 346,
+     "p75": 346,
+     "max": 346
+    }
+   },
+   "1": {
+    "n": 8,
+    "price": {
+     "n": 8,
+     "min": 109000,
+     "p25": 131450.0,
+     "median": 143700.0,
+     "p75": 158000.0,
+     "max": 163900
+    },
+    "sqft": {
+     "n": 8,
+     "min": 624,
+     "p25": 727.0,
+     "median": 784.0,
+     "p75": 847.25,
+     "max": 1092
+    },
+    "hoa": {
+     "n": 8,
+     "min": 299,
+     "p25": 306.75,
+     "median": 354.0,
+     "p75": 406.75,
+     "max": 418
+    }
+   },
+   "2": {
+    "n": 43,
+    "price": {
+     "n": 43,
+     "min": 10000,
+     "p25": 154000.0,
+     "median": 178000,
+     "p75": 199900.0,
+     "max": 429900
+    },
+    "sqft": {
+     "n": 43,
+     "min": 762,
+     "p25": 908.0,
+     "median": 925,
+     "p75": 1100.0,
+     "max": 1276
+    },
+    "hoa": {
+     "n": 43,
+     "min": 90,
+     "p25": 359.0,
+     "median": 384,
+     "p75": 437.0,
+     "max": 890
+    }
+   },
+   "3": {
+    "n": 19,
+    "price": {
+     "n": 19,
+     "min": 171000,
+     "p25": 189000.0,
+     "median": 209999,
+     "p75": 224999.0,
+     "max": 457000
+    },
+    "sqft": {
+     "n": 19,
+     "min": 1104,
+     "p25": 1170.0,
+     "median": 1300,
+     "p75": 1300.0,
+     "max": 1451
+    },
+    "hoa": {
+     "n": 19,
+     "min": 330,
+     "p25": 400.0,
+     "median": 415,
+     "p75": 454.0,
+     "max": 1100
+    }
+   },
+   "4plus": {
+    "n": 0
+   }
+  }
+ },
+ "oceanfront_unit": {
+  "n": 10,
+  "price": {
+   "n": 10,
+   "min": 449000,
+   "p25": 532500.0,
+   "median": 562000.0,
+   "p75": 719000.0,
+   "max": 769000
+  },
+  "hoa": {
+   "n": 10,
+   "min": 735,
+   "p25": 800.75,
+   "median": 943.5,
+   "p75": 1207.25,
+   "max": 1269
+  },
+  "year_built_median": 1985.0,
+  "by_beds": {
+   "0": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "1": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "2": {
+    "n": 5,
+    "price": {
+     "n": 5,
+     "min": 449000,
+     "p25": 479500.0,
+     "median": 540000,
+     "p75": 547500.0,
+     "max": 550000
+    },
+    "sqft": {
+     "n": 5,
+     "min": 825,
+     "p25": 913.5,
+     "median": 1008,
+     "p75": 1014.0,
+     "max": 1020
+    },
+    "hoa": {
+     "n": 5,
+     "min": 735,
+     "p25": 770.5,
+     "median": 855,
+     "p75": 1207.5,
+     "max": 1208
+    }
+   },
+   "3": {
+    "n": 5,
+    "price": {
+     "n": 5,
+     "min": 574000,
+     "p25": 584500.0,
+     "median": 719000,
+     "p75": 744000.0,
+     "max": 769000
+    },
+    "sqft": {
+     "n": 5,
+     "min": 1008,
+     "p25": 1101.5,
+     "median": 1400,
+     "p75": 1455.0,
+     "max": 1510
+    },
+    "hoa": {
+     "n": 5,
+     "min": 785,
+     "p25": 817.5,
+     "median": 1032,
+     "p75": 1150.5,
+     "max": 1269
+    }
+   },
+   "4plus": {
+    "n": 0
+   }
+  }
+ },
+ "oceanfront_building_not_unit": {
+  "n": 0,
+  "price": null,
+  "hoa": null,
+  "year_built_median": null,
+  "by_beds": {
+   "0": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "1": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "2": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "3": {
+    "n": 0,
+    "price": null,
+    "sqft": null,
+    "hoa": null
+   },
+   "4plus": {
+    "n": 0
+   }
+  }
+ }
+}

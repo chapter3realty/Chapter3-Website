@@ -1,0 +1,22 @@
+{
+ "read": "2026-11-17T06:23:05.160311+00:00",
+ "rule": "Flood zone under every condo for sale in Little River (MLS city), in aggregate. The map API's pins (price slices, as in pull_listings.py) give a\npoint for each listing; FEMA NFHL MapServer layer 28 gives FLD_ZONE and SFHA_TF at that point. Kept: counts by zone, by waterfront tag.\nNot kept: a point, address or MLS number. Run: python3 -I pull_flood.py <this dir>. Writes flood.json.",
+ "pins": 184,
+ "failed": 0,
+ "all": {
+  "X": 170,
+  "AE:SFHA": 14
+ },
+ "waterfront_tag": {
+  "X": 18
+ },
+ "not_waterfront_tag": {
+  "X": 152,
+  "AE:SFHA": 14
+ },
+ "in_high_risk": {
+  "all": 14,
+  "waterfront": 0,
+  "not_waterfront": 14
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "1A": {
+  "lots_and_houses": 92,
+  "houses": 87,
+  "landuse": {
+   "101": 87,
+   "100": 5
+  },
+  "lot_sqft_median": 6815,
+  "county_value_median": 466537.0,
+  "golf_edge": {
+   "('PINE LAKES; REVISED PARCEL 4', '389', 156.2)": 12
+  },
+  "sales_ge_half_county_value": [
+   535000.0,
+   535000.0,
+   537000.0,
+   539500.0,
+   540000.0,
+   549000.0,
+   600000.0
+  ],
+  "sales_all": 8
+ },
+ "1B": {
+  "lots_and_houses": 73,
+  "houses": 70,
+  "landuse": {
+   "109": 70,
+   "106": 2,
+   "100": 1
+  },
+  "lot_sqft_median": 2949.0,
+  "county_value_median": 358528.0,
+  "golf_edge": {},
+  "sales_ge_half_county_value": [
+   174000.0,
+   185000.0,
+   350922.0,
+   380000.0,
+   390000.0,
+   397000.0,
+   399900.0,
+   400000.0,
+   402500.0
+  ],
+  "sales_all": 9
+ },
+ "2": {
+  "lots_and_houses": 88,
+  "houses": 87,
+  "landuse": {
+   "101": 87,
+   "100": 1
+  },
+  "lot_sqft_median": 6993,
+  "county_value_median": 493874.0,
+  "golf_edge": {
+   "('PINE LAKES; REVISED PARCEL 4', '389', 156.2)": 20
+  },
+  "sales_ge_half_county_value": [
+   565000.0,
+   635000.0,
+   670000.0
+  ],
+  "sales_all": 3
+ },
+ "3": {
+  "lots_and_houses": 46,
+  "houses": 46,
+  "landuse": {
+   "101": 46
+  },
+  "lot_sqft_median": 8639.5,
+  "county_value_median": 478765.5,
+  "golf_edge": {
+   "('PINE LAKES; REVISED PARCEL 4', '389', 156.2)": 11
+  },
+  "sales_ge_half_county_value": [
+   640000.0,
+   650000.0,
+   680000.0
+  ],
+  "sales_all": 3
+ }
+}

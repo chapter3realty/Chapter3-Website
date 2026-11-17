@@ -1,0 +1,70 @@
+{
+ "rule": "Photo records for /submarkets/conway/homes-for-sale/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "conway-homes-for-sale",
+   "file": "images/2026-11-f/conway-homes-for-sale/conway-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/conway-homes-for-sale/conway-from-above-600w.webp",
+    "1200": "images/2026-11-f/conway-homes-for-sale/conway-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Downtown Conway and the Waccamaw River from above",
+   "what": "Downtown Conway from above (USDA NAIP aerial photo, 2023): the Main Street blocks with their flat roofs and parking lots, older tree-covered streets of houses to the north and west, and the Waccamaw River bending past the bridges on the east side.",
+   "caption": "Downtown Conway and the Waccamaw River from the air, with the older streets of houses behind Main Street.",
+   "alt": "Aerial photo of downtown Conway: blocks of flat-roofed shops and parking lots beside the Waccamaw River, with tree-covered streets of houses to the north and west and two bridges over the river",
+   "place": {
+    "city": "Conway",
+    "sublocation": "Downtown Conway"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023 (tiles m_3008501_ne_16_060_20230527 and neighbors, from the image service's primary mosaic at the frame), natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling) on 2026-11-17; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service (4:3)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8800662.1%2C4006235.6%2C-8798615.4%2C4007770.6&bboxSR=3857&imageSR=3857&size=1800%2C1350&format=jpg&interpolation=RSP_CubicConvolution&f=image&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -79.05769,
+     33.83177,
+     -79.03931,
+     33.84323
+    ],
+    "ground_m_per_px_1200w": 1.42
+   },
+   "original_size": "1800x1350 (NAIP export), then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/conway/homes-for-sale/ on 2026-11-17. Downtown blocks, houses, the river and two bridges. No person; no readable sign, plate or house number at page size. One boat on the river is too small to read.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/conway-homes-for-sale/conway-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/conway-homes-for-sale/conway-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/conway-homes-for-sale/conway-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "The 1x1, 4x3 and 16x9 share crops are center crops of the same 1800x1350 export."
+  }
+ ]
+}

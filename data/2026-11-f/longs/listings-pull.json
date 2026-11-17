@@ -1,0 +1,19 @@
+{
+ "pulled": "2026-11-17T07:13:22.626782+00:00",
+ "rule": "Homes for sale now in Longs (MLS city \"Longs\") in aggregate from the site's public map API and card lookup. Saves counts, ranges, subdivision names with counts. No address, MLS number, firm or photo is saved. Run: python3 -I pull_longs.py <dir>",
+ "totals": {
+  "house": 325,
+  "condo": 22,
+  "townhouse": 20,
+  "manufactured": 8,
+  "multi": 1,
+  "land": 38,
+  "all": 416
+ },
+ "mls_collected": {
+  "house": 325,
+  "condo": 22,
+  "townhouse": 20
+ },
+ "cards_with_price": 367
+}

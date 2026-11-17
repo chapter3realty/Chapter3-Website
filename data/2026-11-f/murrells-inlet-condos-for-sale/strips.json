@@ -1,0 +1,401 @@
+{
+ "read": "2026-11-17T06:26:43.803013+00:00",
+ "strips": {
+  "newest": {
+   "q": "type=condo&city=Murrells+Inlet",
+   "total": 130
+  },
+  "dom14": {
+   "q": "type=condo&city=Murrells+Inlet&domMax=14",
+   "total": 17
+  },
+  "dom30": {
+   "q": "type=condo&city=Murrells+Inlet&domMax=30",
+   "total": 30
+  },
+  "under150": {
+   "q": "type=condo&city=Murrells+Inlet&max=150000",
+   "total": 2
+  },
+  "under200": {
+   "q": "type=condo&city=Murrells+Inlet&max=200000",
+   "total": 27
+  },
+  "200-300": {
+   "q": "type=condo&city=Murrells+Inlet&min=200000&max=300000",
+   "total": 57
+  },
+  "150-300": {
+   "q": "type=condo&city=Murrells+Inlet&min=150000&max=300000",
+   "total": 82
+  },
+  "300plus": {
+   "q": "type=condo&city=Murrells+Inlet&min=300000",
+   "total": 46
+  },
+  "300-500": {
+   "q": "type=condo&city=Murrells+Inlet&min=300000&max=500000",
+   "total": 41
+  },
+  "500plus": {
+   "q": "type=condo&city=Murrells+Inlet&min=500000",
+   "total": 5
+  },
+  "under250": {
+   "q": "type=condo&city=Murrells+Inlet&max=250000",
+   "total": 65
+  },
+  "beds1": {
+   "q": "type=condo&city=Murrells+Inlet&beds=1",
+   "total": 130
+  },
+  "beds2": {
+   "q": "type=condo&city=Murrells+Inlet&beds=2",
+   "total": 121
+  },
+  "beds3": {
+   "q": "type=condo&city=Murrells+Inlet&beds=3",
+   "total": 82
+  },
+  "beds4": {
+   "q": "type=condo&city=Murrells+Inlet&beds=4",
+   "total": 9
+  },
+  "beds3_under300": {
+   "q": "type=condo&city=Murrells+Inlet&beds=3&max=300000",
+   "total": 47
+  },
+  "oceanfront_unit": {
+   "q": "type=condo&city=Murrells+Inlet&has=oceanfront_unit",
+   "total": 11
+  },
+  "oceanfront_building": {
+   "q": "type=condo&city=Murrells+Inlet&has=oceanfront_building",
+   "total": 12
+  },
+  "oceanview_unit": {
+   "q": "type=condo&city=Murrells+Inlet&has=oceanview_unit",
+   "total": 8
+  },
+  "water_ocean": {
+   "q": "type=condo&city=Murrells+Inlet&has=water_ocean",
+   "total": 18
+  },
+  "water_view": {
+   "q": "type=condo&city=Murrells+Inlet&has=water_view",
+   "total": 53
+  },
+  "marsh_view": {
+   "q": "type=condo&city=Murrells+Inlet&has=marsh_view",
+   "total": 10
+  },
+  "waterfront_community": {
+   "q": "type=condo&city=Murrells+Inlet&has=waterfront_community",
+   "total": 13
+  },
+  "icw_community": {
+   "q": "type=condo&city=Murrells+Inlet&has=icw_community",
+   "total": 1
+  },
+  "boat_slip": {
+   "q": "type=condo&city=Murrells+Inlet&has=boat_slip",
+   "total": 0
+  },
+  "community_dock": {
+   "q": "type=condo&city=Murrells+Inlet&has=community_dock",
+   "total": 0
+  },
+  "private_dock": {
+   "q": "type=condo&city=Murrells+Inlet&has=private_dock",
+   "total": 2
+  },
+  "on_water": {
+   "q": "type=condo&city=Murrells+Inlet&waterfront=1",
+   "total": 42
+  },
+  "hoa500": {
+   "q": "type=condo&city=Murrells+Inlet&hoaMax=500",
+   "total": 76
+  },
+  "hoa450": {
+   "q": "type=condo&city=Murrells+Inlet&hoaMax=450",
+   "total": 56
+  },
+  "hoa400": {
+   "q": "type=condo&city=Murrells+Inlet&hoaMax=400",
+   "total": 23
+  },
+  "hoa350": {
+   "q": "type=condo&city=Murrells+Inlet&hoaMax=350",
+   "total": 8
+  },
+  "hoa_water": {
+   "q": "type=condo&city=Murrells+Inlet&has=hoa_includes_water_sewer",
+   "total": 86
+  },
+  "golf_community": {
+   "q": "type=condo&city=Murrells+Inlet&has=golf_community",
+   "total": 35
+  },
+  "on_golf_course": {
+   "q": "type=condo&city=Murrells+Inlet&has=on_golf_course",
+   "total": 18
+  },
+  "golf_view": {
+   "q": "type=condo&city=Murrells+Inlet&has=golf_view",
+   "total": 21
+  },
+  "indoor_pool": {
+   "q": "type=condo&city=Murrells+Inlet&has=indoor_pool",
+   "total": 10
+  },
+  "outdoor_pool": {
+   "q": "type=condo&city=Murrells+Inlet&has=outdoor_pool",
+   "total": 109
+  },
+  "resort_pool": {
+   "q": "type=condo&city=Murrells+Inlet&has=resort_pool",
+   "total": 0
+  },
+  "lazy_river": {
+   "q": "type=condo&city=Murrells+Inlet&has=lazy_river",
+   "total": 0
+  },
+  "pets": {
+   "q": "type=condo&city=Murrells+Inlet&has=pets_allowed",
+   "total": 92
+  },
+  "str": {
+   "q": "type=condo&city=Murrells+Inlet&has=str_allowed",
+   "total": 31
+  },
+  "vrp": {
+   "q": "type=condo&city=Murrells+Inlet&has=vacation_rental_program",
+   "total": 20
+  },
+  "gated": {
+   "q": "type=condo&city=Murrells+Inlet&has=gated",
+   "total": 23
+  },
+  "furnished": {
+   "q": "type=condo&city=Murrells+Inlet&has=furnished",
+   "total": 49
+  },
+  "walk_to_beach": {
+   "q": "type=condo&city=Murrells+Inlet&has=walk_to_beach",
+   "total": 30
+  },
+  "elevator": {
+   "q": "type=condo&city=Murrells+Inlet&has=elevator_building",
+   "total": 21
+  },
+  "low_rise": {
+   "q": "type=condo&city=Murrells+Inlet&has=low_rise",
+   "total": 93
+  },
+  "tennis": {
+   "q": "type=condo&city=Murrells+Inlet&has=tennis",
+   "total": 33
+  },
+  "fitness": {
+   "q": "type=condo&city=Murrells+Inlet&has=fitness_center",
+   "total": 14
+  },
+  "price_reduced": {
+   "q": "type=condo&city=Murrells+Inlet&has=price_reduced",
+   "total": 61
+  },
+  "one_level": {
+   "q": "type=condo&city=Murrells+Inlet&has=one_level",
+   "total": 84
+  },
+  "first_floor": {
+   "q": "type=condo&city=Murrells+Inlet&has=first_floor",
+   "total": 130
+  },
+  "end_unit": {
+   "q": "type=condo&city=Murrells+Inlet&has=end_unit",
+   "total": 41
+  },
+  "garage": {
+   "q": "type=condo&city=Murrells+Inlet&has=garage",
+   "total": 30
+  },
+  "new2015": {
+   "q": "type=condo&city=Murrells+Inlet&yearMin=2015",
+   "total": 18
+  },
+  "new2005": {
+   "q": "type=condo&city=Murrells+Inlet&yearMin=2005",
+   "total": 47
+  },
+  "new2000": {
+   "q": "type=condo&city=Murrells+Inlet&yearMin=2000",
+   "total": 72
+  },
+  "new_construction": {
+   "q": "type=condo&city=Murrells+Inlet&has=new_construction",
+   "total": 16
+  },
+  "near_marshwalk": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.55789,-79.03186&miles=1",
+   "total": 23
+  },
+  "near_marshwalk_2": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.55789,-79.03186&miles=2",
+   "total": 36
+  },
+  "near_gc_pier": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.57608,-78.9974&miles=1",
+   "total": 22
+  },
+  "near_gc_pier_2": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.57608,-78.9974&miles=2",
+   "total": 45
+  },
+  "near_intl": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.60062,-79.04166&miles=2",
+   "total": 64
+  },
+  "near_intl_3": {
+   "q": "type=condo&city=Murrells+Inlet&near=33.60062,-79.04166&miles=3",
+   "total": 94
+  },
+  "sub:Bally Castle": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Bally+Castle",
+   "total": 13
+  },
+  "sub:Marcliffe": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Marcliffe",
+   "total": 16
+  },
+  "sub:Marcliffe at Blackmoor": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Marcliffe+at+Blackmoor",
+   "total": 9
+  },
+  "sub:Cypress Grove": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Cypress+Grove",
+   "total": 5
+  },
+  "sub:International Club": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=International+Club",
+   "total": 6
+  },
+  "sub:Park West": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Park+West",
+   "total": 4
+  },
+  "sub:Sweetwater": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sweetwater",
+   "total": 11
+  },
+  "sub:Jasmine Lake": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Jasmine+Lake",
+   "total": 10
+  },
+  "sub:Tupelo Bay": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Tupelo+Bay",
+   "total": 4
+  },
+  "sub:Indian Wells": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Indian+Wells",
+   "total": 14
+  },
+  "sub:Surfmaster": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Surfmaster",
+   "total": 3
+  },
+  "sub:Riverwood": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Riverwood",
+   "total": 12
+  },
+  "sub:Wyngate": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Wyngate",
+   "total": 6
+  },
+  "sub:Royal Garden": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Royal+Garden",
+   "total": 5
+  },
+  "sub:Blue Heron": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Blue+Heron",
+   "total": 5
+  },
+  "sub:Garden Sands": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Garden+Sands",
+   "total": 3
+  },
+  "sub:Winchester": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Winchester",
+   "total": 3
+  },
+  "sub:Horizon East": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Horizon+East",
+   "total": 2
+  },
+  "sub:Waters Edge": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Waters+Edge",
+   "total": 2
+  },
+  "sub:Sunnyside Village": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sunnyside+Village",
+   "total": 2
+  },
+  "sub:Sea Watch": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sea+Watch",
+   "total": 2
+  },
+  "sub:Sandy Shores": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sandy+Shores",
+   "total": 2
+  },
+  "sub:Sea Oaks": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sea+Oaks",
+   "total": 1
+  },
+  "sub:Marsh Walk": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Marsh+Walk",
+   "total": 1
+  },
+  "sub:Inlet Pointe": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Inlet+Pointe",
+   "total": 1
+  },
+  "sub:Duneside": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Duneside",
+   "total": 1
+  },
+  "sub:Moss Creek": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Moss+Creek",
+   "total": 1
+  },
+  "sub:Kelly Court": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Kelly+Court",
+   "total": 1
+  },
+  "sub:Cambridge": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Cambridge",
+   "total": 2
+  },
+  "sub:Sea Mystique": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sea+Mystique",
+   "total": 1
+  },
+  "sub:Marlin Quay": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Marlin+Quay",
+   "total": 1
+  },
+  "sub:Governors Landing": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Governors+Landing",
+   "total": 1
+  },
+  "sub:Turning Stone": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Turning+Stone",
+   "total": 1
+  },
+  "sub:Sterling Pointe": {
+   "q": "type=condo&city=Murrells+Inlet&subdivision=Sterling+Pointe",
+   "total": 1
+  }
+ }
+}

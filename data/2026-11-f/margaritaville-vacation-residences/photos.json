@@ -1,0 +1,72 @@
+{
+ "photos": [
+  {
+   "slug": "margaritaville-vacation-residences",
+   "file": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-600w.webp",
+    "1200": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Margaritaville Vacation Residences site from above",
+   "what": "The site of Margaritaville Vacation Residences from above (USDA NAIP aerial photo, 2023, before construction): the county tract, outlined in white, is wooded ground in the middle; condo and townhome buildings stand along its sides; the beach and the Atlantic Ocean are at the lower right. Labels placed from coordinates (labels.json).",
+   "caption": "The same ground before construction. The white line is the county's tract; the beach is at the lower right.",
+   "alt": "Aerial photo of the wooded tract where Margaritaville Vacation Residences is being built in Myrtle Beach, outlined in white, with the beach and the Atlantic Ocean at the lower right",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Fins Up Circle, Arcadian Shores"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-17; the exact request is in images/naip-request.txt.",
+   "license_note": "Same source and terms as the batch 2026-11-a NAIP records (data/2026-11-a/submarkets-garden-city/photos.json).",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS). Labels by Chapter3 Realty.",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service and added labels placed from map data",
+   "labels": [
+    "Margaritaville Vacation Residences",
+    "Atlantic Ocean"
+   ],
+   "annotation_sources": {
+    "Margaritaville Vacation Residences": "county parcel SHORE DR; TR E-2 (Horry County GIS layer 24, images/tract.json), outlined from its polygon, label placed above its top corner; label.py",
+    "Atlantic Ocean": "a given point in the water (-78.781826, 33.762423); the text sits just left of it; label.py"
+   },
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8771530.596546784%2C3996554.2868157895%2C-8769916.46393028%2C3998027.2554804333&bboxSR=3857&imageSR=3857&size=2400%2C2190&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+   "frame": {
+    "crop_px_of_2000x1825_export": [200, 330, 1800, 1350],
+    "ground_m_per_px_1200w": 0.5
+   },
+   "original_size": "1800x1350 crop of a 2000x1825 NAIP export, outline and labels drawn, then resized",
+   "subject_check": "Looked at full size by the writer of /invest/condo-buildings/margaritaville-vacation-residences/ on 2026-11-17. The white outline is the county tract drawn from its polygon and sits on the wooded ground; the beach and Atlantic Ocean are at the lower right. No person; no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/margaritaville-vacation-residences/margaritaville-vacation-residences-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Crops cut from the center of the unlabelled crop by tools/photos.js crops, so the share image carries no text."
+  }
+ ]
+}

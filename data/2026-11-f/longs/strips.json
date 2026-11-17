@@ -1,0 +1,314 @@
+[
+ {
+  "q": "city=Longs&type=house&domMax=14",
+  "ok": true,
+  "total": 44,
+  "link": "/homes/?city=Longs&type=house&domMax=14",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&max=299999",
+  "ok": true,
+  "total": 113,
+  "link": "/homes/?city=Longs&type=house&max=299999",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&min=300000&max=399999",
+  "ok": true,
+  "total": 141,
+  "link": "/homes/?city=Longs&type=house&min=300000&max=399999",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&min=400000",
+  "ok": true,
+  "total": 71,
+  "link": "/homes/?city=Longs&type=house&min=400000",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&beds=4",
+  "ok": true,
+  "total": 125,
+  "link": "/homes/?city=Longs&type=house&beds=4",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&beds=5",
+  "ok": true,
+  "total": 20,
+  "link": "/homes/?city=Longs&type=house&beds=5",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=new_construction",
+  "ok": true,
+  "total": 166,
+  "link": "/homes/?city=Longs&type=house&has=new_construction",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=quick_move_in",
+  "ok": true,
+  "total": 105,
+  "link": "/homes/?city=Longs&type=house&has=quick_move_in",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&waterfront=1",
+  "ok": true,
+  "total": 55,
+  "link": "/homes/?city=Longs&type=house&waterfront=1",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=water_lake",
+  "ok": true,
+  "total": 55,
+  "link": "/homes/?city=Longs&type=house&has=water_lake",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=golf_community",
+  "ok": true,
+  "total": 27,
+  "link": "/homes/?city=Longs&type=house&has=golf_community",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&lotMin=1",
+  "ok": true,
+  "total": 12,
+  "link": "/homes/?city=Longs&type=house&lotMin=1",
+  "note": "",
+  "cards": 11
+ },
+ {
+  "q": "city=Longs&type=house&has=one_level",
+  "ok": true,
+  "total": 238,
+  "link": "/homes/?city=Longs&type=house&has=one_level",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=pool",
+  "ok": true,
+  "total": 32,
+  "link": "/homes/?city=Longs&type=house&has=pool",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=active_adult",
+  "ok": true,
+  "total": 0,
+  "link": "/homes/?city=Longs&type=house&has=active_adult",
+  "note": "",
+  "cards": 0
+ },
+ {
+  "q": "city=Longs&type=house&hoa=0",
+  "ok": true,
+  "total": 22,
+  "link": "/homes/?city=Longs&type=house&hoa=0",
+  "note": "No HOA, as listed by the listing agent. Confirm before you buy.",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=townhouse",
+  "ok": true,
+  "total": 20,
+  "link": "/homes/?city=Longs&type=townhouse",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=condo",
+  "ok": true,
+  "total": 22,
+  "link": "/homes/?city=Longs&type=condo",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=land",
+  "ok": true,
+  "total": 38,
+  "link": "/homes/?city=Longs&type=land",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=land&lotMin=1",
+  "ok": true,
+  "total": 32,
+  "link": "/homes/?city=Longs&type=land&lotMin=1",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&has=boat_access",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?city=Longs&type=house&has=boat_access",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "city=Longs&type=house&has=beach_access",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?city=Longs&type=house&has=beach_access",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "subdivision=Carrington Woods&type=house&city=Longs",
+  "ok": true,
+  "total": 21,
+  "link": "/homes/?city=Longs&type=house&subdivision=Carrington+Woods",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=The Forest At Black Bear&type=house&city=Longs",
+  "ok": true,
+  "total": 17,
+  "link": "/homes/?city=Longs&type=house&subdivision=The+Forest+At+Black+Bear",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Palmetto Place&type=house&city=Longs",
+  "ok": true,
+  "total": 17,
+  "link": "/homes/?city=Longs&type=house&subdivision=Palmetto+Place",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Heritage Park&type=house&city=Longs",
+  "ok": true,
+  "total": 16,
+  "link": "/homes/?city=Longs&type=house&subdivision=Heritage+Park",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Eden Springs&type=house&city=Longs",
+  "ok": true,
+  "total": 16,
+  "link": "/homes/?city=Longs&type=house&subdivision=Eden+Springs",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Marshfield&type=house&city=Longs",
+  "ok": true,
+  "total": 16,
+  "link": "/homes/?city=Longs&type=house&subdivision=Marshfield",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=The Tides of Little Creek&type=house&city=Longs",
+  "ok": true,
+  "total": 15,
+  "link": "/homes/?city=Longs&type=house&subdivision=The+Tides+of+Little+Creek",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "subdivision=Forestwood&type=house&city=Longs",
+  "ok": true,
+  "total": 11,
+  "link": "/homes/?city=Longs&type=house&subdivision=Forestwood",
+  "note": "",
+  "cards": 8
+ },
+ {
+  "q": "subdivision=Evington Place&type=house&city=Longs",
+  "ok": true,
+  "total": 10,
+  "link": "/homes/?city=Longs&type=house&subdivision=Evington+Place",
+  "note": "",
+  "cards": 10
+ },
+ {
+  "q": "subdivision=Waterside - Area 10A&type=house&city=Longs",
+  "ok": true,
+  "total": 10,
+  "link": "/homes/?city=Longs&type=house&subdivision=Waterside+-+Area+10A",
+  "note": "",
+  "cards": 10
+ },
+ {
+  "q": "subdivision=Avery Woods&type=house&city=Longs",
+  "ok": true,
+  "total": 10,
+  "link": "/homes/?city=Longs&type=house&subdivision=Avery+Woods",
+  "note": "",
+  "cards": 10
+ },
+ {
+  "q": "subdivision=Lakes at Plantation Pines&type=house&city=Longs",
+  "ok": true,
+  "total": 8,
+  "link": "/homes/?city=Longs&type=house&subdivision=Lakes+at+Plantation+Pines",
+  "note": "",
+  "cards": 8
+ },
+ {
+  "q": "subdivision=Oak Hollow&type=house&city=Longs",
+  "ok": true,
+  "total": 8,
+  "link": "/homes/?city=Longs&type=house&subdivision=Oak+Hollow",
+  "note": "",
+  "cards": 8
+ },
+ {
+  "q": "subdivision=Grande Dunes - North Village&type=house&city=Longs",
+  "ok": true,
+  "total": 6,
+  "link": "/homes/?city=Longs&type=house&subdivision=Grande+Dunes+-+North+Village",
+  "note": "",
+  "cards": 6
+ },
+ {
+  "q": "subdivision=The Vistas at Sun Colony&city=Longs",
+  "ok": true,
+  "total": 5,
+  "link": "/homes/?city=Longs&subdivision=The+Vistas+at+Sun+Colony",
+  "note": "",
+  "cards": 5
+ },
+ {
+  "q": "subdivision=Sun Colony&city=Longs",
+  "ok": true,
+  "total": 16,
+  "link": "/homes/?city=Longs&subdivision=Sun+Colony",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Longs&type=house&near=33.938611,-78.733056&miles=2",
+  "ok": true,
+  "total": 39,
+  "link": "/homes/?city=Longs&type=house&near=33.938611%2C-78.733056&miles=2",
+  "note": "",
+  "cards": 14
+ }
+]

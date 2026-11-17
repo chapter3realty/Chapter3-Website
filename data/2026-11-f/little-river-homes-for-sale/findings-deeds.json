@@ -1,0 +1,177 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "book and page on one deed only": 18375,
+  "parcel in county layer, residential land use": 17778,
+  "postal city Little River": 836
+ },
+ "houses": {
+  "count": 668,
+  "median": 350000.0,
+  "p25": 292000.0,
+  "p75": 450000.0,
+  "min": 36355.0,
+  "max": 2600000.0
+ },
+ "houses_seller_business": {
+  "count": 230,
+  "median": 338337.0,
+  "p25": 292250.0,
+  "p75": 544900.0,
+  "min": 36355.0,
+  "max": 1100000.0
+ },
+ "houses_seller_person": {
+  "count": 438,
+  "median": 351250.0,
+  "p25": 290000.0,
+  "p75": 434210.0,
+  "min": 75000.0,
+  "max": 2600000.0
+ },
+ "land_use_100_left_out": {
+  "count": 55,
+  "median": 291625.0,
+  "p25": 150000.0,
+  "p75": 336000.0,
+  "min": 50000.0,
+  "max": 772456.0
+ },
+ "house_price_bands": {
+  "0-200000": 27,
+  "200000-300000": 159,
+  "300000-400000": 254,
+  "400000-500000": 100,
+  "500000-1000000000": 128
+ },
+ "condos": {
+  "count": 39,
+  "median": 239990.0,
+  "p25": 229000.0,
+  "p75": 269990.0,
+  "min": 205000.0,
+  "max": 462500.0
+ },
+ "condos_seller_business": {
+  "count": 37,
+  "median": 237490.0,
+  "p25": 229000.0,
+  "p75": 262000.0,
+  "min": 205000.0,
+  "max": 370120.0
+ },
+ "condo_price_bands": {
+  "0-150000": 0,
+  "150000-250000": 23,
+  "250000-400000": 15,
+  "400000-1000000000": 1
+ },
+ "houses_by_zip": {
+  "29566": {
+   "count": 668,
+   "median": 350000.0,
+   "p25": 292000.0,
+   "p75": 450000.0,
+   "min": 36355.0,
+   "max": 2600000.0
+  }
+ },
+ "houses_by_tax_district": {
+  "500": 561,
+  "510": 98,
+  "550": 9
+ },
+ "houses_median_price_by_tax_district": {
+  "500": {
+   "count": 561,
+   "median": 333000.0,
+   "p25": 280000.0,
+   "p75": 390000.0,
+   "min": 75000.0,
+   "max": 2600000.0
+  },
+  "510": {
+   "count": 98,
+   "median": 574270.5,
+   "p25": 490000.0,
+   "p75": 620000.0,
+   "min": 36355.0,
+   "max": 825549.0
+  }
+ },
+ "houses_by_quarter": {
+  "2025-Q4": {
+   "count": 130,
+   "median": 331540.5
+  },
+  "2026-Q1": {
+   "count": 154,
+   "median": 334617.5
+  },
+  "2026-Q2": {
+   "count": 163,
+   "median": 360000.0
+  },
+  "2026-Q3": {
+   "count": 176,
+   "median": 365000.0
+  },
+  "2026-Q4": {
+   "count": 45,
+   "median": 359900.0
+  }
+ },
+ "houses_by_seller": {
+  "other business": 192,
+  "person": 438,
+  "D.R. Horton (DR Horton Inc and D R Horton Inc)": 38
+ },
+ "dr_horton_share_pct": 5.7,
+ "business_sellers_top": [
+  [
+   "BAYTREE SC",
+   57
+  ],
+  [
+   "LENNAR CAROLINAS",
+   35
+  ],
+  [
+   "D R HORTON",
+   33
+  ],
+  [
+   "BEAZER HOMES",
+   23
+  ],
+  [
+   "ASHTON CHARLESTON RESIDENTIAL",
+   22
+  ],
+  [
+   "H & H CONSTRUCTORS OF FAYETTEV",
+   8
+  ],
+  [
+   "DR HORTON",
+   5
+  ],
+  [
+   "PALMETTO PROPERTIES OF CONWAY",
+   4
+  ],
+  [
+   "HPA III ACQUISITIONS 1",
+   4
+  ],
+  [
+   "BCR CAPITAL PARTNERS",
+   2
+  ]
+ ]
+}

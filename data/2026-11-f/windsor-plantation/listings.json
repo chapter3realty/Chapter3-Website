@@ -1,0 +1,212 @@
+{
+ "pulled": "2026-11-17T07:36:01.470753+00:00",
+ "refreshedAt": "2026-11-17T07:30:35.935Z",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "rule": "Homes for sale now in Windsor Plantation (MLS names \"Windsor Plantation - Devonshire Estates\", \"Windsor Plantation - St. David's Township\", \"Berwick at Windsor Plantation\"; subdivision=Windsor Plantation returns all), in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS active\nlistings) and listing card (/homes/api/lookup). Saved: counts, list-price median and range, beds, size, year built, HOA fee, lot size, HOA fee brackets\n(hoaMax=T). No MLS number, address, firm or photo is saved. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "all": {
+  "for_sale": 5,
+  "subdivision_names": [
+   "Berwick at Windsor Plantation",
+   "Windsor Plantation - Devonshire Estates",
+   "Windsor Plantation - St. David's Township"
+  ],
+  "types": [
+   "Condominium",
+   "Detached",
+   "Townhouse"
+  ],
+  "list_price": {
+   "median": 469900,
+   "min": 293880,
+   "max": 529900
+  },
+  "year_built": [
+   2008,
+   2019
+  ],
+  "sqft_median": 1940,
+  "beds": [
+   3,
+   4
+  ],
+  "hoa_monthly_listed": [
+   113,
+   113,
+   113,
+   425,
+   449
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "detached": {
+  "for_sale": 3,
+  "subdivision_names": [
+   "Windsor Plantation - Devonshire Estates",
+   "Windsor Plantation - St. David's Township"
+  ],
+  "types": [
+   "Detached"
+  ],
+  "list_price": {
+   "median": 510000,
+   "min": 469900,
+   "max": 529900
+  },
+  "year_built": [
+   2008,
+   2012
+  ],
+  "sqft_median": 2066,
+  "beds": [
+   3,
+   4
+  ],
+  "hoa_monthly_listed": [
+   113,
+   113,
+   113
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "berwick": {
+  "for_sale": 2,
+  "subdivision_names": [
+   "Berwick at Windsor Plantation"
+  ],
+  "types": [
+   "Condominium",
+   "Townhouse"
+  ],
+  "list_price": {
+   "median": 309440.0,
+   "min": 293880,
+   "max": 325000
+  },
+  "year_built": [
+   2016,
+   2019
+  ],
+  "sqft_median": 1912.0,
+  "beds": [
+   3,
+   3
+  ],
+  "hoa_monthly_listed": [
+   425,
+   449
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "fee_at_or_under": {
+  "0": 47,
+  "25": 47,
+  "50": 47,
+  "75": 47,
+  "100": 47,
+  "125": 3,
+  "150": 3,
+  "175": 3,
+  "200": 3,
+  "225": 3,
+  "250": 3,
+  "275": 3,
+  "300": 3,
+  "325": 3,
+  "350": 3,
+  "375": 3,
+  "400": 3,
+  "425": 4,
+  "450": 5
+ },
+ "listing_says_no_hoa": 47
+}

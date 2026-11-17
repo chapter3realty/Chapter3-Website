@@ -1,0 +1,166 @@
+{
+ "made": "2026-11-17",
+ "rule": "Findings for /submarkets/myrtle-beach/pine-lakes-preserve/ from the county cache (pull_county.py), FEMA (pull_fema.py) and the county deed index.\nPlace = county parcels whose legal description starts PINE LAKES PH or PINE LAKE PH (phases 1A, 1B, 2, 3): the MLS name \"The Preserve at Pine Lakes\"; the HOA parcels are owned by PRESERVE AT PINE LAKES HOA INC.\nSales = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json; DEED 001, person names blanked): priced over $10,000, one 11-digit parcel,\nno tax sale, stated price at least 70% of the county market value (lower deeds look like part-interest or non-market transfers; dropped and counted), no CORRECT/RE-RECORD/SEVERAL/PARCELS/TRACTS/LOTS/\"n UNITS\" memo, book and page on one deed. House = building value over $0, land use 101/106/109.\nSize = largest county 'Residential' footprint (layer 27, 2023): roof outline, not living area. Golf lot = within 15 m of a land-use 389/394 parcel owned by FOUNDERS NATIONAL GOLF LLC.\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-17T07:30:37.627063+00:00",
+ "parcels_all": 304,
+ "land_and_houses": 299,
+ "houses": 290,
+ "vacant_lots": 9,
+ "sections": {
+  "PINE LAKE PH 1B": 73,
+  "PINE LAKES PH 1A": 92,
+  "PINE LAKES PH2": 15,
+  "PINE LAKES PH 2": 73,
+  "PINE LAKES PH 3": 46
+ },
+ "common_area_acres": 53.0,
+ "common_area_parcels": 5,
+ "lot_sqft": {
+  "n": 290,
+  "min": 2787,
+  "q1": 6240.0,
+  "median": 6929.5,
+  "q3": 7960.5,
+  "max": 15772
+ },
+ "house_footprint_sqft": {
+  "n": 175,
+  "min": 1796,
+  "q1": 2486.0,
+  "median": 2772,
+  "q3": 3344.0,
+  "max": 3956
+ },
+ "footprint_n": 175,
+ "county_value": {
+  "n": 290,
+  "min": 334139.0,
+  "q1": 400000.0,
+  "median": 464523.5,
+  "q3": 495830.0,
+  "max": 735005.0
+ },
+ "pools": 0,
+ "golf_lots": 43,
+ "common_edge_lots": 184,
+ "sfha_fema": 0,
+ "sfha_county_layer": 0,
+ "fema_zones": [
+  [
+   "X",
+   "F",
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD"
+  ],
+  [
+   "X",
+   "F",
+   "AREA OF MINIMAL FLOOD HAZARD"
+  ]
+ ],
+ "in_city": 299,
+ "tax_district": {
+  "880": 284,
+  "882": 15
+ },
+ "out_of_state": 26,
+ "at4": 225,
+ "at6": 65,
+ "streets": {
+  "WHITEBARK DR": 136,
+  "KNOBCONE LP": 70,
+  "LACEBARK TRL": 32,
+  "BRISTLECONE CT": 28,
+  "CANARY ISLAND CT": 18,
+  "null": 10,
+  "SHORTLEAF PATH": 5
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales_houses": {
+  "count": 20,
+  "prices": {
+   "n": 20,
+   "min": 350922.0,
+   "q1": 399925.0,
+   "median": 538250.0,
+   "q3": 626250.0,
+   "max": 680000.0
+  },
+  "by_month": {
+   "2025/11": 3,
+   "2025/12": 3,
+   "2026/01": 3,
+   "2026/03": 3,
+   "2026/05": 1,
+   "2026/06": 2,
+   "2026/07": 3,
+   "2026/08": 1,
+   "2026/09": 1
+  },
+  "by_section": {
+   "PINE LAKE PH 1B": {
+    "n": 7,
+    "min": 350922.0,
+    "q1": 380000.0,
+    "median": 397000.0,
+    "q3": 400000.0,
+    "max": 402500.0
+   },
+   "PINE LAKES PH 1A": {
+    "n": 7,
+    "min": 535000.0,
+    "q1": 535000.0,
+    "median": 539500.0,
+    "q3": 549000.0,
+    "max": 600000.0
+   },
+   "PINE LAKES PH 2": {
+    "n": 3,
+    "min": 565000.0,
+    "q1": 565000.0,
+    "median": 635000.0,
+    "q3": 670000.0,
+    "max": 670000.0
+   },
+   "PINE LAKES PH 3": {
+    "n": 3,
+    "min": 640000.0,
+    "q1": 640000.0,
+    "median": 650000.0,
+    "q3": 680000.0,
+    "max": 680000.0
+   }
+  },
+  "min_sales": [
+   350922.0,
+   380000.0,
+   390000.0
+  ],
+  "max_sales": [
+   650000.0,
+   670000.0,
+   680000.0
+  ]
+ },
+ "dropped_low_deeds": [
+  70000.0,
+  174000.0,
+  185000.0
+ ],
+ "sales_lots": {
+  "count": 0,
+  "prices": {}
+ },
+ "center": [
+  33.73524,
+  -78.84863
+ ],
+ "bbox": [
+  -78.85396449465242,
+  33.7312875,
+  -78.84362312709497,
+  33.740435000000005
+ ]
+}

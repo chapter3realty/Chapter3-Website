@@ -1,0 +1,66 @@
+{
+ "house": {
+  "cards": 186,
+  "ask": {
+   "n": 127,
+   "min": 223900,
+   "p25": 325000,
+   "median": 375000,
+   "p75": 449900,
+   "max": 2995000
+  },
+  "hoa_entries": 127,
+  "hoa_zero": 17,
+  "hoa_nonzero": {
+   "n": 110,
+   "min": 12,
+   "p25": 65,
+   "median": 103.0,
+   "p75": 159,
+   "max": 397
+  }
+ },
+ "condo": {
+  "cards": 184,
+  "ask": {
+   "n": 110,
+   "min": 80000,
+   "p25": 149900,
+   "median": 186500.0,
+   "p75": 250000,
+   "max": 499000
+  },
+  "hoa_entries": 110,
+  "hoa_zero": 0,
+  "hoa_nonzero": {
+   "n": 110,
+   "min": 159,
+   "p25": 370,
+   "median": 496.0,
+   "p75": 570,
+   "max": 1037
+  }
+ },
+ "townhouse": {
+  "cards": 30,
+  "ask": {
+   "n": 14,
+   "min": 175000,
+   "p25": 232400,
+   "median": 257200.0,
+   "p75": 284900,
+   "max": 339000
+  },
+  "hoa_entries": 14,
+  "hoa_zero": 1,
+  "hoa_nonzero": {
+   "n": 13,
+   "min": 125,
+   "p25": 270,
+   "median": 270,
+   "p75": 313,
+   "max": 597
+  }
+ },
+ "hoa_ratio_condo_to_house_median": 4.815533980582524
+}

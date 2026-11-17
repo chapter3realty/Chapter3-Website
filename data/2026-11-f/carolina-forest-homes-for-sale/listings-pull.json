@@ -1,0 +1,19 @@
+{
+ "pulled": "2026-11-17T05:58:22.845631+00:00",
+ "rule": "Homes for sale now in Carolina Forest (MLS city \"Carolina Forest\") in aggregate from the site's public map API and card lookup. Saves counts, ranges, subdivision names with counts. No address, MLS number, firm or photo is saved. Run: python3 -I pull_conway.py <dir>",
+ "totals": {
+  "house": 298,
+  "condo": 117,
+  "townhouse": 28,
+  "manufactured": 3,
+  "multi": 0,
+  "land": 27,
+  "all": 476
+ },
+ "mls_collected": {
+  "house": 297,
+  "condo": 117,
+  "townhouse": 28
+ },
+ "cards_with_price": 363
+}

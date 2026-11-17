@@ -1,0 +1,268 @@
+{
+ "read": "2026-11-17T06:26:07.563167+00:00",
+ "rule": "Splits the condos for sale in Murrells Inlet (MLS city) by county and Garden City, in aggregate. Pins (price slices) give a point; a point inside a Horry County parcel (Horry GIS layer 24) is Horry,\nelse Georgetown; a Horry point inside the 2020 Garden City Census place polygon (data/2026-11-a/submarkets-garden-city/raw/cdp2020.geojson) is Garden City. Joined in memory to listing cards (lookup).\nKeeps counts, price/fee quartiles, flood high-risk count and MLS community names per part. No point, MLS number or address kept. Run: python3 -I parts.py <this dir> <data root>. Writes parts.json.",
+ "n": 130,
+ "parts": {
+  "horry": {
+   "n": 38,
+   "tax_districts": {
+    "610": 38
+   },
+   "price": {
+    "n": 38,
+    "min": 165000,
+    "p25": 216500.0,
+    "median": 277450.0,
+    "p75": 409900.0,
+    "max": 439900
+   },
+   "hoa": {
+    "n": 38,
+    "min": 248,
+    "p25": 401.5,
+    "median": 407.0,
+    "p75": 482.0,
+    "max": 583
+   },
+   "yearBuilt_median": 2007.0,
+   "high_risk": 0,
+   "oceanfront_tag": 4,
+   "names": [
+    [
+     "Bally Castle",
+     13
+    ],
+    [
+     "Marcliffe at Blackmoor",
+     9
+    ],
+    [
+     "Park West - Murrells Inlet",
+     4
+    ],
+    [
+     "Cypress Grove at Marcliffe West",
+     4
+    ],
+    [
+     "VILLAS @ INTERNATIONAL CLUB",
+     3
+    ],
+    [
+     "Marcliffe West",
+     2
+    ],
+    [
+     "The Fairways - The International Club",
+     1
+    ],
+    [
+     "The Grand Vistas @ The International Club",
+     1
+    ],
+    [
+     "Cambridge - International Club",
+     1
+    ]
+   ]
+  },
+  "garden_city": {
+   "n": 40,
+   "tax_districts": {
+    "610": 40
+   },
+   "price": {
+    "n": 40,
+    "min": 128000,
+    "p25": 185250.0,
+    "median": 214900.0,
+    "p75": 328675.0,
+    "max": 749999
+   },
+   "hoa": {
+    "n": 40,
+    "min": 325,
+    "p25": 427.0,
+    "median": 515.0,
+    "p75": 608.0,
+    "max": 896
+   },
+   "yearBuilt_median": 1994.0,
+   "high_risk": 9,
+   "oceanfront_tag": 15,
+   "names": [
+    [
+     "Sweetwater - Indian Wells",
+     11
+    ],
+    [
+     "Jasmine Lake",
+     10
+    ],
+    [
+     "Tupelo Bay - Garden City",
+     4
+    ],
+    [
+     "Indian Wells Golf Villas",
+     3
+    ],
+    [
+     "SURFMASTER I",
+     2
+    ],
+    [
+     "Beach House",
+     1
+    ],
+    [
+     "THE ADDISON - GARDEN CITY",
+     1
+    ],
+    [
+     "Marsh Walk - Garden City",
+     1
+    ],
+    [
+     "Cambridge Place - Garden City",
+     1
+    ],
+    [
+     "Kelly Court Villas",
+     1
+    ],
+    [
+     "SANDY SHORES II",
+     1
+    ],
+    [
+     "SEA WATCH LDG",
+     1
+    ],
+    [
+     "SURFMASTER II",
+     1
+    ],
+    [
+     "SANDY SHORES I",
+     1
+    ],
+    [
+     "SEA OAKS",
+     1
+    ]
+   ]
+  },
+  "georgetown": {
+   "n": 52,
+   "tax_districts": {
+    "null": 52
+   },
+   "price": {
+    "n": 52,
+    "min": 177000,
+    "p25": 218925.0,
+    "median": 272450.0,
+    "p75": 344000.0,
+    "max": 1199000
+   },
+   "hoa": {
+    "n": 51,
+    "min": 340,
+    "p25": 430.0,
+    "median": 520,
+    "p75": 783.0,
+    "max": 1360
+   },
+   "yearBuilt_median": 1998.0,
+   "high_risk": 22,
+   "oceanfront_tag": 23,
+   "names": [
+    [
+     "RIVERWOOD",
+     12
+    ],
+    [
+     "WYNGATE",
+     6
+    ],
+    [
+     "ROYAL GARDEN",
+     5
+    ],
+    [
+     "Blue Heron",
+     5
+    ],
+    [
+     "Garden Sands",
+     3
+    ],
+    [
+     "WINCHESTER",
+     3
+    ],
+    [
+     "Horizon East",
+     2
+    ],
+    [
+     "WATERS EDGE",
+     2
+    ],
+    [
+     "Sunnyside Village",
+     2
+    ],
+    [
+     "Inlet Pointe - Garden City",
+     1
+    ],
+    [
+     "MOSS CREEK",
+     1
+    ],
+    [
+     "Turning Stone - Murrells Inlet",
+     1
+    ],
+    [
+     "Governors Landing",
+     1
+    ],
+    [
+     "Marlin Quay",
+     1
+    ],
+    [
+     "STERLING POINTE - MURRELLS INLET",
+     1
+    ],
+    [
+     "Not Within a Project/Section Code",
+     1
+    ],
+    [
+     "Sea Watch - Garden City",
+     1
+    ],
+    [
+     "Duneside I",
+     1
+    ],
+    [
+     "SEA MYSTIQUE",
+     1
+    ],
+    [
+     "Guest House",
+     1
+    ],
+    [
+     "Cypress Grove at Marcliffe West",
+     1
+    ]
+   ]
+  }
+ }
+}

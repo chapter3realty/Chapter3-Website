@@ -1,0 +1,168 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "book and page on one deed only": 18375,
+  "parcel in county layer, residential land use": 17778,
+  "postal city Conway": 2810
+ },
+ "houses": {
+  "count": 2155,
+  "median": 305750.0,
+  "p25": 259490.0,
+  "p75": 355000.0,
+  "min": 25000.0,
+  "max": 1425000.0
+ },
+ "houses_seller_business": {
+  "count": 1251,
+  "median": 310000.0,
+  "p25": 264990.0,
+  "p75": 351000.0,
+  "min": 60000.0,
+  "max": 988619.18
+ },
+ "houses_seller_person": {
+  "count": 904,
+  "median": 297949.5,
+  "p25": 249900.0,
+  "p75": 367000.0,
+  "min": 25000.0,
+  "max": 1425000.0
+ },
+ "land_use_100_left_out": {
+  "count": 458,
+  "median": 279225.0,
+  "p25": 110000.0,
+  "p75": 349000.0,
+  "min": 15000.0,
+  "max": 950000.0
+ },
+ "house_price_bands": {
+  "0-200000": 112,
+  "200000-300000": 908,
+  "300000-400000": 821,
+  "400000-500000": 195,
+  "500000-1000000000": 119
+ },
+ "houses_by_zip": {
+  "29526": {
+   "count": 1606,
+   "median": 317120.0,
+   "p25": 265000.0,
+   "p75": 371880.0,
+   "min": 27500.0,
+   "max": 1163500.0
+  },
+  "29527": {
+   "count": 548,
+   "median": 279000.0,
+   "p25": 249990.0,
+   "p75": 315000.0,
+   "min": 25000.0,
+   "max": 1425000.0
+  }
+ },
+ "houses_by_tax_district": {
+  "100": 1362,
+  "110": 526,
+  "160": 38,
+  "400": 198,
+  "500": 4,
+  "260": 2,
+  "403": 17,
+  "240": 8
+ },
+ "houses_median_price_by_tax_district": {
+  "110": {
+   "count": 526,
+   "median": 278495.0,
+   "p25": 237000.0,
+   "p75": 334000.0,
+   "min": 35000.0,
+   "max": 1163500.0
+  },
+  "100": {
+   "count": 1362,
+   "median": 320000.0,
+   "p25": 269900.0,
+   "p75": 372405.0,
+   "min": 25000.0,
+   "max": 1425000.0
+  }
+ },
+ "houses_by_quarter": {
+  "2025-Q4": {
+   "count": 365,
+   "median": 314900.0
+  },
+  "2026-Q1": {
+   "count": 572,
+   "median": 300000.0
+  },
+  "2026-Q2": {
+   "count": 594,
+   "median": 308870.0
+  },
+  "2026-Q3": {
+   "count": 502,
+   "median": 305640.0
+  },
+  "2026-Q4": {
+   "count": 122,
+   "median": 292000.0
+  }
+ },
+ "houses_by_seller": {
+  "person": 904,
+  "other business": 710,
+  "D.R. Horton (DR Horton Inc and D R Horton Inc)": 541
+ },
+ "dr_horton_share_pct": 25.1,
+ "business_sellers_top": [
+  [
+   "DR HORTON",
+   502
+  ],
+  [
+   "LENNAR CAROLINAS",
+   97
+  ],
+  [
+   "NVR",
+   89
+  ],
+  [
+   "GREAT SOUTHERN HOMES",
+   83
+  ],
+  [
+   "H & H CONSTRUCTORS OF FAYETTEV",
+   68
+  ],
+  [
+   "BEVERLY HOMES",
+   66
+  ],
+  [
+   "CLAYTON PROPERTIES GROUP",
+   58
+  ],
+  [
+   "D R HORTON",
+   39
+  ],
+  [
+   "STARLIGHT HOMES SOUTH CAROLINA",
+   36
+  ],
+  [
+   "F & R DEVELOPMENT",
+   25
+  ]
+ ]
+}

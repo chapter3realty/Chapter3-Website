@@ -1,0 +1,413 @@
+{
+ "made": "2026-11-17",
+ "rule": "Findings for /submarkets/conway/wild-wing-plantation/, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json,\nAcclaimWeb DEED (001); person names already blanked). A sale = a deed on a community parcel with a stated price over $10,000; a deed\ncovering several parcels is dropped. House = parcel with county building value over $0 and land use 101/109/106 (not 300 common land).\nGroups: \"houses\" = every section except FAIRWAYS (detached houses, The Sanctuary included); \"sanctuary\" = SANC @ WILD WING; \"fairways\" = FAIRWAYS @WILDWING (townhomes).\nSize = largest county 'Residential' footprint (layer 27, structures 2023): roof outline, not heated living area. Pool = 'Pool Inground' footprint on the lot (a floor).\nGolf lot = within 15 m of a county parcel with land use 394 (golf course) owned by FOUNDERS WILD WING LLC (PAR A and PAR V).\nLake lot = within 15 m of the Wild Wing POA's lake-and-wetland parcel (land use 300, owner WILD WING POA ASSOC INC).\nTax status: assessed/taxable 0.04 = legal residence ratio; 0.06 = other.\nWrites findings.json (counts, medians, ranges; no PIN, owner, address or deed book and page) and map-lots.json (points rounded to 4 decimals).\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-17T07:31:13.850036+00:00",
+ "all": {
+  "parcels": 217,
+  "houses": 109,
+  "vacant_lots": 90,
+  "lot_sqft": {
+   "n": 109,
+   "min": 7116,
+   "q1": 8428.0,
+   "median": 9510,
+   "q3": 15259.5,
+   "max": 66969
+  },
+  "house_footprint_sqft": {
+   "n": 87,
+   "min": 1468,
+   "q1": 2549.0,
+   "median": 2820,
+   "q3": 3208.0,
+   "max": 7929
+  },
+  "county_value": {
+   "n": 109,
+   "min": 258849.0,
+   "q1": 310189.0,
+   "median": 357535.0,
+   "q3": 436121.5,
+   "max": 1060016.0
+  },
+  "pools": 6,
+  "golf_lots": 122,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 8,
+  "assessed_at_4pct_legal_residence": 90,
+  "assessed_at_6pct": 18,
+  "in_city_limits": 0,
+  "in_flood_zone_AE_over5pct": 9,
+  "houses_in_flood_zone": 8,
+  "zoning": {
+   "PDD": 216,
+   "LFA": 1
+  },
+  "streets": {
+   "BANTRY LN": 63,
+   "SHAFTESBURY LN": 35,
+   "WHIDDY LP": 30,
+   "null": 21,
+   "DOONBEG CT": 16,
+   "CAINES LANDING RD": 15,
+   "DORSET PL": 10,
+   "CROOKHAVEN CT": 10,
+   "PUTNEY CT": 6,
+   "PORT RUSH CT": 6,
+   "GLENS WAY": 3,
+   "KINGSBURY LP": 1,
+   "LOUTH ST": 1
+  }
+ },
+ "preserve": {
+  "parcels": 92,
+  "houses": 16,
+  "vacant_lots": 75,
+  "lot_sqft": {
+   "n": 16,
+   "min": 8106,
+   "q1": 8640.0,
+   "median": 9352.0,
+   "q3": 10631.25,
+   "max": 13551
+  },
+  "house_footprint_sqft": {
+   "n": 0
+  },
+  "county_value": {
+   "n": 16,
+   "min": 336070.0,
+   "q1": 349005.25,
+   "median": 373319.0,
+   "q3": 436373.75,
+   "max": 470930.0
+  },
+  "pools": 0,
+  "golf_lots": 29,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 1,
+  "assessed_at_4pct_legal_residence": 11,
+  "assessed_at_6pct": 5,
+  "in_city_limits": 0,
+  "in_flood_zone_AE_over5pct": 0,
+  "houses_in_flood_zone": 0,
+  "zoning": {
+   "PDD": 92
+  },
+  "streets": {
+   "BANTRY LN": 49,
+   "DOONBEG CT": 16,
+   "CROOKHAVEN CT": 10,
+   "null": 8,
+   "PORT RUSH CT": 6,
+   "GLENS WAY": 3
+  }
+ },
+ "landing": {
+  "parcels": 35,
+  "houses": 31,
+  "vacant_lots": 4,
+  "lot_sqft": {
+   "n": 31,
+   "min": 7116,
+   "q1": 8319.0,
+   "median": 8400,
+   "q3": 8658.0,
+   "max": 11306
+  },
+  "house_footprint_sqft": {
+   "n": 31,
+   "min": 2108,
+   "q1": 2331.0,
+   "median": 2624,
+   "q3": 2763.0,
+   "max": 3099
+  },
+  "county_value": {
+   "n": 31,
+   "min": 258849.0,
+   "q1": 276375.0,
+   "median": 303859.0,
+   "q3": 311281.0,
+   "max": 378896.0
+  },
+  "pools": 2,
+  "golf_lots": 16,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 3,
+  "assessed_at_4pct_legal_residence": 25,
+  "assessed_at_6pct": 6,
+  "in_city_limits": 0,
+  "in_flood_zone_AE_over5pct": 0,
+  "houses_in_flood_zone": 0,
+  "zoning": {
+   "PDD": 35
+  },
+  "streets": {
+   "WHIDDY LP": 30,
+   "CAINES LANDING RD": 3,
+   "PUTNEY CT": 1,
+   "null": 1
+  }
+ },
+ "villas": {
+  "parcels": 12,
+  "houses": 0,
+  "vacant_lots": 0,
+  "lot_sqft": {
+   "n": 0
+  },
+  "house_footprint_sqft": {
+   "n": 0
+  },
+  "county_value": {
+   "n": 0
+  },
+  "pools": 0,
+  "golf_lots": 12,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 0,
+  "assessed_at_4pct_legal_residence": 0,
+  "assessed_at_6pct": 0,
+  "in_city_limits": 0,
+  "in_flood_zone_AE_over5pct": 0,
+  "houses_in_flood_zone": 0,
+  "zoning": {
+   "PDD": 12
+  },
+  "streets": {
+   "null": 12
+  }
+ },
+ "older": {
+  "parcels": 78,
+  "houses": 62,
+  "vacant_lots": 11,
+  "lot_sqft": {
+   "n": 62,
+   "min": 7180,
+   "q1": 9109.75,
+   "median": 14739.0,
+   "q3": 18030.25,
+   "max": 66969
+  },
+  "house_footprint_sqft": {
+   "n": 56,
+   "min": 1468,
+   "q1": 2774.5,
+   "median": 3045.5,
+   "q3": 3461.75,
+   "max": 7929
+  },
+  "county_value": {
+   "n": 62,
+   "min": 264260.0,
+   "q1": 341963.25,
+   "median": 395603.5,
+   "q3": 515872.75,
+   "max": 1060016.0
+  },
+  "pools": 4,
+  "golf_lots": 65,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 4,
+  "assessed_at_4pct_legal_residence": 54,
+  "assessed_at_6pct": 7,
+  "in_city_limits": 0,
+  "in_flood_zone_AE_over5pct": 9,
+  "houses_in_flood_zone": 8,
+  "zoning": {
+   "PDD": 77,
+   "LFA": 1
+  },
+  "streets": {
+   "SHAFTESBURY LN": 35,
+   "BANTRY LN": 14,
+   "CAINES LANDING RD": 12,
+   "DORSET PL": 10,
+   "PUTNEY CT": 5,
+   "KINGSBURY LP": 1,
+   "LOUTH ST": 1
+  }
+ },
+ "golf_parcels": [
+  [
+   "SHAFTESBURY GLEN GOLF & FISH CLUB LLC ",
+   "389",
+   "; REM OF TRACTS A B & C",
+   134.7
+  ],
+  [
+   "SHAFTESBURY GLEN GOLF & FISH CLUB LLC ",
+   "389",
+   "; REMAINDER 2",
+   33.4
+  ]
+ ],
+ "sections": {
+  "SHAFTESBURY GLEN GOLF": 69,
+  "SHAFTESBURY GLEN": 3,
+  "THE LANDING @ SHAFTESBURY GLEN": 35,
+  "SHAFTESBURY GLEN PH 4-A": 2,
+  "SHAFTESBURY GLEN HPR": 1,
+  "SHAFTESBURY GLEN GOLF & FISH CLUB": 1,
+  "THE VILLAS @ SHAFTESBURY GLEN HPR PH 1": 12,
+  "SHAFTESBURY GLEN PH 11": 2,
+  "SHAFTESBURY GLEN PH 9": 92
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "houses_all": {
+   "count": 15,
+   "prices": {
+    "n": 15,
+    "min": 175000.0,
+    "q1": 345000.0,
+    "median": 372000.0,
+    "q3": 415000.0,
+    "max": 692500.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2025/12": 3,
+    "2026/01": 1,
+    "2026/02": 3,
+    "2026/03": 2,
+    "2026/04": 1,
+    "2026/08": 1,
+    "2026/09": 2
+   }
+  },
+  "houses_preserve": {
+   "count": 8,
+   "prices": {
+    "n": 8,
+    "min": 345000.0,
+    "q1": 355250.0,
+    "median": 371000.0,
+    "q3": 435750.0,
+    "max": 480000.0
+   },
+   "by_month": {
+    "2025/12": 3,
+    "2026/01": 1,
+    "2026/02": 2,
+    "2026/03": 2
+   }
+  },
+  "houses_landing": {
+   "count": 2,
+   "prices": {
+    "n": 2,
+    "min": 249900.0,
+    "q1": 237875.0,
+    "median": 273950.0,
+    "q3": 310025.0,
+    "max": 298000.0
+   },
+   "by_month": {
+    "2026/02": 1,
+    "2026/09": 1
+   }
+  },
+  "houses_villas": {
+   "count": 1,
+   "prices": {
+    "n": 1,
+    "median": 175000.0
+   },
+   "by_month": {
+    "2026/08": 1
+   }
+  },
+  "houses_older": {
+   "count": 4,
+   "prices": {
+    "n": 4,
+    "min": 397500.0,
+    "q1": 400125.0,
+    "median": 411500.0,
+    "q3": 623125.0,
+    "max": 692500.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2026/04": 1,
+    "2026/09": 1
+   }
+  },
+  "houses_golf": {
+   "count": 6,
+   "prices": {
+    "n": 6,
+    "min": 175000.0,
+    "q1": 310000.0,
+    "median": 390000.0,
+    "q3": 484375.0,
+    "max": 692500.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2026/01": 1,
+    "2026/02": 1,
+    "2026/08": 1,
+    "2026/09": 1
+   }
+  },
+  "lots_all": {
+   "count": 34,
+   "prices": {
+    "n": 34,
+    "min": 70000.0,
+    "q1": 354500.0,
+    "median": 378786.5,
+    "q3": 411876.5,
+    "max": 506517.0
+   },
+   "by_month": {
+    "2026/02": 1,
+    "2026/03": 5,
+    "2026/04": 5,
+    "2026/05": 4,
+    "2026/06": 5,
+    "2026/07": 2,
+    "2026/08": 3,
+    "2026/09": 5,
+    "2026/10": 4
+   }
+  },
+  "lots_preserve": {
+   "count": 33,
+   "prices": {
+    "n": 33,
+    "min": 340400.0,
+    "q1": 355500.0,
+    "median": 379590.0,
+    "q3": 412541.0,
+    "max": 506517.0
+   },
+   "by_month": {
+    "2026/02": 1,
+    "2026/03": 5,
+    "2026/04": 5,
+    "2026/05": 4,
+    "2026/06": 5,
+    "2026/07": 2,
+    "2026/08": 3,
+    "2026/09": 4,
+    "2026/10": 4
+   }
+  }
+ },
+ "center": [
+  33.89564,
+  -78.90569
+ ],
+ "center_preserve": [
+  33.89378,
+  -78.9091
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "crop_px": [
+  200,
+  330,
+  1800,
+  1350
+ ],
+ "ring_vertices": 14,
+ "labels": [
+  {
+   "label": "Margaritaville Vacation Residences",
+   "at": "above the top corner of the county tract SHORE DR; TR E-2, outlined in white",
+   "box": [
+    80,
+    20,
+    1101,
+    74
+   ]
+  },
+  {
+   "label": "Atlantic Ocean",
+   "lon": -78.78295,
+   "lat": 33.761127,
+   "box": [
+    1290,
+    1192,
+    490,
+    65
+   ]
+  }
+ ]
+}

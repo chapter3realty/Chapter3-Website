@@ -1,0 +1,221 @@
+{
+ "read": "2026-11-17",
+ "unsplit_total": 201,
+ "houses_1plus": 201,
+ "all": {
+  "n": 201,
+  "price_q1": 429900.0,
+  "price_med": 534900.0,
+  "price_q3": 750000.0,
+  "acres_med": 1.72,
+  "acres_q1": 1.26,
+  "acres_q3": 2.82
+ },
+ "by_band": {
+  "1 to 2 acres": {
+   "n": 110,
+   "price_q1": 410150.0,
+   "price_med": 484450.0,
+   "price_q3": 618750.0,
+   "acres_med": 1.2850000000000001,
+   "acres_q1": 1.07,
+   "acres_q3": 1.5
+  },
+  "2 to 5 acres": {
+   "n": 58,
+   "price_q1": 439900.0,
+   "price_med": 573450.0,
+   "price_q3": 793675.0,
+   "acres_med": 2.575,
+   "acres_q1": 2.3449999999999998,
+   "acres_q3": 3.0175
+  },
+  "5 to 10 acres": {
+   "n": 19,
+   "price_q1": 454400.0,
+   "price_med": 579900.0,
+   "price_q3": 854900.0,
+   "acres_med": 5.22,
+   "acres_q1": 5.0,
+   "acres_q3": 6.1
+  },
+  "10 acres or more": {
+   "n": 14,
+   "price_q1": 668675.0,
+   "price_med": 814950.0,
+   "price_q3": 1299975.0,
+   "acres_med": 18.5,
+   "acres_q1": 14.5,
+   "acres_q3": 29.0
+  }
+ },
+ "by_area": {
+  "Aynor and Galivants Ferry": {
+   "n": 41,
+   "price_q1": 379900.0,
+   "price_med": 489900.0,
+   "price_q3": 580900.0,
+   "acres_med": 1.64,
+   "acres_q1": 1.22,
+   "acres_q3": 2.44
+  },
+  "Loris, Green Sea and Nichols": {
+   "n": 58,
+   "price_q1": 392400.0,
+   "price_med": 469900.0,
+   "price_q3": 555175.0,
+   "acres_med": 2.57,
+   "acres_q1": 1.4024999999999999,
+   "acres_q3": 3.4850000000000003
+  },
+  "Conway": {
+   "n": 60,
+   "price_q1": 443725.0,
+   "price_med": 545345.0,
+   "price_q3": 754225.0,
+   "acres_med": 1.5,
+   "acres_q1": 1.2575,
+   "acres_q3": 2.4825
+  },
+  "Longs": {
+   "n": 12,
+   "price_q1": 566175.0,
+   "price_med": 679900.0,
+   "price_q3": 898675.0,
+   "acres_med": 5.275,
+   "acres_q1": 2.7875,
+   "acres_q3": 12.5
+  },
+  "Little River": {
+   "n": 4,
+   "price_q1": 1474750.0,
+   "price_med": 1500000.0,
+   "price_q3": 1873750.0,
+   "acres_med": 1.315,
+   "acres_q1": 1.3,
+   "acres_q3": 1.54
+  },
+  "North Myrtle Beach": {
+   "n": 3,
+   "price_q1": 3637000.0,
+   "price_med": 3999000.0,
+   "price_q3": 5248450.0,
+   "acres_med": 2.58,
+   "acres_q1": 2.08,
+   "acres_q3": 2.9000000000000004
+  },
+  "Myrtle Beach, Carolina Forest and Socastee": {
+   "n": 16,
+   "price_q1": 539175.0,
+   "price_med": 1244444.0,
+   "price_q3": 1912500.0,
+   "acres_med": 1.5950000000000002,
+   "acres_q1": 1.295,
+   "acres_q3": 2.2575
+  },
+  "Murrells Inlet and Garden City": {
+   "n": 7,
+   "price_q1": 750000.0,
+   "price_med": 998900.0,
+   "price_q3": 1699500.0,
+   "acres_med": 1.43,
+   "acres_q1": 1.145,
+   "acres_q3": 2.06
+  },
+  "Other": {
+   "n": 0,
+   "price_q1": null,
+   "price_med": null,
+   "price_q3": null,
+   "acres_med": null,
+   "acres_q1": null,
+   "acres_q3": null
+  }
+ },
+ "by_area_5plus": {
+  "Aynor and Galivants Ferry": {
+   "n": 2,
+   "price_q1": 387175.0,
+   "price_med": 424450.0,
+   "price_q3": 461725.0,
+   "acres_med": 5.83,
+   "acres_q1": 5.605,
+   "acres_q3": 6.055
+  },
+  "Loris, Green Sea and Nichols": {
+   "n": 13,
+   "price_q1": 447900.0,
+   "price_med": 487900.0,
+   "price_q3": 599000.0,
+   "acres_med": 5.0,
+   "acres_q1": 5.0,
+   "acres_q3": 5.92
+  },
+  "Conway": {
+   "n": 9,
+   "price_q1": 725000.0,
+   "price_med": 830000.0,
+   "price_q3": 1175000.0,
+   "acres_med": 11.0,
+   "acres_q1": 5.86,
+   "acres_q3": 14.0
+  },
+  "Longs": {
+   "n": 6,
+   "price_q1": 664900.0,
+   "price_med": 754900.0,
+   "price_q3": 1096225.0,
+   "acres_med": 14.0,
+   "acres_q1": 8.3675,
+   "acres_q3": 26.0
+  },
+  "Little River": {
+   "n": 0,
+   "price_q1": null,
+   "price_med": null,
+   "price_q3": null,
+   "acres_med": null,
+   "acres_q1": null,
+   "acres_q3": null
+  },
+  "North Myrtle Beach": {
+   "n": 0,
+   "price_q1": null,
+   "price_med": null,
+   "price_q3": null,
+   "acres_med": null,
+   "acres_q1": null,
+   "acres_q3": null
+  },
+  "Myrtle Beach, Carolina Forest and Socastee": {
+   "n": 2,
+   "price_q1": 1299675.0,
+   "price_med": 1599450.0,
+   "price_q3": 1899225.0,
+   "acres_med": 12.45,
+   "acres_q1": 9.675,
+   "acres_q3": 15.225
+  },
+  "Murrells Inlet and Garden City": {
+   "n": 1,
+   "price_q1": 2200000.0,
+   "price_med": 2200000.0,
+   "price_q3": 2200000.0,
+   "acres_med": 22.0,
+   "acres_q1": 22.0,
+   "acres_q3": 22.0
+  },
+  "Other": {
+   "n": 0,
+   "price_q1": null,
+   "price_med": null,
+   "price_q3": null,
+   "acres_med": null,
+   "acres_q1": null,
+   "acres_q3": null
+  }
+ },
+ "calls": 16,
+ "under_150k": 1,
+ "with_acres_5plus_3bed_up": 31
+}

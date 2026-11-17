@@ -1,0 +1,703 @@
+{
+ "refreshedAt": "2026-11-17T04:20:04.996Z",
+ "total": 1695,
+ "cards": 1706,
+ "types": {
+  "Condominium": 1706
+ },
+ "cities": {
+  "Myrtle Beach": 1688,
+  "North Myrtle Beach": 12,
+  "Longs": 1,
+  "Little River": 2,
+  "Murrells Inlet": 1,
+  "Conway": 2
+ },
+ "price": {
+  "n": 1706,
+  "min": 19975,
+  "p25": 144999.75,
+  "median": 194900.0,
+  "p75": 277499.25,
+  "max": 2500000
+ },
+ "price_bands": {
+  "under_150k": 494,
+  "150k_300k": 865,
+  "300k_plus": 347,
+  "under_100k": 162,
+  "300k_500k": 250,
+  "500k_plus": 97,
+  "1m_plus": 8
+ },
+ "by_beds": {
+  "0": {
+   "n": 254,
+   "price": {
+    "n": 254,
+    "min": 44900,
+    "p25": 78750.0,
+    "median": 117250.0,
+    "p75": 143475.0,
+    "max": 270000
+   },
+   "sqft": {
+    "n": 254,
+    "min": 285,
+    "p25": 375.0,
+    "median": 387.0,
+    "p75": 430.0,
+    "max": 770
+   },
+   "hoa": {
+    "n": 253,
+    "min": 169,
+    "p25": 585.0,
+    "median": 641,
+    "p75": 843.0,
+    "max": 1277
+   }
+  },
+  "1": {
+   "n": 532,
+   "price": {
+    "n": 532,
+    "min": 25000,
+    "p25": 133124.25,
+    "median": 159900.0,
+    "p75": 195000.0,
+    "max": 498900
+   },
+   "sqft": {
+    "n": 532,
+    "min": 384,
+    "p25": 534.0,
+    "median": 581.0,
+    "p75": 650.0,
+    "max": 929
+   },
+   "hoa": {
+    "n": 532,
+    "min": 163,
+    "p25": 658.0,
+    "median": 862.5,
+    "p75": 958.0,
+    "max": 2095
+   }
+  },
+  "2": {
+   "n": 574,
+   "price": {
+    "n": 574,
+    "min": 29888,
+    "p25": 184375.0,
+    "median": 231000.0,
+    "p75": 314924.75,
+    "max": 824900
+   },
+   "sqft": {
+    "n": 574,
+    "min": 500,
+    "p25": 912.75,
+    "median": 1017.5,
+    "p75": 1125.75,
+    "max": 1660
+   },
+   "hoa": {
+    "n": 573,
+    "min": 67,
+    "p25": 439.0,
+    "median": 580,
+    "p75": 981.0,
+    "max": 2415
+   }
+  },
+  "3": {
+   "n": 314,
+   "price": {
+    "n": 314,
+    "min": 31500,
+    "p25": 234325.0,
+    "median": 305700.0,
+    "p75": 437800.0,
+    "max": 2300000
+   },
+   "sqft": {
+    "n": 314,
+    "min": 1001,
+    "p25": 1250.0,
+    "median": 1370.0,
+    "p75": 1532.0,
+    "max": 3250
+   },
+   "hoa": {
+    "n": 314,
+    "min": 200,
+    "p25": 453.75,
+    "median": 618.0,
+    "p75": 1520.0,
+    "max": 3447
+   }
+  },
+  "4": {
+   "n": 28,
+   "price": {
+    "n": 28,
+    "min": 19975,
+    "p25": 469000.0,
+    "median": 595250.0,
+    "p75": 742975.0,
+    "max": 1690000
+   },
+   "sqft": {
+    "n": 28,
+    "min": 1235,
+    "p25": 1782.75,
+    "median": 1966.5,
+    "p75": 2258.5,
+    "max": 3003
+   },
+   "hoa": {
+    "n": 28,
+    "min": 92,
+    "p25": 888.0,
+    "median": 1597.5,
+    "p75": 2000.0,
+    "max": 3312
+   }
+  },
+  "4plus": {
+   "n": 32
+  }
+ },
+ "oceanfront": {
+  "n": 582,
+  "price": {
+   "n": 582,
+   "min": 19975,
+   "p25": 149000.0,
+   "median": 193700.0,
+   "p75": 291150.0,
+   "max": 2500000
+  },
+  "hoa": {
+   "n": 582,
+   "min": 67,
+   "p25": 641.0,
+   "median": 914.5,
+   "p75": 1135.0,
+   "max": 3312
+  },
+  "hoa_missing": 0,
+  "hoa_by_beds": {
+   "1": {
+    "n": 250,
+    "min": 232,
+    "p25": 761.0,
+    "median": 940.5,
+    "p75": 1013.25,
+    "max": 1554
+   },
+   "2": {
+    "n": 116,
+    "min": 67,
+    "p25": 500.0,
+    "median": 879.5,
+    "p75": 1310.0,
+    "max": 2034
+   },
+   "3": {
+    "n": 89,
+    "min": 219,
+    "p25": 457.0,
+    "median": 1120,
+    "p75": 1601.5,
+    "max": 2122
+   }
+  }
+ },
+ "not_oceanfront": {
+  "n": 1124,
+  "price": {
+   "n": 1124,
+   "min": 25000,
+   "p25": 142000.0,
+   "median": 194900.0,
+   "p75": 274974.25,
+   "max": 2300000
+  },
+  "hoa": {
+   "n": 1122,
+   "min": 83,
+   "p25": 446.0,
+   "median": 629.5,
+   "p75": 902.0,
+   "max": 3447
+  },
+  "hoa_missing": 2,
+  "hoa_by_beds": {
+   "1": {
+    "n": 282,
+    "min": 163,
+    "p25": 529.75,
+    "median": 768.0,
+    "p75": 902.0,
+    "max": 2095
+   },
+   "2": {
+    "n": 457,
+    "min": 83,
+    "p25": 434.0,
+    "median": 548,
+    "p75": 895.0,
+    "max": 2415
+   },
+   "3": {
+    "n": 225,
+    "min": 200,
+    "p25": 440.0,
+    "median": 602,
+    "p75": 1332.0,
+    "max": 3447
+   }
+  }
+ },
+ "hoa_all": {
+  "n": 1704,
+  "min": 67,
+  "p25": 480.0,
+  "median": 725.5,
+  "p75": 974.0,
+  "max": 3447
+ },
+ "hoa_missing": 2,
+ "tags": {
+  "": 1105,
+  "Waterfront": 582,
+  "Built 2026": 11,
+  "Built 2025": 3,
+  "Built 2027": 5
+ },
+ "year_built": {
+  "n": 1706,
+  "median": 1988.0,
+  "min": 1956,
+  "max": 2027,
+  "since_2015": 53,
+  "before_1990": 883,
+  "since_2022": 27
+ },
+ "new_construction": 0,
+ "subdivisions_top": [
+  [
+   "Landmark Resort",
+   70
+  ],
+  [
+   "Coral Beach",
+   43
+  ],
+  [
+   "Caravelle Resort",
+   42
+  ],
+  [
+   "Magnolia Pointe",
+   39
+  ],
+  [
+   "Magnolia Place",
+   35
+  ],
+  [
+   "Sea Mist Resort",
+   34
+  ],
+  [
+   "Magnolia North",
+   32
+  ],
+  [
+   "Monterey Bay Suites Resort",
+   31
+  ],
+  [
+   "SAND DUNES PHII",
+   31
+  ],
+  [
+   "Bluewater Resort - Hi rise",
+   30
+  ],
+  [
+   "RIVER OAKS CONDOS",
+   30
+  ],
+  [
+   "Compass Cove Pinnacle Oceanfront Tower",
+   27
+  ],
+  [
+   "PALACE, THE",
+   26
+  ],
+  [
+   "Grande Cayman Resort (formerly Long Bay Resort)",
+   22
+  ],
+  [
+   "MB RESORT RT",
+   19
+  ],
+  [
+   "SANDS OCEAN",
+   18
+  ],
+  [
+   "SAND DUNES PIII",
+   18
+  ],
+  [
+   "Beach Colony",
+   18
+  ],
+  [
+   "Dunes Village Resort",
+   18
+  ],
+  [
+   "Forest Dunes",
+   17
+  ],
+  [
+   "OCEAN REEF RESORT NORTH TOWER",
+   17
+  ],
+  [
+   "Landmark Resort Phase II",
+   17
+  ],
+  [
+   "OCEAN FOREST VILLAS",
+   17
+  ],
+  [
+   "MB Resort I - 16J",
+   17
+  ],
+  [
+   "MERIDIAN PLA",
+   17
+  ],
+  [
+   "Holiday Sands",
+   15
+  ],
+  [
+   "Savannah Shores - MB Arcadian",
+   15
+  ],
+  [
+   "OCEAN FOREST PL",
+   15
+  ],
+  [
+   "Caribbean Oceanfront Condominium Tower - PH II",
+   14
+  ],
+  [
+   "Dunes Pointe",
+   14
+  ],
+  [
+   "Kingston Plantation - South Hampton",
+   13
+  ],
+  [
+   "Royale Palms",
+   13
+  ],
+  [
+   "Holiday Inn - Pavilion - MB",
+   13
+  ],
+  [
+   "Carolina Winds",
+   13
+  ],
+  [
+   "Maisons Sur-Mer",
+   13
+  ],
+  [
+   "Carolinian Beach Resort",
+   12
+  ],
+  [
+   "Caribbean Oceanfront Suite Tower - PH I",
+   12
+  ],
+  [
+   "Kingston Plantation - Richmond Park",
+   12
+  ],
+  [
+   "WATERWAY VILLAG",
+   12
+  ],
+  [
+   "Paradise Resort",
+   12
+  ],
+  [
+   "WINDSOR GREEN",
+   12
+  ],
+  [
+   "ST JOHN S INN",
+   11
+  ],
+  [
+   "MB RESORT II",
+   11
+  ],
+  [
+   "Dunes Village Phase II",
+   11
+  ],
+  [
+   "WAVE RIDER RESO",
+   11
+  ],
+  [
+   "MB RESORT FS",
+   11
+  ],
+  [
+   "SUMMERTREE",
+   11
+  ],
+  [
+   "Oceans One South Tower - Myrtle Beach",
+   10
+  ],
+  [
+   "Bay View Resort",
+   10
+  ],
+  [
+   "Kingston Plantation - Brighton Towers",
+   10
+  ],
+  [
+   "Grande Shores",
+   10
+  ],
+  [
+   "SHOREWOOD",
+   10
+  ],
+  [
+   "Boardwalk Oceanfront Tower",
+   10
+  ],
+  [
+   "Covenant Towers",
+   10
+  ],
+  [
+   "Patricia Grand I",
+   9
+  ],
+  [
+   "Broadway Station",
+   9
+  ],
+  [
+   "Camelot By The Sea",
+   9
+  ],
+  [
+   "OCEAN REEF SOUTH TOWER",
+   9
+  ],
+  [
+   "PALMS, THE",
+   9
+  ],
+  [
+   "Ocean Creek I",
+   9
+  ]
+ ],
+ "subdivisions_n": 276,
+ "sales": {
+  "horry_condo_deeds": 4479,
+  "horry": {
+   "n": 4479,
+   "min": 11019.0,
+   "p25": 148500.0,
+   "median": 215000.0,
+   "p75": 313900.0,
+   "max": 1981122.0
+  },
+  "city_limits": {
+   "n": 1125,
+   "min": 11019.0,
+   "p25": 105000.0,
+   "median": 170000.0,
+   "p75": 265000.0,
+   "max": 1925000.0
+  },
+  "outside_city": {
+   "n": 3354,
+   "min": 14500.0,
+   "p25": 160000.0,
+   "median": 225650.0,
+   "p75": 332125.0,
+   "max": 1981122.0
+  },
+  "nmb_district_550": {
+   "n": 1088,
+   "min": 15000.0,
+   "p25": 222000.0,
+   "median": 306050.0,
+   "p75": 430000.0,
+   "max": 1975000.0
+  }
+ },
+ "sales_by_regime_top": [
+  [
+   "YACHTSMAN RESORT SOUTH TOWER",
+   74,
+   115000.0
+  ],
+  [
+   "TIDES/DRIFTWOOD/OASIS",
+   53,
+   52000.0
+  ],
+  [
+   "LANDMARK",
+   49,
+   97000.0
+  ],
+  [
+   "MAGNOLIA PLACE",
+   44,
+   199500.0
+  ],
+  [
+   "CORAL BEACH",
+   39,
+   85000.0
+  ],
+  [
+   "COVENANT TOWERS",
+   29,
+   36000.0
+  ],
+  [
+   "BEACH COLONY RESORT",
+   22,
+   225725.0
+  ],
+  [
+   "PALACE",
+   22,
+   146000.0
+  ],
+  [
+   "CARAVELLE RESORT",
+   21,
+   145000.0
+  ],
+  [
+   "PINNACLE OCEANFRONT TOWER",
+   21,
+   153000.0
+  ],
+  [
+   "BLUEWATER VILLAS",
+   21,
+   92000.0
+  ],
+  [
+   "DUNES VILLAGE",
+   20,
+   268250.0
+  ],
+  [
+   "LONG BAY RESORT",
+   19,
+   170000.0
+  ],
+  [
+   "MONTEREY BAY SUITES RESORT",
+   18,
+   148500.0
+  ],
+  [
+   "CAROLINIAN RESORT",
+   17,
+   225000.0
+  ],
+  [
+   "SAND DUNES OCEANFRONT TOWER",
+   16,
+   130000.0
+  ],
+  [
+   "ST JOHNS INN",
+   15,
+   48000.0
+  ],
+  [
+   "OCEAN REEF RESORT NORTH TOWER",
+   14,
+   124500.0
+  ],
+  [
+   "OCEANS ONE SOUTH TOWER",
+   13,
+   224153.0
+  ],
+  [
+   "PLACE AT THE BEACH OCEAN FOREST",
+   13,
+   275000.0
+  ],
+  [
+   "SAND DUNES NORTH TOWER",
+   12,
+   336000.0
+  ],
+  [
+   "WILLOW RUN CONDOMINIUMS",
+   11,
+   109000.0
+  ],
+  [
+   "BAYVIEW",
+   11,
+   186500.0
+  ],
+  [
+   "FOREST DUNES",
+   11,
+   210000.0
+  ],
+  [
+   "CARIBBEAN OCEANFRONT TOWER",
+   11,
+   201000.0
+  ]
+ ],
+ "sales_city_bands": {
+  "under_100k": 243,
+  "100_200k": 420,
+  "200_300k": 246,
+  "300_500k": 169,
+  "500k_plus": 47
+ }
+}

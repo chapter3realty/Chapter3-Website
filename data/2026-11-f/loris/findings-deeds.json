@@ -1,0 +1,177 @@
+{
+ "deeds_from": "2025-11-01",
+ "deeds_to": "2026-10-31",
+ "steps": {
+  "all deeds": 30333,
+  "over $10,000": 19055,
+  "one parcel number": 18936,
+  "not tax sale, corrective or multi-parcel memo": 18375,
+  "book and page on one deed only": 18375,
+  "parcel in county layer, residential land use": 17778,
+  "postal city Loris": 657
+ },
+ "houses": {
+  "count": 356,
+  "median": 278500.0,
+  "p25": 246040.0,
+  "p75": 340000.0,
+  "min": 58000.0,
+  "max": 795000.0
+ },
+ "houses_seller_business": {
+  "count": 242,
+  "median": 278500.0,
+  "p25": 250000.0,
+  "p75": 326000.0,
+  "min": 142000.0,
+  "max": 576880.0
+ },
+ "houses_seller_person": {
+  "count": 114,
+  "median": 278995.0,
+  "p25": 238000.0,
+  "p75": 362500.0,
+  "min": 58000.0,
+  "max": 795000.0
+ },
+ "land_use_100_left_out": {
+  "count": 186,
+  "median": 244255.0,
+  "p25": 76000.0,
+  "p75": 310990.0,
+  "min": 17000.0,
+  "max": 527916.0
+ },
+ "house_price_bands": {
+  "0-200000": 18,
+  "200000-300000": 203,
+  "300000-400000": 94,
+  "400000-500000": 28,
+  "500000-1000000000": 13
+ },
+ "houses_by_zip": {
+  "29569": {
+   "count": 356,
+   "median": 278500.0,
+   "p25": 246040.0,
+   "p75": 340000.0,
+   "min": 58000.0,
+   "max": 795000.0
+  }
+ },
+ "houses_by_tax_district": {
+  "260": 49,
+  "220": 40,
+  "200": 94,
+  "250": 118,
+  "300": 14,
+  "240": 39,
+  "500": 1,
+  "100": 1
+ },
+ "houses_median_price_by_tax_district": {
+  "550": null,
+  "500": {
+   "count": 1,
+   "median": 215000.0,
+   "p25": 215000.0,
+   "p75": 215000.0,
+   "min": 215000.0,
+   "max": 215000.0
+  },
+  "250": {
+   "count": 118,
+   "median": 265240.0,
+   "p25": 245000.0,
+   "p75": 310990.0,
+   "min": 58000.0,
+   "max": 541345.0
+  },
+  "200": {
+   "count": 94,
+   "median": 279995.0,
+   "p25": 251750.0,
+   "p75": 344900.0,
+   "min": 145000.0,
+   "max": 795000.0
+  }
+ },
+ "houses_outside_550": {
+  "count": 356,
+  "median": 278500.0,
+  "p25": 246040.0,
+  "p75": 340000.0,
+  "min": 58000.0,
+  "max": 795000.0
+ },
+ "houses_by_quarter": {
+  "2025-Q4": {
+   "count": 54,
+   "median": 309040.0
+  },
+  "2026-Q1": {
+   "count": 97,
+   "median": 262000.0
+  },
+  "2026-Q2": {
+   "count": 119,
+   "median": 276000.0
+  },
+  "2026-Q3": {
+   "count": 75,
+   "median": 280000.0
+  },
+  "2026-Q4": {
+   "count": 11,
+   "median": 270000.0
+  }
+ },
+ "houses_by_seller": {
+  "D.R. Horton (DR Horton Inc and D R Horton Inc)": 61,
+  "person": 114,
+  "other business": 181
+ },
+ "dr_horton_share_pct": 17.1,
+ "business_sellers_top": [
+  [
+   "D R HORTON",
+   49
+  ],
+  [
+   "STARLIGHT HOMES SOUTH CAROLINA",
+   35
+  ],
+  [
+   "LENNAR CAROLINAS",
+   34
+  ],
+  [
+   "CEDAR BRANCH SC",
+   21
+  ],
+  [
+   "JOHNSON & WELLONS",
+   12
+  ],
+  [
+   "GREAT SOUTHERN HOMES",
+   12
+  ],
+  [
+   "DR HORTON",
+   12
+  ],
+  [
+   "DREAM FINDERS HOMES",
+   11
+  ],
+  [
+   "LEWIS CONSTRUCTION GROUP",
+   8
+  ],
+  [
+   "BEVERLY HOMES",
+   7
+  ]
+ ]
+}

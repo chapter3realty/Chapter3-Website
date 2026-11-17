@@ -1,0 +1,108 @@
+{
+ "pulled": "2026-11-17T07:31:41.816792+00:00",
+ "rule": "Drive times from the middle of Shaftesbury Glen (detached houses; mean of parcel centre points, findings.json \"center\") and the Fairways townhomes (\"center_fairways\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "The Preserve at Shaftesbury Glen (middle of its 92 lots)": [
+   33.89378,
+   -78.9091
+  ]
+ },
+ "drives": {
+  "The Preserve at Shaftesbury Glen (middle of its 92 lots)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 42.1,
+    "miles": 26.92,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 33.2,
+    "miles": 21.34,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 37.1,
+    "miles": 23.79,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-78.9223169,33.7027515?overview=false"
+   },
+   "Downtown Conway (Main Street at 4th Avenue)": {
+    "minutes": 19.1,
+    "miles": 9.87,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-79.048,33.8355?overview=false"
+   },
+   "Conway Medical Center": {
+    "minutes": 26.4,
+    "miles": 11.87,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-79.0207,33.8332?overview=false"
+   },
+   "Conway Hospital (Conway Medical Center)": {
+    "minutes": 26.4,
+    "miles": 11.87,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-79.0207,33.8332?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 24.0,
+    "miles": 15.24,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.9091,33.89378;-78.78788522059399,33.76925237005197?overview=false",
+    "name": "APACHE FAMILY CAMPGROUND",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "APACHE FAMILY CAMPGROUND",
+     24.0,
+     15.24
+    ],
+    [
+     "HORRY COUNTY 6",
+     24.8,
+     15.52
+    ],
+    [
+     "MYRTLE BEACH 137",
+     27.5,
+     16.86
+    ],
+    [
+     "MYRTLE BEACH 136",
+     26.3,
+     16.67
+    ],
+    [
+     "HORRY COUNTY 3",
+     25.5,
+     15.89
+    ],
+    [
+     "HORRY COUNTY 4",
+     25.3,
+     15.81
+    ],
+    [
+     "HORRY COUNTY 5",
+     25.2,
+     15.75
+    ],
+    [
+     "HORRY COUNTY 2",
+     25.7,
+     15.96
+    ],
+    [
+     "MYRTLE BEACH 135",
+     27.0,
+     17.03
+    ],
+    [
+     "MYRTLE BEACH 134",
+     27.3,
+     17.1
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 452.1,
+    "miles": 21.06,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.9091,33.89378;-78.78788522059399,33.76925237005197?overview=false"
+   }
+  }
+ }
+}

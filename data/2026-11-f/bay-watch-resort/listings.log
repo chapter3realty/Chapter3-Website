@@ -1,0 +1,160 @@
+{
+ "pulled": "2026-11-17T06:34:37.546505+00:00",
+ "refreshedAt": "2026-11-17T06:30:05.227Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 41,
+ "at_towers": 41,
+ "beds": {
+  "0": 9,
+  "1": 15,
+  "2": 13,
+  "3": 4
+ },
+ "asking": {
+  "all": {
+   "median": 237000,
+   "min": 107900,
+   "max": 549900
+  },
+  "0": {
+   "n": 9,
+   "median": 126900,
+   "min": 107900,
+   "max": 159900,
+   "sqft_median": 345,
+   "sqft_range": [
+    326,
+    400
+   ]
+  },
+  "1": {
+   "n": 15,
+   "median": 229900,
+   "min": 214900,
+   "max": 289000,
+   "sqft_median": 580,
+   "sqft_range": [
+    552,
+    700
+   ]
+  },
+  "2": {
+   "n": 13,
+   "median": 395000,
+   "min": 370000,
+   "max": 419500,
+   "sqft_median": 1062,
+   "sqft_range": [
+    890,
+    1153
+   ]
+  },
+  "3": {
+   "n": 4,
+   "median": 519950.0,
+   "min": 449900,
+   "max": 549900,
+   "sqft_median": 1209.0,
+   "sqft_range": [
+    1103,
+    1315
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 41,
+   "median_at_or_under": 625,
+   "lowest_at_or_under": 400,
+   "highest_at_or_under": 1375,
+   "middle_half": [
+    625.0,
+    1075.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 9,
+   "median_at_or_under": 425,
+   "lowest_at_or_under": 400,
+   "highest_at_or_under": 450,
+   "middle_half": [
+    412.5,
+    425.0
+   ]
+  },
+  "1": {
+   "n": 15,
+   "median_at_or_under": 625,
+   "lowest_at_or_under": 625,
+   "highest_at_or_under": 625,
+   "middle_half": [
+    625.0,
+    625.0
+   ]
+  },
+  "2": {
+   "n": 13,
+   "median_at_or_under": 1075,
+   "lowest_at_or_under": 775,
+   "highest_at_or_under": 1075,
+   "middle_half": [
+    1000.0,
+    1075.0
+   ]
+  },
+  "3": {
+   "n": 4,
+   "median_at_or_under": 1350.0,
+   "lowest_at_or_under": 775,
+   "highest_at_or_under": 1375,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 37,
+  "rentals_allowed": 37,
+  "long_term_rental_allowed": 36,
+  "vacation_rental_program": 39,
+  "has_rental_income": 39,
+  "furnished": 41,
+  "pets_allowed": 23,
+  "oceanfront_unit": 32,
+  "ocean_view": 41,
+  "oceanfront_building": 40,
+  "high_floor_unit": 34,
+  "low_floor_unit": 5,
+  "top_floor": 1,
+  "balcony": 37,
+  "parking_garage": 36,
+  "covered_parking": 40,
+  "indoor_pool": 38,
+  "sauna": 1,
+  "elevator_building": 38,
+  "flood_zone": 5,
+  "hoa_includes_trash": 37,
+  "hoa_includes_utilities": 39,
+  "hoa_includes_water_sewer": 39,
+  "hoa_includes_insurance": 8,
+  "hoa_includes_internet": 38,
+  "hoa_includes_pest": 36,
+  "hoa_includes_cable": 21,
+  "hoa_includes_electric": 30,
+  "security_service": 23
+ },
+ "year_built": {
+  "2001": 27,
+  "2003": 11,
+  "2002": 3
+ },
+ "flood_zone_field": {
+  "None": 41
+ },
+ "subdivision_field": {
+  "Bay Watch PH I - North Tower": 19,
+  "Bay Watch PH III - Center Tower": 15,
+  "Bay Watch PH II - South Tower": 7
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "read": "2026-11-17T06:41:22.716807+00:00",
+ "rule": "Margate Tower in Horry County's public records, in aggregate. Parcels: Horry County GIS layer 24, LegalDescr LIKE 'MARGATE TOWER HPR PH I;%'.\nUnits = parcels with a building value. Kept: unit count, floors (unit number less last two digits), taxed-as-home count, last-sale years, owner state counts.\nSales: deed index (AcclaimWeb DEED 001) window 2025-11-01..2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json) matched by parcel number to the Margate parcels,\nConsideration >= 1000; and window 2025-10-01..2026-09-30 (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json, legal starts MARGATE TOWER HPR PH I;).\nNever kept: PIN, owner, unit record. Run: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 253,
+ "units": 252,
+ "unparsed_unit_numbers": 3,
+ "floors": {
+  "top": 29,
+  "count": 28,
+  "missing_between": [
+   13
+  ],
+  "units_numbered": 249
+ },
+ "county_market_value_groups": [
+  [
+   1000000.0,
+   178
+  ],
+  [
+   1470000.0,
+   47
+  ],
+  [
+   875000.0,
+   2
+  ],
+  [
+   750000.0,
+   2
+  ],
+  [
+   850000.0,
+   2
+  ],
+  [
+   787500.0,
+   2
+  ]
+ ],
+ "last_sale_year": {
+  "2004": 25,
+  "2005": 3,
+  "2006": 2,
+  "2008": 2,
+  "2009": 10,
+  "2010": 3,
+  "2011": 4,
+  "2012": 7,
+  "2013": 12,
+  "2014": 7,
+  "2015": 6,
+  "2016": 10,
+  "2017": 8,
+  "2018": 9,
+  "2019": 12,
+  "2020": 13,
+  "2021": 27,
+  "2022": 23,
+  "2023": 16,
+  "2024": 15,
+  "2025": 14,
+  "2026": 24
+ },
+ "owner_out_of_sc": 175,
+ "owner_state_top": [
+  [
+   "SC",
+   77
+  ],
+  [
+   "NC",
+   69
+  ],
+  [
+   "VA",
+   20
+  ],
+  [
+   "PA",
+   13
+  ],
+  [
+   "WV",
+   12
+  ],
+  [
+   "OH",
+   10
+  ]
+ ],
+ "taxed_as_home_4pct": 46,
+ "sales": {
+  "window_2": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 15,
+    "median": 990000.0,
+    "p25": 875000.0,
+    "p75": 1355000.0,
+    "min": 650000.0,
+    "max": 1633125.0
+   },
+   "floors_1_to_14": {
+    "n": 5,
+    "median": 990000.0,
+    "p25": 885632.185,
+    "p75": 1087500.0,
+    "min": 860000.0,
+    "max": 1100000.0
+   },
+   "floors_15_up": {
+    "n": 9,
+    "median": 1050000.0,
+    "p25": 850000.0,
+    "p75": 1575000.0,
+    "min": 650000.0,
+    "max": 1633125.0
+   },
+   "zero_dollar_deeds_matched": 11,
+   "matched_by_name_not_pin": 0
+  },
+  "window_1": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 14,
+    "median": 950632.185,
+    "p25": 871250.0,
+    "p75": 1403750.0,
+    "min": 650000.0,
+    "max": 1633125.0
+   },
+   "floors_1_to_14": {
+    "n": 6,
+    "median": 950632.185,
+    "p25": 871250.0,
+    "p75": 1081250.0,
+    "min": 860000.0,
+    "max": 1100000.0
+   },
+   "floors_15_up": {
+    "n": 8,
+    "median": 1127500.0,
+    "p25": 837500.0,
+    "p75": 1587500.0,
+    "min": 650000.0,
+    "max": 1633125.0
+   },
+   "buyer_tax_bill_in_sc": 6,
+   "buyer_tax_bill_out_of_sc": 8
+  }
+ }
+}

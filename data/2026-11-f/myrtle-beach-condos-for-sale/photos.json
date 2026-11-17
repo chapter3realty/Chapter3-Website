@@ -1,0 +1,70 @@
+{
+ "rule": "Photo records for /submarkets/myrtle-beach/condos-for-sale/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "myrtle-beach-condos-for-sale",
+   "file": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-600w.webp",
+    "1200": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Myrtle Beach oceanfront from above",
+   "what": "The Myrtle Beach oceanfront near 10th Avenue North from above (USDA NAIP aerial photo, 2023): a row of condo buildings along the beach road, a wide sand beach with surf, and streets and parking lots behind.",
+   "caption": "The Myrtle Beach oceanfront from the air: condo buildings between the beach road and the sand.",
+   "alt": "Aerial photo of the Myrtle Beach oceanfront: a row of condo buildings with pools along the sand, a wide beach with surf, and streets, parking lots and trees behind the buildings",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "The oceanfront along Ocean Boulevard, north of the Boardwalk"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023 (the image service's primary mosaic at the frame), natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling) on 2026-11-17; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ and /submarkets/conway/homes-for-sale/: The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service (4:3)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8779935.2%2C3988389.4%2C-8778154.1%2C3989861.4&bboxSR=3857&imageSR=3857&size=1800%2C1350&format=jpg&interpolation=RSP_CubicConvolution&f=image&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.87017,
+     33.70155,
+     -78.85861,
+     33.7095
+    ],
+    "ground_m_per_px_1200w": 0.89
+   },
+   "original_size": "1800x1350 (NAIP export), cropped to 1300x975, then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/myrtle-beach/condos-for-sale/ on 2026-11-17. Buildings, beach, surf, streets, parking lots. No readable sign, plate or house number at page size; a few specks on the sand are too small to read.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/myrtle-beach-condos-for-sale/myrtle-beach-oceanfront-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "The 1x1 and 16x9 share crops are center crops of the same cropped export."
+  }
+ ]
+}

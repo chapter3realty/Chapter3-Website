@@ -1,0 +1,530 @@
+{
+ "read": "2026-11-17T06:45:11.012899+00:00",
+ "rule": "Surfmaster (MLS subdivisions SURFMASTER I and SURFMASTER II; 1690 and 1620 N Waccamaw Dr, Garden City Beach) in Horry County public records, in aggregate.\nParcels: Horry County GIS layer 24, LegalDescr 'SURFMASTER; %' (regime 1) and 'SURFMASTER PH II; %' (regime 2). Units = parcels with a building value.\nKept: unit counts, floors (unit number less its last two digits), doors per floor, county value groups, last-sale year counts, owner mailing state counts.\nDeeds: window 1 (2025-10-01 to 2026-09-30) = data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json joined by PIN; window 2 (2025-11-01 to 2026-10-31) = data/2026-11-n/buyers-builders/raw/deeds-co.json joined by ParcelNumber.\nFlood: layer 19 polygons touching the common-area parcels' footprint. Tax: units taxed at 6 percent.\nNever kept: a PIN, an owner, a unit's own record. Run: python3 -I pull_county.py <this dir> <website root>",
+ "regimes": {
+  "I": {
+   "where": "LegalDescr LIKE 'SURFMASTER; %'",
+   "parcels": 73,
+   "units": 72,
+   "parcels_without_building_value": 1,
+   "acreage_common_area": [
+    1.13
+   ],
+   "landuse_first_digit": {
+    "1xx": 72
+   },
+   "unparsed_unit_numbers": 6,
+   "floors": {
+    "numbers": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "top": 12,
+    "units_per_floor": {
+     "1": 6,
+     "2": 6,
+     "3": 7,
+     "4": 7,
+     "5": 7,
+     "6": 7,
+     "7": 6,
+     "8": 6,
+     "9": 5,
+     "10": 4,
+     "11": 3,
+     "12": 2
+    },
+    "doors_per_floor": {
+     "1": [
+      1,
+      7,
+      6
+     ],
+     "2": [
+      1,
+      7,
+      6
+     ],
+     "3": [
+      1,
+      7,
+      7
+     ],
+     "4": [
+      1,
+      7,
+      7
+     ],
+     "5": [
+      1,
+      7,
+      7
+     ],
+     "6": [
+      1,
+      7,
+      7
+     ],
+     "7": [
+      2,
+      7,
+      6
+     ],
+     "8": [
+      3,
+      11,
+      6
+     ],
+     "9": [
+      3,
+      7,
+      5
+     ],
+     "10": [
+      4,
+      7,
+      4
+     ],
+     "11": [
+      5,
+      7,
+      3
+     ],
+     "12": [
+      6,
+      7,
+      2
+     ]
+    }
+   },
+   "county_market_value_groups": [
+    [
+     749900.0,
+     27
+    ],
+    [
+     475000.0,
+     20
+    ],
+    [
+     299000.0,
+     12
+    ],
+    [
+     873000.0,
+     5
+    ]
+   ],
+   "county_market_value_groups_under_3": 8,
+   "last_sale_year": {
+    "1989": 1,
+    "1993": 1,
+    "1994": 1,
+    "1995": 1,
+    "1998": 1,
+    "1999": 2,
+    "2001": 3,
+    "2003": 1,
+    "2005": 3,
+    "2006": 1,
+    "2007": 2,
+    "2008": 1,
+    "2009": 1,
+    "2010": 1,
+    "2011": 1,
+    "2012": 2,
+    "2014": 2,
+    "2015": 4,
+    "2016": 5,
+    "2017": 2,
+    "2018": 4,
+    "2019": 5,
+    "2020": 4,
+    "2021": 3,
+    "2022": 1,
+    "2023": 2,
+    "2024": 5,
+    "2025": 2,
+    "2026": 8,
+    "None": 2
+   },
+   "owner_state_top": [
+    [
+     "SC",
+     28
+    ],
+    [
+     "NC",
+     11
+    ],
+    [
+     "NY",
+     7
+    ],
+    [
+     "MD",
+     4
+    ],
+    [
+     "TN",
+     4
+    ],
+    [
+     "VA",
+     4
+    ],
+    [
+     "PA",
+     3
+    ],
+    [
+     "CT",
+     2
+    ]
+   ],
+   "owner_out_of_sc": 44,
+   "taxed_as_home_4pct": 7,
+   "taxed_6pct": 65,
+   "tax6": {
+    "taxable": {
+     "n": 65,
+     "median": 371623.0,
+     "p25": 288305.0,
+     "p75": 438150.0,
+     "min": 148120.0,
+     "max": 790000.0
+    },
+    "market": {
+     "n": 65,
+     "median": 670000.0,
+     "p25": 475000.0,
+     "p75": 749900.0,
+     "min": 299000.0,
+     "max": 873000.0
+    },
+    "implied_tax_at_254.6_mills_NOT_USED_site_is_county_unincorporated": null
+   },
+   "sales_window_1_2025-10-01_to_2026-09-30": {
+    "n": 6,
+    "median": 616250.0,
+    "p25": 530000.0,
+    "p75": 643750.0,
+    "min": 515000.0,
+    "max": 670000.0,
+    "buyer_tax_bill_in_sc": 5,
+    "buyer_tax_bill_out_of_sc": 1
+   },
+   "sales_window_2_2025-11-01_to_2026-10-31": {
+    "n": 6,
+    "median": 616250.0,
+    "p25": 530000.0,
+    "p75": 643750.0,
+    "min": 515000.0,
+    "max": 670000.0,
+    "zero_dollar_deeds": 3
+   },
+   "flood": {
+    "footprint_center": [
+     33.589073,
+     -78.987089
+    ],
+    "zones_touching": [
+     {
+      "attributes": {
+       "FLD_ZONE": "AE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 12.0
+      },
+      "share_of_footprint": 0.736
+     },
+     {
+      "attributes": {
+       "FLD_ZONE": "VE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 14.0
+      },
+      "share_of_footprint": 0.137
+     },
+     {
+      "attributes": {
+       "FLD_ZONE": "AE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 13.0
+      },
+      "share_of_footprint": 0.127
+     }
+    ],
+    "share_in_no_zone": 0.0
+   }
+  },
+  "II": {
+   "where": "LegalDescr LIKE 'SURFMASTER PH II; %'",
+   "parcels": 72,
+   "units": 71,
+   "parcels_without_building_value": 1,
+   "acreage_common_area": [
+    0.96
+   ],
+   "landuse_first_digit": {
+    "1xx": 71
+   },
+   "unparsed_unit_numbers": 6,
+   "floors": {
+    "numbers": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "top": 12,
+    "units_per_floor": {
+     "1": 7,
+     "2": 7,
+     "3": 6,
+     "4": 7,
+     "5": 7,
+     "6": 7,
+     "7": 6,
+     "8": 4,
+     "9": 5,
+     "10": 4,
+     "11": 3,
+     "12": 2
+    },
+    "doors_per_floor": {
+     "1": [
+      8,
+      14,
+      7
+     ],
+     "2": [
+      8,
+      14,
+      7
+     ],
+     "3": [
+      9,
+      14,
+      6
+     ],
+     "4": [
+      8,
+      14,
+      7
+     ],
+     "5": [
+      8,
+      14,
+      7
+     ],
+     "6": [
+      8,
+      14,
+      7
+     ],
+     "7": [
+      8,
+      13,
+      6
+     ],
+     "8": [
+      8,
+      12,
+      4
+     ],
+     "9": [
+      8,
+      12,
+      5
+     ],
+     "10": [
+      8,
+      11,
+      4
+     ],
+     "11": [
+      8,
+      10,
+      3
+     ],
+     "12": [
+      8,
+      9,
+      2
+     ]
+    }
+   },
+   "county_market_value_groups": [
+    [
+     749900.0,
+     29
+    ],
+    [
+     475000.0,
+     18
+    ],
+    [
+     299000.0,
+     13
+    ],
+    [
+     873000.0,
+     6
+    ]
+   ],
+   "county_market_value_groups_under_3": 5,
+   "last_sale_year": {
+    "1990": 1,
+    "1993": 2,
+    "1995": 1,
+    "1998": 1,
+    "1999": 2,
+    "2000": 3,
+    "2001": 2,
+    "2006": 1,
+    "2009": 1,
+    "2011": 2,
+    "2012": 1,
+    "2013": 3,
+    "2015": 6,
+    "2017": 2,
+    "2018": 5,
+    "2019": 3,
+    "2020": 6,
+    "2021": 5,
+    "2022": 4,
+    "2024": 7,
+    "2025": 3,
+    "2026": 9,
+    "None": 1
+   },
+   "owner_state_top": [
+    [
+     "SC",
+     32
+    ],
+    [
+     "NC",
+     8
+    ],
+    [
+     "NY",
+     8
+    ],
+    [
+     "NJ",
+     5
+    ],
+    [
+     "VA",
+     5
+    ],
+    [
+     "MD",
+     3
+    ],
+    [
+     "PA",
+     3
+    ],
+    [
+     "WV",
+     2
+    ]
+   ],
+   "owner_out_of_sc": 39,
+   "taxed_as_home_4pct": 6,
+   "taxed_6pct": 65,
+   "tax6": {
+    "taxable": {
+     "n": 65,
+     "median": 371623.0,
+     "p25": 288305.0,
+     "p75": 448500.0,
+     "min": 148120.0,
+     "max": 749900.0
+    },
+    "market": {
+     "n": 65,
+     "median": 627000.0,
+     "p25": 475000.0,
+     "p75": 749900.0,
+     "min": 265000.0,
+     "max": 873000.0
+    },
+    "implied_tax_at_254.6_mills_NOT_USED_site_is_county_unincorporated": null
+   },
+   "sales_window_1_2025-10-01_to_2026-09-30": {
+    "n": 7,
+    "median": 535000.0,
+    "p25": 314000.0,
+    "p75": 638000.0,
+    "min": 310000.0,
+    "max": 740000.0,
+    "buyer_tax_bill_in_sc": 3,
+    "buyer_tax_bill_out_of_sc": 4
+   },
+   "sales_window_2_2025-11-01_to_2026-10-31": {
+    "n": 7,
+    "median": 535000.0,
+    "p25": 314000.0,
+    "p75": 638000.0,
+    "min": 310000.0,
+    "max": 740000.0,
+    "zero_dollar_deeds": 2
+   },
+   "flood": {
+    "footprint_center": [
+     33.58858,
+     -78.987544
+    ],
+    "zones_touching": [
+     {
+      "attributes": {
+       "FLD_ZONE": "AE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 12.0
+      },
+      "share_of_footprint": 0.574
+     },
+     {
+      "attributes": {
+       "FLD_ZONE": "VE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 14.0
+      },
+      "share_of_footprint": 0.169
+     },
+     {
+      "attributes": {
+       "FLD_ZONE": "AE",
+       "SFHA_TF": "T",
+       "STATIC_BFE": 13.0
+      },
+      "share_of_footprint": 0.258
+     }
+    ],
+    "share_in_no_zone": -0.001
+   }
+  }
+ },
+ "units_total": 143
+}

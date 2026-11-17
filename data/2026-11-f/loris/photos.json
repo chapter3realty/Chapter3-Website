@@ -1,0 +1,71 @@
+{
+ "rule": "Photo records for /submarkets/loris/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "loris",
+   "file": "images/2026-11-f/loris/loris-edge-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/loris/loris-edge-from-above-600w.webp",
+    "1200": "images/2026-11-f/loris/loris-edge-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Loris from above",
+   "what": "Part of Loris from above (USDA NAIP aerial photo, 2023): a road with shops at the upper left, small streets of houses, a plowed field and pine woods to the right, and a ball field with a church near the lower right.",
+   "caption": "Part of Loris from the air: a road with shops at the left, streets of houses, then fields and pine woods.",
+   "alt": "Aerial photo of part of Loris, SC: a road with shops at the upper left, small streets of houses in the middle, and fields and pine woods to the right",
+   "place": {
+    "city": "Loris",
+    "sublocation": "Loris, Horry County"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), natural color. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, WGS84) on 2026-11-17; the exact request is in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service and cropped it to 4:3",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-78.8870,34.0520,-78.8730,34.0610&bboxSR=4326&imageSR=4326&size=1800,1350&format=jpg&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.887,
+     34.052,
+     -78.873,
+     34.061
+    ],
+    "ground_m_per_px_1200w": 0.9
+   },
+   "original_size": "1800x1350 (NAIP export), resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/loris/ on 2026-11-17. Roads, shops, houses, fields and woods; no person, no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-f/loris/loris-edge-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-f/loris/loris-edge-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-f/loris/loris-edge-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "Crops cut from the center of the same 1800 x 1350 export by tools/photos.js crops, for Article.image and the share image.",
+   "crop_source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-78.8870,34.0520,-78.8730,34.0610&bboxSR=4326&imageSR=4326&size=1800,1350&format=jpg&f=image"
+  }
+ ]
+}

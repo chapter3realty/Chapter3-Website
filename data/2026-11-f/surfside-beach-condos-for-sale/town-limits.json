@@ -1,0 +1,92 @@
+{
+ "read": "2026-11-17T06:20:58.839599+00:00",
+ "rule": "How many of the condos for sale (MLS city Surfside Beach) sit inside the Town of Surfside Beach, and which MLS names are inside or outside.\nPins from the site's map API, each point asked of the county Municipalities layer 31 (NAME). Kept: counts by municipality, by MLS name group. Not kept: a point, address, MLS number.\nRun: python3 -I town_limits.py <this dir>. Writes town-limits.json.",
+ "n": 83,
+ "by_town": {
+  "unincorporated": 65,
+  "SURFSIDE BEACH": 18
+ },
+ "by_name": {
+  "Golf Colony at Deerfield": {
+   "unincorporated": 22
+  },
+  "SOUTHBRIDGE": {
+   "unincorporated": 8
+  },
+  "SOUTH BAY LAKES": {
+   "unincorporated": 8
+  },
+  "Retreat at Glenns Bay": {
+   "unincorporated": 6
+  },
+  "Grand Palms Resort (formerly Plantation Resort)": {
+   "unincorporated": 5
+  },
+  "?": {
+   "unincorporated": 4
+  },
+  "SEA SHADOW": {
+   "SURFSIDE BEACH": 3
+  },
+  "Hampton Greens at Deerfield": {
+   "unincorporated": 3
+  },
+  "TRADEWINDS I": {
+   "unincorporated": 2
+  },
+  "SOUTH BAY EAST": {
+   "unincorporated": 2
+  },
+  "Admiral Quarters II": {
+   "SURFSIDE BEACH": 2
+  },
+  "Villas On The Green": {
+   "unincorporated": 2
+  },
+  "Floral Villas": {
+   "SURFSIDE BEACH": 2
+  },
+  "Lighthouse II": {
+   "SURFSIDE BEACH": 1
+  },
+  "SOUTHBRIDGE VILLAS - Hopkins Circle": {
+   "unincorporated": 1
+  },
+  "Ocean Club at Surfside": {
+   "SURFSIDE BEACH": 1
+  },
+  "Hermitage": {
+   "SURFSIDE BEACH": 1
+  },
+  "Maddington Place": {
+   "unincorporated": 1
+  },
+  "Dolphin Cay": {
+   "SURFSIDE BEACH": 1
+  },
+  "Channel Marker-Surfside Beach": {
+   "SURFSIDE BEACH": 1
+  },
+  "SURFBYSEA I": {
+   "SURFSIDE BEACH": 1
+  },
+  "SURFWATCH 2": {
+   "SURFSIDE BEACH": 1
+  },
+  "Islander - Surfside Beach": {
+   "SURFSIDE BEACH": 1
+  },
+  "Plantation Golf Villas": {
+   "unincorporated": 1
+  },
+  "Colony III": {
+   "SURFSIDE BEACH": 1
+  },
+  "Cypress Point": {
+   "SURFSIDE BEACH": 1
+  },
+  "Beachwalk Villas - Surfside Beach": {
+   "SURFSIDE BEACH": 1
+  }
+ }
+}

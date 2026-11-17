@@ -1,0 +1,50 @@
+[
+ {
+  "q": "city=Little%20River&type=condo&max=5000000",
+  "ok": true,
+  "total": 184,
+  "link": "/homes/?city=Little+River&type=condo&max=5000000",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Surfside%20Beach&type=condo&max=5000000",
+  "ok": true,
+  "total": 83,
+  "link": "/homes/?city=Surfside+Beach&type=condo&max=5000000",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=Myrtle%20Beach&type=condo&has=oceanfront_unit&max=5000000",
+  "ok": true,
+  "total": 480,
+  "link": "/homes/?city=Myrtle+Beach&type=condo&max=5000000&has=oceanfront_unit",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "city=North%20Myrtle%20Beach&type=condo&has=oceanfront_unit&max=5000000",
+  "ok": true,
+  "total": 187,
+  "link": "/homes/?city=North+Myrtle+Beach&type=condo&max=5000000&has=oceanfront_unit",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "near=33.5995,-79.0045&miles=2&type=condo&max=5000000",
+  "ok": true,
+  "total": 137,
+  "link": "/homes/?type=condo&max=5000000&near=33.599500%2C-79.004500&miles=2",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "near=33.5995,-79.0045&miles=2&type=house",
+  "ok": true,
+  "total": 137,
+  "link": "/homes/?type=house&near=33.599500%2C-79.004500&miles=2",
+  "note": "",
+  "cards": 14
+ }
+]

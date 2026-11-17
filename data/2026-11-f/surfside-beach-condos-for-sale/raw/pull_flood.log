@@ -1,0 +1,23 @@
+{
+ "read": "2026-11-17T06:14:49.049616+00:00",
+ "rule": "Flood zone under every condo for sale in Surfside Beach (MLS city), in aggregate. The map API's pins (price slices, as in pull_listings.py) give a\npoint for each listing; FEMA NFHL MapServer layer 28 gives FLD_ZONE and SFHA_TF at that point. Kept: counts by zone, by waterfront tag.\nNot kept: a point, address or MLS number. Run: python3 -I pull_flood.py <this dir>. Writes flood.json.",
+ "pins": 83,
+ "failed": 0,
+ "all": {
+  "X": 65,
+  "AE:SFHA": 18
+ },
+ "waterfront_tag": {
+  "AE:SFHA": 12,
+  "X": 20
+ },
+ "not_waterfront_tag": {
+  "X": 45,
+  "AE:SFHA": 6
+ },
+ "in_high_risk": {
+  "all": 18,
+  "waterfront": 12,
+  "not_waterfront": 6
+ }
+}

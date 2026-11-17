@@ -1,0 +1,70 @@
+{
+ "pulled": "2026-11-17T07:40:02.911940+00:00",
+ "pins_total": 201,
+ "pins_read": 201,
+ "no_point": 0,
+ "zoning_at_point": {
+  "FA": 106,
+  "CFA": 22,
+  "LFA": 17,
+  "none": 16,
+  "SF 40": 10,
+  "SF 20": 8,
+  "SF 10": 7,
+  "GR": 5,
+  "PDD": 3,
+  "MRD 3": 2,
+  "HC": 1,
+  "CP": 1,
+  "MSF 10": 1,
+  "TRS": 1,
+  "PUD": 1
+ },
+ "town_at_point": {
+  "unincorporated": 187,
+  "CONWAY": 7,
+  "LORIS": 2,
+  "AYNOR": 2,
+  "BRIARCLIFFE": 1,
+  "MYRTLE BEACH": 1,
+  "NORTH MYRTLE BEACH": 1
+ },
+ "flood_zone_at_point": {
+  "none": 188,
+  "AE": 8,
+  "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 5
+ },
+ "high_risk_flood_at_point": {
+  "not_high_risk": 193,
+  "high_risk": 8
+ },
+ "zoning_by_size": {
+  "1_to_5": {
+   "FA": 84,
+   "LFA": 17,
+   "none": 15,
+   "CFA": 13,
+   "SF 40": 9,
+   "SF 20": 8,
+   "SF 10": 7,
+   "GR": 5,
+   "PDD": 3,
+   "MRD 3": 2,
+   "HC": 1,
+   "CP": 1,
+   "MSF 10": 1,
+   "TRS": 1,
+   "PUD": 1
+  },
+  "5_plus": {
+   "FA": 22,
+   "CFA": 9,
+   "SF 40": 1,
+   "none": 1
+  }
+ },
+ "sources": {
+  "api": "https://chapter3realty.com/homes/api/map?type=house&lotMin=1&has=county_horry&min=..&max=..",
+  "gis": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/identify layers 19, 30, 31"
+ }
+}

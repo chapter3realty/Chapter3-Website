@@ -1,0 +1,246 @@
+{
+ "read": "2026-11-17T06:35:38.717101+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Bay Watch Resort in Horry County's public records, in aggregate. Writes county.json, flood.json.\nParcels: Horry County GIS layer 24, LegalDescr LIKE 'BAYWATCH RESORT%'. Units = parcels with a building value.\nKept: counts per phase (I, II, III), floors, county market value groups, owner mailing state (counts), units taxed as a home (4% ratio),\nlast-sale year (counts). Sales: deed files data/2026-10-d (2025-10-01..2026-09-30) and data/2026-11-n (2025-11-01..2026-10-31, joined by PIN, Consideration >= 1000).\nNever kept: a PIN, an owner, a unit's own record. Run: python3 -I pull_county_all.py <this dir> <website root>",
+ "parcels": 536,
+ "units": 533,
+ "legal_prefixes": [
+  [
+   "BAYWATCH RESORT HPR;",
+   534
+  ],
+  [
+   "BAYWATCH RESORT;",
+   1
+  ],
+  [
+   "BAYWATCH RESORT HPR; 1NIT 1241 PH II",
+   1
+  ]
+ ],
+ "units_by_phase": {
+  "II": 192,
+  "III": 170,
+  "I": 171
+ },
+ "floors_by_phase": {
+  "II": [
+   2,
+   18,
+   16
+  ],
+  "III": [
+   3,
+   18,
+   15
+  ],
+  "I": [
+   2,
+   19,
+   17
+  ]
+ },
+ "market_value": {
+  "median": 230000.0,
+  "p25": 230000.0,
+  "p75": 415000.0,
+  "min": 1000.0,
+  "max": 550000.0
+ },
+ "county_market_value_groups": [
+  [
+   230000.0,
+   223
+  ],
+  [
+   415000.0,
+   78
+  ],
+  [
+   526000.0,
+   72
+  ],
+  [
+   136000.0,
+   44
+  ],
+  [
+   377000.0,
+   28
+  ],
+  [
+   550000.0,
+   23
+  ],
+  [
+   240000.0,
+   18
+  ],
+  [
+   1000.0,
+   9
+  ],
+  [
+   375000.0,
+   6
+  ],
+  [
+   472000.0,
+   5
+  ],
+  [
+   369000.0,
+   5
+  ]
+ ],
+ "last_sale_year": {
+  "2001": 6,
+  "2002": 8,
+  "2003": 24,
+  "2004": 11,
+  "2005": 6,
+  "2006": 2,
+  "2007": 3,
+  "2008": 6,
+  "2009": 12,
+  "2010": 5,
+  "2011": 2,
+  "2012": 11,
+  "2013": 19,
+  "2014": 7,
+  "2015": 9,
+  "2016": 8,
+  "2017": 20,
+  "2018": 22,
+  "2019": 25,
+  "2020": 36,
+  "2021": 52,
+  "2022": 33,
+  "2023": 54,
+  "2024": 59,
+  "2025": 49,
+  "2026": 44
+ },
+ "owner_state_top": [
+  [
+   "NC",
+   131
+  ],
+  [
+   "SC",
+   103
+  ],
+  [
+   "VA",
+   43
+  ],
+  [
+   "PA",
+   37
+  ],
+  [
+   "NY",
+   30
+  ],
+  [
+   "NJ",
+   27
+  ],
+  [
+   "MD",
+   18
+  ],
+  [
+   "TN",
+   17
+  ]
+ ],
+ "owner_out_of_sc": 430,
+ "taxed_as_home_4pct": 22,
+ "taxed_6pct": 511,
+ "sales": {
+  "window_1": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 35,
+    "median": 265000.0,
+    "p25": 220000.0,
+    "p75": 362000.0,
+    "min": 107000.0,
+    "max": 450000.0
+   },
+   "buyer_in_sc": 6,
+   "buyer_out_of_sc": 29,
+   "company_buyers": 9
+  },
+  "window_2": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 32,
+    "median": 235500.0,
+    "p25": 185150.0,
+    "p75": 347100.0,
+    "min": 107000.0,
+    "max": 449000.0
+   },
+   "zero_or_under_1000_deeds": 14
+  },
+  "by_county_value_w1": {
+   "150k_to_249k": {
+    "n": 16,
+    "median": 230000.0,
+    "p25": 222750.0,
+    "p75": 266592.1225,
+    "min": 180200.0,
+    "max": 277500.0
+   },
+   "250k_up": {
+    "n": 13,
+    "median": 387500.0,
+    "p25": 344200.0,
+    "p75": 419500.0,
+    "min": 283500.0,
+    "max": 450000.0
+   },
+   "under_150k": {
+    "n": 6,
+    "median": 131350.0,
+    "p25": 115925.0,
+    "p75": 151225.0,
+    "min": 107000.0,
+    "max": 169900.0
+   }
+  },
+  "by_county_value_w2": {
+   "150k_to_249k": {
+    "n": 15,
+    "median": 230000.0,
+    "p25": 215000.0,
+    "p75": 267122.83,
+    "min": 180200.0,
+    "max": 277500.0
+   },
+   "250k_up": {
+    "n": 10,
+    "median": 386250.0,
+    "p25": 347100.0,
+    "p75": 407250.0,
+    "min": 335000.0,
+    "max": 449000.0
+   },
+   "under_150k": {
+    "n": 7,
+    "median": 142700.0,
+    "p25": 118900.0,
+    "p75": 147500.0,
+    "min": 107000.0,
+    "max": 169900.0
+   }
+  }
+ },
+ "units_by_county_value_group": {
+  "250k_up": 231,
+  "150k_to_249k": 242,
+  "under_150k": 63
+ }
+}

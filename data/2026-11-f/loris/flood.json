@@ -1,0 +1,33 @@
+{
+ "read": "2026-11-17",
+ "source": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+ "houses": 352,
+ "in_high_risk_zone": 2,
+ "by_zone": {
+  "AE": 2
+ },
+ "by_tax_district": {
+  "200": [
+   0,
+   92
+  ],
+  "220": [
+   1,
+   40
+  ],
+  "250": [
+   0,
+   117
+  ],
+  "260": [
+   0,
+   49
+  ],
+  "240": [
+   1,
+   39
+  ]
+ },
+ "polygons_read": 72,
+ "note": "parcel center point against SFHA_TF=T polygons, generalized 0.00003 degrees; counts of houses sold 2025-11-01 to 2026-10-31"
+}

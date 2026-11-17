@@ -1,0 +1,17 @@
+{
+ "rule": "Yearly property tax inside the Town of Surfside Beach, tax year 2026, at 6 and 4 percent, at three prices.\nLevy 214.2 mills (52.1 county, 119.1 school of which 109.1 operations, 43.0 town), ledger batches/2026-11-a/submarkets-surfside-beach/facts.md rows 9 to 11 (VERIFIED).\n6%: price x 0.06 x 0.2142. 4%: price x 0.04 x (0.2142 - 0.1091). Before credits and the 15 percent cap. Writes tax.json.",
+ "tax": {
+  "150000": {
+   "six": 1927.8,
+   "four": 630.6
+  },
+  "200000": {
+   "six": 2570.4,
+   "four": 840.8
+  },
+  "350000": {
+   "six": 4498.2,
+   "four": 1471.4
+  }
+ }
+}

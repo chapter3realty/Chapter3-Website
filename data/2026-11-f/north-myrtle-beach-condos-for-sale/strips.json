@@ -1,0 +1,457 @@
+{
+ "read": "2026-11-17T05:12:01.121037+00:00",
+ "strips": {
+  "newest": {
+   "q": "type=condo&city=North+Myrtle+Beach",
+   "total": 578
+  },
+  "dom14": {
+   "q": "type=condo&city=North+Myrtle+Beach&domMax=14",
+   "total": 43
+  },
+  "under75": {
+   "q": "type=condo&city=North+Myrtle+Beach&max=75000",
+   "total": 11
+  },
+  "under100": {
+   "q": "type=condo&city=North+Myrtle+Beach&max=100000",
+   "total": 15
+  },
+  "under150": {
+   "q": "type=condo&city=North+Myrtle+Beach&max=150000",
+   "total": 42
+  },
+  "150-300": {
+   "q": "type=condo&city=North+Myrtle+Beach&min=150000&max=300000",
+   "total": 254
+  },
+  "300plus": {
+   "q": "type=condo&city=North+Myrtle+Beach&min=300000",
+   "total": 283
+  },
+  "300-500": {
+   "q": "type=condo&city=North+Myrtle+Beach&min=300000&max=500000",
+   "total": 179
+  },
+  "500plus": {
+   "q": "type=condo&city=North+Myrtle+Beach&min=500000",
+   "total": 105
+  },
+  "1mplus": {
+   "q": "type=condo&city=North+Myrtle+Beach&min=1000000",
+   "total": 3
+  },
+  "beds1": {
+   "q": "type=condo&city=North+Myrtle+Beach&beds=1",
+   "total": 561
+  },
+  "beds2": {
+   "q": "type=condo&city=North+Myrtle+Beach&beds=2",
+   "total": 472
+  },
+  "beds3": {
+   "q": "type=condo&city=North+Myrtle+Beach&beds=3",
+   "total": 226
+  },
+  "beds4": {
+   "q": "type=condo&city=North+Myrtle+Beach&beds=4",
+   "total": 58
+  },
+  "oceanfront_unit": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit",
+   "total": 187
+  },
+  "oceanfront_building": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_building",
+   "total": 215
+  },
+  "oceanview_unit": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanview_unit",
+   "total": 139
+  },
+  "water_ocean": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=water_ocean",
+   "total": 243
+  },
+  "oceanfront_unit_under300": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit&max=300000",
+   "total": 62
+  },
+  "oceanfront_unit_under250": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit&max=250000",
+   "total": 53
+  },
+  "oceanfront_unit_2bed": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit&beds=2",
+   "total": 133
+  },
+  "oceanfront_unit_3bed": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit&beds=3",
+   "total": 82
+  },
+  "oceanfront_unit_500plus": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=oceanfront_unit&min=500000",
+   "total": 70
+  },
+  "hoa_water": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=hoa_includes_water_sewer",
+   "total": 508
+  },
+  "hoa500": {
+   "q": "type=condo&city=North+Myrtle+Beach&hoaMax=500",
+   "total": 109
+  },
+  "hoa400": {
+   "q": "type=condo&city=North+Myrtle+Beach&hoaMax=400",
+   "total": 39
+  },
+  "hoa600": {
+   "q": "type=condo&city=North+Myrtle+Beach&hoaMax=600",
+   "total": 225
+  },
+  "hoa300": {
+   "q": "type=condo&city=North+Myrtle+Beach&hoaMax=300",
+   "total": 14
+  },
+  "lazy_river": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=lazy_river",
+   "total": 99
+  },
+  "lazy_river_building": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=lazy_river_building",
+   "total": 71
+  },
+  "indoor_pool": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=indoor_pool",
+   "total": 168
+  },
+  "outdoor_pool": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=outdoor_pool",
+   "total": 507
+  },
+  "resort_pool": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=resort_pool",
+   "total": 49
+  },
+  "golf_community": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=golf_community",
+   "total": 122
+  },
+  "on_golf_course": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=on_golf_course",
+   "total": 51
+  },
+  "golf_view": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=golf_view",
+   "total": 72
+  },
+  "elevator_building": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=elevator_building",
+   "total": 302
+  },
+  "pets": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=pets_allowed",
+   "total": 413
+  },
+  "str": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=str_allowed",
+   "total": 468
+  },
+  "vrp": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=vacation_rental_program",
+   "total": 301
+  },
+  "gated": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=gated",
+   "total": 103
+  },
+  "furnished": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=furnished",
+   "total": 511
+  },
+  "walk_to_beach": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=walk_to_beach",
+   "total": 414
+  },
+  "icw_community": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=icw_community",
+   "total": 70
+  },
+  "water_view": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=water_view",
+   "total": 363
+  },
+  "marsh_view": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=marsh_view",
+   "total": 27
+  },
+  "boat_slip": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=boat_slip",
+   "total": 0
+  },
+  "community_dock": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=community_dock",
+   "total": 19
+  },
+  "waterfront_community": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=waterfront_community",
+   "total": 285
+  },
+  "penthouse": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=penthouse",
+   "total": 26
+  },
+  "price_reduced": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=price_reduced",
+   "total": 317
+  },
+  "new_construction": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=new_construction",
+   "total": 0
+  },
+  "still_built": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=still_being_built",
+   "total": 0
+  },
+  "new2022": {
+   "q": "type=condo&city=North+Myrtle+Beach&yearMin=2022",
+   "total": 6
+  },
+  "new2015": {
+   "q": "type=condo&city=North+Myrtle+Beach&yearMin=2015",
+   "total": 10
+  },
+  "near_barefoot_landing": {
+   "q": "type=condo&city=North+Myrtle+Beach&near=33.7998752,-78.7424398&miles=1",
+   "total": 90
+  },
+  "near_main_street": {
+   "q": "type=condo&city=North+Myrtle+Beach&near=33.8188841,-78.6723736&miles=1",
+   "total": 89
+  },
+  "near_cherry_grove_pier": {
+   "q": "type=condo&city=North+Myrtle+Beach&near=33.8287315,-78.6326763&miles=1",
+   "total": 67
+  },
+  "near_main_street_2": {
+   "q": "type=condo&city=North+Myrtle+Beach&near=33.8188841,-78.6723736&miles=2",
+   "total": 227
+  },
+  "tennis": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=tennis",
+   "total": 60
+  },
+  "fitness": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=fitness_center",
+   "total": 160
+  },
+  "beach_access": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=beach_access",
+   "total": 66
+  },
+  "balcony": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=balcony",
+   "total": 421
+  },
+  "low_rise": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=low_rise",
+   "total": 271
+  },
+  "high_rise": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=high_rise",
+   "total": 223
+  },
+  "ocean_view": {
+   "q": "type=condo&city=North+Myrtle+Beach&has=ocean_view",
+   "total": 293
+  },
+  "sub:Beach Cove": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Beach+Cove",
+   "total": 27
+  },
+  "sub:Mar Vista Grande": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Mar+Vista+Grande",
+   "total": 6
+  },
+  "sub:Prince Resort": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Prince+Resort",
+   "total": 7
+  },
+  "sub:Bay Watch": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Bay+Watch",
+   "total": 41
+  },
+  "sub:Sea Cabin": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Sea+Cabin",
+   "total": 12
+  },
+  "sub:Avista": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Avista",
+   "total": 11
+  },
+  "sub:North Beach Towers": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=North+Beach+Towers",
+   "total": 10
+  },
+  "sub:Crescent Shores": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Crescent+Shores",
+   "total": 13
+  },
+  "sub:Ocean Keyes": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Ocean+Keyes",
+   "total": 10
+  },
+  "sub:Tilghman": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Tilghman",
+   "total": 34
+  },
+  "sub:Barefoot": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Barefoot",
+   "total": 116
+  },
+  "sub:Willow Bend": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Willow+Bend",
+   "total": 19
+  },
+  "sub:The Havens": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=The+Havens",
+   "total": 15
+  },
+  "sub:YACHT CLUB VILLAS": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=YACHT+CLUB+VILLAS",
+   "total": 14
+  },
+  "sub:Ironwood": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Ironwood",
+   "total": 11
+  },
+  "sub:River Crossing": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=River+Crossing",
+   "total": 10
+  },
+  "sub:Greenbriar": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Greenbriar",
+   "total": 9
+  },
+  "sub:Edgewater": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Edgewater",
+   "total": 9
+  },
+  "sub:OCEAN BAYCLUB": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=OCEAN+BAYCLUB",
+   "total": 8
+  },
+  "sub:Malibu Pointe": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Malibu+Pointe",
+   "total": 7
+  },
+  "sub:Carolina Keyes": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Carolina+Keyes",
+   "total": 9
+  },
+  "sub:Waterway Landing": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Waterway+Landing",
+   "total": 9
+  },
+  "sub:Cherry Grove Villas": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Cherry+Grove+Villas",
+   "total": 5
+  },
+  "sub:Ocean Greens": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Ocean+Greens",
+   "total": 6
+  },
+  "sub:Waipani": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Waipani",
+   "total": 5
+  },
+  "sub:Seven Oaks": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Seven+Oaks",
+   "total": 5
+  },
+  "sub:Windy Hill Dunes": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Windy+Hill+Dunes",
+   "total": 0
+  },
+  "sub:Ocean Pier": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Ocean+Pier",
+   "total": 5
+  },
+  "sub:Chateau By The Sea": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Chateau+By+The+Sea",
+   "total": 0
+  },
+  "sub:Inlet Point": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Inlet+Point",
+   "total": 1
+  },
+  "sub:Sea Castle": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Sea+Castle",
+   "total": 5
+  },
+  "sub:Shorehaven": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Shorehaven",
+   "total": 5
+  },
+  "sub:Harbourgate": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Harbourgate",
+   "total": 5
+  },
+  "sub:Seashore Villas": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Seashore+Villas",
+   "total": 0
+  },
+  "sub:Beach Villas": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Beach+Villas",
+   "total": 2
+  },
+  "sub:Laguna Keyes": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Laguna+Keyes",
+   "total": 1
+  },
+  "sub:Hill Street": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Hill+Street",
+   "total": 0
+  },
+  "sub:Ocean Marsh": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Ocean+Marsh",
+   "total": 1
+  },
+  "sub:Sea Mist": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Sea+Mist",
+   "total": 0
+  },
+  "sub:Cottages at Ingram Dunes": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Cottages+at+Ingram+Dunes",
+   "total": 0
+  },
+  "sub:Cottages at 7th": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Cottages+at+7th",
+   "total": 0
+  },
+  "sub:Grande Harbour": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Grande+Harbour",
+   "total": 0
+  },
+  "sub:Windsor": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Windsor",
+   "total": 0
+  },
+  "sub:Sands": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Sands",
+   "total": 9
+  },
+  "sub:Bahama Sands": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Bahama+Sands",
+   "total": 6
+  },
+  "sub:NMB Golf": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=NMB+Golf",
+   "total": 9
+  },
+  "sub:Veranda": {
+   "q": "type=condo&city=North+Myrtle+Beach&subdivision=Veranda",
+   "total": 6
+  }
+ }
+}

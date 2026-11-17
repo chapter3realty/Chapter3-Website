@@ -1,0 +1,25 @@
+{
+ "read": "2026-11-17T06:24:22.863879+00:00",
+ "rule": "Flood zone under every condo for sale in Murrells Inlet (MLS city), in aggregate. The map API's pins (price slices, as in pull_listings.py) give a\npoint for each listing; FEMA NFHL MapServer layer 28 gives FLD_ZONE and SFHA_TF at that point. Kept: counts by zone, by waterfront tag.\nNot kept: a point, address or MLS number. Run: python3 -I pull_flood.py <this dir>. Writes flood.json.",
+ "pins": 130,
+ "failed": 0,
+ "all": {
+  "X": 99,
+  "AE:SFHA": 24,
+  "VE:SFHA": 7
+ },
+ "waterfront_tag": {
+  "X": 26,
+  "AE:SFHA": 9,
+  "VE:SFHA": 7
+ },
+ "not_waterfront_tag": {
+  "X": 73,
+  "AE:SFHA": 15
+ },
+ "in_high_risk": {
+  "all": 31,
+  "waterfront": 16,
+  "not_waterfront": 15
+ }
+}

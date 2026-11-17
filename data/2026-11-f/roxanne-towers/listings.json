@@ -1,0 +1,173 @@
+{
+ "pulled": "2026-11-17T06:33:50.429509+00:00",
+ "refreshedAt": "2026-11-17T06:30:05.227Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "rule": "The Roxanne Towers (1604 N Ocean Blvd, Myrtle Beach): condos for sale now, in aggregate, from the site's public map API\n(https://chapter3realty.com/homes/api/map, CCMLS active listings through the CRM) and the public listing card (/homes/api/lookup).\nSame building words as /invest/condo-buildings/ (\"Roxanne Towers\", type=condo). A listing counts only if its address is 1604 N Ocean Blvd (however the listing spells it).\n- Monthly HOA fee: for each threshold T (0, 25, 50 ... 1500) the call hoaMax=T returns the listings whose fee is T or less.\n  Each listing's fee is then known to a $25 bracket. Only medians and ranges per bedroom group are saved.\n- Flags: has=<key> counts (agent-ticked MLS fields and description words, as the CRM reads them).\n- Cards: year built, size, bedrooms, flood zone field. Only ranges, medians and counts are saved.\nNever saved: an MLS number, a unit number, a single listing's price or fee, a firm, a photo or a remark.\nCalls are spaced 2.1 s. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "api_total": 2,
+ "at_504": 2,
+ "beds": {
+  "1": 2
+ },
+ "asking": {
+  "all": {
+   "median": 207450.0,
+   "min": 195000,
+   "max": 219900
+  },
+  "1": {
+   "n": 2,
+   "median": 207450.0,
+   "min": 195000,
+   "max": 219900,
+   "sqft_median": 658.0,
+   "sqft_range": [
+    633,
+    683
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 2,
+   "median_at_or_under": 800.0,
+   "lowest_at_or_under": 800,
+   "highest_at_or_under": 800,
+   "middle_half": null
+  },
+  "zero_or_blank": 0,
+  "1": {
+   "n": 2,
+   "median_at_or_under": 800.0,
+   "lowest_at_or_under": 800,
+   "highest_at_or_under": 800,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 2,
+  "rentals_allowed": 2,
+  "long_term_rental_allowed": 2,
+  "vacation_rental_program": 2,
+  "has_rental_income": 2,
+  "furnished": 2,
+  "pets_allowed": 0,
+  "oceanfront_unit": 2,
+  "ocean_view": 2,
+  "oceanfront_building": 2,
+  "high_floor_unit": 1,
+  "low_floor_unit": 0,
+  "top_floor": 0,
+  "balcony": 2,
+  "parking_garage": 2,
+  "covered_parking": 2,
+  "indoor_pool": 2,
+  "sauna": 0,
+  "elevator_building": 2,
+  "flood_zone": 0,
+  "hoa_includes_trash": 2,
+  "hoa_includes_utilities": 2,
+  "hoa_includes_water_sewer": 2,
+  "hoa_includes_insurance": 2,
+  "hoa_includes_internet": 2,
+  "hoa_includes_pest": 2,
+  "hoa_includes_cable": 2,
+  "hoa_includes_electric": 2,
+  "security_service": 1
+ },
+ "year_built": {
+  "2004": 1,
+  "1964": 1
+ },
+ "flood_zone_field": {
+  "None": 2
+ },
+ "subdivision_field": {
+  "ROXANNE TOWERS": 2
+ },
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=25",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=50",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=75",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=100",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=125",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=150",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=175",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=200",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=225",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=250",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=275",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=300",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=325",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=350",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=400",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=450",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=475",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=525",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=550",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=575",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=600",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=625",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=650",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=675",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=700",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=725",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=750",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=775",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=800",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=str_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=rentals_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=long_term_rental_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=vacation_rental_program",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=has_rental_income",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=furnished",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=oceanfront_unit",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=ocean_view",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=oceanfront_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=high_floor_unit",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=low_floor_unit",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=top_floor",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=balcony",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=parking_garage",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=covered_parking",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=indoor_pool",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=sauna",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=elevator_building",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=flood_zone",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_trash",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_utilities",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_water_sewer",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_insurance",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_internet",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_pest",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_cable",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&has=security_service",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>"
+ ],
+ "fee_exact": {
+  "read": "2026-11-17T06:37:20.455936+00:00",
+  "1": {
+   "n": 2,
+   "lowest": 795,
+   "highest": 795
+  },
+  "calls": [
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=787",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=793",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=796",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=794",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=795",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=797",
+   "https://chapter3realty.com/homes/api/map?type=condo&subdivision=Roxanne+Towers&hoaMax=795"
+  ]
+ }
+}

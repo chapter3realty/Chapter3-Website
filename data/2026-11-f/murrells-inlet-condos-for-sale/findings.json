@@ -1,0 +1,612 @@
+{
+ "refreshedAt": "2026-11-17T06:20:04.879Z",
+ "total": 130,
+ "cards": 130,
+ "types": {
+  "Condominium": 130
+ },
+ "cities": {
+  "Murrells Inlet": 130
+ },
+ "price": {
+  "n": 130,
+  "min": 128000,
+  "p25": 209999.75,
+  "median": 251297.5,
+  "p75": 349925.0,
+  "max": 1199000
+ },
+ "price_bands": {
+  "under_150k": 2,
+  "150k_300k": 82,
+  "300k_plus": 46,
+  "under_100k": 0,
+  "300k_500k": 41,
+  "500k_plus": 5,
+  "1m_plus": 1
+ },
+ "by_beds": {
+  "0": {
+   "n": 0,
+   "price": null,
+   "sqft": null,
+   "hoa": null
+  },
+  "1": {
+   "n": 9,
+   "price": {
+    "n": 9,
+    "min": 177000,
+    "p25": 264500.0,
+    "median": 286000,
+    "p75": 324900.0,
+    "max": 379900
+   },
+   "sqft": {
+    "n": 9,
+    "min": 462,
+    "p25": 667.0,
+    "median": 760,
+    "p75": 862.5,
+    "max": 890
+   },
+   "hoa": {
+    "n": 9,
+    "min": 425,
+    "p25": 640.0,
+    "median": 783,
+    "p75": 901.0,
+    "max": 1056
+   }
+  },
+  "2": {
+   "n": 39,
+   "price": {
+    "n": 39,
+    "min": 128000,
+    "p25": 188900.0,
+    "median": 215000,
+    "p75": 299900.0,
+    "max": 449900
+   },
+   "sqft": {
+    "n": 39,
+    "min": 551,
+    "p25": 814.0,
+    "median": 1008,
+    "p75": 1158.0,
+    "max": 1463
+   },
+   "hoa": {
+    "n": 39,
+    "min": 248,
+    "p25": 427.0,
+    "median": 474,
+    "p75": 552.0,
+    "max": 783
+   }
+  },
+  "3": {
+   "n": 73,
+   "price": {
+    "n": 73,
+    "min": 175000,
+    "p25": 216450.0,
+    "median": 259900,
+    "p75": 349950.0,
+    "max": 749999
+   },
+   "sqft": {
+    "n": 73,
+    "min": 1004,
+    "p25": 1392.0,
+    "median": 1450,
+    "p75": 1631.0,
+    "max": 2096
+   },
+   "hoa": {
+    "n": 72,
+    "min": 340,
+    "p25": 412.5,
+    "median": 472.5,
+    "p75": 540.25,
+    "max": 950
+   }
+  },
+  "4": {
+   "n": 8,
+   "price": {
+    "n": 8,
+    "min": 399000,
+    "p25": 425650.0,
+    "median": 434900.0,
+    "p75": 439650.0,
+    "max": 1199000
+   },
+   "sqft": {
+    "n": 8,
+    "min": 2053,
+    "p25": 2053.0,
+    "median": 2074.5,
+    "p75": 2136.5,
+    "max": 2374
+   },
+   "hoa": {
+    "n": 8,
+    "min": 400,
+    "p25": 402.0,
+    "median": 402.0,
+    "p75": 537.75,
+    "max": 1360
+   }
+  },
+  "4plus": {
+   "n": 9
+  }
+ },
+ "oceanfront": {
+  "n": 42,
+  "price": {
+   "n": 42,
+   "min": 177000,
+   "p25": 219550.0,
+   "median": 284450.0,
+   "p75": 356225.0,
+   "max": 1199000
+  },
+  "hoa": {
+   "n": 42,
+   "min": 378,
+   "p25": 427.0,
+   "median": 547.5,
+   "p75": 740.25,
+   "max": 1360
+  },
+  "hoa_missing": 0,
+  "hoa_by_beds": {
+   "1": {
+    "n": 7,
+    "min": 425,
+    "p25": 640.0,
+    "median": 783,
+    "p75": 1018.0,
+    "max": 1056
+   },
+   "2": {
+    "n": 12,
+    "min": 378,
+    "p25": 427.0,
+    "median": 475.0,
+    "p75": 701.25,
+    "max": 726
+   },
+   "3": {
+    "n": 21,
+    "min": 385,
+    "p25": 427.0,
+    "median": 525,
+    "p75": 700.5,
+    "max": 815
+   }
+  }
+ },
+ "not_oceanfront": {
+  "n": 88,
+  "price": {
+   "n": 88,
+   "min": 128000,
+   "p25": 199924.75,
+   "median": 249900.0,
+   "p75": 343950.0,
+   "max": 749999
+  },
+  "hoa": {
+   "n": 87,
+   "min": 248,
+   "p25": 402.0,
+   "median": 464,
+   "p75": 515.0,
+   "max": 950
+  },
+  "hoa_missing": 1,
+  "hoa_by_beds": {
+   "1": {
+    "n": 2,
+    "min": 640,
+    "p25": 640,
+    "median": 712.0,
+    "p75": 784,
+    "max": 784
+   },
+   "2": {
+    "n": 27,
+    "min": 248,
+    "p25": 379.0,
+    "median": 474,
+    "p75": 515.0,
+    "max": 783
+   },
+   "3": {
+    "n": 51,
+    "min": 340,
+    "p25": 402.0,
+    "median": 462,
+    "p75": 515.0,
+    "max": 950
+   }
+  }
+ },
+ "hoa_all": {
+  "n": 129,
+  "min": 248,
+  "p25": 407.0,
+  "median": 475,
+  "p75": 585.0,
+  "max": 1360
+ },
+ "hoa_missing": 1,
+ "tags": {
+  "": 72,
+  "Waterfront": 42,
+  "Built 2026": 15,
+  "Built 2025": 1
+ },
+ "year_built": {
+  "n": 130,
+  "median": 2004.0,
+  "min": 1978,
+  "max": 2026,
+  "since_2015": 18,
+  "before_1990": 37,
+  "since_2022": 18
+ },
+ "new_construction": 0,
+ "subdivisions_top": [
+  [
+   "Bally Castle",
+   13
+  ],
+  [
+   "RIVERWOOD",
+   12
+  ],
+  [
+   "Sweetwater - Indian Wells",
+   11
+  ],
+  [
+   "Jasmine Lake",
+   10
+  ],
+  [
+   "Marcliffe at Blackmoor",
+   9
+  ],
+  [
+   "WYNGATE",
+   6
+  ],
+  [
+   "ROYAL GARDEN",
+   5
+  ],
+  [
+   "Blue Heron",
+   5
+  ],
+  [
+   "Cypress Grove at Marcliffe West",
+   5
+  ],
+  [
+   "Tupelo Bay - Garden City",
+   4
+  ],
+  [
+   "Park West - Murrells Inlet",
+   4
+  ],
+  [
+   "Garden Sands",
+   3
+  ],
+  [
+   "WINCHESTER",
+   3
+  ],
+  [
+   "VILLAS @ INTERNATIONAL CLUB",
+   3
+  ],
+  [
+   "Indian Wells Golf Villas",
+   3
+  ],
+  [
+   "SURFMASTER I",
+   2
+  ],
+  [
+   "Marcliffe West",
+   2
+  ],
+  [
+   "Horizon East",
+   2
+  ],
+  [
+   "WATERS EDGE",
+   2
+  ],
+  [
+   "Sunnyside Village",
+   2
+  ],
+  [
+   "Beach House",
+   1
+  ],
+  [
+   "Inlet Pointe - Garden City",
+   1
+  ],
+  [
+   "THE ADDISON - GARDEN CITY",
+   1
+  ],
+  [
+   "MOSS CREEK",
+   1
+  ],
+  [
+   "Turning Stone - Murrells Inlet",
+   1
+  ],
+  [
+   "The Fairways - The International Club",
+   1
+  ],
+  [
+   "Governors Landing",
+   1
+  ],
+  [
+   "Marlin Quay",
+   1
+  ],
+  [
+   "Marsh Walk - Garden City",
+   1
+  ],
+  [
+   "Cambridge Place - Garden City",
+   1
+  ],
+  [
+   "STERLING POINTE - MURRELLS INLET",
+   1
+  ],
+  [
+   "Not Within a Project/Section Code",
+   1
+  ],
+  [
+   "Sea Watch - Garden City",
+   1
+  ],
+  [
+   "Kelly Court Villas",
+   1
+  ],
+  [
+   "Duneside I",
+   1
+  ],
+  [
+   "SEA MYSTIQUE",
+   1
+  ],
+  [
+   "The Grand Vistas @ The International Club",
+   1
+  ],
+  [
+   "SANDY SHORES II",
+   1
+  ],
+  [
+   "Guest House",
+   1
+  ],
+  [
+   "SEA WATCH LDG",
+   1
+  ],
+  [
+   "Cambridge - International Club",
+   1
+  ],
+  [
+   "SURFMASTER II",
+   1
+  ],
+  [
+   "SANDY SHORES I",
+   1
+  ],
+  [
+   "SEA OAKS",
+   1
+  ]
+ ],
+ "subdivisions_n": 44,
+ "sales": {
+  "horry_condo_deeds": 4479,
+  "horry": {
+   "n": 4479,
+   "min": 11019.0,
+   "p25": 148500.0,
+   "median": 215000.0,
+   "p75": 313900.0,
+   "max": 1981122.0
+  },
+  "city_limits": {
+   "n": 57,
+   "min": 75000.0,
+   "p25": 284750.0,
+   "median": 359900.0,
+   "p75": 492500.0,
+   "max": 750000.0
+  },
+  "outside_city": {
+   "n": 4422,
+   "min": 11019.0,
+   "p25": 147500.0,
+   "median": 215000.0,
+   "p75": 310000.0,
+   "max": 1981122.0
+  },
+  "surfside_district_660": {
+   "n": 57,
+   "min": 75000.0,
+   "p25": 284750.0,
+   "median": 359900.0,
+   "p75": 492500.0,
+   "max": 750000.0
+  }
+ },
+ "sales_by_regime_top": [
+  [
+   "SANDPEBBLE",
+   11,
+   356000.0
+  ],
+  [
+   "SURFSIDE BY THE SEA",
+   4,
+   289000.0
+  ],
+  [
+   "CAPE CODDAGES II",
+   3,
+   455000.0
+  ],
+  [
+   "BEACH TRAILS",
+   2,
+   287500.0
+  ],
+  [
+   "TROPICAL SANDS",
+   2,
+   282000.0
+  ],
+  [
+   "HERMITAGE ON MYRTLE LAKE",
+   2,
+   434500.0
+  ],
+  [
+   "SURFWATCH II",
+   2,
+   530000.0
+  ],
+  [
+   "ADMIRALS QUARTERS II",
+   2,
+   647500.0
+  ],
+  [
+   "COLONY III OF SURFSIDE",
+   2,
+   205000.0
+  ],
+  [
+   "FOSTER BUILDING COMPLEX COMMERCIAL",
+   2,
+   139750.0
+  ],
+  [
+   "SAND FIDDLER",
+   2,
+   327500.0
+  ],
+  [
+   "SEA SHADOW",
+   2,
+   552500.0
+  ],
+  [
+   "BOSTON GARDENS OF SURFSIDE",
+   2,
+   617500.0
+  ],
+  [
+   "CHANNEL MARKER",
+   1,
+   400000.0
+  ],
+  [
+   "SURFSIDE BUSINESS CENTER",
+   1,
+   75000.0
+  ],
+  [
+   "LAST RESORT",
+   1,
+   240000.0
+  ],
+  [
+   "ISLANDER",
+   1,
+   500000.0
+  ],
+  [
+   "BEACHWALK",
+   1,
+   385000.0
+  ],
+  [
+   "ISLANDER AT SURFSIDE BEACH",
+   1,
+   585000.0
+  ],
+  [
+   "OCEAN QUARTERS",
+   1,
+   685000.0
+  ],
+  [
+   "PRINCETON HOUSE",
+   1,
+   435000.0
+  ],
+  [
+   "SOUTH SHORES",
+   1,
+   540000.0
+  ],
+  [
+   "VANTAGE POINTE",
+   1,
+   346000.0
+  ],
+  [
+   "COLONY AT SURFSIDE",
+   1,
+   255000.0
+  ],
+  [
+   "POINTTE",
+   1,
+   270000.0
+  ]
+ ],
+ "sales_city_bands": {
+  "under_100k": 1,
+  "100_200k": 5,
+  "200_300k": 11,
+  "300_500k": 26,
+  "500k_plus": 14
+ }
+}

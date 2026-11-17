@@ -1,0 +1,17 @@
+{
+ "pulled": "2026-11-17T07:22:11.640369+00:00",
+ "rule": "Homes for sale now in Loris (MLS city \"Loris\") in aggregate from the site's public map API and card lookup. Saves counts, ranges, subdivision names with counts. No address, MLS number, firm or photo is saved. Run: python3 -I pull_loris.py <dir>",
+ "totals": {
+  "house": 146,
+  "condo": 0,
+  "townhouse": 0,
+  "manufactured": 15,
+  "multi": 0,
+  "land": 166,
+  "all": 340
+ },
+ "mls_collected": {
+  "house": 146
+ },
+ "cards_with_price": 146
+}

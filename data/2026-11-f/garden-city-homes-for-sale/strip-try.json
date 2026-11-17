@@ -1,0 +1,474 @@
+[
+ {
+  "q": "has=area_garden_city&domMax=14",
+  "ok": true,
+  "total": 21,
+  "link": "/homes/?has=area_garden_city&domMax=14",
+  "note": "",
+  "cards": 13
+ },
+ {
+  "q": "has=area_garden_city&domMax=30",
+  "ok": true,
+  "total": 46,
+  "link": "/homes/?has=area_garden_city&domMax=30",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&domMax=30",
+  "ok": true,
+  "total": 12,
+  "link": "/homes/?type=house&has=area_garden_city&domMax=30",
+  "note": "",
+  "cards": 11
+ },
+ {
+  "q": "has=area_garden_city&type=condo&domMax=30",
+  "ok": true,
+  "total": 19,
+  "link": "/homes/?type=condo&has=area_garden_city&domMax=30",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&max=749999",
+  "ok": true,
+  "total": 18,
+  "link": "/homes/?type=house&max=749999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&min=750000&max=1499999",
+  "ok": true,
+  "total": 23,
+  "link": "/homes/?type=house&min=750000&max=1499999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&min=1500000",
+  "ok": true,
+  "total": 14,
+  "link": "/homes/?type=house&min=1500000&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&max=249999",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=condo&max=249999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&min=250000&max=399999",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=condo&min=250000&max=399999&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&min=400000",
+  "ok": true,
+  "total": 15,
+  "link": "/homes/?type=condo&min=400000&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&beds=1",
+  "ok": true,
+  "total": 77,
+  "link": "/homes/?type=condo&beds=1&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&beds=2",
+  "ok": true,
+  "total": 59,
+  "link": "/homes/?type=condo&beds=2&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&beds=3",
+  "ok": true,
+  "total": 20,
+  "link": "/homes/?type=condo&beds=3&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&beds=4",
+  "ok": true,
+  "total": 41,
+  "link": "/homes/?type=house&beds=4&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&beds=5",
+  "ok": true,
+  "total": 31,
+  "link": "/homes/?type=house&beds=5&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&beds=6",
+  "ok": true,
+  "total": 13,
+  "link": "/homes/?type=house&beds=6&has=area_garden_city",
+  "note": "",
+  "cards": 13
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=new_construction",
+  "ok": true,
+  "total": 3,
+  "link": "/homes/?type=house&has=area_garden_city%2Cnew_construction",
+  "note": "",
+  "cards": 3
+ },
+ {
+  "q": "has=area_garden_city&type=house&waterfront=1",
+  "ok": true,
+  "total": 14,
+  "link": "/homes/?type=house&waterfront=1&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&waterfront=1",
+  "ok": true,
+  "total": 39,
+  "link": "/homes/?type=condo&waterfront=1&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=oceanfront_unit",
+  "ok": true,
+  "total": 27,
+  "link": "/homes/?type=condo&has=area_garden_city%2Coceanfront_unit",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=oceanfront_building",
+  "ok": true,
+  "total": 34,
+  "link": "/homes/?type=condo&has=area_garden_city%2Coceanfront_building",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=ocean_view",
+  "ok": true,
+  "total": 46,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cocean_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=marsh_view",
+  "ok": true,
+  "total": 21,
+  "link": "/homes/?type=house&has=area_garden_city%2Cmarsh_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=private_dock",
+  "ok": true,
+  "total": 8,
+  "link": "/homes/?type=house&has=area_garden_city%2Cprivate_dock",
+  "note": "",
+  "cards": 8
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=pool",
+  "ok": true,
+  "total": 27,
+  "link": "/homes/?type=house&has=area_garden_city%2Cpool",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=pool",
+  "ok": true,
+  "total": 23,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cpool",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=raised_home",
+  "ok": true,
+  "total": 49,
+  "link": "/homes/?type=house&has=area_garden_city%2Craised_home",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=walk_to_beach",
+  "ok": true,
+  "total": 47,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwalk_to_beach",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=walk_to_beach",
+  "ok": true,
+  "total": 62,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cwalk_to_beach",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=boat_lift_any",
+  "ok": true,
+  "total": 2,
+  "link": "/homes/?type=house&has=area_garden_city%2Cboat_lift_any",
+  "note": "",
+  "cards": 2
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=home_elevator",
+  "ok": true,
+  "total": 13,
+  "link": "/homes/?type=house&has=area_garden_city%2Chome_elevator",
+  "note": "",
+  "cards": 13
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=one_level",
+  "ok": true,
+  "total": 9,
+  "link": "/homes/?type=house&has=area_garden_city%2Cone_level",
+  "note": "",
+  "cards": 7
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=icw_view",
+  "ok": true,
+  "total": 0,
+  "link": "/homes/?type=house&has=area_garden_city%2Cicw_view",
+  "note": "",
+  "cards": 0
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=water_icw",
+  "ok": true,
+  "total": 0,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwater_icw",
+  "note": "",
+  "cards": 0
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=golf_cart_ok",
+  "ok": true,
+  "total": 36,
+  "link": "/homes/?type=house&has=area_garden_city%2Cgolf_cart_ok",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=str_allowed",
+  "ok": true,
+  "total": 52,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cstr_allowed",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=str_allowed",
+  "ok": true,
+  "total": 40,
+  "link": "/homes/?type=house&has=area_garden_city%2Cstr_allowed",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=furnished",
+  "ok": true,
+  "total": 60,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cfurnished",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=furnished",
+  "ok": true,
+  "total": 41,
+  "link": "/homes/?type=house&has=area_garden_city%2Cfurnished",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=vacation_rental_program",
+  "ok": true,
+  "total": 34,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cvacation_rental_program",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=hoa_includes_insurance",
+  "ok": true,
+  "total": 60,
+  "link": "/homes/?type=condo&has=area_garden_city%2Choa_includes_insurance",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=elevator",
+  "ok": true,
+  "total": 32,
+  "link": "/homes/?type=condo&has=area_garden_city%2Celevator",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=indoor_pool",
+  "ok": true,
+  "total": 9,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cindoor_pool",
+  "note": "",
+  "cards": 9
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=close_to_water",
+  "ok": true,
+  "total": 53,
+  "link": "/homes/?type=house&has=area_garden_city%2Cclose_to_water",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=water_access",
+  "ok": true,
+  "total": 18,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwater_access",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=beach_access",
+  "ok": true,
+  "total": 2,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cbeach_access",
+  "note": "",
+  "cards": 2
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=beach_access",
+  "ok": true,
+  "total": 7,
+  "link": "/homes/?type=house&has=area_garden_city%2Cbeach_access",
+  "note": "",
+  "cards": 7
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=ocean_view",
+  "ok": true,
+  "total": 19,
+  "link": "/homes/?type=house&has=area_garden_city%2Cocean_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=water_view",
+  "ok": true,
+  "total": 29,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwater_view",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=oceanfront",
+  "ok": true,
+  "total": 55,
+  "link": "/homes/?type=house&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=water_ocean",
+  "ok": true,
+  "total": 11,
+  "link": "/homes/?type=house&has=area_garden_city%2Cwater_ocean",
+  "note": "",
+  "cards": 11
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=water_ocean",
+  "ok": true,
+  "total": 40,
+  "link": "/homes/?type=condo&has=area_garden_city%2Cwater_ocean",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=county_georgetown",
+  "ok": true,
+  "total": 17,
+  "link": "/homes/?type=house&has=area_garden_city%2Ccounty_georgetown",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=county_georgetown",
+  "ok": true,
+  "total": 3,
+  "link": "/homes/?type=condo&has=area_garden_city%2Ccounty_georgetown",
+  "note": "",
+  "cards": 3
+ },
+ {
+  "q": "has=area_garden_city&type=house&has=county_horry",
+  "ok": true,
+  "total": 38,
+  "link": "/homes/?type=house&has=area_garden_city%2Ccounty_horry",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=condo&has=county_horry",
+  "ok": true,
+  "total": 74,
+  "link": "/homes/?type=condo&has=area_garden_city%2Ccounty_horry",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=house&hoa=0",
+  "ok": true,
+  "total": 40,
+  "link": "/homes/?type=house&hoa=0&has=area_garden_city",
+  "note": "No HOA, as listed by the listing agent. Confirm before you buy.",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=manufactured",
+  "ok": true,
+  "total": 65,
+  "link": "/homes/?type=manufactured&has=area_garden_city",
+  "note": "",
+  "cards": 14
+ },
+ {
+  "q": "has=area_garden_city&type=land",
+  "ok": true,
+  "total": 3,
+  "link": "/homes/?type=land&has=area_garden_city",
+  "note": "",
+  "cards": 3
+ }
+]

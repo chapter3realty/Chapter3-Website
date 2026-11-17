@@ -1,0 +1,51 @@
+{
+ "rule": "Photo record for /submarkets/carolina-forest/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "carolina-forest-from-above",
+   "file": "images/2026-11-f/carolina-forest-upgrade/carolina-forest-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-f/carolina-forest-upgrade/carolina-forest-from-above-600w.webp",
+    "1200": "images/2026-11-f/carolina-forest-upgrade/carolina-forest-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 572,
+   "title": "Carolina Forest from above",
+   "what": "Part of Carolina Forest from the air (USDA NAIP aerial photo, 2023): curving streets of houses around lakes, Carolina Forest Boulevard across the middle, a four-lane highway below it and the Intracoastal Waterway at the lower right.",
+   "caption": "Part of Carolina Forest from the air, in 2023. Newer streets are not on it.",
+   "alt": "Aerial photo of part of Carolina Forest: curving streets of houses around lakes and pine woods, with a wide road across the middle and the Intracoastal Waterway at the lower right",
+   "place": {
+    "city": "Myrtle Beach",
+    "sublocation": "Carolina Forest"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, mosaic locked to Year=2023) on 2026-11-17; request in source_request.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "compositeCapture",
+   "changes": "Chapter3 Realty exported this view from the NAIP service; nothing drawn on it",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-78.96,33.735,-78.855,33.785&bboxSR=4326&imageSR=4326&size=1600,762&format=jpg&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A%20%22esriMosaicAttribute%22%2C%20%22where%22%3A%20%22Year%3D2023%22%2C%20%22sortField%22%3A%20%22Year%22%2C%20%22ascending%22%3A%20false%2C%20%22mosaicOperation%22%3A%20%22MT_FIRST%22%7D&f=image",
+   "frame": {
+    "bbox_wgs84": [
+     -78.96,
+     33.735,
+     -78.855,
+     33.785
+    ]
+   },
+   "original_size": "1600x762 (NAIP export), resized to 1200 and 600 wide",
+   "subject_check": "Looked at full size by the writer on 2026-11-17. Streets, lakes, woods and roads only. No person; no readable sign, plate or house number at page size."
+  }
+ ]
+}
