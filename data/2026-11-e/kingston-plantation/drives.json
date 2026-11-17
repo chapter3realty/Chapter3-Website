@@ -1,0 +1,31 @@
+{
+ "start": [
+  33.76795,
+  -78.77984
+ ],
+ "drives": {
+  "Myrtle Beach International Airport terminal": {
+   "minutes": 24.6,
+   "miles": 14.09
+  },
+  "Broadway at the Beach": {
+   "minutes": 15.6,
+   "miles": 8.51
+  },
+  "Coastal Grand Mall": {
+   "minutes": 19.6,
+   "miles": 10.96
+  },
+  "Grand Strand Medical Center": {
+   "minutes": 9.3,
+   "miles": 3.83
+  },
+  "Barefoot Landing": {
+   "minutes": 9.0,
+   "miles": 3.89
+  }
+ },
+ "tool": "router.project-osrm.org driving, no traffic",
+ "pulled": "2026-11-14",
+ "correction": "Barefoot Landing corrected 2026-11-14 to the verifier's rerun (VERIFY.md row 23): 9.0 minutes, 3.89 miles. The first pull (15.7 minutes, 6.41 miles) was wrong."
+}

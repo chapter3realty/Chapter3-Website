@@ -1,0 +1,148 @@
+{
+ "read": "2026-11-14T21:17:28.158Z",
+ "rule": "see header",
+ "groups": {
+  "six_percent": {
+   "n": 8,
+   "failed": 0,
+   "years": [
+    2026
+   ],
+   "median_total": 5610.87,
+   "min_total": 4804.86,
+   "max_total": 7023.9,
+   "city_tax_nonzero": 0,
+   "total_over_appraisal_pct": [
+    1.22,
+    1.23,
+    1.23,
+    1.23,
+    1.22,
+    1.22,
+    1.23,
+    1.23
+   ],
+   "rows": [
+    {
+     "appraisal": 485300,
+     "total": 5942.52,
+     "countyTax": 5853.12,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 394450,
+     "total": 4847.07,
+     "countyTax": 4757.67,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 457784,
+     "total": 5610.87,
+     "countyTax": 5521.47,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 394450,
+     "total": 4847.07,
+     "countyTax": 4757.67,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 483000,
+     "total": 5914.38,
+     "countyTax": 5824.98,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 575000,
+     "total": 7023.9,
+     "countyTax": 6934.5,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 391000,
+     "total": 4804.86,
+     "countyTax": 4715.46,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 457784,
+     "total": 5610.87,
+     "countyTax": 5521.47,
+     "fees": 89.4
+    }
+   ]
+  },
+  "four_percent": {
+   "n": 8,
+   "failed": 0,
+   "years": [
+    2026
+   ],
+   "median_total": 1772.09,
+   "min_total": 1251.02,
+   "max_total": 2295,
+   "city_tax_nonzero": 0,
+   "total_over_appraisal_pct": [
+    0.32,
+    0.38,
+    0.32,
+    0.38,
+    0.38,
+    0.33,
+    0.39,
+    0.37
+   ],
+   "rows": [
+    {
+     "appraisal": 391000,
+     "total": 1251.02,
+     "countyTax": 3143.64,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 517500,
+     "total": 1991.73,
+     "countyTax": 4160.7,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 410550,
+     "total": 1322.7,
+     "countyTax": 3300.42,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 600000,
+     "total": 2295,
+     "countyTax": 4824,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 600000,
+     "total": 2295,
+     "countyTax": 4824,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 457784,
+     "total": 1496.39,
+     "countyTax": 3680.31,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 457784,
+     "total": 1772.09,
+     "countyTax": 3680.31,
+     "fees": 89.4
+    },
+    {
+     "appraisal": 394450,
+     "total": 1470.65,
+     "countyTax": 3171.78,
+     "fees": 89.4
+    }
+   ]
+  }
+ }
+}

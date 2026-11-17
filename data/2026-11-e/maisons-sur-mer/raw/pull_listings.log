@@ -1,0 +1,94 @@
+{
+ "pulled": "2026-11-14T21:15:51.510323+00:00",
+ "refreshedAt": "2026-11-14T21:10:11.790Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 13,
+ "at_9650": 13,
+ "beds": {
+  "2": 13
+ },
+ "asking": {
+  "all": {
+   "median": 555000,
+   "min": 349900,
+   "max": 824900
+  },
+  "2": {
+   "n": 13,
+   "median": 555000,
+   "min": 349900,
+   "max": 824900,
+   "sqft_median": 1420,
+   "sqft_range": [
+    1367,
+    1511
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 13,
+   "median_at_or_under": 1025,
+   "lowest_at_or_under": 1025,
+   "highest_at_or_under": 1475,
+   "middle_half": [
+    1025.0,
+    1475.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "2": {
+   "n": 13,
+   "median_at_or_under": 1025,
+   "lowest_at_or_under": 1025,
+   "highest_at_or_under": 1475,
+   "middle_half": [
+    1025.0,
+    1475.0
+   ]
+  }
+ },
+ "flags": {
+  "str_allowed": 12,
+  "rentals_allowed": 12,
+  "long_term_rental_allowed": 12,
+  "vacation_rental_program": 3,
+  "has_rental_income": 3,
+  "furnished": 11,
+  "pets_allowed": 11,
+  "oceanfront_unit": 0,
+  "ocean_view": 10,
+  "oceanfront_building": 12,
+  "high_floor_unit": 8,
+  "low_floor_unit": 2,
+  "top_floor": 1,
+  "balcony": 13,
+  "parking_garage": 13,
+  "covered_parking": 13,
+  "indoor_pool": 1,
+  "sauna": 0,
+  "elevator_building": 13,
+  "flood_zone": 7,
+  "hoa_includes_trash": 12,
+  "hoa_includes_utilities": 13,
+  "hoa_includes_water_sewer": 13,
+  "hoa_includes_insurance": 1,
+  "hoa_includes_internet": 10,
+  "hoa_includes_pest": 11,
+  "hoa_includes_cable": 10,
+  "hoa_includes_electric": 0,
+  "security_service": 13
+ },
+ "year_built": {
+  "1974": 7,
+  "1975": 6
+ },
+ "flood_zone_field": {
+  "None": 13
+ },
+ "subdivision_field": {
+  "Maisons Sur-Mer": 13
+ }
+}

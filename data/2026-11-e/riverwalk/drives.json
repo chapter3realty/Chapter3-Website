@@ -1,0 +1,99 @@
+{
+ "pulled": "2026-11-14T20:32:05.422063+00:00",
+ "rule": "Drive times from the middle of the Riverwalk condos (findings.json \"center\") by the OSRM public router (driving, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: the airport terminal and Broadway at the Beach and Coastal Grand as in data/2026-11-d/plantation-point/pull_drives.py; Publix (955 Wood Duck Dr) and Arrowhead Country Club (OSM relation 6544171, centre point) from Nominatim.\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "start": [
+  33.69641,
+  -78.95454
+ ],
+ "drives": {
+  "Myrtle Beach International Airport terminal": {
+   "minutes": 15.5,
+   "miles": 6.11,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.922789,33.681467?overview=false"
+  },
+  "Broadway at the Beach": {
+   "minutes": 16.9,
+   "miles": 7.1,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.8807609,33.7162695?overview=false"
+  },
+  "Coastal Grand Mall": {
+   "minutes": 13.5,
+   "miles": 4.96,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.9223169,33.7027515?overview=false"
+  },
+  "Publix, 955 Wood Duck Dr": {
+   "minutes": 15.3,
+   "miles": 7.35,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.9689224,33.6637074?overview=false"
+  },
+  "Arrowhead Country Club (centre of the OSM course outline)": {
+   "minutes": 3.0,
+   "miles": 0.75,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.9561351,33.7052162?overview=false"
+  },
+  "nearest public beach access": {
+   "minutes": 17.2,
+   "miles": 6.83,
+   "url": "https://router.project-osrm.org/route/v1/driving/-78.95454,33.69641;-78.90584409827707,33.6684830234399?overview=false",
+   "name": "MYRTLE BEACH 8",
+   "parking": "No"
+  }
+ },
+ "beach_accesses_routed": [
+  [
+   "MYRTLE BEACH 5",
+   17.3,
+   7.0
+  ],
+  [
+   "MYRTLE BEACH 3",
+   18.0,
+   7.22
+  ],
+  [
+   "MYRTLE BEACH 2",
+   18.1,
+   7.31
+  ],
+  [
+   "MYRTLE BEACH 6",
+   17.6,
+   6.93
+  ],
+  [
+   "MYRTLE BEACH 1",
+   18.0,
+   7.4
+  ],
+  [
+   "MYRTLE BEACH 4",
+   17.8,
+   7.12
+  ],
+  [
+   " ",
+   17.3,
+   6.8
+  ],
+  [
+   "MYRTLE BEACH 7",
+   17.5,
+   6.88
+  ],
+  [
+   "MYRTLE BEACH 8",
+   17.2,
+   6.83
+  ],
+  [
+   "MYRTLE BEACH 9",
+   17.3,
+   6.91
+  ]
+ ],
+ "walk_to_that_access": {
+  "minutes": 149.5,
+  "miles": 6.96,
+  "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.95454,33.69641;-78.90584409827707,33.6684830234399?overview=false"
+ }
+}

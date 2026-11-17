@@ -1,0 +1,104 @@
+{
+ "by_building": {
+  "Kingston Plantation - Arrowhead Court": {
+   "n": 1,
+   "first_bracket_with_a_listing": 1100,
+   "all_at_or_under": 1100
+  },
+  "Kingston Plantation - Brighton Towers": {
+   "n": 10,
+   "first_bracket_with_a_listing": 1100,
+   "all_at_or_under": 1700
+  },
+  "Kingston Plantation - Canterbury Court": {
+   "n": 4,
+   "first_bracket_with_a_listing": 600,
+   "all_at_or_under": 800
+  },
+  "Kingston Plantation - Cumberland Terrace": {
+   "n": 2,
+   "first_bracket_with_a_listing": 800,
+   "all_at_or_under": 800
+  },
+  "Kingston Plantation - Laurel Court": {
+   "n": 1,
+   "first_bracket_with_a_listing": 1100,
+   "all_at_or_under": 1100
+  },
+  "Kingston Plantation - Margate Tower": {
+   "n": 7,
+   "first_bracket_with_a_listing": 1500,
+   "all_at_or_under": 2100
+  },
+  "Kingston Plantation - North Hampton": {
+   "n": 3,
+   "first_bracket_with_a_listing": 1100,
+   "all_at_or_under": 1400
+  },
+  "Kingston Plantation - Richmond Park": {
+   "n": 12,
+   "first_bracket_with_a_listing": 700,
+   "all_at_or_under": 1300
+  },
+  "Kingston Plantation - South Hampton": {
+   "n": 13,
+   "first_bracket_with_a_listing": 1100,
+   "all_at_or_under": 1400
+  },
+  "Kingston Plantation - St James Park HPR": {
+   "n": 2,
+   "first_bracket_with_a_listing": 600,
+   "all_at_or_under": 700
+  },
+  "Kingston Plantation - West Hyde Park": {
+   "n": 5,
+   "first_bracket_with_a_listing": 500,
+   "all_at_or_under": 800
+  },
+  "Kingston Plantation - Windermere By The Sea": {
+   "n": 1,
+   "first_bracket_with_a_listing": 600,
+   "all_at_or_under": 600
+  },
+  "Kingston Plantation - Windsor Court": {
+   "n": 2,
+   "first_bracket_with_a_listing": 800,
+   "all_at_or_under": 800
+  }
+ },
+ "all_fee_at_or_under": {
+  "0": 0,
+  "100": 0,
+  "200": 0,
+  "300": 0,
+  "400": 0,
+  "500": 1,
+  "600": 5,
+  "700": 12,
+  "800": 19,
+  "900": 19,
+  "1000": 19,
+  "1100": 38,
+  "1200": 39,
+  "1300": 43,
+  "1400": 51,
+  "1500": 54,
+  "1600": 54,
+  "1700": 58,
+  "1800": 59,
+  "1900": 60,
+  "2000": 62,
+  "2100": 63,
+  "2200": 63,
+  "2300": 63,
+  "2400": 63,
+  "2500": 63,
+  "2600": 63,
+  "2700": 63,
+  "2800": 63,
+  "2900": 63,
+  "3000": 63
+ },
+ "hoa0": 0,
+ "note": "hoaMax=T returns listings with monthly HOA fee at or under T (CCMLS via chapter3realty.com/homes/api/map), pulled 2026-11-14"
+}

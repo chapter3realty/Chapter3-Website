@@ -1,0 +1,87 @@
+{
+ "pulled": "2026-11-14T20:52:16.781098+00:00",
+ "refreshedAt": "2026-11-14T20:50:11.559Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 6,
+ "at_603": 6,
+ "beds": {
+  "3": 6
+ },
+ "asking": {
+  "all": {
+   "median": 824950.0,
+   "min": 749900,
+   "max": 979000
+  },
+  "3": {
+   "n": 6,
+   "median": 824950.0,
+   "min": 749900,
+   "max": 979000,
+   "sqft_median": 1480.0,
+   "sqft_range": [
+    1465,
+    1549
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 6,
+   "median_at_or_under": 1350.0,
+   "lowest_at_or_under": 1300,
+   "highest_at_or_under": 1350,
+   "middle_half": null
+  },
+  "zero_or_blank": 0,
+  "3": {
+   "n": 6,
+   "median_at_or_under": 1350.0,
+   "lowest_at_or_under": 1300,
+   "highest_at_or_under": 1350,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 6,
+  "rentals_allowed": 6,
+  "long_term_rental_allowed": 6,
+  "vacation_rental_program": 3,
+  "has_rental_income": 3,
+  "furnished": 5,
+  "pets_allowed": 6,
+  "oceanfront_unit": 4,
+  "ocean_view": 6,
+  "oceanfront_building": 6,
+  "high_floor_unit": 6,
+  "low_floor_unit": 0,
+  "top_floor": 0,
+  "balcony": 6,
+  "parking_garage": 5,
+  "covered_parking": 6,
+  "indoor_pool": 6,
+  "sauna": 0,
+  "elevator_building": 6,
+  "flood_zone": 3,
+  "hoa_includes_trash": 6,
+  "hoa_includes_utilities": 6,
+  "hoa_includes_water_sewer": 6,
+  "hoa_includes_insurance": 6,
+  "hoa_includes_internet": 6,
+  "hoa_includes_pest": 6,
+  "hoa_includes_cable": 5,
+  "hoa_includes_electric": 0,
+  "security_service": 4
+ },
+ "year_built": {
+  "2006": 6
+ },
+ "flood_zone_field": {
+  "None": 6
+ },
+ "subdivision_field": {
+  "Mar Vista Grande": 6
+ }
+}

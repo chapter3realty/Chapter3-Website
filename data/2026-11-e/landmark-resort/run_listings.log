@@ -1,0 +1,122 @@
+{
+ "pulled": "2026-11-14T19:35:53.104844+00:00",
+ "refreshedAt": "2026-11-14T19:31:21.806Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 89,
+ "at_1501": 88,
+ "beds": {
+  "0": 50,
+  "1": 38
+ },
+ "asking": {
+  "all": {
+   "median": 105000.0,
+   "min": 59000,
+   "max": 199900
+  },
+  "0": {
+   "n": 50,
+   "median": 86400.0,
+   "min": 59000,
+   "max": 133000,
+   "sqft_median": 360.0,
+   "sqft_range": [
+    353,
+    485
+   ]
+  },
+  "1": {
+   "n": 38,
+   "median": 125000.0,
+   "min": 92500,
+   "max": 199900,
+   "sqft_median": 550.0,
+   "sqft_range": [
+    500,
+    640
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 88,
+   "median_at_or_under": 925.0,
+   "lowest_at_or_under": 400,
+   "highest_at_or_under": 1150,
+   "middle_half": [
+    625.0,
+    975.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 50,
+   "median_at_or_under": 625.0,
+   "lowest_at_or_under": 400,
+   "highest_at_or_under": 1000,
+   "middle_half": [
+    450.0,
+    925.0
+   ]
+  },
+  "1": {
+   "n": 38,
+   "median_at_or_under": 975.0,
+   "lowest_at_or_under": 825,
+   "highest_at_or_under": 1150,
+   "middle_half": [
+    925.0,
+    1056.25
+   ]
+  }
+ },
+ "flags": {
+  "str_allowed": 79,
+  "rentals_allowed": 80,
+  "long_term_rental_allowed": 75,
+  "vacation_rental_program": 78,
+  "has_rental_income": 78,
+  "furnished": 88,
+  "pets_allowed": 39,
+  "oceanfront_unit": 37,
+  "ocean_view": 71,
+  "oceanfront_building": 82,
+  "high_floor_unit": 66,
+  "low_floor_unit": 10,
+  "top_floor": 1,
+  "balcony": 77,
+  "parking_garage": 79,
+  "covered_parking": 84,
+  "indoor_pool": 86,
+  "sauna": 0,
+  "elevator_building": 80,
+  "flood_zone": 16,
+  "hoa_includes_trash": 83,
+  "hoa_includes_utilities": 84,
+  "hoa_includes_water_sewer": 84,
+  "hoa_includes_insurance": 84,
+  "hoa_includes_internet": 79,
+  "hoa_includes_pest": 71,
+  "hoa_includes_cable": 37,
+  "hoa_includes_electric": 76,
+  "security_service": 56
+ },
+ "year_built": {
+  "1973": 43,
+  "1996": 39,
+  "1974": 2,
+  "1985": 1,
+  "2004": 1,
+  "1986": 1,
+  "1976": 1
+ },
+ "flood_zone_field": {
+  "None": 88
+ },
+ "subdivision_field": {
+  "Landmark Resort": 70,
+  "Landmark Resort Phase II": 18
+ }
+}

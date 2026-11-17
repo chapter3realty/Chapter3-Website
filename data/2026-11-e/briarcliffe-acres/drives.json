@@ -1,0 +1,103 @@
+{
+ "pulled": "2026-11-14T21:38:07.811398+00:00",
+ "rule": "Drive times from the middle of Briarcliffe Acres (the mean of the house lots' inside points, findings.json \"center\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Briarcliffe Acres (middle of the houses)": [
+   33.79068,
+   -78.75036
+  ]
+ },
+ "drives": {
+  "Briarcliffe Acres (middle of the houses)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 26.5,
+    "miles": 15.44,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 17.5,
+    "miles": 9.86,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 21.4,
+    "miles": 12.31,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 11.2,
+    "miles": 5.18,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.8194704,33.7580795?overview=false"
+   },
+   "Barefoot Landing": {
+    "minutes": 4.5,
+    "miles": 1.44,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.7424398,33.7998752?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 5.5,
+    "miles": 2.07,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.75036,33.79068;-78.73231561791424,33.79221055903281?overview=false",
+    "name": "NORTH MYRTLE BEACH 1",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "NORTH MYRTLE BEACH 1",
+     5.5,
+     2.07
+    ],
+    [
+     "NORTH MYRTLE BEACH 2",
+     5.7,
+     2.21
+    ],
+    [
+     "NORTH MYRTLE BEACH 3",
+     5.9,
+     2.29
+    ],
+    [
+     "NORTH MYRTLE BEACH 4",
+     6.0,
+     2.34
+    ],
+    [
+     "NORTH MYRTLE BEACH 5",
+     6.3,
+     2.46
+    ],
+    [
+     "NORTH MYRTLE BEACH 6",
+     6.3,
+     2.48
+    ],
+    [
+     "NORTH MYRTLE BEACH 7",
+     6.4,
+     2.52
+    ],
+    [
+     "NORTH MYRTLE BEACH 8",
+     6.5,
+     2.51
+    ],
+    [
+     "NORTH MYRTLE BEACH 9",
+     6.6,
+     2.54
+    ],
+    [
+     "NORTH MYRTLE BEACH 10",
+     6.8,
+     2.8
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 44.4,
+    "miles": 2.07,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.75036,33.79068;-78.73231561791424,33.79221055903281?overview=false"
+   }
+  }
+ }
+}

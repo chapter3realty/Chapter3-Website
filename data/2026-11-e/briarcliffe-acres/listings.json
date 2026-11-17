@@ -1,0 +1,83 @@
+{
+ "pulled": "2026-11-14T21:37:47.690859+00:00",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "refreshedAt": "2026-11-14T21:20:42.310Z",
+ "rule": "Homes for sale now in Briarcliffe Acres, in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS active listings)\nand the public listing card (/homes/api/lookup). MLS subdivision name searched: \"Briarcliffe Acres\". A home counts when its map point is inside the town boundary\n(county Municipalities layer 31, buffered 40 m). Also records the live counts of the strips the page uses (/homes/api/strip). HOA: hoa=0 = the listing says no HOA; hoaMax=0 includes a $0 fee.\nSaved: counts, list-price range and median, beds, size, year built, acres, HOA fields as listed, strip counts. No MLS number, address, listing firm or photo.\nRun: RAW=<scratch> python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "subdivision_search_total": 2,
+ "for_sale_inside_town": 2,
+ "subdivision_names": [
+  "Briarcliffe Acres"
+ ],
+ "types": [
+  "Detached"
+ ],
+ "listing_says_no_hoa": 1,
+ "at_or_under_0_fee": 2,
+ "hoa_monthly_listed": [
+  null,
+  null
+ ],
+ "hoa_fields": [
+  {
+   "hoaMonthly": null
+  },
+  {
+   "hoaMonthly": null
+  }
+ ],
+ "list_price": [
+  1050000,
+  874900
+ ],
+ "year_built": [
+  1970,
+  1975
+ ],
+ "sqft": [
+  2713,
+  2293
+ ],
+ "beds": [
+  4,
+  3
+ ],
+ "city_on_card": [
+  "Myrtle Beach"
+ ],
+ "waterfront_flag": [
+  false,
+  false
+ ],
+ "strips": {
+  "town (subdivision)": {
+   "query": "subdivision=Briarcliffe+Acres",
+   "ok": true,
+   "total": 2
+  },
+  "houses within 1.5 miles": {
+   "query": "near=33.79068%2C-78.75036&miles=1.5&type=house",
+   "ok": true,
+   "total": 40
+  },
+  "houses with a pool within 2 miles": {
+   "query": "near=33.79068%2C-78.75036&miles=2&type=house&has=pool",
+   "ok": true,
+   "total": 18
+  },
+  "houses within 1.5 miles at $700,000 and up": {
+   "query": "near=33.79068%2C-78.75036&miles=1.5&type=house&min=700000",
+   "ok": true,
+   "total": 15
+  },
+  "houses with a lake view within 1.5 miles": {
+   "query": "near=33.79068%2C-78.75036&miles=1.5&type=house&has=lake_view",
+   "ok": true,
+   "total": 3
+  },
+  "homes within 1 mile (all types)": {
+   "query": "near=33.79068%2C-78.75036&miles=1",
+   "ok": true,
+   "total": 160
+  }
+ }
+}

@@ -1,0 +1,208 @@
+{
+ "read": "2026-11-14T20:54:30.028718+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Mar Vista Grande in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, every parcel whose LegalDescr\n   starts \"MAR VISTA GRANDE HPR;\". Units = parcels with a building value. Unit numbers: \"UNIT 1001\" (floors 7 to 12), \"UNIT CL-502\" (floors 5 and 6),\n   \"UNIT PH 1406\" (floors 14 and 15), \"UNIT CU-1\" (commercial). Floor = the number less its last two digits.\n   Kept: units per floor group, county market-value groups (counts), last-sale year (counts), owner mailing state (counts), units taxed at 4 percent.\n   Never kept: a PIN, an owner, a unit's own record.\n2. Sales: deed sales from data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json (recorded 2025-10-01 to 2026-09-30) and the later window\n   from data/2026-11-n/buyers-builders/raw/deeds-co.json (2025-11-01 to 2026-10-31, Consideration > 0). Count, median, quartiles, range.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 163,
+ "units_with_building_value": 162,
+ "condos": 160,
+ "commercial_units": 2,
+ "parcels_without_building_value": 1,
+ "floor_groups": {
+  "CU0": {
+   "units": 2,
+   "doors": null
+  },
+  "CL5": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "CL6": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain7": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain8": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain9": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain10": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain11": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "plain12": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "PH14": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  },
+  "PH15": {
+   "units": 16,
+   "doors": [
+    1,
+    16
+   ]
+  }
+ },
+ "county_market_value_groups": [
+  [
+   880000.0,
+   73
+  ],
+  [
+   661000.0,
+   56
+  ],
+  [
+   750000.0,
+   17
+  ],
+  [
+   990000.0,
+   6
+  ]
+ ],
+ "county_market_value_groups_under_3": 8,
+ "last_sale_year": {
+  "2006": 11,
+  "2007": 7,
+  "2008": 6,
+  "2009": 2,
+  "2010": 4,
+  "2011": 7,
+  "2012": 3,
+  "2013": 4,
+  "2014": 4,
+  "2015": 2,
+  "2016": 8,
+  "2017": 9,
+  "2018": 7,
+  "2019": 9,
+  "2020": 7,
+  "2021": 14,
+  "2022": 16,
+  "2023": 5,
+  "2024": 6,
+  "2025": 14,
+  "2026": 15
+ },
+ "owner_state_top": [
+  [
+   "NC",
+   68
+  ],
+  [
+   "SC",
+   37
+  ],
+  [
+   "OH",
+   16
+  ],
+  [
+   "VA",
+   8
+  ],
+  [
+   "PA",
+   5
+  ],
+  [
+   "NY",
+   4
+  ],
+  [
+   "KY",
+   3
+  ],
+  [
+   "NJ",
+   3
+  ]
+ ],
+ "owner_out_of_sc": 123,
+ "taxed_as_home_4pct": 16,
+ "taxed_at_6pct": 144,
+ "sales": {
+  "hub_window": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 8,
+    "median": 795000.0,
+    "p25": 688750.0,
+    "p75": 867500.0,
+    "min": 180000.0,
+    "max": 895500.0
+   },
+   "under_300000": 1,
+   "all_without_under_300000": {
+    "n": 7,
+    "median": 815000.0,
+    "p25": 775000.0,
+    "p75": 870000.0,
+    "min": 660000.0,
+    "max": 895500.0
+   }
+  },
+  "later_window": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 6,
+    "median": 817500.0,
+    "p25": 626250.0,
+    "p75": 876375.0,
+    "min": 180000.0,
+    "max": 895500.0
+   },
+   "under_300000": 1,
+   "all_without_under_300000": {
+    "n": 5,
+    "median": 860000.0,
+    "p25": 775000.0,
+    "p75": 882750.0,
+    "min": 775000.0,
+    "max": 895500.0
+   },
+   "zero_dollar_deeds": 13
+  }
+ }
+}

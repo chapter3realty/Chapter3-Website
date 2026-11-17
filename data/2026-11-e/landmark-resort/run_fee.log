@@ -1,0 +1,7 @@
+0 {'n': 50, 'lowest': 390, 'highest': 981}
+1 {'n': 38, 'lowest': 812, 'highest': 1135}
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-139/data/2026-11-e/landmark-resort/pull_fee_exact.py", line 21, in <module>
+    n = L["fee"][b]["n"]; hi = int(L["fee"][b]["highest_at_or_under"]); lo = int(L["fee"][b]["lowest_at_or_under"]) - 25
+        ~~~~~~~~^^^
+KeyError: '2'

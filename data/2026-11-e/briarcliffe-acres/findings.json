@@ -1,0 +1,275 @@
+{
+ "made": "2026-11-14",
+ "rule": "Findings for /submarkets/north-myrtle-beach/briarcliffe-acres/, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json, AcclaimWeb DEED (001)); GEO = Blog-Brain tools/geo/grand-strand-v2.json (Census TIGER coastline).\nTown = parcels whose inside point is in the county's BRIARCLIFFE municipal boundary (layer 31). House = a single-family parcel (land use 101/102) with a county building value over $0.\nSize = the largest county 'Residential' footprint (layer 27, Structures 2023) on the lot: roof outline with garage, not heated living area. Pool = an 'Pool Inground' footprint (1870) on the lot.\nTax status: assessed / taxable = 0.04 is the owner's legal-residence ratio; 0.06 every other home. Flood: FEMA zone at the lot's inside point (layer 19) and whether the house outline touches a high-risk (SFHA) zone.\nOceanfront = a lot within 30 m of the TIGER coastline. Lake lot = a lot within 15 m of one of the three 'BRIARCLIFFE ACRES-PARK; LAKE' parcels.\nA sale = a deed on a town parcel with stated consideration over $10,000; a deed covering several parcels is dropped.\nWrites findings.json: counts, medians and ranges only; no PIN, owner, address or deed book and page.\nRun: RAW=<scratch> SALES=<deeds-co.json> GEO=<grand-strand-v2.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-14T21:32:03.598468+00:00",
+ "town_parcels": 269,
+ "town_acres": 383.5,
+ "town_bounds_lng_lat": [
+  -78.762013,
+  33.784146,
+  -78.739014,
+  33.797956
+ ],
+ "land_use": {
+  "101": 250,
+  "600": 4,
+  "100": 12,
+  "123": 1,
+  "102": 1,
+  "620": 1
+ },
+ "sub": {
+  "BCA": 265,
+  "CARU": 3,
+  "CS001": 1
+ },
+ "houses": {
+  "houses": 250,
+  "pools": 76,
+  "lot_sqft": {
+   "n": 250,
+   "min": 10708,
+   "q1": 37833.75,
+   "median": 42121.5,
+   "q3": 48506.5,
+   "max": 213028
+  },
+  "footprint": {
+   "n": 247,
+   "min": 1683,
+   "q1": 3365.0,
+   "median": 4067,
+   "q3": 5077.0,
+   "max": 8901
+  },
+  "county_value": {
+   "n": 250,
+   "min": 385440.0,
+   "q1": 827724.25,
+   "median": 967157.0,
+   "q3": 1157623.5,
+   "max": 3886951.0
+  },
+  "legal_residence_4pct": 197,
+  "six_pct": 52
+ },
+ "empty_lots": 12,
+ "empty_lot_sqft": {
+  "n": 12,
+  "min": 9249,
+  "q1": 22369.5,
+  "median": 43733.0,
+  "q3": 118736.5,
+  "max": 169485
+ },
+ "oceanfront": {
+  "houses": 0,
+  "pools": 0,
+  "lot_sqft": {},
+  "footprint": {},
+  "county_value": {},
+  "legal_residence_4pct": 0,
+  "six_pct": 0
+ },
+ "not_oceanfront": {
+  "houses": 250,
+  "pools": 76,
+  "lot_sqft": {
+   "n": 250,
+   "min": 10708,
+   "q1": 37833.75,
+   "median": 42121.5,
+   "q3": 48506.5,
+   "max": 213028
+  },
+  "footprint": {
+   "n": 247,
+   "min": 1683,
+   "q1": 3365.0,
+   "median": 4067,
+   "q3": 5077.0,
+   "max": 8901
+  },
+  "county_value": {
+   "n": 250,
+   "min": 385440.0,
+   "q1": 827724.25,
+   "median": 967157.0,
+   "q3": 1157623.5,
+   "max": 3886951.0
+  },
+  "legal_residence_4pct": 197,
+  "six_pct": 52
+ },
+ "lake": {
+  "houses": 37,
+  "pools": 17,
+  "lot_sqft": {
+   "n": 37,
+   "min": 27213,
+   "q1": 35124.0,
+   "median": 44239,
+   "q3": 57662.5,
+   "max": 74629
+  },
+  "footprint": {
+   "n": 36,
+   "min": 2565,
+   "q1": 4184.0,
+   "median": 5056.5,
+   "q3": 6299.25,
+   "max": 8901
+  },
+  "county_value": {
+   "n": 37,
+   "min": 720710.0,
+   "q1": 1107225.0,
+   "median": 1299626.0,
+   "q3": 1766021.0,
+   "max": 2879040.0
+  },
+  "legal_residence_4pct": 28,
+  "six_pct": 9
+ },
+ "ocean_dist_m": {
+  "n": 250,
+  "min": 174,
+  "q1": 574.25,
+  "median": 791.0,
+  "q3": 982.75,
+  "max": 1288
+ },
+ "houses_within_400m_of_ocean": 30,
+ "houses_within_800m_of_ocean": 129,
+ "flood_zone_at_lot_center": {
+  "outside mapped zones (X)": 221,
+  "AE": 24,
+  "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 5
+ },
+ "house_outline_touches_high_risk": 23,
+ "oceanfront_house_outline_touches_high_risk": 0,
+ "oceanfront_flood_zone_at_lot_center": {},
+ "owner_mailing_out_of_state": 32,
+ "zoning_of_houses": {
+  "null": 250
+ },
+ "streets_houses_and_lots": {
+  "CENTER DR": 33,
+  "NORTH GATE RD": 24,
+  "SOUTH GATE RD": 23,
+  "CABANA RD": 16,
+  "BAYBERRY LN": 15,
+  "BIRCH LN": 14,
+  "LAKE DR": 12,
+  "HICKORY LN": 11,
+  "CYPRESS LN": 11,
+  "HOLLY LN": 10,
+  "CEDAR LN": 10,
+  "OCEAN VIEW DR": 9,
+  "BEACH DR": 9,
+  "null": 9,
+  "LIVE OAK LN": 9,
+  "CHERRY LN": 8,
+  "MIDDLE GATE RD": 8,
+  "MYRTLE LN": 8,
+  "DOGWOOD LN": 8,
+  "PATTERSON DR": 6,
+  "PINE TREE LN": 6,
+  "EVERGREEN LN": 4,
+  "PALMETTO LN": 2
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "all_town": {
+   "count": 10,
+   "prices": {
+    "n": 10,
+    "min": 800000.0,
+    "q1": 897500.0,
+    "median": 1137500.0,
+    "q3": 1342500.0,
+    "max": 4650000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/04": 2,
+    "2026/05": 2,
+    "2026/08": 4,
+    "2026/10": 1
+   }
+  },
+  "houses": {
+   "count": 9,
+   "prices": {
+    "n": 9,
+    "min": 815000.0,
+    "q1": 987500.0,
+    "median": 1175000.0,
+    "q3": 1395000.0,
+    "max": 4650000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/04": 2,
+    "2026/05": 2,
+    "2026/08": 3,
+    "2026/10": 1
+   }
+  },
+  "oceanfront_houses": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  },
+  "not_oceanfront_houses": {
+   "count": 9,
+   "prices": {
+    "n": 9,
+    "min": 815000.0,
+    "q1": 987500.0,
+    "median": 1175000.0,
+    "q3": 1395000.0,
+    "max": 4650000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/04": 2,
+    "2026/05": 2,
+    "2026/08": 3,
+    "2026/10": 1
+   }
+  },
+  "pool_houses": {
+   "count": 2,
+   "prices": {
+    "n": 2,
+    "min": 1500000.0,
+    "q1": 712500.0,
+    "median": 3075000.0,
+    "q3": 5437500.0,
+    "max": 4650000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/04": 1
+   }
+  },
+  "lots": {
+   "count": 1,
+   "prices": {
+    "n": 1,
+    "median": 800000.0
+   },
+   "by_month": {
+    "2026/08": 1
+   }
+  }
+ },
+ "center": [
+  33.79068,
+  -78.75036
+ ]
+}

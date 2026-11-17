@@ -1,0 +1,239 @@
+{
+ "read": "2026-11-14T20:27:13.002000+00:00",
+ "rule": "Riverwalk findings (aggregate only). Reads RAW/county.json (pull_county.py) and the deed index (DEED (001), 2025-11-01 to 2026-10-31).\nCondo units = parcels (land use 107) whose legal description starts RIVERWALK AT ARROWHEAD, RIVERWALK @ ARROWHEAD (the original 1997-99 phase) or RIVERWALK II (later phases);\ngarage units (117), townhome lots (109, RIVERWALK TNHMS) and common areas are counted apart. Sales matched by parcel number. No PIN, owner or address is written.\nRun: RAW=<dir> SALES=<deeds-co.json> python3 -I analyze.py <this dir>. Writes findings.json.",
+ "counts": {
+  "condo_units": 321,
+  "phase_I_units": 216,
+  "phase_II_units": 105,
+  "garage_units": 7,
+  "townhome_lots": 28,
+  "all_parcels": 366,
+  "common_area_and_other": 10
+ },
+ "parse": {
+  "unparsed": 24
+ },
+ "buildings": {
+  "distinct_building_numbers_by_phase": {
+   "I": 17,
+   "II": 9
+  },
+  "floors_seen": [
+   1,
+   2,
+   3
+  ],
+  "units_per_floor": {
+   "1": 99,
+   "2": 99,
+   "3": 99
+  }
+ },
+ "county_value": {
+  "median": 205000.0,
+  "min": 158000.0,
+  "max": 343000.0,
+  "by_phase": {
+   "I": {
+    "n": 216,
+    "median": 205000.0
+   },
+   "II": {
+    "n": 105,
+    "median": 280000.0
+   }
+  }
+ },
+ "townhome_county_value": {
+  "n": 28,
+  "median": 296235.5,
+  "min": 240000.0,
+  "max": 317004.0
+ },
+ "tax_status": {
+  "taxed_4pct_legal_residence": 112,
+  "taxed_6pct": 209,
+  "other": 0,
+  "n": 321,
+  "tax_district": {
+   "600": 309,
+   "800": 12
+  }
+ },
+ "owner_mailing_state": {
+  "top": [
+   [
+    "SC",
+    167
+   ],
+   [
+    "NY",
+    25
+   ],
+   [
+    "MA",
+    16
+   ],
+   [
+    "PA",
+    15
+   ],
+   [
+    "NC",
+    14
+   ],
+   [
+    "NJ",
+    13
+   ],
+   [
+    "MD",
+    12
+   ],
+   [
+    "OH",
+    9
+   ]
+  ],
+  "out_of_sc": 154,
+  "sc": 167,
+  "blank": 0
+ },
+ "last_sale_year": {
+  "1997": 2,
+  "1998": 1,
+  "1999": 2,
+  "2001": 3,
+  "2002": 6,
+  "2003": 5,
+  "2004": 7,
+  "2005": 6,
+  "2006": 10,
+  "2007": 5,
+  "2008": 2,
+  "2009": 2,
+  "2010": 7,
+  "2011": 6,
+  "2012": 3,
+  "2013": 7,
+  "2014": 7,
+  "2015": 8,
+  "2016": 11,
+  "2017": 11,
+  "2018": 14,
+  "2019": 19,
+  "2020": 26,
+  "2021": 21,
+  "2022": 22,
+  "2023": 24,
+  "2024": 25,
+  "2025": 29,
+  "2026": 30
+ },
+ "flood_condo_parcels": {
+  "X": 240,
+  "0.2": 69,
+  "AE": 12
+ },
+ "flood_area_share": {
+  "ae_share_of_unit_parcel_area": 0.002020797981161963,
+  "x_shaded_0p2_share": 0.09389019083173271
+ },
+ "flood_layer_zone_counts": {
+  "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 44,
+  "AE": 2
+ },
+ "footprints_in_community": {
+  "1820": 28
+ },
+ "footprints_touch_AE": 0,
+ "footprints_in_0p2": 0,
+ "pool_footprints_1870_in_community": 0,
+ "waterway_distance_m": {
+  "min": 7,
+  "median": 101,
+  "max": 285,
+  "within_25m": 66,
+  "within_100m": 156,
+  "within_250m": 297,
+  "n": 321
+ },
+ "golf_distance_m": {
+  "owner_parcels": [],
+  "parcels_used": 2,
+  "acres": 88.5,
+  "within_15m": 0,
+  "within_50m": 12,
+  "median": 183,
+  "n": 321
+ },
+ "towns": [
+  "MYRTLE BEACH"
+ ],
+ "town_contains_center": false,
+ "town_contains_all_condo_parcels": 0,
+ "zoning_condo_parcels": {
+  "GR None": 321
+ },
+ "center": [
+  33.69641,
+  -78.95454
+ ],
+ "bbox": [
+  -78.95682,
+  33.69534,
+  -78.95275,
+  33.69819
+ ],
+ "deeds_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "deed_rows_matched": 40,
+  "under_1000_transfers": {
+   "condos_phase_I": 7,
+   "condos_phase_II": 4,
+   "townhomes": 1
+  },
+  "condos_all": {
+   "n": 22,
+   "median": 208500.0,
+   "p25": 174625.0,
+   "p75": 250000.0,
+   "min": 137500.0,
+   "max": 325500.0
+  },
+  "condos_phase_II": {
+   "n": 9,
+   "median": 265000.0,
+   "p25": 220950.0,
+   "p75": 300000.0,
+   "min": 177000.0,
+   "max": 325500.0
+  },
+  "condos_phase_I": {
+   "n": 13,
+   "median": 183000.0,
+   "p25": 162500.0,
+   "p75": 212500.0,
+   "min": 137500.0,
+   "max": 224000.0
+  },
+  "townhomes": {
+   "n": 6,
+   "median": 246000.0,
+   "p25": 181121.25,
+   "p75": 256125.0,
+   "min": 4485.0,
+   "max": 259500.0
+  },
+  "condos_by_quarter": {
+   "2025Q4": 4,
+   "2026Q1": 5,
+   "2026Q2": 9,
+   "2026Q3": 4
+  },
+  "condos_units_sold_once_or_more": 22
+ }
+}

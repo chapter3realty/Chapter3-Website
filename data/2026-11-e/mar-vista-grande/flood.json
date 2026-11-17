@@ -1,0 +1,112 @@
+{
+ "read": "2026-11-14T20:54:41.618239+00:00",
+ "layer19_fields": [
+  "OBJECTID",
+  "Shape",
+  "Shape.STArea()",
+  "Shape.STLength()",
+  "FLD_AR_ID",
+  "FLD_ZONE",
+  "FLOODWAY",
+  "SFHA_TF",
+  "STATIC_BFE",
+  "V_DATUM",
+  "DEPTH",
+  "LEN_UNIT",
+  "VELOCITY",
+  "VEL_UNIT",
+  "AR_REVERT",
+  "BFE_REVERT",
+  "DEP_REVERT",
+  "SOURCE_CIT"
+ ],
+ "footprint_parcels": 163,
+ "footprint_center": [
+  33.815286,
+  -78.680278
+ ],
+ "footprint_bounds": [
+  -78.680935,
+  33.814746,
+  -78.679621,
+  33.815835
+ ],
+ "zones_touching": [
+  {
+   "attributes": {
+    "FLD_ZONE": "AE",
+    "SFHA_TF": "T",
+    "STATIC_BFE": 11.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.679
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "VE",
+    "SFHA_TF": "T",
+    "STATIC_BFE": 12.0
+   },
+   "all_attribute_names": [
+    "OBJECTID",
+    "Shape.STArea()",
+    "Shape.STLength()",
+    "FLD_AR_ID",
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.321
+  }
+ ],
+ "center_point_zones": [
+  {
+   "OBJECTID": 714,
+   "Shape.STArea()": 15262889.335861135,
+   "Shape.STLength()": 95063.76042893859,
+   "FLD_AR_ID": "714",
+   "FLD_ZONE": "AE",
+   "FLOODWAY": " ",
+   "SFHA_TF": "T",
+   "STATIC_BFE": 11.0,
+   "V_DATUM": "NAVD88",
+   "DEPTH": -9999.0,
+   "LEN_UNIT": "FEET",
+   "VELOCITY": -9999.0,
+   "VEL_UNIT": " ",
+   "AR_REVERT": " ",
+   "BFE_REVERT": -9999.0,
+   "DEP_REVERT": -9999.0,
+   "SOURCE_CIT": "STUDY1"
+  }
+ ],
+ "share_in_no_zone": 0.0
+}

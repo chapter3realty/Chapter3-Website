@@ -1,0 +1,7 @@
+# Data: /submarkets/myrtle-beach/kingston-plantation/ (batch 2026-11-e, read 2026-11-14)
+
+Raw (scratch, has MLS numbers and owner states): `raw/` (map-kp.json, cards.json, bbox-parcels.json, kingston-parcels.json, google-suggestions.txt, kingstonresorts-home.html.txt, acerealty-kp.html.txt, km.txt = Kingston Resorts Owner Reference Manual, an old PDF).
+Saved for the page (counts and ranges only, no address, MLS number, PIN or owner): `listings.json`, `hoa-brackets.json`, `findings.json`, `findings-extra.json`, `drives.json`, `map-points.json` (one point per building location, 4 decimals).
+Scripts: `pull_listings.py` (python3 -I pull_listings.py .), `pull_county.py` (RAW=raw), `analyze.py` (RAW=raw SALES=../../2026-11-n/buyers-builders/raw/deeds-co.json python3 -I analyze.py .), `pull-suggestions` loop in must-answer.md.
+Community rule: parcels from county Parcels layer 24 inside envelope -78.800,33.755,-78.765,33.782 whose legal description starts with Arrowhead Ct, Brighton, Canterbury C, Cumberland Terrace, Kingston Lake, Kingston Plantation, Kingston Commercial, Margate Tower, North Hampton, Richmond Park, South Hampton, St James Park, West Hyde Park, Windermere By The Sea. Left out on purpose: "Kingston Arcadian" (33 parcels, unclear if part), Laurel Court and Windsor Court (MLS names with no matching county legal name found; 3 listings), Royale Palms and Sands/Seawatch groups (other places).
+HOA fees: `hoaMax=T` brackets from the site's map API; the API's bracket is the monthly fee at or under T.

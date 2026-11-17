@@ -1,0 +1,314 @@
+{
+ "pulled": "2026-11-14T20:25:30.631162+00:00",
+ "refreshedAt": "2026-11-14T20:20:41.462Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "rule": "Riverwalk (Myrtle Beach 29579): homes for sale now, in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS)\nand the listing card (/homes/api/lookup). subdivision=Riverwalk matches two MLS names: RIVERWALK (condos) and \"Riverwalk Townhomes at Arrowhead\"; the card's subdivision field splits them.\nHOA fee: hoaMax=T returns the listings whose fee is T or less, so each fee is known to a $25 bracket (T=0: blank or zero). Flags: has=<key> counts.\nNever saved: an MLS number, an address, a single listing's price or fee, a firm, a photo, a remark. Calls spaced 2.1 s. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "api_total": 13,
+ "n": 13,
+ "subdivision_field": {
+  "RIVERWALK": 9,
+  "RIVERWALK II": 2,
+  "Riverwalk Townhomes at Arrowhead": 2
+ },
+ "city_zip": {
+  "Myrtle Beach|29579": 13
+ },
+ "groups": {
+  "condos": {
+   "n": 11,
+   "median": 194900,
+   "min": 145000,
+   "max": 298000,
+   "sqft_median": 992,
+   "sqft_range": [
+    756,
+    1510
+   ],
+   "beds": {
+    "1": 5,
+    "2": 4,
+    "3": 2
+   },
+   "waterfront_tag": 3,
+   "waterfront_field": 3,
+   "year_built": {
+    "1997": 4,
+    "2006": 2,
+    "1998": 4,
+    "1999": 1
+   }
+  },
+  "townhomes": {
+   "n": 2,
+   "median": 257000.0,
+   "min": 254000,
+   "max": 260000,
+   "sqft_median": 1666.5,
+   "sqft_range": [
+    1658,
+    1675
+   ],
+   "beds": {
+    "3": 2
+   },
+   "waterfront_tag": 0,
+   "waterfront_field": 0,
+   "year_built": {
+    "2022": 2
+   }
+  }
+ },
+ "condos_by_beds": {
+  "1": {
+   "n": 5,
+   "median": 169900,
+   "min": 145000,
+   "max": 179900,
+   "sqft_median": 800,
+   "sqft_range": [
+    756,
+    830
+   ],
+   "beds": {
+    "1": 5
+   },
+   "waterfront_tag": 1,
+   "waterfront_field": 1,
+   "year_built": {
+    "1998": 2,
+    "1997": 2,
+    "1999": 1
+   }
+  },
+  "2": {
+   "n": 4,
+   "median": 207450.0,
+   "min": 194900,
+   "max": 223500,
+   "sqft_median": 1056.0,
+   "sqft_range": [
+    992,
+    1120
+   ],
+   "beds": {
+    "2": 4
+   },
+   "waterfront_tag": 2,
+   "waterfront_field": 2,
+   "year_built": {
+    "1997": 2,
+    "1998": 2
+   }
+  },
+  "3": {
+   "n": 2,
+   "median": 263950.0,
+   "min": 229900,
+   "max": 298000,
+   "sqft_median": 1510.0,
+   "sqft_range": [
+    1510,
+    1510
+   ],
+   "beds": {
+    "3": 2
+   },
+   "waterfront_tag": 0,
+   "waterfront_field": 0,
+   "year_built": {
+    "2006": 2
+   }
+  }
+ },
+ "fee": {
+  "rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "condos": {
+   "n_with_fee": 11,
+   "zero_or_blank": 0,
+   "no_bracket": 0,
+   "median_at_or_under": 400,
+   "lowest_at_or_under": 325,
+   "highest_at_or_under": 500,
+   "all_brackets": {
+    "325": 5,
+    "400": 4,
+    "500": 2
+   }
+  },
+  "townhomes": {
+   "n_with_fee": 2,
+   "zero_or_blank": 0,
+   "no_bracket": 0,
+   "median_at_or_under": 200.0,
+   "lowest_at_or_under": 200,
+   "highest_at_or_under": 200,
+   "all_brackets": {
+    "200": 2
+   }
+  }
+ },
+ "fee_by_beds": {
+  "1": {
+   "n_with_fee": 5,
+   "zero_or_blank": 0,
+   "no_bracket": 0,
+   "median_at_or_under": 325,
+   "lowest_at_or_under": 325,
+   "highest_at_or_under": 325,
+   "all_brackets": {
+    "325": 5
+   }
+  },
+  "2": {
+   "n_with_fee": 4,
+   "zero_or_blank": 0,
+   "no_bracket": 0,
+   "median_at_or_under": 400.0,
+   "lowest_at_or_under": 400,
+   "highest_at_or_under": 400,
+   "all_brackets": {
+    "400": 4
+   }
+  },
+  "3": {
+   "n_with_fee": 2,
+   "zero_or_blank": 0,
+   "no_bracket": 0,
+   "median_at_or_under": 500.0,
+   "lowest_at_or_under": 500,
+   "highest_at_or_under": 500,
+   "all_brackets": {
+    "500": 2
+   }
+  }
+ },
+ "flags_all": {
+  "rentals_allowed": 12,
+  "long_term_rental_allowed": 12,
+  "str_allowed": 9,
+  "has_rental_income": 1,
+  "pets_allowed": 11,
+  "community_pool": 11,
+  "outdoor_pool": 11,
+  "clubhouse": 9,
+  "tennis": 0,
+  "golf_view": 12,
+  "on_golf_course": 10,
+  "icw_view": 2,
+  "water_view": 4,
+  "water_icw": 2,
+  "marsh_view": 0,
+  "waterfront_community": 9,
+  "balcony": 10,
+  "elevator": 2,
+  "elevator_building": 2,
+  "upper_floor_unit": 10,
+  "low_floor_unit": 13,
+  "first_floor_or_elevator": 5,
+  "in_unit_laundry": 13,
+  "furnished": 10,
+  "fha_accepted": 7,
+  "va_accepted": 5,
+  "conventional_accepted": 12,
+  "cash_only_listing": 0,
+  "hoa_includes_trash": 13,
+  "hoa_includes_water_sewer": 10,
+  "hoa_includes_insurance": 10,
+  "hoa_includes_internet": 3,
+  "hoa_includes_cable": 7,
+  "hoa_includes_electric": 0,
+  "hoa_includes_utilities": 10,
+  "hoa_includes_pest": 11,
+  "lawn_care_included": 13,
+  "security_service": 1,
+  "gated": 0,
+  "outside_city_limits": 8,
+  "beach_5mi": 13,
+  "near_beach": 0
+ },
+ "flood_zone_field": {
+  "None": 13
+ },
+ "stories_field": {
+  "None": 13
+ },
+ "calls": [
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/lookup?mls=<listing>",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=0",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=25",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=50",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=75",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=100",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=125",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=150",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=175",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=200",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=225",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=250",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=275",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=300",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=325",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=350",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=375",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=400",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=425",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=450",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=475",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&hoaMax=500",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=rentals_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=long_term_rental_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=str_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=has_rental_income",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=pets_allowed",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=community_pool",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=outdoor_pool",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=clubhouse",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=tennis",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=golf_view",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=on_golf_course",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=icw_view",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=water_view",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=water_icw",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=marsh_view",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=waterfront_community",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=balcony",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=elevator",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=elevator_building",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=upper_floor_unit",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=low_floor_unit",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=first_floor_or_elevator",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=in_unit_laundry",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=furnished",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=fha_accepted",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=va_accepted",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=conventional_accepted",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=cash_only_listing",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_trash",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_water_sewer",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_insurance",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_internet",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_cable",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_electric",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_utilities",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=hoa_includes_pest",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=lawn_care_included",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=security_service",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=gated",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=outside_city_limits",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=beach_5mi",
+  "https://chapter3realty.com/homes/api/map?subdivision=Riverwalk&has=near_beach"
+ ]
+}

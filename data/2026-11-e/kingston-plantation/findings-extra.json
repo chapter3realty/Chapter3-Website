@@ -1,0 +1,6 @@
+{"made":"2026-11-14","note":"Computed from raw/bbox-parcels.json with the analyze.py rules, leaving out the 256 'Kingston Lakes' parcels (all one owner, county value $150,000 each, no sale in the window).",
+ "without_kingston_lakes":{"units":1364,"county_value_median":481500,"legal_residence_4pct":158,"assessed_6pct":1206,"owner_mailing_out_of_state":1031,
+ "legal_residence_by_building":{"Arrowhead Court":[55,2],"Brighton Towers":[201,15],"Canterbury Court":[66,11],"Cumberland Terrace":[72,13],"Margate Tower":[253,46],"North Hampton":[126,18],"Richmond Park":[183,14],"South Hampton":[143,12],"St James Park":[65,9],"West Hyde Park":[140,15],"Windermere By The Sea":[60,3]}},
+ "kingston_lakes":{"parcels":256,"distinct_owner_names":1,"county_value_each":150000,"land_use_code":"312","sales_in_window":0,"for_sale_now":0},
+ "tax_method":"pilot plantation-point facts row 37: 201.0 mills unincorporated; school operations 109.1 mills off for a legal residence; flat fee $89.40; 4% / 6% assessment",
+ "tax_at_typical_price_435000":{"legal_residence":1688,"second_home_or_rental":5336}}

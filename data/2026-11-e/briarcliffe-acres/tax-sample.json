@@ -1,0 +1,149 @@
+{
+ "rule": "Sample of 12 Briarcliffe Acres houses (7 taxed at 4%, 5 at 6%, chosen at random with seed 11), newest bill (tax year 2026), from the Horry County Treasurer's public payment site by pull_tax.py. No PIN, name or address kept.",
+ "bills": [
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 364873.0,
+   "assessed": 14600.0,
+   "county_tax": 2499.52,
+   "town_tax": 700.8,
+   "fees": 89.4,
+   "total": 1366.56,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 576380.0,
+   "assessed": 23060.0,
+   "county_tax": 3947.87,
+   "town_tax": 1106.88,
+   "fees": 89.4,
+   "total": 2298.0,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 787866.0,
+   "assessed": 31520.0,
+   "county_tax": 5396.22,
+   "town_tax": 1512.96,
+   "fees": 89.4,
+   "total": 3559.75,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 787086.0,
+   "assessed": 31480.0,
+   "county_tax": 5389.38,
+   "town_tax": 1511.04,
+   "fees": 89.4,
+   "total": 3555.35,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 725206.0,
+   "assessed": 29010.0,
+   "county_tax": 4966.51,
+   "town_tax": 1392.48,
+   "fees": 89.4,
+   "total": 2953.1,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 557037.0,
+   "assessed": 22280.0,
+   "county_tax": 3814.34,
+   "town_tax": 1069.44,
+   "fees": 89.4,
+   "total": 2542.43,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 4,
+   "appraisal": 878203.0,
+   "assessed": 35130.0,
+   "county_tax": 6014.26,
+   "town_tax": 1686.24,
+   "fees": 89.4,
+   "total": 3957.22,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 6,
+   "appraisal": 2668170.0,
+   "assessed": 160090.0,
+   "county_tax": 27407.41,
+   "town_tax": 7684.32,
+   "fees": 89.4,
+   "total": 35181.13,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 6,
+   "appraisal": 1093639.0,
+   "assessed": 65620.0,
+   "county_tax": 11234.14,
+   "town_tax": 3149.76,
+   "fees": 89.4,
+   "total": 14473.3,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 6,
+   "appraisal": 2319911.0,
+   "assessed": 139200.0,
+   "county_tax": 23831.04,
+   "town_tax": 6681.6,
+   "fees": 89.4,
+   "total": 30602.04,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 6,
+   "appraisal": 825056.0,
+   "assessed": 49500.0,
+   "county_tax": 8474.4,
+   "town_tax": 2376.0,
+   "fees": 89.4,
+   "total": 10939.8,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  },
+  {
+   "year": 2026,
+   "ratio_pct": 6,
+   "appraisal": 445894.0,
+   "assessed": 26750.0,
+   "county_tax": 4579.6,
+   "town_tax": 1284.0,
+   "fees": 89.4,
+   "total": 5953.0,
+   "mills_county": 171.2,
+   "mills_town": 48.0
+  }
+ ]
+}

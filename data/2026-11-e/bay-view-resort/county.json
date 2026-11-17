@@ -1,0 +1,366 @@
+{
+ "read": "2026-11-14T19:24:20.524810+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Bay View Resort in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, every parcel whose\n   LegalDescr starts \"THE PALACE;\" (the regime name /invest/condo-buildings/ used). Units = parcels with a building value.\n   Kept: units per floor (floor = the unit number less its last two digits), door numbers per floor, the count of units at\n   each county market value (the assessor's unit types), the year of each unit's last recorded sale (counts), owner mailing\n   state (counts), units taxed at the 4% legal-residence ratio. Never kept: a PIN, an owner, a unit's own record.\n2. Sales: the deed sales /invest/condo-buildings/ used (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json,\n   AcclaimWeb DEED (001) recorded 2025-10-01 to 2026-09-30, kept sales only), plus the later window 2025-11-01 to 2026-10-31\n   (data/2026-11-n/buyers-builders/raw/deeds-co.json, Consideration > 0). Kept: count, median, quartiles, range, by floor band,\n   and buyers' tax-bill state (in or out of South Carolina) for the first window.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 183,
+ "units": 183,
+ "parcels_without_building_value": 0,
+ "landuse_first_digit": {
+  "1xx": 183
+ },
+ "unparsed_unit_numbers": 2,
+ "floors": {
+  "numbers": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19
+  ],
+  "top": 19,
+  "count": 17,
+  "missing_between": [
+   13
+  ],
+  "units_per_floor": {
+   "2": 9,
+   "3": 9,
+   "4": 11,
+   "5": 11,
+   "6": 11,
+   "7": 11,
+   "8": 11,
+   "9": 11,
+   "10": 11,
+   "11": 11,
+   "12": 11,
+   "14": 11,
+   "15": 11,
+   "16": 11,
+   "17": 11,
+   "18": 11,
+   "19": 9
+  },
+  "doors_per_floor": {
+   "2": [
+    2,
+    10,
+    9
+   ],
+   "3": [
+    2,
+    10,
+    9
+   ],
+   "4": [
+    1,
+    11,
+    11
+   ],
+   "5": [
+    1,
+    11,
+    11
+   ],
+   "6": [
+    1,
+    11,
+    11
+   ],
+   "7": [
+    1,
+    11,
+    11
+   ],
+   "8": [
+    1,
+    11,
+    11
+   ],
+   "9": [
+    1,
+    11,
+    11
+   ],
+   "10": [
+    1,
+    11,
+    11
+   ],
+   "11": [
+    1,
+    11,
+    11
+   ],
+   "12": [
+    1,
+    11,
+    11
+   ],
+   "14": [
+    1,
+    11,
+    11
+   ],
+   "15": [
+    1,
+    11,
+    11
+   ],
+   "16": [
+    1,
+    11,
+    11
+   ],
+   "17": [
+    1,
+    11,
+    11
+   ],
+   "18": [
+    1,
+    11,
+    11
+   ],
+   "19": [
+    1,
+    9,
+    9
+   ]
+  }
+ },
+ "county_market_value_groups": [
+  [
+   387900.0,
+   70
+  ],
+  [
+   165000.0,
+   31
+  ],
+  [
+   492500.0,
+   30
+  ],
+  [
+   189900.0,
+   21
+  ],
+  [
+   350000.0,
+   7
+  ],
+  [
+   354000.0,
+   5
+  ],
+  [
+   145000.0,
+   4
+  ]
+ ],
+ "county_market_value_groups_under_3": 15,
+ "last_sale_year": {
+  "2007": 12,
+  "2008": 4,
+  "2009": 3,
+  "2010": 11,
+  "2011": 7,
+  "2012": 3,
+  "2013": 4,
+  "2014": 2,
+  "2015": 1,
+  "2016": 4,
+  "2017": 3,
+  "2018": 8,
+  "2019": 6,
+  "2020": 6,
+  "2021": 18,
+  "2022": 31,
+  "2023": 15,
+  "2024": 13,
+  "2025": 18,
+  "2026": 14
+ },
+ "owner_state_top": [
+  [
+   "NC",
+   42
+  ],
+  [
+   "SC",
+   27
+  ],
+  [
+   "MD",
+   12
+  ],
+  [
+   "VA",
+   10
+  ],
+  [
+   "GA",
+   10
+  ],
+  [
+   "NJ",
+   9
+  ],
+  [
+   "FL",
+   8
+  ],
+  [
+   "NY",
+   8
+  ]
+ ],
+ "owner_out_of_sc": 155,
+ "taxed_as_home_4pct": 2,
+ "sales": {
+  "hub_window": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 12,
+    "median": 188200.0,
+    "p25": 133944.25,
+    "p75": 358750.0,
+    "min": 112500.0,
+    "max": 475000.0
+   },
+   "floors_1_to_10": {
+    "n": 4,
+    "median": 269950.0,
+    "p25": 187350.0,
+    "p75": 353750.0,
+    "min": 186500.0,
+    "max": 355000.0
+   },
+   "floors_11_up": {
+    "n": 8,
+    "median": 139888.5,
+    "p25": 117375.0,
+    "p75": 363750.0,
+    "min": 112500.0,
+    "max": 475000.0
+   },
+   "buyer_tax_bill_in_sc": 2,
+   "buyer_tax_bill_out_of_sc": 10,
+   "buyer_states_out_of_sc": [
+    [
+     "NC",
+     5
+    ],
+    [
+     "AZ",
+     1
+    ],
+    [
+     "MD",
+     1
+    ],
+    [
+     "IL",
+     1
+    ],
+    [
+     "DE",
+     1
+    ],
+    [
+     "MA",
+     1
+    ]
+   ],
+   "buyer_is_company": 2,
+   "by_quarter": {
+    "2025Q4": 3,
+    "2026Q1": 1,
+    "2026Q2": 5,
+    "2026Q3": 3
+   }
+  },
+  "later_window": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 11,
+    "median": 186500.0,
+    "p25": 112500.0,
+    "p75": 355000.0,
+    "min": 104900.0,
+    "max": 475000.0
+   },
+   "floors_1_to_10": {
+    "n": 5,
+    "median": 189900.0,
+    "p25": 145700.0,
+    "p75": 352500.0,
+    "min": 104900.0,
+    "max": 355000.0
+   },
+   "floors_11_up": {
+    "n": 6,
+    "median": 122250.0,
+    "p25": 110600.0,
+    "p75": 388750.0,
+    "min": 104900.0,
+    "max": 475000.0
+   },
+   "zero_dollar_deeds": 5,
+   "commercial_unit_deeds": 0,
+   "note": "Commercial units left out. Consideration as indexed; deeds under $1,000 are transfers, not sales",
+   "under_1000": 0
+  }
+ },
+ "sales_by_value": {
+  "read": "2026-11-14T19:30:23.003624+00:00",
+  "rule": "Bay View Resort: recorded sales split by the county's own market value for the unit (a stand-in for unit size, since deeds carry no\nbedrooms): units the county values under $200,000 (the one-bedroom size; the one-bedrooms for sale ask $119,900 to $194,900) and units it\nvalues at $300,000 or more (two- and three-bedrooms; those for sale ask $362,500 to $532,500). Sources: Horry County GIS layer 24\n(PIN, MarketProp, LegalDescr 'BAYVIEW HPR PH I;%'), joined by PIN to the deed files named in pull_county.py (window 1: out-of-state-buyers.json,\n2025-10-01 to 2026-09-30; window 2: data/2026-11-n/buyers-builders/raw/deeds-co.json, 2025-11-01 to 2026-10-31, Consideration >= 1000).\nKept: per group the count, median, lowest and highest price. A group of fewer than 3 is not kept. Never kept: a PIN, a unit, a buyer, a date of a single deed.\nRun: python3 -I pull_sales_by_value.py <this dir> <website root>. Merges \"sales_by_value\" into county.json.",
+  "units_by_county_value": {
+   "under_200k": 64,
+   "300k_up": 119
+  },
+  "window_1": {
+   "window": "2025-10-01 to 2026-09-30",
+   "under_200k": {
+    "n": 7,
+    "median": 139777.0,
+    "min": 112500.0,
+    "max": 189900.0
+   },
+   "300k_up": {
+    "n": 5,
+    "median": 360000.0,
+    "min": 350000.0,
+    "max": 475000.0
+   }
+  },
+  "window_2": {
+   "window": "2025-11-01 to 2026-10-31",
+   "under_200k": {
+    "n": 8,
+    "median": 122250.0,
+    "min": 104900.0,
+    "max": 189900.0
+   },
+   "300k_up": {
+    "n": 4,
+    "median": 357500.0,
+    "min": 350000.0,
+    "max": 475000.0
+   }
+  }
+ }
+}

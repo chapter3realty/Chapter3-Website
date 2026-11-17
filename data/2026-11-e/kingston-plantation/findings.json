@@ -1,0 +1,321 @@
+{
+ "made": "2026-11-14",
+ "rule": "Findings for /submarkets/myrtle-beach/kingston-plantation/ from the county parcels in the bbox cache (raw/bbox-parcels.json, pulled from\nParcels layer 24 by envelope -78.800,33.755,-78.765,33.782), the county flood layer 19, and the deed index (SALES = deeds-co.json,\nHorry County AcclaimWeb DEED 2025-11-01..2026-10-31, names already blanked). Community = parcels whose legal description starts with one\nof the building names below (the MLS 'Kingston Plantation - <building>' names plus the county's own Kingston Plantation names).\nCounts, medians, ranges only; no PIN, owner, address, deed book or page in the output.\nRun: RAW=raw SALES=<deeds-co.json> python3 -I analyze.py .",
+ "parcels_all": 1627,
+ "units": 1620,
+ "buildings": {
+  "Arrowhead Court": {
+   "units": 55,
+   "county_value": {
+    "n": 55,
+    "median": 330000.0,
+    "min": 220000.0,
+    "max": 330000.0,
+    "q1": 300000.0,
+    "q3": 330000.0
+   }
+  },
+  "Brighton Towers": {
+   "units": 201,
+   "county_value": {
+    "n": 201,
+    "median": 660000.0,
+    "min": 510000.0,
+    "max": 2549430.0,
+    "q1": 562000.0,
+    "q3": 886000.0
+   }
+  },
+  "Canterbury Court": {
+   "units": 66,
+   "county_value": {
+    "n": 66,
+    "median": 375000.0,
+    "min": 271000.0,
+    "max": 470000.0,
+    "q1": 375000.0,
+    "q3": 375000.0
+   }
+  },
+  "Cumberland Terrace": {
+   "units": 72,
+   "county_value": {
+    "n": 72,
+    "median": 345000.0,
+    "min": 345000.0,
+    "max": 486000.0,
+    "q1": 345000.0,
+    "q3": 486000.0
+   }
+  },
+  "Kingston Lakes": {
+   "units": 256,
+   "county_value": {
+    "n": 256,
+    "median": 150000.0,
+    "min": 150000.0,
+    "max": 7376250.0,
+    "q1": 150000.0,
+    "q3": 150000.0
+   }
+  },
+  "Margate Tower": {
+   "units": 253,
+   "county_value": {
+    "n": 253,
+    "median": 1000000.0,
+    "min": 20000.0,
+    "max": 1525000.0,
+    "q1": 1000000.0,
+    "q3": 1000000.0
+   }
+  },
+  "North Hampton": {
+   "units": 126,
+   "county_value": {
+    "n": 126,
+    "median": 642000.0,
+    "min": 4790.0,
+    "max": 1468450.0,
+    "q1": 500000.0,
+    "q3": 680000.0
+   }
+  },
+  "Richmond Park": {
+   "units": 183,
+   "county_value": {
+    "n": 183,
+    "median": 330000.0,
+    "min": 85270.0,
+    "max": 474000.0,
+    "q1": 260000.0,
+    "q3": 372000.0
+   }
+  },
+  "South Hampton": {
+   "units": 143,
+   "county_value": {
+    "n": 143,
+    "median": 472000.0,
+    "min": 380000.0,
+    "max": 810000.0,
+    "q1": 440000.0,
+    "q3": 483000.0
+   }
+  },
+  "St James Park": {
+   "units": 65,
+   "county_value": {
+    "n": 65,
+    "median": 375000.0,
+    "min": 300000.0,
+    "max": 490000.0,
+    "q1": 375000.0,
+    "q3": 390000.0
+   }
+  },
+  "West Hyde Park": {
+   "units": 140,
+   "county_value": {
+    "n": 140,
+    "median": 384000.0,
+    "min": 250000.0,
+    "max": 460000.0,
+    "q1": 384000.0,
+    "q3": 384000.0
+   }
+  },
+  "Windermere By The Sea": {
+   "units": 60,
+   "county_value": {
+    "n": 60,
+    "median": 453000.0,
+    "min": 440000.0,
+    "max": 675000.0,
+    "q1": 453000.0,
+    "q3": 660000.0
+   }
+  }
+ },
+ "county_value": {
+  "n": 1620,
+  "median": 435000.0,
+  "min": 4790.0,
+  "max": 7376250.0,
+  "q1": 320000.0,
+  "q3": 660000.0
+ },
+ "legal_residence_4pct": 158,
+ "assessed_6pct": 1462,
+ "owner_mailing_out_of_state": 1287,
+ "tax_districts": {
+  "800": 1627
+ },
+ "center": [
+  33.76795,
+  -78.77984
+ ],
+ "flood_zone_by_unit": {
+  "none": 1149,
+  "('0.2 PCT ANNUAL CHANCE FLOOD HAZARD', 'F')": 328,
+  "('AE', 'T')": 143
+ },
+ "flood_by_building": {
+  "St James Park": {
+   "none": 65
+  },
+  "Windermere By The Sea": {
+   "none": 60
+  },
+  "West Hyde Park": {
+   "none": 140
+  },
+  "Cumberland Terrace": {
+   "none": 72
+  },
+  "Richmond Park": {
+   "none": 182,
+   "('0.2 PCT ANNUAL CHANCE FLOOD HAZARD', 'F')": 1
+  },
+  "Canterbury Court": {
+   "none": 66
+  },
+  "Arrowhead Court": {
+   "none": 55
+  },
+  "Brighton Towers": {
+   "('0.2 PCT ANNUAL CHANCE FLOOD HAZARD', 'F')": 201
+  },
+  "South Hampton": {
+   "('AE', 'T')": 143
+  },
+  "North Hampton": {
+   "('0.2 PCT ANNUAL CHANCE FLOOD HAZARD', 'F')": 126
+  },
+  "Margate Tower": {
+   "none": 253
+  },
+  "Kingston Lakes": {
+   "none": 256
+  }
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "all": {
+   "n": 83,
+   "median": 435000.0,
+   "min": 176250.0,
+   "max": 1633125.0,
+   "q1": 320000.0,
+   "q3": 669000.0
+  },
+  "by_month": {
+   "2025/11": 8,
+   "2025/12": 6,
+   "2026/01": 3,
+   "2026/02": 8,
+   "2026/03": 7,
+   "2026/04": 3,
+   "2026/05": 6,
+   "2026/06": 11,
+   "2026/07": 11,
+   "2026/08": 9,
+   "2026/09": 5,
+   "2026/10": 6
+  },
+  "by_building": {
+   "Arrowhead Court": {
+    "n": 1,
+    "median": 242500.0,
+    "min": 242500.0,
+    "max": 242500.0,
+    "q1": 242500.0,
+    "q3": 242500.0
+   },
+   "Brighton Towers": {
+    "n": 14,
+    "median": 577500.0,
+    "min": 330000.0,
+    "max": 713000.0,
+    "q1": 520000.0,
+    "q3": 660000.0
+   },
+   "Canterbury Court": {
+    "n": 3,
+    "median": 360000.0,
+    "min": 350000.0,
+    "max": 420000.0,
+    "q1": 350000.0,
+    "q3": 420000.0
+   },
+   "Cumberland Terrace": {
+    "n": 5,
+    "median": 325000.0,
+    "min": 310000.0,
+    "max": 437500.0,
+    "q1": 316000.0,
+    "q3": 341000.0
+   },
+   "Margate Tower": {
+    "n": 15,
+    "median": 990000.0,
+    "min": 650000.0,
+    "max": 1633125.0,
+    "q1": 875000.0,
+    "q3": 1355000.0
+   },
+   "North Hampton": {
+    "n": 5,
+    "median": 675000.0,
+    "min": 650000.0,
+    "max": 839000.0,
+    "q1": 669000.0,
+    "q3": 725000.0
+   },
+   "Richmond Park": {
+    "n": 17,
+    "median": 245000.0,
+    "min": 192500.0,
+    "max": 400000.0,
+    "q1": 220000.0,
+    "q3": 319000.0
+   },
+   "South Hampton": {
+    "n": 9,
+    "median": 429500.0,
+    "min": 312550.0,
+    "max": 655000.0,
+    "q1": 375000.0,
+    "q3": 470000.0
+   },
+   "St James Park": {
+    "n": 4,
+    "median": 337500.0,
+    "min": 176250.0,
+    "max": 377450.0,
+    "q1": 315000.0,
+    "q3": 377450.0
+   },
+   "West Hyde Park": {
+    "n": 9,
+    "median": 420000.0,
+    "min": 240000.0,
+    "max": 454500.0,
+    "q1": 380000.0,
+    "q3": 435000.0
+   },
+   "Windermere By The Sea": {
+    "n": 1,
+    "median": 445500.0,
+    "min": 445500.0,
+    "max": 445500.0,
+    "q1": 445500.0,
+    "q3": 445500.0
+   }
+  },
+  "multi_parcel_deeds_dropped": 0
+ }
+}

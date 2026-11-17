@@ -1,0 +1,58 @@
+{
+  "rule": "Photo records for /submarkets/north-myrtle-beach/briarcliffe-acres/ (tools/photos.js format).",
+  "photos": [
+    {
+      "slug": "briarcliffe-acres",
+      "file": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-1200w.webp",
+      "variants": {
+        "600": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-600w.webp",
+        "1200": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-1200w.webp"
+      },
+      "width": 1200,
+      "height": 900,
+      "title": "Briarcliffe Acres from above",
+      "what": "Briarcliffe Acres from above (USDA NAIP aerial photo, 2023): houses on large wooded lots along curving streets, one of the town's two lakes in the middle, a strip of marsh and dunes, and the beach and surf at the lower right.",
+      "caption": "Part of Briarcliffe Acres from the air: the lake, the streets of acre lots, then marsh, dunes and the beach.",
+      "alt": "Aerial photo of part of Briarcliffe Acres: houses on large wooded lots beside a lake, with a strip of marsh and dunes and then the beach and ocean at the lower right",
+      "place": {
+        "city": "Myrtle Beach",
+        "sublocation": "Briarcliffe Acres"
+      },
+      "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+      "source_name": "The National Map (USGS)",
+      "author": "USDA Farm Service Agency, NAIP",
+      "author_type": "Organization",
+      "license": "Public domain",
+      "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+      "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023, natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling, mosaic locked to Year=2023) on 2026-11-14; the exact request is in source_request. The right-hand strip of open water, where two image tiles meet, was cut off.",
+      "license_note": "Same source and terms as the NAIP record of /submarkets/myrtle-beach/plantation-point/ (data/2026-11-d/plantation-point/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+      "terms_urls": [
+        "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+        "https://www.fsa.usda.gov/help/policies-and-links/"
+      ],
+      "taken": "2023",
+      "display_credit": "U.S. government aerial photo",
+      "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+      "digital_source_type": "composite",
+      "changes": "Chapter3 Realty cut this view from the NAIP service (1600 by 1200 export, cropped to the left 1240 by 930 pixels at 4:3, resized to 1200 by 900). The 1x1 and 16x9 search-engine crops are cut from the same 1240 by 930 view (the square is enlarged from 930 to 1200 pixels).",
+      "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8766675.565194266%2C3999837.975251432%2C-8765075.565194266%2C4001037.975251432&bboxSR=3857&imageSR=3857&size=1600%2C1200&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+      "crops": {
+        "1x1": {
+          "path": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-1x1.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        "4x3": {
+          "path": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-4x3.webp",
+          "width": 1200,
+          "height": 900
+        },
+        "16x9": {
+          "path": "images/2026-11-e/briarcliffe-acres/briarcliffe-acres-lakes-from-above-16x9.webp",
+          "width": 1200,
+          "height": 675
+        }
+      }
+    }
+  ]
+}

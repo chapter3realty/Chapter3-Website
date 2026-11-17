@@ -1,0 +1,396 @@
+{
+ "pulled": "2026-11-14T20:00:38.302605+00:00",
+ "refreshedAt": "2026-11-14T19:50:52.096Z",
+ "all": {
+  "n": 63,
+  "price": {
+   "median": 449900,
+   "min": 210000,
+   "max": 1690000
+  },
+  "sqft_median": 1246,
+  "year_built": [
+   1986,
+   2006
+  ],
+  "beds": [
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    30
+   ],
+   [
+    3,
+    26
+   ],
+   [
+    4,
+    3
+   ]
+  ],
+  "hoa_listed_n": 0,
+  "waterfront_flag": 15
+ },
+ "types": {
+  "Condominium": {
+   "n": 63,
+   "price": {
+    "median": 449900,
+    "min": 210000,
+    "max": 1690000
+   },
+   "sqft_median": 1246,
+   "year_built": [
+    1986,
+    2006
+   ],
+   "beds": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     30
+    ],
+    [
+     3,
+     26
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 15
+  }
+ },
+ "subdivisions": {
+  "Kingston Plantation - Arrowhead Court": {
+   "n": 1,
+   "price": {
+    "median": 289900,
+    "min": 289900,
+    "max": 289900
+   },
+   "sqft_median": 960,
+   "year_built": [
+    1988,
+    1988
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 1
+  },
+  "Kingston Plantation - Brighton Towers": {
+   "n": 10,
+   "price": {
+    "median": 649450.0,
+    "min": 519000,
+    "max": 719000
+   },
+   "sqft_median": 1478.5,
+   "year_built": [
+    2000,
+    2000
+   ],
+   "beds": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     6
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  },
+  "Kingston Plantation - Canterbury Court": {
+   "n": 4,
+   "price": {
+    "median": 392450.0,
+    "min": 299900,
+    "max": 439000
+   },
+   "sqft_median": 1364.0,
+   "year_built": [
+    1995,
+    1996
+   ],
+   "beds": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 1
+  },
+  "Kingston Plantation - Cumberland Terrace": {
+   "n": 2,
+   "price": {
+    "median": 332000.0,
+    "min": 325000,
+    "max": 339000
+   },
+   "sqft_median": 1216.0,
+   "year_built": [
+    1989,
+    1990
+   ],
+   "beds": [
+    [
+     2,
+     2
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  },
+  "Kingston Plantation - Laurel Court": {
+   "n": 1,
+   "price": {
+    "median": 289900,
+    "min": 289900,
+    "max": 289900
+   },
+   "sqft_median": 960,
+   "year_built": [
+    1987,
+    1987
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 1
+  },
+  "Kingston Plantation - Margate Tower": {
+   "n": 7,
+   "price": {
+    "median": 1000000,
+    "min": 640000,
+    "max": 1690000
+   },
+   "sqft_median": 2426,
+   "year_built": [
+    2004,
+    2006
+   ],
+   "beds": [
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 4
+  },
+  "Kingston Plantation - North Hampton": {
+   "n": 3,
+   "price": {
+    "median": 499000,
+    "min": 495000,
+    "max": 749000
+   },
+   "sqft_median": 1180,
+   "year_built": [
+    1987,
+    1988
+   ],
+   "beds": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  },
+  "Kingston Plantation - Richmond Park": {
+   "n": 12,
+   "price": {
+    "median": 342500.0,
+    "min": 225000,
+    "max": 479900
+   },
+   "sqft_median": 1152.0,
+   "year_built": [
+    1986,
+    1988
+   ],
+   "beds": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 6
+  },
+  "Kingston Plantation - South Hampton": {
+   "n": 13,
+   "price": {
+    "median": 459900,
+    "min": 409900,
+    "max": 629000
+   },
+   "sqft_median": 1514,
+   "year_built": [
+    1987,
+    1987
+   ],
+   "beds": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     8
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  },
+  "Kingston Plantation - St James Park HPR": {
+   "n": 2,
+   "price": {
+    "median": 414450.0,
+    "min": 359900,
+    "max": 469000
+   },
+   "sqft_median": 1241.0,
+   "year_built": [
+    1991,
+    1992
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 1
+  },
+  "Kingston Plantation - West Hyde Park": {
+   "n": 5,
+   "price": {
+    "median": 350000,
+    "min": 210000,
+    "max": 449900
+   },
+   "sqft_median": 1152,
+   "year_built": [
+    1988,
+    1988
+   ],
+   "beds": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 1
+  },
+  "Kingston Plantation - Windermere By The Sea": {
+   "n": 1,
+   "price": {
+    "median": 479500,
+    "min": 479500,
+    "max": 479500
+   },
+   "sqft_median": 1258,
+   "year_built": [
+    1994,
+    1994
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  },
+  "Kingston Plantation - Windsor Court": {
+   "n": 2,
+   "price": {
+    "median": 415000.0,
+    "min": 405000,
+    "max": 425000
+   },
+   "sqft_median": 1155.0,
+   "year_built": [
+    1993,
+    1993
+   ],
+   "beds": [
+    [
+     2,
+     2
+    ]
+   ],
+   "hoa_listed_n": 0,
+   "waterfront_flag": 0
+  }
+ },
+ "cities_zips": [
+  [
+   [
+    "Myrtle Beach",
+    "29572"
+   ],
+   63
+  ]
+ ]
+}
