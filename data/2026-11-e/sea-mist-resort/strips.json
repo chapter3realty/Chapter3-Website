@@ -1,0 +1,197 @@
+{
+ "read": "2026-11-14T20:50:26.684515+00:00",
+ "strips": {
+  "whole": {
+   "q": "subdivision=Sea Mist Resort",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort",
+   "ok": true,
+   "total": 34,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": ""
+   },
+   "note": "",
+   "link": "/homes/?subdivision=Sea+Mist+Resort",
+   "empty": true
+  },
+  "whole_type": {
+   "q": "subdivision=Sea Mist Resort&type=condo",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&type=condo",
+   "ok": true,
+   "total": 34,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "Condo",
+    "town": "",
+    "more": ""
+   },
+   "note": "",
+   "link": "/homes/?type=condo&subdivision=Sea+Mist+Resort",
+   "empty": true
+  },
+  "oceanfront_unit": {
+   "q": "subdivision=Sea Mist Resort&has=oceanfront_unit",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&has=oceanfront_unit",
+   "ok": true,
+   "total": 11,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?subdivision=Sea+Mist+Resort&has=oceanfront_unit",
+   "empty": true
+  },
+  "rental_program": {
+   "q": "subdivision=Sea Mist Resort&has=vacation_rental_program",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&has=vacation_rental_program",
+   "ok": true,
+   "total": 25,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?subdivision=Sea+Mist+Resort&has=vacation_rental_program",
+   "empty": true
+  },
+  "electric_in_fee": {
+   "q": "subdivision=Sea Mist Resort&has=hoa_includes_electric",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&has=hoa_includes_electric",
+   "ok": true,
+   "total": 25,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?subdivision=Sea+Mist+Resort&has=hoa_includes_electric",
+   "empty": true
+  },
+  "under_60k": {
+   "q": "subdivision=Sea Mist Resort&max=60000",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&max=60000",
+   "ok": true,
+   "total": 12,
+   "labels": {
+    "price": "Up to $60K",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": ""
+   },
+   "note": "",
+   "link": "/homes/?max=60000&subdivision=Sea+Mist+Resort",
+   "empty": false
+  },
+  "high_floor": {
+   "q": "subdivision=Sea Mist Resort&has=high_floor_unit",
+   "url": "https://chapter3realty.com/homes/api/strip?subdivision=Sea+Mist+Resort&has=high_floor_unit",
+   "ok": true,
+   "total": 23,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?subdivision=Sea+Mist+Resort&has=high_floor_unit",
+   "empty": true
+  },
+  "near_oceanfront_1br": {
+   "q": "near=33.67498,-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=1",
+   "url": "https://chapter3realty.com/homes/api/strip?near=33.67498%2C-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=1",
+   "ok": true,
+   "total": 137,
+   "labels": {
+    "price": "",
+    "beds": "1+ bd",
+    "type": "Condo",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?type=condo&beds=1&near=33.674980%2C-78.898459&miles=1&has=oceanfront_unit",
+   "empty": false
+  },
+  "near_oceanfront_2br": {
+   "q": "near=33.67498,-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=2",
+   "url": "https://chapter3realty.com/homes/api/strip?near=33.67498%2C-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=2",
+   "ok": true,
+   "total": 36,
+   "labels": {
+    "price": "",
+    "beds": "2+ bd",
+    "type": "Condo",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?type=condo&beds=2&near=33.674980%2C-78.898459&miles=1&has=oceanfront_unit",
+   "empty": false
+  },
+  "near_oceanfront": {
+   "q": "near=33.67498,-78.898459&miles=1&type=condo&has=oceanfront_unit",
+   "url": "https://chapter3realty.com/homes/api/strip?near=33.67498%2C-78.898459&miles=1&type=condo&has=oceanfront_unit",
+   "ok": true,
+   "total": 178,
+   "labels": {
+    "price": "",
+    "beds": "",
+    "type": "Condo",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?type=condo&near=33.674980%2C-78.898459&miles=1&has=oceanfront_unit",
+   "empty": false
+  },
+  "near_2br_any": {
+   "q": "near=33.67498,-78.898459&miles=1&type=condo&beds=2",
+   "url": "https://chapter3realty.com/homes/api/strip?near=33.67498%2C-78.898459&miles=1&type=condo&beds=2",
+   "ok": true,
+   "total": 88,
+   "labels": {
+    "price": "",
+    "beds": "2+ bd",
+    "type": "Condo",
+    "town": "",
+    "more": ""
+   },
+   "note": "",
+   "link": "/homes/?type=condo&beds=2&near=33.674980%2C-78.898459&miles=1",
+   "empty": false
+  },
+  "near_3br_oceanfront": {
+   "q": "near=33.67498,-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=3",
+   "url": "https://chapter3realty.com/homes/api/strip?near=33.67498%2C-78.898459&miles=1&type=condo&has=oceanfront_unit&beds=3",
+   "ok": true,
+   "total": 15,
+   "labels": {
+    "price": "",
+    "beds": "3+ bd",
+    "type": "Condo",
+    "town": "",
+    "more": "Filters (1)"
+   },
+   "note": "",
+   "link": "/homes/?type=condo&beds=3&near=33.674980%2C-78.898459&miles=1&has=oceanfront_unit",
+   "empty": false
+  }
+ }
+}

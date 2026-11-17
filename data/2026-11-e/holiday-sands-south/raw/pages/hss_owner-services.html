@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+
+	<!-- BETTER META GOES HERE -->
+	<title>Sorry, the page you were looking for was not found | Holiday Sands South</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="index,follow,archive" />
+
+		<meta name="geo.position" content="," />
+		<meta name="geo.placename" content="" />
+		<meta name="geo.region" content="" />
+
+		
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+		<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+		<meta name="DC.title" content="Sorry, the page you were looking for was not found | Holiday Sands South" />
+		<meta name="DC.creator" content="" />
+		<meta name="DC.subject" content="" />
+		<meta name="DC.description" content="" />
+		<meta name="DC.publisher" content="" />
+		<meta name="DC.date.created" scheme="DCTERMS.W3CDTF" content="2026-11-14T14:48:38-05:00" />
+		<meta name="DC.date.modified" scheme="DCTERMS.W3CDTF" content="2026-11-14T14:48:38-05:00" />
+		<meta name="DC.date.valid" scheme="DCTERMS.W3CDTF" content="2026-11-20T16:48:38-05:00" />
+		<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" />
+		<meta name="DC.rights" scheme="DCTERMS.URI" content="">
+		<meta name="DC.format" content="text/html" />
+		<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://www.holidaysandssouth.com/owner-services" />
+	<!-- snippet for global head includes -->
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/css/screen.css" />
+<link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="/scripts/jquery.cycle2.min.js"></script>
+<script src="/scripts/jquery.cycle2.carousel.min.js"></script>
+<script src="/scripts/jquery.cycle2.caption2.min.js"></script>
+<script src="/scripts/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="/scripts/jquery.cookie.js"></script>
+<script src="/scripts/fancybox/jquery.fancybox.js" ></script><!-- fancybox version 2.0 --> 
+<script type="text/javascript" src="/scripts/fuelscripts.js"></script>
+<script type="text/javascript" src="/scripts/jquery.validate.min.js"></script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZ6NNB3');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script type="text/javascript">
+//SLEEP function for the ONE
+function sleepItOff(){
+	theDelay = 500; //half of a second
+	var start = (new Date).getTime();
+	var x = true;
+	while(x){
+		if(((new Date).getTime() - start) >= theDelay){
+    		x = false;
+		}
+	}
+}
+$(function() {
+	//ONE FUNCTION TO RULE THEM ALL
+	/*
+		THIS FUNCTION WILL HANDLE EVERY LINK ON THE SITE
+		IT IS NEEDED WHEN DEALING WITH PHONE NUMBERS BEING PASSED TO GD,
+		MBOX SESSIONS BEING PASSED TO GD,
+		OR MBOX REPORTING
+		ALL POINTS WHERE MODIFICATION MAY BE NEEDED ARE COMMENTED WITH DETAILS
+		NO OTHER MODIFICATIONS ARE NEEDED
+	*/
+
+	//PHONE - Value assignment may need to be adjusted per site
+	//
+	//Grab all <a> clicks
+	$('a').live('click', function() {
+		//Link Value
+		var linkV = $(this).attr('href');
+		//Class Bypass
+		//For lightboxes etc.. if a link clicked has the following class it will not be processed by this function
+		if($(this).hasClass('doNotProcess') || $(this).hasClass('meNeither')){
+			return true;
+		}				
+		//Dead Link Bypass
+		if(linkV === 'undefined' || linkV === 'false' || linkV === '' || linkV.length < 5) {
+			return true;
+		}
+		//GD address needs phone and mbox session
+		if(linkV.indexOf('search.iqrez') >0 || linkV.indexOf('search.guestdesk') >0 || linkV.indexOf('secure.guestdesk') >0) {		
+			//Set a concatinator (?, &, /)
+			var concat = '';
+			if(linkV.indexOf('?') > 0) {
+				concat = '&';
+			} else {
+				if(linkV.charAt(linkV.length - 1) == '/') {
+					concat = '?';
+				} else {
+					concat = '/?';
+				} 
+			}
+			//Phone - comment out ***!! BOTH LINES !!*** if not necessary 
+			if(linkV.indexOf('tollfree') <0) {
+				//linkV += concat+'tollfree='+phone;
+				//concat = '&';
+			}
+			//MboxSession - comment out if not necessary
+			//linkV += concat+'mboxSession='+mboxFactoryDefault.getSessionId().getId();		
+
+			//Any mbox calls go here //If you use mbox calls make sure you use the sleepItOff() function to delay //If used, the sleepItOff Function has to be the last call
+			if($(this).attr('id') == 'resNavLink') {
+				//mboxTrack('cc_navResClick');
+				//more calls here...
+				//sleepItOff(); - MOVED TO GA				
+			}				
+			//Any GA calls go here
+			sleepItOff();
+			//pageTracker._link(linkV);
+			//setTimeout("_gaq.push(['_link', '"+linkV+"'])",500);
+	                _gaq.push(['_link', linkV]);
+		        return false;
+		}		
+		//Eventually, go there
+		window.location = linkV;		
+	})
+});
+</script>
+
+	
+	<!-- STASH EXTRA HEAD ITEMS -->
+	
+	<!-- if we have some extra <head> includes, put them here -->
+
+
+    <!-- PINGDOM -->
+	<meta name="pingdom" content="1c57ff8826348ed782f34dc2b7a377a4" />    
+	
+		<style type="text/css">
+	.card {
+		min-height: 275px;
+	}
+
+	a.date-picker {
+		background: url(https://widgets.guestdesk.com/searchbox/lib/images/calendar.png) no-repeat !important;
+	}
+
+	#gd_searchbox_container input[type="submit"] {
+    	width: 91%;
+    	margin-left: 0px;
+	}
+	</style>
+	
+	
+	<!-- Sojern Tag v6_js, Pixel Version: 1 -->
+	<script>  (function () {        var params = {};    /* Please do not modify the below code. */    var cid = [];    var paramsArr = [];    var cidParams = [];    var pl = document.createElement('script');    var defaultParams = {"vid":"hot"};    for(key in defaultParams) { params[key] = defaultParams[key]; };    for(key in cidParams) {cid.push(params[cidParams[key]]);};    params.cid = cid.join('|');    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };    pl.type = 'text/javascript';    pl.async = true;    pl.src = 'https://beacon.sojern.com/pixel/p/295213?f_v=v6_js&p_v=1&' + paramsArr.join('&');    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);  })();</script>
+	<!-- End Sojern Tag -->
+	
+</head>
+
+<body id="owner-services">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ6NNB3"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	    
+    <div id="dialog-modal2" style="display:none;">
+        <div id="close-button">
+            <a href="" class="closeD" rel="close"><img src="/media/layout/close-button-specials.png" /></a>
+        </div>
+        <a href=""><img src="/media/layout/hss-facebook-popup.jpg" alt="Sizzling Summer Savings!" id="special-offer-fb" /></a>
+        <div id="special-offer-fb-replace"></div>
+    </div><!--DIALOG MODAL-->    
+    
+	
+    <!-- HEADER SNIPPET
+	============================================== -->
+	<div id="orange-bar"></div>
+
+<div class="container">
+
+	<div class="row-fluid header">
+		<div class="span4">
+			<a href="/"><img src="/media/layout/logo.png" alt="Holiday Sands South" title="Holiday Sands South" /></a>
+		</div><!--LOGO-->
+		
+		<div class="span4 top-nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact/">Contact Us</a></li>
+				<li><a href="/map/">Map/Directions</a></li>
+				<li class="last"><a href="/weather/">Weather</a></li>
+			</ul>
+			<div class="clear both"></div>
+			<span class="phone-number">1-800-448-4439</span>
+		</div><!--PHONE NUMBER-->
+		
+		<div class="span4 top-special">
+			
+			<div class="special-image">
+				<img src="/media/images/starfish.jpg" width="90" height="90" />
+			</div>
+		
+			
+				<div class="cycle-slideshow top-special-text" data-cycle-slides="a" data-cycle-fx=scrollHorz data-cycle-timeout=10000 data-cycle-next="#next-specials" data-cycle-prev="#prev-specials">
+		      	
+					<a class="banner-copy" href="http://search.guestdesk.com/specials/holidaysandssouth/search"><p>Internet&nbsp;Special: &nbsp;Book Now &amp; Receive 10% Off A 3 Night Stay</p></a>
+		      	
+					<a class="banner-copy" href="http://search.guestdesk.com/specials/holidaysandssouth/search"><p>Internet&nbsp;Special: Save 15% Off &nbsp;On All 7 Nights Stays&nbsp;</p></a>
+		      	
+		      	</div>
+		    <a href=# id=prev-specials><img src="/media/layout/promo-previous.png" width="15" /></a>
+		    <a href=# id=next-specials><img src="/media/layout/promo-next.png" width="15" /></a>
+			
+		</div>
+		
+		<div class="span12 navigation">
+			<div class="navbar">
+				<ul class="nav">
+					<li><a href="http://search.guestdesk.com/reservations/HolidaySandsSouth/search/">Reservations</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Accommodations</a>
+						<ul class="dropdown-menu">
+                            <li><a href="/accommodations/">Rooms and Suites</a><li>
+							<li class="last"><a href="/photo-gallery/">Photos</a></li>
+                            <!--<li class="last"><a href="/videos/">Videos</a></li>-->
+						</ul>
+					</li>
+					<li><a href="/amenities/">Amenities</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Groups &amp; Meetings</a>
+						<ul class="dropdown-menu">
+							<li class="last"><a href="/groups/weddings/">Weddings</a></li>
+							<li class="last"><a href="/groups/meetings/">Meetings</a></li>
+							<li class="last"><a href="/groups/conference-center/">Conference Center</a></li>
+							<li class="last"><a href="/sports/">Sports &amp; Team Groups</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Specials &amp; Packages</a>
+						<ul class="dropdown-menu">
+							<li class="last"><a href="http://search.guestdesk.com/specials/HolidaySandsSouth/search/">Specials</a></li>
+							<li class="last"><a href="/golf/">Golf</a></li>
+							<li class="last"><a href="/snowbirds/">Snowbirds</a></li>
+						</ul>
+					</li>
+					<li><a href="/area/">Area Information</a></li>
+					<li class="last"><a href="/news/">News &amp; Events</a></li>
+				</ul>
+			</div>
+		</div><!--NAVIGATION-->
+	</div><!--HEADER-->
+     
+    <!-- PROMO AREA
+	============================================== -->
+	<div class="row-fluid">
+		<div class="span12 promo-frame">
+		
+			<div id="booking-widget">
+				<div id="reservations-tag"><img src="/media/layout/reservations.png" /></div>
+				<div id="phone-booking">1-800-448-4439</div>
+				<br />
+				<br />
+				<br />
+				<script type="text/javascript" src="/site/gd-embed/"></script>
+			</div><!--BOOKING WIDGET-->
+		
+		    <div class="promo-image">    	
+		        	
+		        		<div class="cycle-slideshow"
+		    				 data-cycle-fx="scrollHorz"
+		    				 data-cycle-timeout="5000"
+		    				 data-cycle-swipe=true
+		    				 data-cycle-prev="#prev"
+		    				 data-cycle-next="#next">
+				            
+				            	<img src="/images/made/media/images/photo_(1)_Klee_1170_584_90_s_c1.JPG" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen6_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen3_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen5_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen1_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+		            	</div>		
+				
+		    </div><!--PROMO AREA-->
+		    
+		    <a href=# id="prev"><img src="/media/layout/promo-previous.png" /></a> 
+		    <a href=# id="next"><img src="/media/layout/promo-next.png" /></a>
+	    </div>
+    </div> 
+    
+    <!--<div class="row-fluid booking-widget-lower">
+    	<div class="span12 horz-booking-widget">
+    		<div class="span5">
+    			<h1>Book Your Vacation Today!</h1>
+    		</div>
+    		
+    		<div class="span7">
+				<script type="text/javascript" src="http://widgets.guestdesk.com/searchBox/holidaysandssouth-horz_com/"></script>
+			</div>
+    	</div>
+    </div>--><!--HORZ BOOKING WIDGET-->
+     
+	<!-- PAGE INTRO
+	============================================== -->
+    
+    	<div class="content">
+    		<div class="span11">
+    			<h1></h1>
+    			
+    		</div>
+    	
+    
+    
+    
+    <!-- PAGE BODY
+	============================================== -->
+  
+    		
+    		<!-- MAIN CONTENT
+	    	============================================== -->
+	    	
+	    		   
+	<h3>Sorry, the page you were looking for was not found. <br /> Please use the links below to find the information you seek.</h3>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/map/">Map &amp; Directions</a></li>      
+        <li><a href="http://search.guestdesk.com/reservations/HolidaySandsSouth/search/">Reservations</a></li>   
+        <li><a href="/accommodations/">Accommodations</a></li>            
+        <li><a href="/photo-gallery/">Photo Gallery</a></li>
+        <li><a href="/videos/">Videos</a></li>
+        <li><a href="/amenities/">Amenities</a></li>
+        <li><a href="/groups/">Groups &amp; Meetings</a></li>
+        <li><a href="/specials/">Specials &amp; Packages</a></li>
+        <li><a href="/golf/">Golf Packages</a></li>
+        <li><a href="/snowbirds/">Snowbirds</a></li>
+        <li><a href="/area/">Area Information</a></li>
+        <li><a href="/news/">News &amp; Events</a></li>
+        <li><a href="/investment/">Investment Opportunities</a></li>
+        <li><a href="/privacy/">Terms &amp; Privacy Policy</a></li>  
+    </ul>
+
+	    		<div class="clearfix"></div>
+    </div><!-- CONTENT -->
+    <!-- FOOTER SNIPPET
+	============================================== -->
+	<div class="row-fluid content">
+		
+		
+			<div class="span3 home-intro-image">
+                                 <img src="/media/images/HSSPhoto2bldgsbeach.jpg" width="220" />
+			</div><!--INTRO IMAGE-->	
+<div class="span4 prop-intro">
+                               <h1>Two Properties in One</h1>
+                               <p>Two Properties in One! From traditional hotel rooms to modern 1 &amp; 2 bedroom condominiums that feature the comfort and privacy of separate sleeping, living, and dining areas, we have the right accommodations for you.&nbsp; For many years, we have maintained the reputation as one of Myrtle Beach&#39;s favorite family vacation destinations. Our success has always been based on offering affordable rates, providing friendly, prompt customer service, and having a great selection of family amenities. Oceanfront vacations just don&#39;t get any better, so join us this year and experience a family vacation you will remember all year! We look forward to being a part of your family&#39;s vacation this year!</p>
+			</div><!--PROPERTY INTRO-->
+			
+			<div class="span5 promotions">
+				<h1>Property Highlights</h1>
+				<div class="video-container">
+					<iframe width="420" height="315" src="//www.youtube.com/embed/VWsZR-yzx5U?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+	</div><!--CONTENT-->
+	
+	<div class="row fluid footer">
+		<div class="span9 footer-left">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/privacy/">Terms &amp; Privacy Policies</a></li>
+				<li><a href="/contact/">Contact Us</a></li>
+				<li class="last"><a href="/site/sitemap/">Site Map</a></li>
+			</ul>
+			<div class="clear both"></div>
+			
+			<p><strong>Reservations: 1-800-448-4439</strong></p>
+			<p>2411 South Ocean Boulevard Myrtle Beach SC 29577</p>
+			<p>2013 &copy; Holiday Sands South. All rights reserved.</p>
+		</div>
+		
+
+		<div class="span3 footer-right">
+			<p>Sign up for eDeals!</p>
+			 <form action="https://www.holidaysandssouth.com/?ACT=29" accept-charset="utf-8" name="esignup" id="esignup" method="post"><div style="display:none">
+<input type="hidden" name="params_id" value="9999751" />
+<input type="hidden" name="csrf_token" value="d539002ba8af581a864223cbe6ac696be04a617a" />
+</div>
+      			<input type="text" id="email" name="email" placeholder="Enter a valid email" class="required email" />
+      			<input type="submit" name="submit" value="Submit" class="orange-button" />
+   			</form>
+			<div class="clear both"></div>
+			<p><strong>Connect With Us!</strong></p>
+                        <a target="_blank" class="doNotProcess" href="http://www.facebook.com/HolidaySandsSouth"><img src="/media/layout/facebook-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="http://twitter.com/Myrtle_Beach_SC"><img src="/media/layout/twitter-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="http://www.pinterest.com/holidaysandsso/"><img src="/media/layout/pinterest-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="https://www.youtube.com/channel/UCmvjxQbgoNlbFHm1OjzoTtA/videos"><img src="/media/layout/youtube-small.png" /></a>
+		</div>
+
+	</div><!--FOOTER-->
+	
+</div><!--CONTAINER-->
+
+
+
+<div id="social-media-bar">
+	<ul>
+		<li class="first"><img src="/media/layout/connect-with-us.png" /></li>
+		<li><a target="_blank" class="doNotProcess" href="http://www.facebook.com/HolidaySandsSouth"><img src="/media/layout/facebook-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="http://twitter.com/Myrtle_Beach_SC"><img src="/media/layout/twitter-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="http://www.pinterest.com/holidaysandsso/"><img src="/media/layout/pinterest-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="https://www.youtube.com/channel/UCmvjxQbgoNlbFHm1OjzoTtA/videos"><img src="/media/layout/youtube-large.png" width="45" /></a></li>
+    </ul>
+</div><!--SOCIAL MEDIA BAR-->
+
+
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21576624-1']);
+  _gaq.push(['_setDomainName', 'holidaysandssouth.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6007261649065';
+fb_param.value = '0.00';
+fb_param.currency = 'USD';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6007261649065&amp;value=0&amp;currency=USD" /></noscript>
+
+    
+</body>
+</html>
+
+
+
+
+

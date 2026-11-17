@@ -1,0 +1,145 @@
+{
+ "pulled": "2026-11-14T20:56:43.338545+00:00",
+ "refreshedAt": "2026-11-14T20:50:11.559Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 9,
+ "at_2007": 9,
+ "beds": {
+  "1": 1,
+  "2": 3,
+  "3": 2,
+  "4": 3
+ },
+ "asking": {
+  "all": {
+   "median": 434900,
+   "min": 234900,
+   "max": 550000
+  },
+  "1": {
+   "n": 1,
+   "median": 234900,
+   "min": 234900,
+   "max": 234900,
+   "sqft_median": 776,
+   "sqft_range": [
+    776,
+    776
+   ]
+  },
+  "2": {
+   "n": 3,
+   "median": 329000,
+   "min": 320000,
+   "max": 365000,
+   "sqft_median": 1074,
+   "sqft_range": [
+    1035,
+    1074
+   ]
+  },
+  "3": {
+   "n": 2,
+   "median": 434900.0,
+   "min": 434900,
+   "max": 434900,
+   "sqft_median": 1288.0,
+   "sqft_range": [
+    1276,
+    1300
+   ]
+  },
+  "4": {
+   "n": 3,
+   "median": 529000,
+   "min": 529000,
+   "max": 550000,
+   "sqft_median": 1779,
+   "sqft_range": [
+    1779,
+    1780
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 3,
+  "all": {
+   "n": 6,
+   "median_at_or_under": 1225.0,
+   "lowest_at_or_under": 875,
+   "highest_at_or_under": 1450,
+   "middle_half": null
+  },
+  "zero_or_blank": 0,
+  "1": {
+   "n": 1,
+   "median_at_or_under": 875,
+   "lowest_at_or_under": 875,
+   "highest_at_or_under": 875,
+   "middle_half": null
+  },
+  "2": {
+   "n": 3,
+   "median_at_or_under": 1225,
+   "lowest_at_or_under": 1175,
+   "highest_at_or_under": 1225,
+   "middle_half": null
+  },
+  "3": {
+   "n": 2,
+   "median_at_or_under": 1450.0,
+   "lowest_at_or_under": 1450,
+   "highest_at_or_under": 1450,
+   "middle_half": null
+  },
+  "4": {
+   "n": 0,
+   "median_at_or_under": null,
+   "lowest_at_or_under": null,
+   "highest_at_or_under": null,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 9,
+  "rentals_allowed": 9,
+  "long_term_rental_allowed": 8,
+  "vacation_rental_program": 9,
+  "has_rental_income": 9,
+  "furnished": 9,
+  "pets_allowed": 2,
+  "oceanfront_unit": 9,
+  "ocean_view": 9,
+  "oceanfront_building": 9,
+  "high_floor_unit": 7,
+  "low_floor_unit": 2,
+  "top_floor": 0,
+  "balcony": 9,
+  "parking_garage": 9,
+  "covered_parking": 9,
+  "indoor_pool": 7,
+  "sauna": 0,
+  "elevator_building": 9,
+  "flood_zone": 1,
+  "hoa_includes_trash": 9,
+  "hoa_includes_utilities": 9,
+  "hoa_includes_water_sewer": 9,
+  "hoa_includes_insurance": 9,
+  "hoa_includes_internet": 8,
+  "hoa_includes_pest": 6,
+  "hoa_includes_cable": 8,
+  "hoa_includes_electric": 8,
+  "security_service": 7
+ },
+ "year_built": {
+  "2006": 8,
+  "2005": 1
+ },
+ "flood_zone_field": {
+  "None": 9
+ },
+ "subdivision_field": {
+  "Grand Atlantic": 9
+ }
+}

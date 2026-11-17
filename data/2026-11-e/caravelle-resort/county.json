@@ -1,0 +1,453 @@
+{
+ "read": "2026-11-14T20:03:19.806438+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Caravelle Resort and Caravelle Tower (6900 and 7000 N Ocean Blvd, Myrtle Beach) in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, LegalDescr LIKE 'CARAVELLE%'.\n   Two regimes: 'CARAVELLE RESORT HPR; UNIT n' and 'CARAVELLE TOWER HPR; UNIT n'. Units = parcels with a building value.\n   Floor = unit number less its last two digits. Kept: counts per regime and floor, door numbers, market-value groups, last-sale years,\n   owner mailing state (counts), taxed at the 4 percent ratio. Never kept: a PIN, an owner, a unit's own record.\n2. Sales: deed index windows already pulled for the site (2025-10-01..2026-09-30 and 2025-11-01..2026-10-31). Zero-dollar and under-$1,000 deeds are counted apart.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 406,
+ "stray_parcels_left_out": 1,
+ "units": 404,
+ "parcels_without_building_value": [
+  "CARAVELLE RESORT HPR; C/AC/A",
+  "CARAVELLE TOWER HPR; C/AC/A"
+ ],
+ "landuse": {
+  "1xx": 403,
+  "3xx": 1
+ },
+ "by_regime": {
+  "resort": {
+   "units": 348,
+   "units_without_floor_number": 6,
+   "floors": {
+    "lowest": 1,
+    "top": 15,
+    "missing_between": [
+     13
+    ],
+    "units_per_floor": {
+     "1": 12,
+     "2": 22,
+     "3": 22,
+     "4": 22,
+     "5": 25,
+     "6": 25,
+     "7": 26,
+     "8": 27,
+     "9": 27,
+     "10": 27,
+     "11": 26,
+     "12": 27,
+     "14": 27,
+     "15": 27
+    }
+   },
+   "county_market_value_groups": [
+    [
+     180000.0,
+     165
+    ],
+    [
+     205000.0,
+     84
+    ],
+    [
+     120000.0,
+     20
+    ],
+    [
+     153000.0,
+     20
+    ],
+    [
+     150000.0,
+     13
+    ],
+    [
+     261000.0,
+     13
+    ],
+    [
+     169000.0,
+     12
+    ],
+    [
+     144000.0,
+     4
+    ],
+    [
+     185000.0,
+     3
+    ],
+    [
+     130000.0,
+     3
+    ],
+    [
+     141000.0,
+     2
+    ],
+    [
+     145000.0,
+     2
+    ],
+    [
+     200000.0,
+     1
+    ],
+    [
+     137500.0,
+     1
+    ],
+    [
+     260000.0,
+     1
+    ],
+    [
+     174000.0,
+     1
+    ],
+    [
+     235000.0,
+     1
+    ],
+    [
+     175000.0,
+     1
+    ],
+    [
+     1730000.0,
+     1
+    ]
+   ],
+   "last_sale_year": {
+    "2006": 18,
+    "2007": 2,
+    "2008": 3,
+    "2009": 34,
+    "2010": 6,
+    "2011": 2,
+    "2012": 4,
+    "2013": 7,
+    "2014": 4,
+    "2015": 3,
+    "2016": 7,
+    "2017": 4,
+    "2018": 17,
+    "2019": 21,
+    "2020": 11,
+    "2021": 34,
+    "2022": 47,
+    "2023": 27,
+    "2024": 31,
+    "2025": 44,
+    "2026": 22
+   },
+   "owner_state_top": [
+    [
+     "SC",
+     124
+    ],
+    [
+     "NC",
+     53
+    ],
+    [
+     "PA",
+     31
+    ],
+    [
+     "NY",
+     20
+    ],
+    [
+     "OH",
+     15
+    ],
+    [
+     "IL",
+     10
+    ],
+    [
+     "NJ",
+     9
+    ],
+    [
+     "IN",
+     8
+    ]
+   ],
+   "owner_out_of_sc": 224,
+   "owner_in_sc": 124,
+   "taxed_at_4pct": 4,
+   "taxed_at_6pct": 344,
+   "tax_districts": {
+    "880": 348
+   }
+  },
+  "tower": {
+   "units": 56,
+   "units_without_floor_number": 1,
+   "floors": {
+    "lowest": 1,
+    "top": 7,
+    "missing_between": [],
+    "units_per_floor": {
+     "1": 8,
+     "2": 8,
+     "3": 7,
+     "4": 8,
+     "5": 8,
+     "6": 8,
+     "7": 8
+    }
+   },
+   "county_market_value_groups": [
+    [
+     140000.0,
+     46
+    ],
+    [
+     130000.0,
+     7
+    ],
+    [
+     165000.0,
+     1
+    ],
+    [
+     125000.0,
+     1
+    ],
+    [
+     104390.0,
+     1
+    ]
+   ],
+   "last_sale_year": {
+    "1999": 1,
+    "2001": 1,
+    "2002": 2,
+    "2003": 1,
+    "2006": 1,
+    "2007": 1,
+    "2008": 2,
+    "2009": 2,
+    "2012": 1,
+    "2013": 1,
+    "2014": 1,
+    "2015": 4,
+    "2016": 1,
+    "2017": 2,
+    "2018": 2,
+    "2019": 3,
+    "2021": 3,
+    "2022": 4,
+    "2023": 6,
+    "2024": 7,
+    "2025": 3,
+    "2026": 5,
+    "None": 2
+   },
+   "owner_state_top": [
+    [
+     "SC",
+     18
+    ],
+    [
+     "NC",
+     13
+    ],
+    [
+     "NY",
+     6
+    ],
+    [
+     "VA",
+     5
+    ],
+    [
+     "MA",
+     2
+    ],
+    [
+     "MI",
+     2
+    ],
+    [
+     "PA",
+     2
+    ],
+    [
+     "WV",
+     1
+    ]
+   ],
+   "owner_out_of_sc": 38,
+   "owner_in_sc": 18,
+   "taxed_at_4pct": 5,
+   "taxed_at_6pct": 51,
+   "tax_districts": {
+    "880": 56
+   }
+  }
+ },
+ "sales_window_1": {
+  "window": "2025-10-01 to 2026-09-30",
+  "all": {
+   "n": 32,
+   "median": 140000.0,
+   "p25": 123250.0,
+   "p75": 157375.0,
+   "min": 76000.0,
+   "max": 270000.0
+  },
+  "resort": {
+   "n": 28,
+   "median": 144500.0,
+   "p25": 127250.0,
+   "p75": 159375.0,
+   "min": 118000.0,
+   "max": 270000.0
+  },
+  "tower": {
+   "n": 4,
+   "median": 105750.0,
+   "p25": 77375.0,
+   "p75": 137500.0,
+   "min": 76000.0,
+   "max": 140000.0
+  },
+  "resort_floors_1_to_7": {
+   "n": 10,
+   "median": 136000.0,
+   "p25": 121225.0,
+   "p75": 200000.0,
+   "min": 118000.0,
+   "max": 270000.0
+  },
+  "resort_floors_8_up": {
+   "n": 18,
+   "median": 145000.0,
+   "p25": 136500.0,
+   "p75": 158125.0,
+   "min": 119000.0,
+   "max": 207000.0
+  },
+  "under_1000": 0,
+  "buyer_tax_bill_in_sc": 7,
+  "buyer_tax_bill_out_of_sc": 25,
+  "buyer_states_out_of_sc": [
+   [
+    "PA",
+    5
+   ],
+   [
+    "TN",
+    4
+   ],
+   [
+    "GA",
+    2
+   ],
+   [
+    "MD",
+    2
+   ],
+   [
+    "CT",
+    2
+   ],
+   [
+    "NM",
+    1
+   ],
+   [
+    "IL",
+    1
+   ],
+   [
+    "IN",
+    1
+   ],
+   [
+    "NY",
+    1
+   ],
+   [
+    "NJ",
+    1
+   ],
+   [
+    "CA",
+    1
+   ],
+   [
+    "KY",
+    1
+   ],
+   [
+    "FL",
+    1
+   ],
+   [
+    "NH",
+    1
+   ],
+   [
+    "VA",
+    1
+   ]
+  ],
+  "buyer_is_company": 9,
+  "by_quarter": {
+   "2025Q4": 10,
+   "2026Q1": 7,
+   "2026Q2": 8,
+   "2026Q3": 7
+  }
+ },
+ "sales_window_2": {
+  "window": "2025-11-01 to 2026-10-31",
+  "all": {
+   "n": 26,
+   "median": 140000.0,
+   "p25": 125750.0,
+   "p75": 158125.0,
+   "min": 76000.0,
+   "max": 270000.0
+  },
+  "resort": {
+   "n": 21,
+   "median": 145000.0,
+   "p25": 135500.0,
+   "p75": 162500.0,
+   "min": 110000.0,
+   "max": 270000.0
+  },
+  "tower": {
+   "n": 5,
+   "median": 102500.0,
+   "p25": 78750.0,
+   "p75": 135000.0,
+   "min": 76000.0,
+   "max": 140000.0
+  },
+  "resort_floors_1_to_7": {
+   "n": 6,
+   "median": 146000.0,
+   "p25": 125750.0,
+   "p75": 202500.0,
+   "min": 122000.0,
+   "max": 270000.0
+  },
+  "resort_floors_8_up": {
+   "n": 15,
+   "median": 145000.0,
+   "p25": 137500.0,
+   "p75": 160000.0,
+   "min": 110000.0,
+   "max": 207000.0
+  },
+  "zero_dollar_deeds": 3,
+  "under_1000_not_zero": 0
+ }
+}

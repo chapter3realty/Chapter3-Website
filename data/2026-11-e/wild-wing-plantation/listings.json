@@ -1,0 +1,158 @@
+{
+ "pulled": "2026-11-15T00:00:08.720140+00:00",
+ "refreshedAt": "2026-11-14T23:50:43.984Z",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "rule": "Homes for sale now in Wild Wing Plantation (MLS subdivision names \"Wild Wing Plantation\" and \"The Sanctuary at Wild Wing Plantation\"; the search\nsubdivision=Wild Wing Plantation returns both), in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS active\nlistings) and listing card (/homes/api/lookup). Saved: counts, list-price median and range, beds, size, year built, HOA fee, lot size, HOA fee brackets\n(hoaMax=T). No MLS number, address, firm or photo is saved. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "all": {
+  "for_sale": 25,
+  "subdivision_names": [
+   "The Sanctuary at Wild Wing Plantation",
+   "Wild Wing Plantation"
+  ],
+  "types": [
+   "Detached",
+   "Residential"
+  ],
+  "list_price": {
+   "median": 660000,
+   "min": 297500,
+   "max": 1750000
+  },
+  "year_built": [
+   1999,
+   2026
+  ],
+  "sqft_median": 2873.0,
+  "beds": [
+   0,
+   5
+  ],
+  "hoa_monthly_listed": [
+   66,
+   66,
+   74,
+   115,
+   115,
+   130,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135,
+   135
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "sanctuary": {
+  "for_sale": 3,
+  "subdivision_names": [
+   "The Sanctuary at Wild Wing Plantation"
+  ],
+  "types": [
+   "Detached"
+  ],
+  "list_price": {
+   "median": 355000,
+   "min": 349900,
+   "max": 645000
+  },
+  "year_built": [
+   1999,
+   2008
+  ],
+  "sqft_median": 2322,
+  "beds": [
+   3,
+   4
+  ],
+  "hoa_monthly_listed": [
+   66,
+   66,
+   74
+  ],
+  "hoa_fields_missing": 0,
+  "keys": [
+   "address",
+   "baths",
+   "beds",
+   "city",
+   "daysOnMarket",
+   "floodZone",
+   "hoaMonthly",
+   "listPrice",
+   "listingFirm",
+   "lotAcres",
+   "mlsNumber",
+   "newConstruction",
+   "originalListPrice",
+   "photos",
+   "remarks",
+   "soldOn",
+   "soldPrice",
+   "sqft",
+   "status",
+   "stories",
+   "subdivision",
+   "taxAnnual",
+   "tier",
+   "type",
+   "url",
+   "waterfront",
+   "yearBuilt",
+   "zip"
+  ]
+ },
+ "fee_at_or_under": {
+  "0": 48,
+  "25": 48,
+  "50": 48,
+  "75": 3,
+  "100": 3,
+  "125": 5,
+  "150": 25
+ },
+ "listing_says_no_hoa": 48
+}

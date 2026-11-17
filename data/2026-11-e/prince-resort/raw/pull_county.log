@@ -1,0 +1,239 @@
+{
+ "read": "2026-11-14T19:37:32.829689+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "parcels": 263,
+ "units": 262,
+ "units_by_phase": {
+  "II": 98,
+  "I": 164
+ },
+ "units_per_floor": {
+  "II": {
+   "9": 7,
+   "10": 10,
+   "11": 10,
+   "12": 9,
+   "14": 10,
+   "15": 10,
+   "16": 10,
+   "17": 10,
+   "18": 10,
+   "19": 10
+  },
+  "I": {
+   "3": 10,
+   "4": 10,
+   "5": 10,
+   "6": 10,
+   "7": 10,
+   "8": 10,
+   "9": 10,
+   "10": 10,
+   "11": 10,
+   "12": 11,
+   "14": 10,
+   "15": 10,
+   "16": 10,
+   "17": 10,
+   "18": 10
+  }
+ },
+ "floors": {
+  "II": [
+   9,
+   19,
+   [
+    13
+   ]
+  ],
+  "I": [
+   3,
+   18,
+   [
+    13
+   ]
+  ]
+ },
+ "units_without_floor_number": {
+  "II:UN CU-4 PH II HPR": 1,
+  "II:UN CU-5 PH II HPR": 1,
+  "I:UNIT PH 2 HPR": 1,
+  "I:UNIT PH 3 HPR": 1,
+  "I:UNIT PH 4 HPR": 1,
+  "I:UNIT PH 5 HPR": 1,
+  "I:UNIT PH 6 HPR": 1,
+  "I:UNIT PH 7 HPR": 1,
+  "I:UNIT PH 9 HPR": 1,
+  "I:UNIT CU-1 HPR": 1,
+  "I:UNIT CU-2 HPR": 1,
+  "I:UNIT CU-3 HPR": 1,
+  "I:UNIT PH 1 HPR": 1,
+  "I:UNIT PH 8 HPR": 1,
+  "I:UNIT PH 10 HPR": 1
+ },
+ "county_market_value_groups": [
+  [
+   370000.0,
+   175
+  ],
+  [
+   230000.0,
+   51
+  ],
+  [
+   260000.0,
+   26
+  ],
+  [
+   270000.0,
+   2
+  ],
+  [
+   390000.0,
+   2
+  ],
+  [
+   1000.0,
+   1
+  ],
+  [
+   563030.0,
+   1
+  ],
+  [
+   461000.0,
+   1
+  ],
+  [
+   841230.0,
+   1
+  ],
+  [
+   948220.0,
+   1
+  ],
+  [
+   2710630.0,
+   1
+  ]
+ ],
+ "last_sale_year": {
+  "2006": 2,
+  "2007": 6,
+  "2008": 6,
+  "2009": 1,
+  "2010": 11,
+  "2011": 6,
+  "2012": 9,
+  "2013": 4,
+  "2014": 5,
+  "2015": 2,
+  "2016": 6,
+  "2017": 6,
+  "2018": 15,
+  "2019": 16,
+  "2020": 29,
+  "2021": 43,
+  "2022": 19,
+  "2023": 2,
+  "2024": 9,
+  "2025": 32,
+  "2026": 33
+ },
+ "owner_state_top": [
+  [
+   "SC",
+   163
+  ],
+  [
+   "NC",
+   40
+  ],
+  [
+   "VA",
+   11
+  ],
+  [
+   "NY",
+   7
+  ],
+  [
+   "OH",
+   6
+  ],
+  [
+   "MI",
+   5
+  ],
+  [
+   "FL",
+   4
+  ],
+  [
+   "PA",
+   4
+  ]
+ ],
+ "owner_out_of_sc": 99,
+ "taxed_at_4pct": 12,
+ "taxed_at_6pct": 250,
+ "tax_districts": {
+  "550": 263
+ },
+ "common_area_acres": [
+  0.94
+ ],
+ "sales_window_1": {
+  "window": "2025-10-01 to 2026-09-30",
+  "bulk_deeds": 1,
+  "unit_sales": {
+   "n": 6,
+   "median": 365000.0,
+   "p25": 302500.0,
+   "p75": 382000.0,
+   "min": 220000.0,
+   "max": 385000.0
+  },
+  "tower_I": {
+   "n": 5,
+   "median": 355000.0,
+   "p25": 275000.0,
+   "p75": 380000.0,
+   "min": 220000.0,
+   "max": 385000.0
+  },
+  "tower_II": {
+   "n": 1,
+   "median": 381000.0,
+   "p25": null,
+   "p75": null,
+   "min": 381000.0,
+   "max": 381000.0
+  },
+  "buyer_tax_bill_in_sc": 1,
+  "buyer_tax_bill_out_of_sc": 5,
+  "buyer_is_company": 1,
+  "market_value_at_sale_median_note": "county value of the sold units",
+  "ratio_sale_to_county_value": [
+   0.96,
+   0.89,
+   1.01,
+   1.04,
+   0.98,
+   0.96
+  ]
+ },
+ "sales_window_2": {
+  "window": "2025-11-01 to 2026-10-31",
+  "unit_sales": {
+   "n": 5,
+   "median": 355000.0,
+   "p25": 275000.0,
+   "p75": 380000.0,
+   "min": 220000.0,
+   "max": 385000.0
+  },
+  "bulk_units_and_weeks_deeds": 1,
+  "zero_dollar_deeds": 2
+ }
+}

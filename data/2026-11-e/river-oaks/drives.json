@@ -1,0 +1,188 @@
+{
+ "pulled": "2026-11-14T21:25:39.646340+00:00",
+ "rule": "Drive times from the middle of River Oaks west (resort condos, Waterway Village, cottages, Oakmont, Par 4: mean of parcel centre points) and River Oaks east (Fairways condos and The Landing at River Oaks), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "River Oaks west (condos, cottages, Oakmont, Par 4)": [
+   33.722,
+   -78.92056
+  ],
+  "River Oaks east (Fairways condos, The Landing)": [
+   33.73276,
+   -78.90095
+  ]
+ },
+ "drives": {
+  "River Oaks west (condos, cottages, Oakmont, Par 4)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 10.5,
+    "miles": 4.69,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.92056,33.722;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 9.5,
+    "miles": 4.59,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.92056,33.722;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 8.3,
+    "miles": 3.37,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.92056,33.722;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 15.7,
+    "miles": 8.84,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.92056,33.722;-78.8194704,33.7580795?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 8.8,
+    "miles": 4.19,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.92056,33.722;-78.8804377129017,33.6906918992821?overview=false",
+    "name": "MYRTLE BEACH 40",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 40",
+     8.8,
+     4.19
+    ],
+    [
+     "MYRTLE BEACH 55",
+     9.8,
+     4.74
+    ],
+    [
+     "MYRTLE BEACH 45",
+     9.1,
+     4.49
+    ],
+    [
+     "MYRTLE BEACH 44",
+     9.1,
+     4.27
+    ],
+    [
+     "MYRTLE BEACH 43",
+     9.0,
+     4.24
+    ],
+    [
+     "MYRTLE BEACH 48",
+     9.4,
+     4.52
+    ],
+    [
+     "MYRTLE BEACH 42",
+     8.9,
+     4.22
+    ],
+    [
+     "MYRTLE BEACH 46",
+     9.0,
+     4.45
+    ],
+    [
+     "MYRTLE BEACH 41",
+     8.9,
+     4.21
+    ],
+    [
+     "MYRTLE BEACH 49",
+     9.6,
+     4.56
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 124.4,
+    "miles": 5.79,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.92056,33.722;-78.8804377129017,33.6906918992821?overview=false"
+   }
+  },
+  "River Oaks east (Fairways condos, The Landing)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 13.9,
+    "miles": 6.13,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.90095,33.73276;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 12.9,
+    "miles": 6.03,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.90095,33.73276;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 11.8,
+    "miles": 4.81,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.90095,33.73276;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 16.7,
+    "miles": 8.0,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.90095,33.73276;-78.8194704,33.7580795?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 13.7,
+    "miles": 6.57,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.90095,33.73276;-78.87011425429033,33.701004122705456?overview=false",
+    "name": "MYRTLE BEACH 68",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 74",
+     14.3,
+     6.78
+    ],
+    [
+     "MYRTLE BEACH 73",
+     14.3,
+     6.77
+    ],
+    [
+     "MYRTLE BEACH 71",
+     14.0,
+     6.66
+    ],
+    [
+     "MYRTLE BEACH 76",
+     15.0,
+     6.95
+    ],
+    [
+     "MYRTLE BEACH 77",
+     14.8,
+     6.91
+    ],
+    [
+     "MYRTLE BEACH 78",
+     14.8,
+     6.92
+    ],
+    [
+     "MYRTLE BEACH 70",
+     13.9,
+     6.6
+    ],
+    [
+     "MYRTLE BEACH 69",
+     13.8,
+     6.58
+    ],
+    [
+     "MYRTLE BEACH 68",
+     13.7,
+     6.57
+    ],
+    [
+     "MYRTLE BEACH 80",
+     15.0,
+     7.05
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 173.5,
+    "miles": 8.08,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.90095,33.73276;-78.87011425429033,33.701004122705456?overview=false"
+   }
+  }
+ }
+}

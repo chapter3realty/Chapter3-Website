@@ -1,0 +1,208 @@
+{
+ "pulled": "2026-11-15T01:34:16.145423+00:00",
+ "rule": "Drive times from the middle of the Grande Dunes homes inside the City of Myrtle Beach and the middle of the Grande Dunes homes inside the City of North Myrtle Beach\n(the mean of their parcel inside points, map-points.json), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points for the Ocean Club (101 Grande Dunes Blvd) and the Grande Dunes Marina; the other places as in data/2026-11-d/plantation-point/pull_drives.py.\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Grande Dunes, Myrtle Beach part (middle)": [
+   33.76635,
+   -78.81478
+  ],
+  "Grande Dunes North, North Myrtle Beach part (middle)": [
+   33.78934,
+   -78.79446
+  ]
+ },
+ "drives": {
+  "Grande Dunes, Myrtle Beach part (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 18.8,
+    "miles": 11.29,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 9.9,
+    "miles": 5.71,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 13.8,
+    "miles": 8.16,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 3.5,
+    "miles": 1.03,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.8194704,33.7580795?overview=false"
+   },
+   "Grande Dunes Ocean Club (101 Grande Dunes Blvd)": {
+    "minutes": 4.6,
+    "miles": 1.51,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.8058885,33.7492748?overview=false"
+   },
+   "Grande Dunes Marina": {
+    "minutes": 2.0,
+    "miles": 0.44,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.817664,33.7635764?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 4.4,
+    "miles": 1.81,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.81478,33.76635;-78.80295346523609,33.752525449186784?overview=false",
+    "name": "MYRTLE BEACH 136",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 136",
+     4.4,
+     1.81
+    ],
+    [
+     "MYRTLE BEACH 137",
+     5.7,
+     1.99
+    ],
+    [
+     "MYRTLE BEACH 135",
+     4.6,
+     1.83
+    ],
+    [
+     "MYRTLE BEACH 134",
+     4.8,
+     1.9
+    ],
+    [
+     "MYRTLE BEACH 133",
+     5.0,
+     1.96
+    ],
+    [
+     "MYRTLE BEACH 132",
+     5.1,
+     2.02
+    ],
+    [
+     "MYRTLE BEACH 131",
+     5.2,
+     2.09
+    ],
+    [
+     "HORRY COUNTY 2",
+     7.2,
+     3.41
+    ],
+    [
+     "APACHE FAMILY CAMPGROUND",
+     5.5,
+     2.68
+    ],
+    [
+     "HORRY COUNTY 3",
+     7.0,
+     3.33
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 36.5,
+    "miles": 1.69,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.81478,33.76635;-78.80295346523609,33.752525449186784?overview=false"
+   }
+  },
+  "Grande Dunes North, North Myrtle Beach part (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 26.6,
+    "miles": 15.34,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 17.6,
+    "miles": 9.76,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 21.5,
+    "miles": 12.21,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 15.0,
+    "miles": 6.95,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.8194704,33.7580795?overview=false"
+   },
+   "Grande Dunes Ocean Club (101 Grande Dunes Blvd)": {
+    "minutes": 15.2,
+    "miles": 7.15,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.8058885,33.7492748?overview=false"
+   },
+   "Grande Dunes Marina": {
+    "minutes": 14.6,
+    "miles": 6.61,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.817664,33.7635764?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 12.2,
+    "miles": 5.53,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.79446,33.78934;-78.78788522059399,33.76925237005197?overview=false",
+    "name": "APACHE FAMILY CAMPGROUND",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     "APACHE FAMILY CAMPGROUND",
+     12.2,
+     5.53
+    ],
+    [
+     "HORRY COUNTY 6",
+     13.0,
+     5.81
+    ],
+    [
+     "HORRY COUNTY 5",
+     13.4,
+     6.04
+    ],
+    [
+     "HORRY COUNTY 4",
+     13.5,
+     6.1
+    ],
+    [
+     "HORRY COUNTY 3",
+     13.7,
+     6.18
+    ],
+    [
+     "HORRY COUNTY 2",
+     13.9,
+     6.25
+    ],
+    [
+     "MYRTLE BEACH 137",
+     15.7,
+     7.15
+    ],
+    [
+     "MYRTLE BEACH 136",
+     14.5,
+     6.96
+    ],
+    [
+     "MYRTLE BEACH 135",
+     15.2,
+     7.32
+    ],
+    [
+     "MYRTLE BEACH 134",
+     15.5,
+     7.38
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 237.9,
+    "miles": 11.08,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.79446,33.78934;-78.78788522059399,33.76925237005197?overview=false"
+   }
+  }
+ }
+}

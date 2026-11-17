@@ -1,0 +1,40 @@
+    "FLD_ZONE",
+    "FLOODWAY",
+    "SFHA_TF",
+    "STATIC_BFE",
+    "V_DATUM",
+    "DEPTH",
+    "LEN_UNIT",
+    "VELOCITY",
+    "VEL_UNIT",
+    "AR_REVERT",
+    "BFE_REVERT",
+    "DEP_REVERT",
+    "SOURCE_CIT"
+   ],
+   "share_of_footprint": 0.131
+  }
+ ],
+ "center_point_zones": [
+  {
+   "OBJECTID": 1024,
+   "Shape.STArea()": 7152028.027012014,
+   "Shape.STLength()": 71431.63484461536,
+   "FLD_AR_ID": "1024",
+   "FLD_ZONE": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+   "FLOODWAY": " ",
+   "SFHA_TF": "F",
+   "STATIC_BFE": -9999.0,
+   "V_DATUM": " ",
+   "DEPTH": -9999.0,
+   "LEN_UNIT": " ",
+   "VELOCITY": -9999.0,
+   "VEL_UNIT": " ",
+   "AR_REVERT": " ",
+   "BFE_REVERT": -9999.0,
+   "DEP_REVERT": -9999.0,
+   "SOURCE_CIT": "STUDY1"
+  }
+ ],
+ "share_in_no_zone": 0.4
+}

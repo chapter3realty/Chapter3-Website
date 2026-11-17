@@ -1,0 +1,46 @@
+{
+ "crop_px": [
+  500,
+  450,
+  1600,
+  1200
+ ],
+ "labels": [
+  {
+   "label": "Prince Resort, beach side",
+   "lon": -78.633545,
+   "lat": 33.830293,
+   "px": [
+    518,
+    709
+   ]
+  },
+  {
+   "label": "Prince Resort, across the road",
+   "lon": -78.632905,
+   "lat": 33.831104,
+   "px": [
+    856,
+    193
+   ]
+  },
+  {
+   "label": "Cherry Grove Pier",
+   "lon": -78.633348,
+   "lat": 33.830134,
+   "px": [
+    622,
+    810
+   ]
+  },
+  {
+   "label": "Atlantic Ocean",
+   "lon": -78.631686,
+   "lat": 33.829945,
+   "px": [
+    1500,
+    930
+   ]
+  }
+ ]
+}

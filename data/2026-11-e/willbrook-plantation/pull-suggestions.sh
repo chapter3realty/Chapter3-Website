@@ -1,0 +1,6 @@
+#!/bin/sh
+# Google search suggestions (Firefox client) for Willbrook Plantation seeds. Run: sh pull-suggestions.sh > raw/google-suggestions.txt
+for q in "willbrook plantation" "willbrook plantation pawleys island" "willbrook plantation homes for sale" "willbrook plantation hoa" "willbrook plantation golf" "willbrook plantation golf course" "willbrook plantation pawleys island sc" "willbrook plantation history" "willbrook plantation real estate" "willbrook plantation hoa fees" "willbrook plantation flood" "willbrook plantation a" "willbrook plantation b" "willbrook plantation c" "willbrook plantation d" "willbrook plantation f" "willbrook plantation g" "willbrook plantation h" "willbrook plantation l" "willbrook plantation m" "willbrook plantation r" "willbrook plantation s" "willbrook plantation t" "willbrook plantation w" "tradition club willbrook" "tradition at willbrook" "mingo at willbrook" "willbrook plantation condos" "willbrook plantation lots for sale" "willbrook plantation gated" "is willbrook plantation gated" "willbrook plantation reviews" "willbrook plantation restaurant" "willbrook pawleys island"; do
+  printf '== %s\n' "$q"
+  curl -s -A Mozilla/5.0 "https://suggestqueries.google.com/complete/search?client=firefox&q=$(python3 -c 'import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))' "$q")"; echo
+done

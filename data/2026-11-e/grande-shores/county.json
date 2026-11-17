@@ -1,0 +1,349 @@
+{
+ "read": "2026-11-14T19:26:03.060279+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query",
+ "rule": "Grande Shores in Horry County's public records, in aggregate.\n1. Parcels: https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query, every parcel whose\n   LegalDescr starts \"GRANDE SHORES HPR\" (the county's regime name; \"HPR\" is the county's tag). Condo units = land use 107 with a building value.\n   Kept: units per floor (floor = unit number less its last two digits; \"PH nn\" units counted apart), the count of units at each county\n   market value (the assessor's unit types), the year of each unit's last recorded sale (counts), owner mailing state (counts, in or out of SC),\n   units taxed at the 4% legal-residence ratio, and the commercial parcels' land-use codes (counts). Never kept: a PIN, an owner, a unit's own record.\n2. Sales: the deed files the Palace page used (data/2026-10-d/sell-out-of-state-buyers/out-of-state-buyers.json, AcclaimWeb DEED (001), recorded\n   2025-10-01 to 2026-09-30; data/2026-11-n/buyers-builders/raw/deeds-co.json, recorded 2025-11-01 to 2026-10-31, Consideration > 0).\n   Kept: count, median, quartiles, range, and the same by county value group when a group has 5 or more sales. No unit, no deed, no price on its own.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "parcels": 141,
+ "condo_units": 136,
+ "penthouse_units": 13,
+ "unparsed_unit_numbers": 0,
+ "other_parcels": [
+  [
+   "C/A",
+   "500",
+   4295
+  ],
+  [
+   "COMMERCIAL 3 VENDING",
+   "356",
+   21450
+  ],
+  [
+   "COMMERCIAL MOTEL 1",
+   "312",
+   7599960
+  ],
+  [
+   "BAR, COMMERCIAL #2",
+   "356",
+   10790
+  ],
+  [
+   "COMMERCIAL 4 RECEPTN",
+   "356",
+   201250
+  ]
+ ],
+ "floors": {
+  "numbers": [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "count": 10,
+  "units_per_floor": {
+   "3": 5,
+   "4": 5,
+   "5": 5,
+   "6": 5,
+   "7": 13,
+   "8": 19,
+   "9": 19,
+   "10": 19,
+   "11": 19,
+   "12": 14
+  },
+  "doors_per_floor": {
+   "3": [
+    20,
+    24,
+    5
+   ],
+   "4": [
+    20,
+    24,
+    5
+   ],
+   "5": [
+    20,
+    24,
+    5
+   ],
+   "6": [
+    20,
+    24,
+    5
+   ],
+   "7": [
+    20,
+    38,
+    13
+   ],
+   "8": [
+    20,
+    38,
+    19
+   ],
+   "9": [
+    20,
+    38,
+    19
+   ],
+   "10": [
+    20,
+    38,
+    19
+   ],
+   "11": [
+    20,
+    38,
+    19
+   ],
+   "12": [
+    20,
+    38,
+    14
+   ]
+  }
+ },
+ "county_market_value_groups": [
+  [
+   170000.0,
+   47
+  ],
+  [
+   389000.0,
+   32
+  ],
+  [
+   220000.0,
+   31
+  ],
+  [
+   430000.0,
+   7
+  ],
+  [
+   135000.0,
+   4
+  ],
+  [
+   140000.0,
+   2
+  ],
+  [
+   270000.0,
+   1
+  ],
+  [
+   176000.0,
+   1
+  ],
+  [
+   229500.0,
+   1
+  ],
+  [
+   445000.0,
+   1
+  ],
+  [
+   365000.0,
+   1
+  ],
+  [
+   165000.0,
+   1
+  ],
+  [
+   380000.0,
+   1
+  ],
+  [
+   175000.0,
+   1
+  ],
+  [
+   154500.0,
+   1
+  ],
+  [
+   156500.0,
+   1
+  ],
+  [
+   136000.0,
+   1
+  ],
+  [
+   154900.0,
+   1
+  ],
+  [
+   345000.0,
+   1
+  ]
+ ],
+ "last_sale_year": {
+  "2001": 6,
+  "2003": 2,
+  "2004": 1,
+  "2005": 3,
+  "2006": 1,
+  "2007": 2,
+  "2009": 1,
+  "2010": 3,
+  "2012": 2,
+  "2013": 2,
+  "2014": 1,
+  "2015": 3,
+  "2017": 4,
+  "2018": 6,
+  "2019": 7,
+  "2020": 8,
+  "2021": 26,
+  "2022": 24,
+  "2023": 17,
+  "2024": 5,
+  "2025": 4,
+  "2026": 8
+ },
+ "owner_state_top": [
+  [
+   "SC",
+   77
+  ],
+  [
+   "NY",
+   12
+  ],
+  [
+   "NC",
+   8
+  ],
+  [
+   "VA",
+   7
+  ],
+  [
+   "TN",
+   5
+  ],
+  [
+   "OH",
+   4
+  ],
+  [
+   "GA",
+   4
+  ],
+  [
+   "WV",
+   2
+  ]
+ ],
+ "owner_in_sc": 77,
+ "owner_out_of_sc": 59,
+ "taxed_as_home_4pct": 2,
+ "taxed_at_6pct": 134,
+ "sales": {
+  "hub_window": {
+   "window": "2025-10-01 to 2026-09-30",
+   "all": {
+    "n": 10,
+    "median": 150250.0,
+    "p25": 124500.0,
+    "p75": 218750.0,
+    "min": 109000.0,
+    "max": 369000.0
+   },
+   "by_value_group": {
+    "135000": {
+     "n": 2,
+     "median": 132800.0,
+     "p25": null,
+     "p75": null,
+     "min": 123000.0,
+     "max": 142600.0
+    },
+    "170000": {
+     "n": 5,
+     "median": 150000.0,
+     "p25": 117000.0,
+     "p75": 172750.0,
+     "min": 109000.0,
+     "max": 195000.0
+    },
+    "220000": {
+     "n": 1,
+     "median": 200000.0,
+     "p25": null,
+     "p75": null,
+     "min": 200000.0,
+     "max": 200000.0
+    },
+    "270000": {
+     "n": 1,
+     "median": 275000.0,
+     "p25": null,
+     "p75": null,
+     "min": 275000.0,
+     "max": 275000.0
+    },
+    "389000": {
+     "n": 1,
+     "median": 369000.0,
+     "p25": null,
+     "p75": null,
+     "min": 369000.0,
+     "max": 369000.0
+    }
+   },
+   "buyer_tax_bill_in_sc": 3,
+   "buyer_tax_bill_out_of_sc": 7,
+   "buyer_states_out_of_sc": [
+    [
+     "NY",
+     2
+    ],
+    [
+     "NC",
+     2
+    ],
+    [
+     "OH",
+     2
+    ],
+    [
+     "VA",
+     1
+    ]
+   ],
+   "buyer_is_company": 3,
+   "by_quarter": {
+    "2025Q4": 3,
+    "2026Q2": 4,
+    "2026Q3": 3
+   }
+  },
+  "later_window": {
+   "window": "2025-11-01 to 2026-10-31",
+   "all": {
+    "n": 10,
+    "median": 150250.0,
+    "p25": 124500.0,
+    "p75": 218750.0,
+    "min": 109000.0,
+    "max": 369000.0
+   },
+   "zero_dollar_deeds": 1,
+   "under_1000": 0
+  }
+ }
+}

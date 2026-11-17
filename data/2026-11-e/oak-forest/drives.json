@@ -1,0 +1,109 @@
+{
+ "pulled": "2026-11-14T21:07:50.898689+00:00",
+ "rule": "Drive times from the middle of Oak Forest (the mean of their parcel\ncentre points, findings.json \"center_main\" and \"center_landing\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Oak Forest (middle)": [
+   33.67669,
+   -78.96186
+  ]
+ },
+ "drives": {
+  "Oak Forest (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 12.4,
+    "miles": 5.74,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 13.0,
+    "miles": 6.91,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 9.5,
+    "miles": 4.4,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.9223169,33.7027515?overview=false"
+   },
+   "Grand Strand Medical Center": {
+    "minutes": 19.2,
+    "miles": 11.16,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.8194704,33.7580795?overview=false"
+   },
+   "Costco (county parcel legal description OAK FOREST; COSTCO)": {
+    "minutes": 9.6,
+    "miles": 4.43,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.91541,33.70643?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 12.3,
+    "miles": 4.63,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.9145723103484,33.66116414863854?overview=false",
+    "name": "MYRTLE BEACH 1",
+    "parking": "Yes"
+   },
+   "beach accesses routed": [
+    [
+     " ",
+     16.3,
+     5.87
+    ],
+    [
+     "HORRY COUNTY 1",
+     12.9,
+     4.68
+    ],
+    [
+     "MYRTLE BEACH 1",
+     12.3,
+     4.63
+    ],
+    [
+     "MYRTLE BEACH 2",
+     12.6,
+     4.72
+    ],
+    [
+     "MYRTLE BEACH 3",
+     13.1,
+     4.8
+    ],
+    [
+     "MYRTLE BEACH 4",
+     13.1,
+     4.9
+    ],
+    [
+     "MYRTLE BEACH 5",
+     13.2,
+     5.1
+    ],
+    [
+     "MYRTLE BEACH 6",
+     13.6,
+     5.06
+    ],
+    [
+     "MYRTLE BEACH 7",
+     14.0,
+     5.19
+    ],
+    [
+     " ",
+     14.0,
+     5.2
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 93.8,
+    "miles": 4.37,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.96186,33.67669;-78.9145723103484,33.66116414863854?overview=false"
+   },
+   "The Market Common": {
+    "minutes": 7.8,
+    "miles": 2.7,
+    "note": "Added by the page's writer from the verifier's run (VERIFY.md item 9): OSRM driving from the middle of Oak Forest to OSM point 33.66786,-78.93993, no traffic; 52 minutes and 2.4 miles on foot.",
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.96186,33.67669;-78.93993,33.66786?overview=false"
+   }
+  }
+ }
+}

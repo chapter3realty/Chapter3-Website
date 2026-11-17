@@ -1,0 +1,40 @@
+{
+ "read": "2026-11-14T21:16:26.729913+00:00",
+ "strips": [
+  {
+   "q": "subdivision=Ocean%20Forest%20Villas",
+   "ok": true,
+   "total": 17
+  },
+  {
+   "q": "type=condo&near=33.72902,-78.83472&miles=0.5&has=oceanfront_unit",
+   "ok": true,
+   "total": 40
+  },
+  {
+   "q": "type=condo&near=33.72902,-78.83472&miles=1&beds=2&max=300000",
+   "ok": true,
+   "total": 15
+  },
+  {
+   "q": "subdivision=Ocean%20Forest%20Villas&max=300000",
+   "ok": true,
+   "total": 4
+  },
+  {
+   "q": "subdivision=Ocean%20Forest%20Villas&has=ocean_view",
+   "ok": true,
+   "total": 14
+  },
+  {
+   "q": "type=condo&near=33.72902,-78.83472&miles=1",
+   "ok": true,
+   "total": 166
+  },
+  {
+   "q": "near=33.72902,-78.83472&miles=1&type=house",
+   "ok": true,
+   "total": 35
+  }
+ ]
+}

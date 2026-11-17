@@ -1,0 +1,973 @@
+{
+ "pulled": "2026-11-15T01:28:25.944063+00:00",
+ "refreshedAt": "2026-11-15T01:20:03.840Z",
+ "all": {
+  "n": 119,
+  "price": {
+   "median": 720000,
+   "min": 219900,
+   "max": 6700000
+  },
+  "sqft_median": 2440,
+  "year_built": [
+   1997,
+   2027
+  ],
+  "beds": [
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    12
+   ],
+   [
+    3,
+    59
+   ],
+   [
+    4,
+    41
+   ],
+   [
+    5,
+    4
+   ],
+   [
+    7,
+    1
+   ]
+  ],
+  "hoa_listed_n": 119,
+  "hoa": {
+   "min": 0,
+   "median": 370,
+   "max": 3447
+  },
+  "waterfront_flag": 25,
+  "built_2024_or_later": 52
+ },
+ "types": {
+  "Semi Detached": {
+   "n": 7,
+   "price": {
+    "median": 459900,
+    "min": 400000,
+    "max": 524000
+   },
+   "sqft_median": 1514,
+   "year_built": [
+    2019,
+    2024
+   ],
+   "beds": [
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "hoa_listed_n": 7,
+   "hoa": {
+    "min": 435,
+    "median": 438,
+    "max": 451
+   },
+   "waterfront_flag": 1
+  },
+  "Townhouse": {
+   "n": 13,
+   "price": {
+    "median": 649990,
+    "min": 360800,
+    "max": 774000
+   },
+   "sqft_median": 2180,
+   "year_built": [
+    2019,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     8
+    ]
+   ],
+   "hoa_listed_n": 13,
+   "hoa": {
+    "min": 325,
+    "median": 325,
+    "max": 386
+   },
+   "waterfront_flag": 0
+  },
+  "Detached": {
+   "n": 82,
+   "price": {
+    "median": 877450.0,
+    "min": 389900,
+    "max": 6700000
+   },
+   "sqft_median": 2626.0,
+   "year_built": [
+    2003,
+    2027
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     44
+    ],
+    [
+     4,
+     32
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "hoa_listed_n": 82,
+   "hoa": {
+    "min": 0,
+    "median": 344.0,
+    "max": 719
+   },
+   "waterfront_flag": 22
+  },
+  "Condominium": {
+   "n": 17,
+   "price": {
+    "median": 415000,
+    "min": 219900,
+    "max": 2300000
+   },
+   "sqft_median": 1413,
+   "year_built": [
+    1997,
+    2008
+   ],
+   "beds": [
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 17,
+   "hoa": {
+    "min": 980,
+    "median": 1600,
+    "max": 3447
+   },
+   "waterfront_flag": 2
+  }
+ },
+ "subdivisions": {
+  "Dunes Ocean Front - Formerly Grande Dunes Oceanside": {
+   "n": 1,
+   "price": {
+    "median": 6700000,
+    "min": 6700000,
+    "max": 6700000
+   },
+   "sqft_median": 5499,
+   "year_built": [
+    2015,
+    2015
+   ],
+   "beds": [
+    [
+     7,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 0,
+    "median": 0,
+    "max": 0
+   },
+   "waterfront_flag": 1
+  },
+  "Grande Dunes  - Villa Firenze": {
+   "n": 2,
+   "price": {
+    "median": 773500.0,
+    "min": 679000,
+    "max": 868000
+   },
+   "sqft_median": 2907.0,
+   "year_built": [
+    2007,
+    2008
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 2,
+   "hoa": {
+    "min": 1600,
+    "median": 1600.0,
+    "max": 1600
+   },
+   "waterfront_flag": 1
+  },
+  "Grande Dunes - Bal Harbor": {
+   "n": 3,
+   "price": {
+    "median": 3400000,
+    "min": 2180000,
+    "max": 3689000
+   },
+   "sqft_median": 4694,
+   "year_built": [
+    2008,
+    2027
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "hoa_listed_n": 3,
+   "hoa": {
+    "min": 380,
+    "median": 400,
+    "max": 400
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Beach View": {
+   "n": 5,
+   "price": {
+    "median": 699880,
+    "min": 639900,
+    "max": 735000
+   },
+   "sqft_median": 2573,
+   "year_built": [
+    2025,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     3
+    ]
+   ],
+   "hoa_listed_n": 5,
+   "hoa": {
+    "min": 295,
+    "median": 295,
+    "max": 295
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Calais": {
+   "n": 1,
+   "price": {
+    "median": 1485000,
+    "min": 1485000,
+    "max": 1485000
+   },
+   "sqft_median": 3497,
+   "year_built": [
+    2006,
+    2006
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 374,
+    "median": 374,
+    "max": 374
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Capri Village": {
+   "n": 1,
+   "price": {
+    "median": 2989000,
+    "min": 2989000,
+    "max": 2989000
+   },
+   "sqft_median": 5485,
+   "year_built": [
+    2026,
+    2026
+   ],
+   "beds": [
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 344,
+    "median": 344,
+    "max": 344
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Castillo del Mar": {
+   "n": 1,
+   "price": {
+    "median": 2100000,
+    "min": 2100000,
+    "max": 2100000
+   },
+   "sqft_median": 3950,
+   "year_built": [
+    2004,
+    2004
+   ],
+   "beds": [
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 719,
+    "median": 719,
+    "max": 719
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Cipriana Park": {
+   "n": 3,
+   "price": {
+    "median": 849000,
+    "min": 799000,
+    "max": 955000
+   },
+   "sqft_median": 2548,
+   "year_built": [
+    2014,
+    2023
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "hoa_listed_n": 3,
+   "hoa": {
+    "min": 232,
+    "median": 232,
+    "max": 232
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Del Webb": {
+   "n": 26,
+   "price": {
+    "median": 681950.0,
+    "min": 400000,
+    "max": 1444000
+   },
+   "sqft_median": 2149.0,
+   "year_built": [
+    2018,
+    2025
+   ],
+   "beds": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     18
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "hoa_listed_n": 26,
+   "hoa": {
+    "min": 379,
+    "median": 401.0,
+    "max": 451
+   },
+   "waterfront_flag": 5
+  },
+  "Grande Dunes - Islecrest": {
+   "n": 11,
+   "price": {
+    "median": 719990,
+    "min": 599990,
+    "max": 1229990
+   },
+   "sqft_median": 2033,
+   "year_built": [
+    2026,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "hoa_listed_n": 11,
+   "hoa": {
+    "min": 283,
+    "median": 283,
+    "max": 283
+   },
+   "waterfront_flag": 7
+  },
+  "Grande Dunes - Living Dunes": {
+   "n": 10,
+   "price": {
+    "median": 892087.5,
+    "min": 695000,
+    "max": 1249000
+   },
+   "sqft_median": 2196.0,
+   "year_built": [
+    2019,
+    2025
+   ],
+   "beds": [
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     4
+    ]
+   ],
+   "hoa_listed_n": 10,
+   "hoa": {
+    "min": 350,
+    "median": 370.0,
+    "max": 375
+   },
+   "waterfront_flag": 2
+  },
+  "Grande Dunes - Marina Inn": {
+   "n": 8,
+   "price": {
+    "median": 299900.0,
+    "min": 219900,
+    "max": 375000
+   },
+   "sqft_median": 1335.0,
+   "year_built": [
+    2005,
+    2007
+   ],
+   "beds": [
+    [
+     0,
+     2
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "hoa_listed_n": 8,
+   "hoa": {
+    "min": 1277,
+    "median": 2033.0,
+    "max": 2034
+   },
+   "waterfront_flag": 1
+  },
+  "Grande Dunes - Members Club": {
+   "n": 3,
+   "price": {
+    "median": 1498000,
+    "min": 1399000,
+    "max": 1825000
+   },
+   "sqft_median": 3508,
+   "year_built": [
+    2006,
+    2015
+   ],
+   "beds": [
+    [
+     4,
+     3
+    ]
+   ],
+   "hoa_listed_n": 3,
+   "hoa": {
+    "min": 344,
+    "median": 344,
+    "max": 344
+   },
+   "waterfront_flag": 1
+  },
+  "Grande Dunes - Milano": {
+   "n": 2,
+   "price": {
+    "median": 1896500.0,
+    "min": 1698000,
+    "max": 2095000
+   },
+   "sqft_median": 5088.0,
+   "year_built": [
+    2004,
+    2007
+   ],
+   "beds": [
+    [
+     4,
+     2
+    ]
+   ],
+   "hoa_listed_n": 2,
+   "hoa": {
+    "min": 344,
+    "median": 344.0,
+    "max": 344
+   },
+   "waterfront_flag": 2
+  },
+  "Grande Dunes - North Village": {
+   "n": 9,
+   "price": {
+    "median": 450000,
+    "min": 360800,
+    "max": 669000
+   },
+   "sqft_median": 2059,
+   "year_built": [
+    2024,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "hoa_listed_n": 9,
+   "hoa": {
+    "min": 341,
+    "median": 347,
+    "max": 386
+   },
+   "waterfront_flag": 2
+  },
+  "Grande Dunes - Palermo": {
+   "n": 2,
+   "price": {
+    "median": 2649450.0,
+    "min": 1899900,
+    "max": 3399000
+   },
+   "sqft_median": 3812.5,
+   "year_built": [
+    2023,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 2,
+   "hoa": {
+    "min": 238,
+    "median": 289.0,
+    "max": 340
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Promenade": {
+   "n": 8,
+   "price": {
+    "median": 649990.0,
+    "min": 550000,
+    "max": 664990
+   },
+   "sqft_median": 2466.0,
+   "year_built": [
+    2025,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "hoa_listed_n": 8,
+   "hoa": {
+    "min": 325,
+    "median": 325.0,
+    "max": 325
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Riviera Village": {
+   "n": 4,
+   "price": {
+    "median": 2072500.0,
+    "min": 1675000,
+    "max": 2760000
+   },
+   "sqft_median": 3777.0,
+   "year_built": [
+    2004,
+    2026
+   ],
+   "beds": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "hoa_listed_n": 4,
+   "hoa": {
+    "min": 344,
+    "median": 344.0,
+    "max": 344
+   },
+   "waterfront_flag": 2
+  },
+  "Grande Dunes - Seville": {
+   "n": 1,
+   "price": {
+    "median": 949900,
+    "min": 949900,
+    "max": 949900
+   },
+   "sqft_median": 2451,
+   "year_built": [
+    2014,
+    2014
+   ],
+   "beds": [
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 306,
+    "median": 306,
+    "max": 306
+   },
+   "waterfront_flag": 1
+  },
+  "Grande Dunes - Siena Park": {
+   "n": 3,
+   "price": {
+    "median": 1100000,
+    "min": 829000,
+    "max": 1299000
+   },
+   "sqft_median": 2273,
+   "year_built": [
+    2003,
+    2006
+   ],
+   "beds": [
+    [
+     3,
+     3
+    ]
+   ],
+   "hoa_listed_n": 3,
+   "hoa": {
+    "min": 249,
+    "median": 249,
+    "max": 249
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Tuscany Village": {
+   "n": 2,
+   "price": {
+    "median": 1285000.0,
+    "min": 1285000,
+    "max": 1285000
+   },
+   "sqft_median": 3558.0,
+   "year_built": [
+    2007,
+    2007
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 2,
+   "hoa": {
+    "min": 340,
+    "median": 348.0,
+    "max": 356
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Villa Venezia": {
+   "n": 1,
+   "price": {
+    "median": 2490900,
+    "min": 2490900,
+    "max": 2490900
+   },
+   "sqft_median": 3509,
+   "year_built": [
+    2025,
+    2025
+   ],
+   "beds": [
+    [
+     4,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 199,
+    "median": 199,
+    "max": 199
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Vista del Mar": {
+   "n": 1,
+   "price": {
+    "median": 2300000,
+    "min": 2300000,
+    "max": 2300000
+   },
+   "sqft_median": 2901,
+   "year_built": [
+    2006,
+    2006
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ]
+   ],
+   "hoa_listed_n": 1,
+   "hoa": {
+    "min": 3447,
+    "median": 3447,
+    "max": 3447
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Waterside Edge": {
+   "n": 2,
+   "price": {
+    "median": 2049500.0,
+    "min": 1900000,
+    "max": 2199000
+   },
+   "sqft_median": 3208.5,
+   "year_built": [
+    2021,
+    2021
+   ],
+   "beds": [
+    [
+     3,
+     2
+    ]
+   ],
+   "hoa_listed_n": 2,
+   "hoa": {
+    "min": 470,
+    "median": 486.5,
+    "max": 503
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes - Waterside Pointe": {
+   "n": 3,
+   "price": {
+    "median": 1195000,
+    "min": 962000,
+    "max": 1795000
+   },
+   "sqft_median": 2846,
+   "year_built": [
+    2018,
+    2020
+   ],
+   "beds": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "hoa_listed_n": 3,
+   "hoa": {
+    "min": 375,
+    "median": 503,
+    "max": 503
+   },
+   "waterfront_flag": 0
+  },
+  "Grande Dunes \u2013 Villa Marbella": {
+   "n": 6,
+   "price": {
+    "median": 554450.0,
+    "min": 415000,
+    "max": 615000
+   },
+   "sqft_median": 1718.5,
+   "year_built": [
+    1997,
+    2008
+   ],
+   "beds": [
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "hoa_listed_n": 6,
+   "hoa": {
+    "min": 980,
+    "median": 1395.0,
+    "max": 1398
+   },
+   "waterfront_flag": 0
+  }
+ },
+ "cities_zips": [
+  [
+   [
+    "Myrtle Beach",
+    "29572"
+   ],
+   86
+  ],
+  [
+   [
+    "Myrtle Beach",
+    "29579"
+   ],
+   15
+  ],
+  [
+   [
+    "Longs",
+    "29568"
+   ],
+   9
+  ],
+  [
+   [
+    "Myrtle Beach",
+    "29577"
+   ],
+   9
+  ]
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "patricia-grand": {
+  "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8779226.744632052%2C3989248.2290455406%2C-8778721.871882247%2C3989626.8836078937&bboxSR=3857&imageSR=3857&size=2400%2C1800&format=jpg&pixelType=U8&interpolation=RSP_CubicConvolution&mosaicRule=%7B%22mosaicMethod%22%3A+%22esriMosaicAttribute%22%2C+%22sortField%22%3A+%22Year%22%2C+%22sortValue%22%3A+%222050%22%2C+%22ascending%22%3A+true%2C+%22where%22%3A+%22Year%3D2023%22%7D&f=image&renderingRule=%7B%22rasterFunction%22%3A+%22None%22%7D&bandIds=0%2C1%2C2",
+  "bbox3857": [
+   -8779226.744632052,
+   3989248.2290455406,
+   -8778721.871882247,
+   3989626.8836078937
+  ],
+  "center": [
+   -78.862868,
+   33.706333
+  ],
+  "ground_m": 420
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "pulled": "2026-11-14T20:45:57.427959+00:00",
+ "refreshedAt": "2026-11-14T20:40:11.897Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 34,
+ "at_sea_mist": 32,
+ "beds": {
+  "0": 32
+ },
+ "asking": {
+  "all": {
+   "median": 68950.0,
+   "min": 44900,
+   "max": 99000
+  },
+  "0": {
+   "n": 32,
+   "median": 68950.0,
+   "min": 44900,
+   "max": 99000,
+   "sqft_median": 385.0,
+   "sqft_range": [
+    335,
+    450
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 32,
+   "median_at_or_under": 625.0,
+   "lowest_at_or_under": 625,
+   "highest_at_or_under": 650,
+   "middle_half": [
+    625.0,
+    650.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 32,
+   "median_at_or_under": 625.0,
+   "lowest_at_or_under": 625,
+   "highest_at_or_under": 650,
+   "middle_half": [
+    625.0,
+    650.0
+   ]
+  }
+ },
+ "flags": {
+  "str_allowed": 28,
+  "rentals_allowed": 28,
+  "long_term_rental_allowed": 28,
+  "vacation_rental_program": 23,
+  "has_rental_income": 23,
+  "furnished": 32,
+  "pets_allowed": 2,
+  "oceanfront_unit": 11,
+  "ocean_view": 31,
+  "oceanfront_building": 25,
+  "high_floor_unit": 22,
+  "low_floor_unit": 3,
+  "top_floor": 0,
+  "balcony": 27,
+  "parking_garage": 14,
+  "covered_parking": 14,
+  "indoor_pool": 7,
+  "sauna": 0,
+  "elevator_building": 29,
+  "flood_zone": 1,
+  "hoa_includes_trash": 31,
+  "hoa_includes_utilities": 31,
+  "hoa_includes_water_sewer": 31,
+  "hoa_includes_insurance": 31,
+  "hoa_includes_internet": 29,
+  "hoa_includes_pest": 31,
+  "hoa_includes_cable": 15,
+  "hoa_includes_electric": 24,
+  "security_service": 23
+ },
+ "year_built": {
+  "1977": 32
+ },
+ "flood_zone_field": {
+  "None": 32
+ },
+ "subdivision_field": {
+  "Sea Mist Resort": 32
+ }
+}

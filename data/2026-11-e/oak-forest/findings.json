@@ -1,0 +1,157 @@
+{
+ "made": "2026-11-14",
+ "rule": "Findings for /submarkets/myrtle-beach/plantation-point/, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31\n(data/2026-11-n/buyers-builders/raw/deeds-co.json, AcclaimWeb DEED (001); person names already blanked there).\nA sale = a deed on a community parcel with a stated price over $10,000. A deed covering several parcels is dropped.\nHouses = parcels with a county building value over $0. Size = the largest county 'Residential' footprint (layer 27,\nStructures 2023) on the lot: ground floor plus garage roof outline, not heated living area. Pool = an 'Pool Inground' footprint on the lot.\nTax status: assessed value / taxable value = 0.04 is the 4% legal-residence (owner's full-time home) ratio; 0.06 is every other home.\nFlood: the FEMA zone at each lot's inside point (layer 19), and whether any part of the lot touches a high-risk (SFHA) zone.\nWaterway lot = within 25 m of the county's Intracoastal Waterway outline (layer 21). Golf lot = within 15 m of the\nMyrtlewood course parcel (owner FOUNDERS NATIONAL GOLF LLC, 376.6 acres). The Landing = lots on Landing Rd, Lighthouse Way, Ketch Ct, Shipyard Rd and Plantation Dr (its streets),\nplus every parcel whose legal description names The Landing.\nWrites findings.json: counts, medians and ranges only; no PIN, owner, address or deed book and page.\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-14T21:03:40.129384+00:00",
+ "all": {
+  "parcels": 188,
+  "houses": 185,
+  "vacant_lots": 3,
+  "lot_sqft": {
+   "n": 185,
+   "min": 5049,
+   "q1": 6275.5,
+   "median": 6323,
+   "q3": 6698.5,
+   "max": 23666
+  },
+  "house_footprint_sqft": {
+   "n": 185,
+   "min": 926,
+   "q1": 1772.5,
+   "median": 1871,
+   "q3": 2001.0,
+   "max": 2816
+  },
+  "county_value": {
+   "n": 185,
+   "min": 215000.0,
+   "q1": 248422.0,
+   "median": 256744.0,
+   "q3": 272167.0,
+   "max": 383202.0
+  },
+  "pools": 3,
+  "lot_center_in_high_risk_flood_zone": 16,
+  "lot_touches_high_risk_zone": 38,
+  "flood_zone_at_lot_center": {
+   "outside mapped zones (X)": 145,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 27,
+   "AE": 16
+  },
+  "owner_mailing_out_of_state": 19,
+  "house_footprint_touches_high_risk_zone": 29,
+  "assessed_at_4pct_legal_residence": 135,
+  "assessed_at_6pct": 50,
+  "in_city_limits": 0,
+  "zoning": {
+   "SF 10": 188
+  },
+  "streets": {
+   "TEMPERANCE DR": 105,
+   "MORLYNN DR": 44,
+   "TRIUMPH DR": 35,
+   "null": 3,
+   "LIKELY PL": 1
+  }
+ },
+ "sections": {
+  "OAK FOREST PH II": 54,
+  "OAK FOREST": 105,
+  "OAK FOREST PH III": 29
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "all": {
+   "count": 14,
+   "prices": {
+    "n": 14,
+    "min": 131500.0,
+    "q1": 253750.0,
+    "median": 258000.0,
+    "q3": 281875.0,
+    "max": 340000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/02": 1,
+    "2026/03": 1,
+    "2026/04": 1,
+    "2026/05": 3,
+    "2026/06": 1,
+    "2026/08": 5,
+    "2026/10": 1
+   }
+  },
+  "houses": {
+   "count": 14,
+   "prices": {
+    "n": 14,
+    "min": 131500.0,
+    "q1": 253750.0,
+    "median": 258000.0,
+    "q3": 281875.0,
+    "max": 340000.0
+   },
+   "by_month": {
+    "2025/12": 1,
+    "2026/02": 1,
+    "2026/03": 1,
+    "2026/04": 1,
+    "2026/05": 3,
+    "2026/06": 1,
+    "2026/08": 5,
+    "2026/10": 1
+   }
+  },
+  "lots": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  }
+ },
+ "center": [
+  33.67669,
+  -78.96186
+ ],
+ "extra": {
+  "houses_by_zone_at_lot_point": {
+   "outside mapped zones (X)": 143,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 26,
+   "AE": 16
+  },
+  "houses_by_street": {
+   "MORLYNN DR": 44,
+   "TRIUMPH DR": 35,
+   "TEMPERANCE DR": 105,
+   "LIKELY PL": 1
+  },
+  "houses_touching_high_risk_by_street": {
+   "MORLYNN DR": 12,
+   "TEMPERANCE DR": 17
+  },
+  "houses_with_footprint_in_ae_or_touching": 29,
+  "vacant": [
+   [
+    "100",
+    0,
+    38571,
+    "outside mapped zones (X)"
+   ],
+   [
+    "100",
+    0,
+    8337,
+    "0.2 PCT ANNUAL CHANCE FLOOD HAZARD"
+   ],
+   [
+    "100",
+    0,
+    7245,
+    "outside mapped zones (X)"
+   ]
+  ]
+ }
+}

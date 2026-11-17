@@ -1,0 +1,31 @@
+{
+ "n": 47,
+ "with_bracket": 47,
+ "bands": {
+  "under 450 sq ft": {
+   "n": 7,
+   "bracket_lowest": 600,
+   "bracket_highest": 825,
+   "median_bracket": 675
+  },
+  "450 to 519": {
+   "n": 22,
+   "bracket_lowest": 650,
+   "bracket_highest": 875,
+   "median_bracket": 750.0
+  },
+  "520 to 599": {
+   "n": 7,
+   "bracket_lowest": 650,
+   "bracket_highest": 900,
+   "median_bracket": 875
+  },
+  "600 and over": {
+   "n": 11,
+   "bracket_lowest": 750,
+   "bracket_highest": 950,
+   "median_bracket": 900
+  }
+ },
+ "correlation_sqft_fee": 0.72
+}

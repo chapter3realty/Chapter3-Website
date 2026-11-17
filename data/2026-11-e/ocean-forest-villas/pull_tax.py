@@ -1,0 +1,26 @@
+"""Ocean Forest Villas: the county's taxable assessment per unit, in aggregate, and the tax it implies at the 2026 City of Myrtle Beach
+millage (254.6 mills; ledger CON row 21). Units chosen as in pull_county.py. Source: Horry County GIS layer 24 (AssessedProp, TaxableProp, MarketProp).
+Kept: for units taxed at the 6 percent rate, the count and the median and quartiles of TaxableProp and of MarketProp, and the
+implied yearly tax (AssessedProp, which is 6 percent of TaxableProp, x 254.6 / 1000, before any credit or fee on the bill). No unit's own record.
+Run: python3 -I pull_tax.py <this dir>. Writes tax.json."""
+import json, sys, urllib.request, urllib.parse, statistics as st, datetime
+D = sys.argv[1]
+U = "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query"
+import re
+NAME = re.compile(r"^(A PLACE AT TH|A PLACE AT BCH|PLACE AT B|OCEAN FOREST;)")
+q = {"geometry": "-78.8375,33.7270,-78.8325,33.7310", "geometryType": "esriGeometryEnvelope", "inSR": 4326, "spatialRel": "esriSpatialRelIntersects", "outFields": "LegalDescr,MarketImprv,MarketProp,AssessedProp,TaxableProp,LandUseCode", "returnGeometry": "true", "outSR": 4326, "resultRecordCount": 2000, "f": "json"}
+rows = []
+for f in json.load(urllib.request.urlopen(U + "?" + urllib.parse.urlencode(q), timeout=120))["features"]:
+    g = f["geometry"]["rings"][0]
+    if NAME.match(f["attributes"]["LegalDescr"] or "") and sum(p[1] for p in g) / len(g) >= 33.7278: rows.append(f["attributes"])
+six = [a for a in rows if (a.get("MarketImprv") or 0) > 0 and (a.get("LandUseCode") or "").startswith("1") and a.get("TaxableProp") and abs(a["AssessedProp"] / a["TaxableProp"] - 0.06) < 0.002]
+def qs(v): v = sorted(v); q = st.quantiles(v, n=4); return {"median": st.median(v), "p25": q[0], "p75": q[2]}
+tp = [a["TaxableProp"] for a in six]; mp = [a["MarketProp"] for a in six]; tax = [a["AssessedProp"] * 254.6 / 1000 for a in six]
+import collections
+byg = collections.defaultdict(list)
+for a in six: byg[a["MarketProp"]].append(a["AssessedProp"] * 254.6 / 1000)
+groups = {str(int(k)): {"n": len(v), "implied_tax_median": round(st.median(v)), "lowest": round(min(v)), "highest": round(max(v))} for k, v in sorted(byg.items()) if len(v) >= 5}
+out = {"read": datetime.datetime.now(datetime.timezone.utc).isoformat(), "rule": __doc__, "units_at_6pct": len(six),
+       "taxable_value": qs(tp), "market_value": qs(mp), "implied_tax_city_millage": {k: round(v) for k, v in qs(tax).items()},
+       "by_county_value_group_n5_plus": groups, "taxable_below_market_share": round(sum(1 for a in six if a["TaxableProp"] < a["MarketProp"] - 1) / len(six), 3)}
+json.dump(out, open(D + "/tax.json", "w"), indent=1); print(json.dumps(out, indent=1)[-700:])

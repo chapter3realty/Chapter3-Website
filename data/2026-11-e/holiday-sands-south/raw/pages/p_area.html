@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
+
+	<!-- BETTER META GOES HERE -->
+	<title>Area Information | Holiday Sands South</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="index,follow,archive" />
+
+		<meta name="geo.position" content="," />
+		<meta name="geo.placename" content="" />
+		<meta name="geo.region" content="" />
+
+		
+		<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+		<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+		<meta name="DC.title" content="Area Information | Holiday Sands South" />
+		<meta name="DC.creator" content="Developer" />
+		<meta name="DC.subject" content="" />
+		<meta name="DC.description" content="" />
+		<meta name="DC.publisher" content="" />
+		<meta name="DC.date.created" scheme="DCTERMS.W3CDTF" content="2013-04-02T09:16:07-04:00" />
+		<meta name="DC.date.modified" scheme="DCTERMS.W3CDTF" content="2013-09-05T12:52:08-04:00" />
+		<meta name="DC.date.valid" scheme="DCTERMS.W3CDTF" content="2026-11-20T16:48:48-05:00" />
+		<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" />
+		<meta name="DC.rights" scheme="DCTERMS.URI" content="">
+		<meta name="DC.format" content="text/html" />
+		<meta name="DC.identifier" scheme="DCTERMS.URI" content="https://www.holidaysandssouth.com/area" />
+	<!-- snippet for global head includes -->
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/css/screen.css" />
+<link href="/css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+<link href="/scripts/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="/scripts/jquery.cycle2.min.js"></script>
+<script src="/scripts/jquery.cycle2.carousel.min.js"></script>
+<script src="/scripts/jquery.cycle2.caption2.min.js"></script>
+<script src="/scripts/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="/scripts/jquery.cookie.js"></script>
+<script src="/scripts/fancybox/jquery.fancybox.js" ></script><!-- fancybox version 2.0 --> 
+<script type="text/javascript" src="/scripts/fuelscripts.js"></script>
+<script type="text/javascript" src="/scripts/jquery.validate.min.js"></script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZ6NNB3');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script type="text/javascript">
+//SLEEP function for the ONE
+function sleepItOff(){
+	theDelay = 500; //half of a second
+	var start = (new Date).getTime();
+	var x = true;
+	while(x){
+		if(((new Date).getTime() - start) >= theDelay){
+    		x = false;
+		}
+	}
+}
+$(function() {
+	//ONE FUNCTION TO RULE THEM ALL
+	/*
+		THIS FUNCTION WILL HANDLE EVERY LINK ON THE SITE
+		IT IS NEEDED WHEN DEALING WITH PHONE NUMBERS BEING PASSED TO GD,
+		MBOX SESSIONS BEING PASSED TO GD,
+		OR MBOX REPORTING
+		ALL POINTS WHERE MODIFICATION MAY BE NEEDED ARE COMMENTED WITH DETAILS
+		NO OTHER MODIFICATIONS ARE NEEDED
+	*/
+
+	//PHONE - Value assignment may need to be adjusted per site
+	//
+	//Grab all <a> clicks
+	$('a').live('click', function() {
+		//Link Value
+		var linkV = $(this).attr('href');
+		//Class Bypass
+		//For lightboxes etc.. if a link clicked has the following class it will not be processed by this function
+		if($(this).hasClass('doNotProcess') || $(this).hasClass('meNeither')){
+			return true;
+		}				
+		//Dead Link Bypass
+		if(linkV === 'undefined' || linkV === 'false' || linkV === '' || linkV.length < 5) {
+			return true;
+		}
+		//GD address needs phone and mbox session
+		if(linkV.indexOf('search.iqrez') >0 || linkV.indexOf('search.guestdesk') >0 || linkV.indexOf('secure.guestdesk') >0) {		
+			//Set a concatinator (?, &, /)
+			var concat = '';
+			if(linkV.indexOf('?') > 0) {
+				concat = '&';
+			} else {
+				if(linkV.charAt(linkV.length - 1) == '/') {
+					concat = '?';
+				} else {
+					concat = '/?';
+				} 
+			}
+			//Phone - comment out ***!! BOTH LINES !!*** if not necessary 
+			if(linkV.indexOf('tollfree') <0) {
+				//linkV += concat+'tollfree='+phone;
+				//concat = '&';
+			}
+			//MboxSession - comment out if not necessary
+			//linkV += concat+'mboxSession='+mboxFactoryDefault.getSessionId().getId();		
+
+			//Any mbox calls go here //If you use mbox calls make sure you use the sleepItOff() function to delay //If used, the sleepItOff Function has to be the last call
+			if($(this).attr('id') == 'resNavLink') {
+				//mboxTrack('cc_navResClick');
+				//more calls here...
+				//sleepItOff(); - MOVED TO GA				
+			}				
+			//Any GA calls go here
+			sleepItOff();
+			//pageTracker._link(linkV);
+			//setTimeout("_gaq.push(['_link', '"+linkV+"'])",500);
+	                _gaq.push(['_link', linkV]);
+		        return false;
+		}		
+		//Eventually, go there
+		window.location = linkV;		
+	})
+});
+</script>
+
+	
+	<!-- STASH EXTRA HEAD ITEMS -->
+	
+	<!-- if we have some extra <head> includes, put them here -->
+
+
+    <!-- PINGDOM -->
+	<meta name="pingdom" content="1c57ff8826348ed782f34dc2b7a377a4" />    
+	
+		<style type="text/css">
+	.card {
+		min-height: 275px;
+	}
+
+	a.date-picker {
+		background: url(https://widgets.guestdesk.com/searchbox/lib/images/calendar.png) no-repeat !important;
+	}
+
+	#gd_searchbox_container input[type="submit"] {
+    	width: 91%;
+    	margin-left: 0px;
+	}
+	</style>
+	
+	
+	<!-- Sojern Tag v6_js, Pixel Version: 1 -->
+	<script>  (function () {        var params = {};    /* Please do not modify the below code. */    var cid = [];    var paramsArr = [];    var cidParams = [];    var pl = document.createElement('script');    var defaultParams = {"vid":"hot"};    for(key in defaultParams) { params[key] = defaultParams[key]; };    for(key in cidParams) {cid.push(params[cidParams[key]]);};    params.cid = cid.join('|');    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };    pl.type = 'text/javascript';    pl.async = true;    pl.src = 'https://beacon.sojern.com/pixel/p/295213?f_v=v6_js&p_v=1&' + paramsArr.join('&');    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);  })();</script>
+	<!-- End Sojern Tag -->
+	
+</head>
+
+<body id="area">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ6NNB3"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	    
+    <div id="dialog-modal2" style="display:none;">
+        <div id="close-button">
+            <a href="" class="closeD" rel="close"><img src="/media/layout/close-button-specials.png" /></a>
+        </div>
+        <a href=""><img src="/media/layout/hss-facebook-popup.jpg" alt="Sizzling Summer Savings!" id="special-offer-fb" /></a>
+        <div id="special-offer-fb-replace"></div>
+    </div><!--DIALOG MODAL-->    
+    
+	
+    <!-- HEADER SNIPPET
+	============================================== -->
+	<div id="orange-bar"></div>
+
+<div class="container">
+
+	<div class="row-fluid header">
+		<div class="span4">
+			<a href="/"><img src="/media/layout/logo.png" alt="Holiday Sands South" title="Holiday Sands South" /></a>
+		</div><!--LOGO-->
+		
+		<div class="span4 top-nav">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact/">Contact Us</a></li>
+				<li><a href="/map/">Map/Directions</a></li>
+				<li class="last"><a href="/weather/">Weather</a></li>
+			</ul>
+			<div class="clear both"></div>
+			<span class="phone-number">1-800-448-4439</span>
+		</div><!--PHONE NUMBER-->
+		
+		<div class="span4 top-special">
+			
+			<div class="special-image">
+				<img src="/media/images/starfish.jpg" width="90" height="90" />
+			</div>
+		
+			
+				<div class="cycle-slideshow top-special-text" data-cycle-slides="a" data-cycle-fx=scrollHorz data-cycle-timeout=10000 data-cycle-next="#next-specials" data-cycle-prev="#prev-specials">
+		      	
+					<a class="banner-copy" href="http://search.guestdesk.com/specials/holidaysandssouth/search"><p>Internet&nbsp;Special: &nbsp;Book Now &amp; Receive 10% Off A 3 Night Stay</p></a>
+		      	
+					<a class="banner-copy" href="http://search.guestdesk.com/specials/holidaysandssouth/search"><p>Internet&nbsp;Special: Save 15% Off &nbsp;On All 7 Nights Stays&nbsp;</p></a>
+		      	
+		      	</div>
+		    <a href=# id=prev-specials><img src="/media/layout/promo-previous.png" width="15" /></a>
+		    <a href=# id=next-specials><img src="/media/layout/promo-next.png" width="15" /></a>
+			
+		</div>
+		
+		<div class="span12 navigation">
+			<div class="navbar">
+				<ul class="nav">
+					<li><a href="http://search.guestdesk.com/reservations/HolidaySandsSouth/search/">Reservations</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Accommodations</a>
+						<ul class="dropdown-menu">
+                            <li><a href="/accommodations/">Rooms and Suites</a><li>
+							<li class="last"><a href="/photo-gallery/">Photos</a></li>
+                            <!--<li class="last"><a href="/videos/">Videos</a></li>-->
+						</ul>
+					</li>
+					<li><a href="/amenities/">Amenities</a></li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Groups &amp; Meetings</a>
+						<ul class="dropdown-menu">
+							<li class="last"><a href="/groups/weddings/">Weddings</a></li>
+							<li class="last"><a href="/groups/meetings/">Meetings</a></li>
+							<li class="last"><a href="/groups/conference-center/">Conference Center</a></li>
+							<li class="last"><a href="/sports/">Sports &amp; Team Groups</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Specials &amp; Packages</a>
+						<ul class="dropdown-menu">
+							<li class="last"><a href="http://search.guestdesk.com/specials/HolidaySandsSouth/search/">Specials</a></li>
+							<li class="last"><a href="/golf/">Golf</a></li>
+							<li class="last"><a href="/snowbirds/">Snowbirds</a></li>
+						</ul>
+					</li>
+					<li><a href="/area/">Area Information</a></li>
+					<li class="last"><a href="/news/">News &amp; Events</a></li>
+				</ul>
+			</div>
+		</div><!--NAVIGATION-->
+	</div><!--HEADER-->
+     
+    <!-- PROMO AREA
+	============================================== -->
+	<div class="row-fluid">
+		<div class="span12 promo-frame">
+		
+			<div id="booking-widget">
+				<div id="reservations-tag"><img src="/media/layout/reservations.png" /></div>
+				<div id="phone-booking">1-800-448-4439</div>
+				<br />
+				<br />
+				<br />
+				<script type="text/javascript" src="/site/gd-embed/"></script>
+			</div><!--BOOKING WIDGET-->
+		
+		    <div class="promo-image">    	
+		        	
+		        		<div class="cycle-slideshow"
+		    				 data-cycle-fx="scrollHorz"
+		    				 data-cycle-timeout="5000"
+		    				 data-cycle-swipe=true
+		    				 data-cycle-prev="#prev"
+		    				 data-cycle-next="#next">
+				            
+				            	<img src="/images/made/media/images/photo_(1)_Klee_1170_584_90_s_c1.JPG" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen6_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen3_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen5_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+				            	<img src="/images/made/media/images/amen1_1170_584_90_s_c1.jpg" alt="" width="1170" height="584" />
+				            
+		            	</div>		
+				
+		    </div><!--PROMO AREA-->
+		    
+		    <a href=# id="prev"><img src="/media/layout/promo-previous.png" /></a> 
+		    <a href=# id="next"><img src="/media/layout/promo-next.png" /></a>
+	    </div>
+    </div> 
+    
+    <!--<div class="row-fluid booking-widget-lower">
+    	<div class="span12 horz-booking-widget">
+    		<div class="span5">
+    			<h1>Book Your Vacation Today!</h1>
+    		</div>
+    		
+    		<div class="span7">
+				<script type="text/javascript" src="http://widgets.guestdesk.com/searchBox/holidaysandssouth-horz_com/"></script>
+			</div>
+    	</div>
+    </div>--><!--HORZ BOOKING WIDGET-->
+     
+	<!-- PAGE INTRO
+	============================================== -->
+    
+    	<div class="content">
+    		<div class="span11">
+    			<h1>Area Information</h1>
+    			
+        <p>
+	Shopping, Dining, and Area Attractions are all located nearby our centrally-located properties. &nbsp;</p>
+
+    
+    		</div>
+    	
+    
+    
+    
+    <!-- PAGE BODY
+	============================================== -->
+  
+    		
+    		<!-- MAIN CONTENT
+	    	============================================== -->
+	    	
+	    		
+		    	<div class="row-fluid">
+	<div class="span12 area-information">
+		     		<h4>Shopping</h4>
+		        	
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Bargin_Beachwear_200_134_90_s_c1.jpg" class="" alt="Bargain Beachwear" width="200" height="134" /><br />		                <strong class="area-name">Bargain Beachwear</strong><br />
+		                Multiple Myrtle Beach Locations
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-3002<br />		                <a href="http://bargainbeachwear.com/" target="_blank">http://bargainbeachwear.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Barefoot_Landing_200_134_90_s_c1.jpg" class="" alt="Barefoot Landing" width="200" height="134" /><br />		                <strong class="area-name">Barefoot Landing
+</strong><br />
+		                4898 Hwy. 17 S.
+North Myrtle Beach, SC 29572<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 272-8349<br />		                <a href="http://www.bflanding.com/" target="_blank">http://www.bflanding.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Bass_Pro_Shops_200_134_90_s_c1.jpg" class="" alt="Bass Pro Shops" width="200" height="134" /><br />		                <strong class="area-name">Bass Pro Shops </strong><br />
+		                10177 North Kings Hwy.
+Myrtle Beach, SC 29572
+<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843)361-4800<br />		                <a href="http://www.basspro.com" target="_blank">http://www.basspro.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/broadway_200_134_90_s_c1.JPG" class="" alt="Broadway at the Beach" width="200" height="134" /><br />		                <strong class="area-name">Broadway at the Beach</strong><br />
+		                1325 Celebrity Circle 
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 444-3200<br />		                <a href="http://www.broadwayatthebeach.com" target="_blank">http://www.broadwayatthebeach.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/coastalgrand_200_134_90_s_c1.jpg" class="" alt="Coastal Grand Mall" width="200" height="134" /><br />		                <strong class="area-name">Coastal Grand Mall</strong><br />
+		                2000 Coastal Grand Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 839-9100<br />		                <a href="http://www.coastalgrand.com" target="_blank">http://www.coastalgrand.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/market-common-street_200_134_90_s_c1.jpg" class="" alt="Myrtle Beach Market Common" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Beach Market Common</strong><br />
+		                4017 Deville Street
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 839-3500<br />		                <a href="http://www.marketcommonmb.com" target="_blank">http://www.marketcommonmb.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Myrtle_Beach_Mall_200_134_90_s_c1.jpg" class="" alt="Myrtle Beach Mall" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Beach Mall</strong><br />
+		                10177 North Kings Highway
+Myrtle Beach, SC 29572<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 272-4040<br />		                <a href="http://www.mymallmyrtlebeach.com/" target="_blank">http://www.mymallmyrtlebeach.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Tanger_Outlet_200_134_90_s_c1.jpg" class="" alt="Tanger Outlet Center" width="200" height="134" /><br />		                <strong class="area-name">Tanger Outlet Center</strong><br />
+		                Multiple Myrtle Beach Locations
+Myrtle Beach, SC 29579<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 449-0491<br />		                <a href="http://www.tangeroutlet.com/" target="_blank">http://www.tangeroutlet.com/</a><br />		                </div>                
+		              
+				       	</div>
+</div>
+		    
+		    	<div class="row-fluid">
+	<div class="span12 area-information">
+		     		<h4>Restaurants</h4>
+		        	
+		        		<div class="card">
+		            	<img src="/images/made/media/images/angelos_new_pic_200_134_90_s_c1.jpg" class="" alt="Angelo's" width="200" height="134" /><br />		                <strong class="area-name">Angelo's</strong><br />
+		                2311 S. Kings Hwy.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-2800<br />		                <a href="http://www.angelosteakandpasta.com/" target="_blank">http://www.angelosteakandpasta.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Banditos_200_134_90_s_c1.jpg" class="" alt="Banditos" width="200" height="134" /><br />		                <strong class="area-name">Banditos</strong><br />
+		                1410 Ocean Blvd. 
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 808-9800<br />		                <a href="http://banditosmyrtlebeach.com/" target="_blank">http://banditosmyrtlebeach.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/china_chef_200_134_90_s_c1.jpg" class="" alt="China Chef Delivery" width="200" height="134" /><br />		                <strong class="area-name">China Chef Delivery
+</strong><br />
+		                1470 S. Kings Hwy.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-8886<br />		                <a href="http://www.chinachefmb.com/" target="_blank">http://www.chinachefmb.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/damon-s-grill_200_134_90_s_c1.jpg" class="" alt="Damon's Grill" width="200" height="134" /><br />		                <strong class="area-name">Damon's Grill</strong><br />
+		                2985 South Ocean Blvd.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-8000<br />		                <a href="http://www.ribsribsribs.com/" target="_blank">http://www.ribsribsribs.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Five-Guys-247x300_200_134_90_s_c1.jpg" class="" alt="Five Guys Famous Burgers & Fries" width="200" height="134" /><br />		                <strong class="area-name">Five Guys Famous Burgers & Fries
+</strong><br />
+		                1772 Pine Island Drive
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />843-839-9973<br />		                <a href="http://www.fiveguys.com/" target="_blank">http://www.fiveguys.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Gordon-Biersch-Restaurant-Myrtle-Beach_800_400_90_s_c1_200_134_90_s_c1.jpg" class="" alt="Gordon Biersch" width="200" height="134" /><br />		                <strong class="area-name">Gordon Biersch</strong><br />
+		                3060 Howard Avenue
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />843-839-0249<br />		                <a href="http://www.GordonBiersch.com/locations/myrtle-beach" target="_blank">http://www.GordonBiersch.com/locations/myrtle-beach</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Hard_Rock_Cafe_200_134_90_s_c1.jpg" class="" alt="Hard Rock Cafe" width="200" height="134" /><br />		                <strong class="area-name">Hard Rock Cafe
+</strong><br />
+		                1322 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 946-0007<br />		                <a href="http://www.hardrock.com/" target="_blank">http://www.hardrock.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/HOBlues_200_134_90_s_c1.jpg" class="" alt="House of Blues" width="200" height="134" /><br />		                <strong class="area-name">House of Blues</strong><br />
+		                4640 Hwy. 17 South
+North Myrtle Beach, SC 29582<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 272-3000<br />		                <a href="http://www.houseofblues.com/myrtlebeach" target="_blank">http://www.houseofblues.com/myrtlebeach</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Jimmy_Buffet_Margarittaville_200_134_90_s_c1.jpg" class="" alt="Jimmy Buffet's Margaritaville" width="200" height="134" /><br />		                <strong class="area-name">Jimmy Buffet's Margaritaville
+</strong><br />
+		                1114 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 448-5455<br />		                <a href="http://www.margaritavillemyrtlebeach.com/" target="_blank">http://www.margaritavillemyrtlebeach.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/King-Street-Grille-Myrtle-Beach_800_400_90_s_c1_200_134_90_s_c1.jpg" class="" alt="King Street Grille" width="200" height="134" /><br />		                <strong class="area-name">King Street Grille</strong><br />
+		                3040 Howard Avenue
+Myrtle Beach, SC<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 238-3900<br />		                <a href="http://www.thekingstreetgrille.com" target="_blank">http://www.thekingstreetgrille.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Mama_Mia_200_134_90_s_c1.jpg" class="" alt="Mama Mia Pizzeria & Ice Cream" width="200" height="134" /><br />		                <strong class="area-name">Mama Mia Pizzeria & Ice Cream
+</strong><br />
+		                2807 South Ocean Blvd.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-5200<br />		                <a href="http://mamamiapizzeriamb.com/" target="_blank">http://mamamiapizzeriamb.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/mellowmushroom_200_134_90_s_c1.jpg" class="" alt="Mellow Mushroom" width="200" height="134" /><br />		                <strong class="area-name">Mellow Mushroom</strong><br />
+		                1571 21st Avenue North
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 444-1122<br />		                <a href="http://www.mellowmushroom.com" target="_blank">http://www.mellowmushroom.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Nacho_Hippo_200_134_90_s_c1.jpg" class="" alt="Nacho Hippo Cantina Maximo" width="200" height="134" /><br />		                <strong class="area-name">Nacho Hippo Cantina Maximo
+</strong><br />
+		                1160 Farrow Pkwy.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 839-9770<br />		                <a href="http://www.nachohippo.com/" target="_blank">http://www.nachohippo.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/PF_Changs_200_134_s_c1.png" class="" alt="P.F. Chang's" width="200" height="134" /><br />		                <strong class="area-name">P.F. Chang's</strong><br />
+		                1190 Farrow Parkway
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />843-839-9470<br />		                <a href="pfchangs.com" target="_blank">pfchangs.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Senior_Frogs_200_134_90_s_c1.jpg" class="" alt="Senor Frogs" width="200" height="134" /><br />		                <strong class="area-name">Senor Frogs
+</strong><br />
+		                1304 Celebrity Cir. Unit R8
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 444-5506<br />		                <a href="http://www.senorfrogs.com/" target="_blank">http://www.senorfrogs.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Thornys_200_134_90_s_c1.jpg" class="" alt="Thorny's Steakhouse" width="200" height="134" /><br />		                <strong class="area-name">Thorny's Steakhouse</strong><br />
+		                600 S Kings Hwy
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 448-2333<br />		                <a href="http://www.thornys.com/" target="_blank">http://www.thornys.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/TupeloHoneyCafe_900_400_90_s_c1_(1)_200_134_90_s_c1.jpg" class="" alt="Tupelo Honey Cafe" width="200" height="134" /><br />		                <strong class="area-name">Tupelo Honey Cafe</strong><br />
+		                3042 Howard Avenue
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 315-3780<br />		                <a href="http://www.tupelohoneycafe.com" target="_blank">http://www.tupelohoneycafe.com</a><br />		                </div>                
+		              
+				       	</div>
+</div>
+		    
+		    	<div class="row-fluid">
+	<div class="span12 area-information">
+		     		<h4>Area Attractions</h4>
+		        	
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Alabama_Theatre_200_134_90_s_c1.jpg" class="" alt="Alabama Theatre" width="200" height="134" /><br />		                <strong class="area-name">Alabama Theatre</strong><br />
+		                4750 Hwy. 17 S.
+North Myrtle Beach, SC 29582<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(800) 342-2262<br />		                <a href="http://www.alabama-theatre.com/" target="_blank">http://www.alabama-theatre.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/BroadwayGrandPrix1_200_134_90_s_c1.jpg" class="" alt="Broadway Grand Prix" width="200" height="134" /><br />		                <strong class="area-name">Broadway Grand Prix</strong><br />
+		                1820 21st Avenue North
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843)839-4080<br />		                <a href="http://www.broadwaygrandprix.com" target="_blank">http://www.broadwaygrandprix.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Brookgreen_Gardens2_200_134_90_s_c1.jpg" class="" alt="Brookgreen Gardens" width="200" height="134" /><br />		                <strong class="area-name">Brookgreen Gardens</strong><br />
+		                1931 Brookgreen Dr.
+Murrells Inlet, SC 29576<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 235-6000<br />		                <a href="http://www.brookgreen.org/" target="_blank">http://www.brookgreen.org/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/The_Carolina_Opry_200_134_90_s_c1.jpg" class="" alt="The Carolina Opry" width="200" height="134" /><br />		                <strong class="area-name">The Carolina Opry
+</strong><br />
+		                8901 Hwy. 17
+Myrtle Beach, SC 29572<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(800) 843-6779<br />		                <a href="http://www.thecarolinaopry.com/" target="_blank">http://www.thecarolinaopry.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Childrens_Museum_200_134_90_s_c1.jpg" class="" alt="Children's Museum of SC" width="200" height="134" /><br />		                <strong class="area-name">Children's Museum of SC
+</strong><br />
+		                2501 N. Kings Hwy.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 946-9469<br />		                <a href="http://www.cmsckids.org/" target="_blank">http://www.cmsckids.org/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/familykingdom_200_134_90_s_c1.jpg" class="" alt="Family Kingdom Amusement Park" width="200" height="134" /><br />		                <strong class="area-name">Family Kingdom Amusement Park</strong><br />
+		                300 South Ocean Boulevard
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 636-3447<br />		                <a href="http://www.familykingdomfun.com/" target="_blank">http://www.familykingdomfun.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Huffman_Helicopters_200_134_90_s_c1.jpg" class="" alt="Huffman Helicopter Rides" width="200" height="134" /><br />		                <strong class="area-name">Huffman Helicopter Rides</strong><br />
+		                3000 South Kings Hwy.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843)946-0022<br />		                <a href="http://www.huffmanhelicopters.com" target="_blank">http://www.huffmanhelicopters.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Legends_In_Concert_200_134_90_s_c1.jpg" class="" alt="Legends in Concert" width="200" height="134" /><br />		                <strong class="area-name">Legends in Concert
+</strong><br />
+		                2925 Hollywood Dr.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 238-7827<br />		                <a href="http://www.legendsinconcert.com/" target="_blank">http://www.legendsinconcert.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/MagiQuest_200_134_90_s_c1.jpg" class="" alt="MagiQuest Myrtle Beach" width="200" height="134" /><br />		                <strong class="area-name">MagiQuest Myrtle Beach</strong><br />
+		                1185 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 916-1800<br />		                <a href="http://www.magiquest.com/" target="_blank">http://www.magiquest.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Medieval_Times_200_134_90_s_c1.jpg" class="" alt="Medieval Times Dinner & Tournament" width="200" height="134" /><br />		                <strong class="area-name">Medieval Times Dinner & Tournament
+</strong><br />
+		                2904 Fantasy Way
+Myrtle Beach, SC 29579<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(888) 935-6878<br />		                <a href="http://www.medievaltimes.com/myrtlebeach.aspx" target="_blank">http://www.medievaltimes.com/myrtlebeach.aspx</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/pelicans_200_134_90_s_c1.jpg" class="" alt="Myrtle Beach Pelicans" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Beach Pelicans</strong><br />
+		                1251 21st Ave. North
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 918-6000<br />		                <a href="http://www.myrtlebeachpelicans.com" target="_blank">http://www.myrtlebeachpelicans.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Myrtle_Beach_Skywheel_200_134_90_s_c1.jpg" class="" alt="Myrtle Beach Skywheel" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Beach Skywheel</strong><br />
+		                1110 N. Ocean Blvd.
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 839-9200<br />		                <a href="http://myrtlebeachskywheel.com/" target="_blank">http://myrtlebeachskywheel.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/myrtle_beach_speedway_200_134_90_s_c1.jpg" class="" alt="Myrtle Beach Speedway" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Beach Speedway
+</strong><br />
+		                455 Hospitality Lane
+Myrtle Beach, SC 29579<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(877) RACE-LAP<br />		                <a href="http://www.myrtlebeachspeedway.com/" target="_blank">http://www.myrtlebeachspeedway.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/myrtlewaves_200_134_90_s_c1.jpg" class="" alt="Myrtle Waves Waterpark" width="200" height="134" /><br />		                <strong class="area-name">Myrtle Waves Waterpark</strong><br />
+		                3000 10th Avenue North
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 918-8725<br />		                <a href="http://www.myrtlewaves.com/" target="_blank">http://www.myrtlewaves.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Palace_Theatre_200_134_90_s_c1.jpg" class="" alt="Palace Theatre" width="200" height="134" /><br />		                <strong class="area-name">Palace Theatre</strong><br />
+		                1420 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 448-9224<br />		                <a href="http://www.palacetheatremyrtlebeach.com/" target="_blank">http://www.palacetheatremyrtlebeach.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/pirates-voyage-myrtle-beach-sc_200_134_90_s_c1.jpg" class="" alt="Pirates Voyage" width="200" height="134" /><br />		                <strong class="area-name">Pirates Voyage</strong><br />
+		                8901 North Kings Hwy
+Myrtle Beach, SC 29572<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 497-9700<br />		                <a href="http://www.piratesvoyage.com" target="_blank">http://www.piratesvoyage.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Radical_Ropes_Adventure_Park_200_134_90_s_c1.jpg" class="" alt="Radical Ropes Adventure Park" width="200" height="134" /><br />		                <strong class="area-name">Radical Ropes Adventure Park</strong><br />
+		                301 19th Avenue South
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 723-4225<br />		                <a href="http://www.radicalropes.com" target="_blank">http://www.radicalropes.com</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Ripleys_Aquarium_200_134_90_s_c1.jpg" class="" alt="Ripley's Aquarium" width="200" height="134" /><br />		                <strong class="area-name">Ripley's Aquarium
+</strong><br />
+		                1110 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 916-0888<br />		                <a href="http://www.ripleyaquariums.com/myrtlebeach/" target="_blank">http://www.ripleyaquariums.com/myrtlebeach/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Wild_Water__Wheels_200_134_90_s_c1.jpg" class="" alt="Wild Water & Wheels" width="200" height="134" /><br />		                <strong class="area-name">Wild Water & Wheels
+</strong><br />
+		                910 Hwy. 17 S.
+Surfside Beach, SC 29575<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 238-3787<br />		                <a href="http://www.wild-water.com/" target="_blank">http://www.wild-water.com/</a><br />		                </div>                
+		            
+		        		<div class="card">
+		            	<img src="/images/made/media/images/Wonderworks_200_134_90_s_c1.jpg" class="" alt="WonderWorks" width="200" height="134" /><br />		                <strong class="area-name">WonderWorks
+</strong><br />
+		                1313 Celebrity Circle
+Myrtle Beach, SC 29577<br />
+		                <img src="/media/layout/phone-icon.png" width="15" class="noborder" />(843) 626-9962<br />		                <a href="http://www.wonderworksonline.com/myrtle-beach/" target="_blank">http://www.wonderworksonline.com/myrtle-beach/</a><br />		                </div>                
+		              
+				       	</div>
+</div>
+		    
+	    		<div class="clearfix"></div>
+    </div><!-- CONTENT -->
+    <!-- FOOTER SNIPPET
+	============================================== -->
+	<div class="row-fluid content">
+		
+		
+			<div class="span3 home-intro-image">
+                                 <img src="/media/images/HSSPhoto2bldgsbeach.jpg" width="220" />
+			</div><!--INTRO IMAGE-->	
+<div class="span4 prop-intro">
+                               <h1>Two Properties in One</h1>
+                               <p>Two Properties in One! From traditional hotel rooms to modern 1 &amp; 2 bedroom condominiums that feature the comfort and privacy of separate sleeping, living, and dining areas, we have the right accommodations for you.&nbsp; For many years, we have maintained the reputation as one of Myrtle Beach&#39;s favorite family vacation destinations. Our success has always been based on offering affordable rates, providing friendly, prompt customer service, and having a great selection of family amenities. Oceanfront vacations just don&#39;t get any better, so join us this year and experience a family vacation you will remember all year! We look forward to being a part of your family&#39;s vacation this year!</p>
+			</div><!--PROPERTY INTRO-->
+			
+			<div class="span5 promotions">
+				<h1>Property Highlights</h1>
+				<div class="video-container">
+					<iframe width="420" height="315" src="//www.youtube.com/embed/VWsZR-yzx5U?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+			
+	</div><!--CONTENT-->
+	
+	<div class="row fluid footer">
+		<div class="span9 footer-left">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/privacy/">Terms &amp; Privacy Policies</a></li>
+				<li><a href="/contact/">Contact Us</a></li>
+				<li class="last"><a href="/site/sitemap/">Site Map</a></li>
+			</ul>
+			<div class="clear both"></div>
+			
+			<p><strong>Reservations: 1-800-448-4439</strong></p>
+			<p>2411 South Ocean Boulevard Myrtle Beach SC 29577</p>
+			<p>2013 &copy; Holiday Sands South. All rights reserved.</p>
+		</div>
+		
+
+		<div class="span3 footer-right">
+			<p>Sign up for eDeals!</p>
+			 <form action="https://www.holidaysandssouth.com/?ACT=29" accept-charset="utf-8" name="esignup" id="esignup" method="post"><div style="display:none">
+<input type="hidden" name="params_id" value="9999758" />
+<input type="hidden" name="csrf_token" value="0f7a5b6cee47cd24d5a71f003a32685e93a0a5fc" />
+</div>
+      			<input type="text" id="email" name="email" placeholder="Enter a valid email" class="required email" />
+      			<input type="submit" name="submit" value="Submit" class="orange-button" />
+   			</form>
+			<div class="clear both"></div>
+			<p><strong>Connect With Us!</strong></p>
+                        <a target="_blank" class="doNotProcess" href="http://www.facebook.com/HolidaySandsSouth"><img src="/media/layout/facebook-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="http://twitter.com/Myrtle_Beach_SC"><img src="/media/layout/twitter-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="http://www.pinterest.com/holidaysandsso/"><img src="/media/layout/pinterest-small.png" /></a>
+    	                <a target="_blank" class="doNotProcess" href="https://www.youtube.com/channel/UCmvjxQbgoNlbFHm1OjzoTtA/videos"><img src="/media/layout/youtube-small.png" /></a>
+		</div>
+
+	</div><!--FOOTER-->
+	
+</div><!--CONTAINER-->
+
+
+
+<div id="social-media-bar">
+	<ul>
+		<li class="first"><img src="/media/layout/connect-with-us.png" /></li>
+		<li><a target="_blank" class="doNotProcess" href="http://www.facebook.com/HolidaySandsSouth"><img src="/media/layout/facebook-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="http://twitter.com/Myrtle_Beach_SC"><img src="/media/layout/twitter-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="http://www.pinterest.com/holidaysandsso/"><img src="/media/layout/pinterest-large.png" width="45" /></a></li>
+    	        <li><a target="_blank" class="doNotProcess" href="https://www.youtube.com/channel/UCmvjxQbgoNlbFHm1OjzoTtA/videos"><img src="/media/layout/youtube-large.png" width="45" /></a></li>
+    </ul>
+</div><!--SOCIAL MEDIA BAR-->
+
+
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21576624-1']);
+  _gaq.push(['_setDomainName', 'holidaysandssouth.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6007261649065';
+fb_param.value = '0.00';
+fb_param.currency = 'USD';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6007261649065&amp;value=0&amp;currency=USD" /></noscript>
+
+    
+</body>
+</html>
+
+
+
+<!---->
+
+
+    
+    
+    
+    
+
+
+
+		
+		    
+		
+		    
+		
+		    
+		

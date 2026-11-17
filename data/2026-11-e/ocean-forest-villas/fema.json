@@ -1,0 +1,69 @@
+{
+ "read": "2026-11-14T21:10:26.048429+00:00",
+ "source": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query?",
+ "center_point": [
+  {
+   "FLD_ZONE": "X",
+   "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+   "SFHA_TF": "F",
+   "STATIC_BFE": -9999.0
+  }
+ ],
+ "zones": [
+  {
+   "attributes": {
+    "FLD_ZONE": "AE",
+    "ZONE_SUBTY": null,
+    "SFHA_TF": "T",
+    "STATIC_BFE": 12.0
+   },
+   "share_of_footprint": 0.0
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "VE",
+    "ZONE_SUBTY": null,
+    "SFHA_TF": "T",
+    "STATIC_BFE": 15.0
+   },
+   "share_of_footprint": 0.0
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "X",
+    "ZONE_SUBTY": "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+    "SFHA_TF": "F",
+    "STATIC_BFE": -9999.0
+   },
+   "share_of_footprint": 0.0
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "VE",
+    "ZONE_SUBTY": null,
+    "SFHA_TF": "T",
+    "STATIC_BFE": 16.0
+   },
+   "share_of_footprint": 0.0
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "VE",
+    "ZONE_SUBTY": null,
+    "SFHA_TF": "T",
+    "STATIC_BFE": 13.0
+   },
+   "share_of_footprint": 0.0
+  },
+  {
+   "attributes": {
+    "FLD_ZONE": "X",
+    "ZONE_SUBTY": "AREA OF MINIMAL FLOOD HAZARD",
+    "SFHA_TF": "F",
+    "STATIC_BFE": -9999.0
+   },
+   "share_of_footprint": 1.0
+  }
+ ],
+ "share_in_no_polygon": 0.0
+}

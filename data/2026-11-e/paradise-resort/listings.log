@@ -1,0 +1,147 @@
+{
+ "pulled": "2026-11-14T20:07:09.961912+00:00",
+ "refreshedAt": "2026-11-14T20:00:52.784Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 12,
+ "at_2201": 12,
+ "beds": {
+  "0": 1,
+  "1": 7,
+  "2": 1,
+  "4": 3
+ },
+ "asking": {
+  "all": {
+   "median": 222352.5,
+   "min": 119500,
+   "max": 599000
+  },
+  "0": {
+   "n": 1,
+   "median": 119500,
+   "min": 119500,
+   "max": 119500,
+   "sqft_median": 421,
+   "sqft_range": [
+    421,
+    421
+   ]
+  },
+  "1": {
+   "n": 7,
+   "median": 218000,
+   "min": 179900,
+   "max": 240000,
+   "sqft_median": 629,
+   "sqft_range": [
+    607,
+    672
+   ]
+  },
+  "2": {
+   "n": 1,
+   "median": 299900,
+   "min": 299900,
+   "max": 299900,
+   "sqft_median": 1020,
+   "sqft_range": [
+    1020,
+    1020
+   ]
+  },
+  "4": {
+   "n": 3,
+   "median": 595500,
+   "min": 529000,
+   "max": 599000,
+   "sqft_median": 1802,
+   "sqft_range": [
+    1802,
+    1802
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 3,
+  "all": {
+   "n": 8,
+   "median_at_or_under": 712.5,
+   "lowest_at_or_under": 450,
+   "highest_at_or_under": 1150,
+   "middle_half": [
+    675.0,
+    750.0
+   ]
+  },
+  "zero_or_blank": 1,
+  "0": {
+   "n": 1,
+   "median_at_or_under": 450,
+   "lowest_at_or_under": 450,
+   "highest_at_or_under": 450,
+   "middle_half": null
+  },
+  "1": {
+   "n": 6,
+   "median_at_or_under": 712.5,
+   "lowest_at_or_under": 675,
+   "highest_at_or_under": 750,
+   "middle_half": null
+  },
+  "2": {
+   "n": 1,
+   "median_at_or_under": 1150,
+   "lowest_at_or_under": 1150,
+   "highest_at_or_under": 1150,
+   "middle_half": null
+  },
+  "4": {
+   "n": 0,
+   "median_at_or_under": null,
+   "lowest_at_or_under": null,
+   "highest_at_or_under": null,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 10,
+  "rentals_allowed": 10,
+  "long_term_rental_allowed": 10,
+  "vacation_rental_program": 12,
+  "has_rental_income": 12,
+  "furnished": 11,
+  "pets_allowed": 8,
+  "oceanfront_unit": 10,
+  "ocean_view": 10,
+  "oceanfront_building": 9,
+  "high_floor_unit": 10,
+  "low_floor_unit": 1,
+  "top_floor": 0,
+  "balcony": 11,
+  "parking_garage": 12,
+  "covered_parking": 12,
+  "indoor_pool": 11,
+  "sauna": 0,
+  "elevator_building": 11,
+  "flood_zone": 3,
+  "hoa_includes_trash": 11,
+  "hoa_includes_utilities": 11,
+  "hoa_includes_water_sewer": 11,
+  "hoa_includes_insurance": 11,
+  "hoa_includes_internet": 11,
+  "hoa_includes_pest": 10,
+  "hoa_includes_cable": 8,
+  "hoa_includes_electric": 10,
+  "security_service": 9
+ },
+ "year_built": {
+  "2006": 12
+ },
+ "flood_zone_field": {
+  "None": 12
+ },
+ "subdivision_field": {
+  "Paradise Resort": 12
+ }
+}

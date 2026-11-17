@@ -1,0 +1,586 @@
+{
+ "computed": "2026-11-14T20:36:25.313223+00:00",
+ "rule": "Findings for /submarkets/pawleys-island/willbrook-plantation/, from the Georgetown County GIS cache (pull_county.py, pull_buildings.py).\nCommunity (the county's own wording): every parcel whose legal description contains WILLBROOK, minus the 9 pieces of the 600-acre Highway 17 tract\n(street UNKNOWN). Parts, by legal description: MINGO (Mingo at Willbrook), OAK POINT, ALLSTON POINT, AVIAN FOREST, GREENHAVEN, TRADITION (Tradition Club at Willbrook),\nREUNION (Reunion Hall roads and lakes), else WILLBROOK (the main phases and stages). Core = WILLBROOK + OAK POINT + ALLSTON POINT (the part the MLS calls Willbrook Plantation).\nHouse = land-use code Q100 or N100 with a 2024 county building footprint whose centre is inside the parcel. Condo/townhome unit = code Q455 or N455.\nEmpty lot = Q100/N100/N000 with no building. Lot size = the parcel outline (the table's TotalLandArea is 1.0 on most lots: a placeholder). Size = largest 2024 footprint on the lot (roof outline, not heated area).\nTax status: land-use code first letter Q = legal residence (4 percent), N = other (6 percent), our reading (Pawleys Island ledger row 8).\nLast deed = the county's SalePrice and SaleDate on the parcel. A market sale = a last deed of $10,000 or more. Window = 2025-11-01 to 2026-10-31.\nGolf lot = parcel within 15 m of the Willbrook Golf Course parcel (owner FOUNDERS NATIONAL GOLF LLC, 193.7 acres, Tidewater Cir). Flood: FEMA zone (county Nature layer 9) at the lot's inside point.\nWrites findings.json, map-lots.json: counts, medians, ranges and one rounded point per lot; no TMS, owner, street number or name.\nRun: RAW=<scratch> python3 -I analyze.py <this dir>",
+ "core": {
+  "parcels": 227,
+  "houses": 189,
+  "condo_units": 1,
+  "empty_lots": 12,
+  "lot_acres": {
+   "n": 189,
+   "min": 0.189,
+   "q1": 0.519,
+   "median": 0.583,
+   "q3": 0.674,
+   "max": 1.828
+  },
+  "footprint_sqft": {
+   "n": 189,
+   "min": 2574,
+   "q1": 3693.0,
+   "median": 4207,
+   "q3": 4700.5,
+   "max": 7098
+  },
+  "legal_residence": 169,
+  "golf_lots": 138,
+  "sfha_center": 50,
+  "sfha_touch": 121,
+  "house_in_sfha": 70,
+  "bfe_values": {
+   "8.0": 14,
+   "7.0": 3,
+   "-9999.0": 33
+  },
+  "flood_zones": {
+   "X": 139,
+   "AE": 50
+  },
+  "bill_outside_sc": 13,
+  "sales_12m": {
+   "n": 8,
+   "min": 775000.0,
+   "q1": 820500.0,
+   "median": 1017500.0,
+   "q3": 1203750.0,
+   "max": 1375000.0
+  },
+  "sales_3y": {
+   "n": 18,
+   "min": 475000.0,
+   "q1": 736250.0,
+   "median": 995000.0,
+   "q3": 1171250.0,
+   "max": 1525000.0
+  },
+  "last_deed_year": {
+   "1991": 1,
+   "1993": 1,
+   "1994": 1,
+   "1995": 3,
+   "1996": 1,
+   "1997": 2,
+   "1999": 1,
+   "2000": 2,
+   "2001": 3,
+   "2002": 1,
+   "2003": 5,
+   "2004": 2,
+   "2005": 4,
+   "2006": 2,
+   "2007": 3,
+   "2008": 4,
+   "2009": 3,
+   "2010": 3,
+   "2011": 4,
+   "2012": 2,
+   "2013": 2,
+   "2014": 2,
+   "2015": 6,
+   "2016": 6,
+   "2017": 7,
+   "2018": 3,
+   "2019": 12,
+   "2020": 14,
+   "2021": 10,
+   "2022": 7,
+   "2023": 7,
+   "2024": 4,
+   "2025": 7,
+   "2026": 7
+  }
+ },
+ "parts": {
+  "ALLSTON POINT": {
+   "parcels": 18,
+   "houses": 16,
+   "condo_units": 0,
+   "empty_lots": 0,
+   "lot_acres": {
+    "n": 16,
+    "min": 0.189,
+    "q1": 0.199,
+    "median": 0.223,
+    "q3": 0.249,
+    "max": 0.367
+   },
+   "footprint_sqft": {
+    "n": 16,
+    "min": 2829,
+    "q1": 3215.25,
+    "median": 3302.5,
+    "q3": 3408.0,
+    "max": 3710
+   },
+   "legal_residence": 16,
+   "golf_lots": 2,
+   "sfha_center": 0,
+   "sfha_touch": 7,
+   "house_in_sfha": 1,
+   "bfe_values": {},
+   "flood_zones": {
+    "X": 16
+   },
+   "bill_outside_sc": 0,
+   "sales_12m": {
+    "n": 0
+   },
+   "sales_3y": {
+    "n": 2,
+    "min": 609000.0,
+    "q1": 570000.0,
+    "median": 687000.0,
+    "q3": 804000.0,
+    "max": 765000.0
+   },
+   "last_deed_year": {
+    "1995": 1,
+    "2003": 1,
+    "2004": 1,
+    "2015": 1,
+    "2019": 1,
+    "2022": 2,
+    "2023": 2,
+    "2024": 1,
+    "2025": 1,
+    "2026": 1
+   }
+  },
+  "AVIAN FOREST": {
+   "parcels": 13,
+   "houses": 0,
+   "condo_units": 0,
+   "empty_lots": 0,
+   "lot_acres": {
+    "n": 0
+   },
+   "footprint_sqft": {
+    "n": 0
+   },
+   "legal_residence": 0,
+   "golf_lots": 0,
+   "sfha_center": 0,
+   "sfha_touch": 0,
+   "house_in_sfha": 0,
+   "bfe_values": {},
+   "flood_zones": {},
+   "bill_outside_sc": 0,
+   "sales_12m": {
+    "n": 0
+   },
+   "sales_3y": {
+    "n": 0
+   },
+   "last_deed_year": {}
+  },
+  "MINGO": {
+   "parcels": 80,
+   "houses": 41,
+   "condo_units": 28,
+   "empty_lots": 0,
+   "lot_acres": {
+    "n": 41,
+    "min": 0.068,
+    "q1": 0.075,
+    "median": 0.077,
+    "q3": 0.081,
+    "max": 0.145
+   },
+   "footprint_sqft": {
+    "n": 41,
+    "min": 1434,
+    "q1": 1533.5,
+    "median": 1613,
+    "q3": 1717.5,
+    "max": 3143
+   },
+   "legal_residence": 31,
+   "golf_lots": 0,
+   "sfha_center": 0,
+   "sfha_touch": 0,
+   "house_in_sfha": 0,
+   "bfe_values": {},
+   "flood_zones": {
+    "X": 41
+   },
+   "bill_outside_sc": 4,
+   "sales_12m": {
+    "n": 4,
+    "min": 475000.0,
+    "q1": 477500.0,
+    "median": 491500.0,
+    "q3": 518250.0,
+    "max": 525000.0
+   },
+   "sales_3y": {
+    "n": 10,
+    "min": 475000.0,
+    "q1": 483750.0,
+    "median": 508000.0,
+    "q3": 527500.0,
+    "max": 535000.0
+   },
+   "last_deed_year": {
+    "2013": 2,
+    "2014": 1,
+    "2015": 2,
+    "2016": 4,
+    "2017": 4,
+    "2018": 1,
+    "2019": 2,
+    "2020": 2,
+    "2021": 3,
+    "2022": 3,
+    "2023": 2,
+    "2024": 3,
+    "2025": 4,
+    "2026": 3
+   }
+  },
+  "OAK POINT": {
+   "parcels": 10,
+   "houses": 7,
+   "condo_units": 0,
+   "empty_lots": 2,
+   "lot_acres": {
+    "n": 7,
+    "min": 0.422,
+    "q1": 0.517,
+    "median": 0.584,
+    "q3": 1.366,
+    "max": 1.828
+   },
+   "footprint_sqft": {
+    "n": 7,
+    "min": 2938,
+    "q1": 4311.0,
+    "median": 4395,
+    "q3": 4882.0,
+    "max": 5940
+   },
+   "legal_residence": 6,
+   "golf_lots": 1,
+   "sfha_center": 7,
+   "sfha_touch": 7,
+   "house_in_sfha": 7,
+   "bfe_values": {
+    "8.0": 7
+   },
+   "flood_zones": {
+    "AE": 7
+   },
+   "bill_outside_sc": 0,
+   "sales_12m": {
+    "n": 0
+   },
+   "sales_3y": {
+    "n": 1,
+    "median": 1525000.0
+   },
+   "last_deed_year": {
+    "1995": 1,
+    "2022": 2,
+    "2025": 1
+   }
+  },
+  "REUNION": {
+   "parcels": 7,
+   "houses": 0,
+   "condo_units": 0,
+   "empty_lots": 0,
+   "lot_acres": {
+    "n": 0
+   },
+   "footprint_sqft": {
+    "n": 0
+   },
+   "legal_residence": 0,
+   "golf_lots": 0,
+   "sfha_center": 0,
+   "sfha_touch": 0,
+   "house_in_sfha": 0,
+   "bfe_values": {},
+   "flood_zones": {},
+   "bill_outside_sc": 0,
+   "sales_12m": {
+    "n": 0
+   },
+   "sales_3y": {
+    "n": 0
+   },
+   "last_deed_year": {}
+  },
+  "TRADITION": {
+   "parcels": 151,
+   "houses": 135,
+   "condo_units": 0,
+   "empty_lots": 1,
+   "lot_acres": {
+    "n": 135,
+    "min": 0.163,
+    "q1": 0.219,
+    "median": 0.238,
+    "q3": 0.26,
+    "max": 0.467
+   },
+   "footprint_sqft": {
+    "n": 135,
+    "min": 1804,
+    "q1": 2621.0,
+    "median": 3079,
+    "q3": 3482.0,
+    "max": 4368
+   },
+   "legal_residence": 113,
+   "golf_lots": 0,
+   "sfha_center": 0,
+   "sfha_touch": 0,
+   "house_in_sfha": 0,
+   "bfe_values": {},
+   "flood_zones": {
+    "X": 135
+   },
+   "bill_outside_sc": 21,
+   "sales_12m": {
+    "n": 8,
+    "min": 505000.0,
+    "q1": 527500.0,
+    "median": 572000.0,
+    "q3": 598750.0,
+    "max": 750000.0
+   },
+   "sales_3y": {
+    "n": 13,
+    "min": 16000.0,
+    "q1": 530000.0,
+    "median": 559000.0,
+    "q3": 675000.0,
+    "max": 785000.0
+   },
+   "last_deed_year": {
+    "1995": 1,
+    "1996": 11,
+    "1998": 1,
+    "1999": 2,
+    "2000": 1,
+    "2002": 1,
+    "2003": 3,
+    "2004": 3,
+    "2006": 1,
+    "2007": 4,
+    "2009": 1,
+    "2010": 1,
+    "2011": 1,
+    "2012": 3,
+    "2014": 3,
+    "2015": 1,
+    "2016": 4,
+    "2017": 4,
+    "2018": 4,
+    "2019": 1,
+    "2020": 6,
+    "2021": 5,
+    "2022": 6,
+    "2023": 6,
+    "2024": 1,
+    "2025": 4,
+    "2026": 8
+   }
+  },
+  "WILLBROOK": {
+   "parcels": 199,
+   "houses": 166,
+   "condo_units": 1,
+   "empty_lots": 10,
+   "lot_acres": {
+    "n": 166,
+    "min": 0.227,
+    "q1": 0.537,
+    "median": 0.5945,
+    "q3": 0.68075,
+    "max": 1.186
+   },
+   "footprint_sqft": {
+    "n": 166,
+    "min": 2574,
+    "q1": 3786.75,
+    "median": 4245.0,
+    "q3": 4789.25,
+    "max": 7098
+   },
+   "legal_residence": 147,
+   "golf_lots": 135,
+   "sfha_center": 43,
+   "sfha_touch": 107,
+   "house_in_sfha": 62,
+   "bfe_values": {
+    "8.0": 7,
+    "7.0": 3,
+    "-9999.0": 33
+   },
+   "flood_zones": {
+    "X": 123,
+    "AE": 43
+   },
+   "bill_outside_sc": 13,
+   "sales_12m": {
+    "n": 8,
+    "min": 775000.0,
+    "q1": 820500.0,
+    "median": 1017500.0,
+    "q3": 1203750.0,
+    "max": 1375000.0
+   },
+   "sales_3y": {
+    "n": 15,
+    "min": 475000.0,
+    "q1": 775000.0,
+    "median": 1000000.0,
+    "q3": 1155000.0,
+    "max": 1375000.0
+   },
+   "last_deed_year": {
+    "1991": 1,
+    "1993": 1,
+    "1994": 1,
+    "1995": 1,
+    "1996": 1,
+    "1997": 2,
+    "1999": 1,
+    "2000": 2,
+    "2001": 3,
+    "2002": 1,
+    "2003": 4,
+    "2004": 1,
+    "2005": 4,
+    "2006": 2,
+    "2007": 3,
+    "2008": 4,
+    "2009": 3,
+    "2010": 3,
+    "2011": 4,
+    "2012": 2,
+    "2013": 2,
+    "2014": 2,
+    "2015": 5,
+    "2016": 6,
+    "2017": 7,
+    "2018": 3,
+    "2019": 11,
+    "2020": 14,
+    "2021": 10,
+    "2022": 3,
+    "2023": 5,
+    "2024": 3,
+    "2025": 5,
+    "2026": 6
+   }
+  }
+ },
+ "all": {
+  "parcels": 478,
+  "houses": 365,
+  "condo_units": 29,
+  "empty_lots": 13,
+  "lot_acres": {
+   "n": 365,
+   "min": 0.068,
+   "q1": 0.225,
+   "median": 0.329,
+   "q3": 0.5874999999999999,
+   "max": 1.828
+  },
+  "footprint_sqft": {
+   "n": 365,
+   "min": 1434,
+   "q1": 2835.0,
+   "median": 3546,
+   "q3": 4256.5,
+   "max": 7098
+  },
+  "legal_residence": 313,
+  "golf_lots": 138,
+  "sfha_center": 50,
+  "sfha_touch": 121,
+  "house_in_sfha": 70,
+  "bfe_values": {
+   "8.0": 14,
+   "7.0": 3,
+   "-9999.0": 33
+  },
+  "flood_zones": {
+   "X": 315,
+   "AE": 50
+  },
+  "bill_outside_sc": 38,
+  "sales_12m": {
+   "n": 20,
+   "min": 475000.0,
+   "q1": 521250.0,
+   "median": 597500.0,
+   "q3": 975000.0,
+   "max": 1375000.0
+  },
+  "sales_3y": {
+   "n": 41,
+   "min": 16000.0,
+   "q1": 522500.0,
+   "median": 600000.0,
+   "q3": 937500.0,
+   "max": 1525000.0
+  },
+  "last_deed_year": {
+   "1991": 1,
+   "1993": 1,
+   "1994": 1,
+   "1995": 4,
+   "1996": 12,
+   "1997": 2,
+   "1998": 1,
+   "1999": 3,
+   "2000": 3,
+   "2001": 3,
+   "2002": 2,
+   "2003": 8,
+   "2004": 5,
+   "2005": 4,
+   "2006": 3,
+   "2007": 7,
+   "2008": 4,
+   "2009": 4,
+   "2010": 4,
+   "2011": 5,
+   "2012": 5,
+   "2013": 4,
+   "2014": 6,
+   "2015": 9,
+   "2016": 14,
+   "2017": 15,
+   "2018": 8,
+   "2019": 15,
+   "2020": 22,
+   "2021": 18,
+   "2022": 16,
+   "2023": 15,
+   "2024": 8,
+   "2025": 15,
+   "2026": 18
+  }
+ },
+ "golf_acres": 248.5,
+ "golf_tract_total_acres_other_owner": null,
+ "center_core": [
+  33.48923,
+  -79.12668
+ ],
+ "core_sales_12m_list_prices_only": [
+  775000.0,
+  799000.0,
+  885000.0,
+  1005000.0,
+  1030000.0,
+  1155000.0,
+  1220000.0,
+  1375000.0
+ ]
+}

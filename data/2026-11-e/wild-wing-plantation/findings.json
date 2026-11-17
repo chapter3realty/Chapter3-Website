@@ -1,0 +1,384 @@
+{
+ "made": "2026-11-14",
+ "rule": "Findings for /submarkets/conway/wild-wing-plantation/, from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json,\nAcclaimWeb DEED (001); person names already blanked). A sale = a deed on a community parcel with a stated price over $10,000; a deed\ncovering several parcels is dropped. House = parcel with county building value over $0 and land use 101/109/106 (not 300 common land).\nGroups: \"houses\" = every section except FAIRWAYS (detached houses, The Sanctuary included); \"sanctuary\" = SANC @ WILD WING; \"fairways\" = FAIRWAYS @WILDWING (townhomes).\nSize = largest county 'Residential' footprint (layer 27, structures 2023): roof outline, not heated living area. Pool = 'Pool Inground' footprint on the lot (a floor).\nGolf lot = within 15 m of a county parcel with land use 394 (golf course) owned by FOUNDERS WILD WING LLC (PAR A and PAR V).\nLake lot = within 15 m of the Wild Wing POA's lake-and-wetland parcel (land use 300, owner WILD WING POA ASSOC INC).\nTax status: assessed/taxable 0.04 = legal residence ratio; 0.06 = other.\nWrites findings.json (counts, medians, ranges; no PIN, owner, address or deed book and page) and map-lots.json (points rounded to 4 decimals).\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "county_read": "2026-11-14T20:37:41.604727+00:00",
+ "all": {
+  "parcels": 940,
+  "houses": 852,
+  "vacant_lots": 74,
+  "lot_sqft": {
+   "n": 852,
+   "min": 1964,
+   "q1": 7163.25,
+   "median": 13948.0,
+   "q3": 19301.0,
+   "max": 125893
+  },
+  "house_footprint_sqft": {
+   "n": 522,
+   "min": 1931,
+   "q1": 3064.0,
+   "median": 3441.5,
+   "q3": 3834.0,
+   "max": 7404
+  },
+  "county_value": {
+   "n": 852,
+   "min": 207000.0,
+   "q1": 354631.5,
+   "median": 491497.5,
+   "q3": 615692.25,
+   "max": 1598023.0
+  },
+  "pools": 42,
+  "golf_lots": 189,
+  "lake_lots": 46,
+  "owner_mailing_out_of_state": 94,
+  "assessed_at_4pct_legal_residence": 664,
+  "assessed_at_6pct": 188,
+  "in_city_limits": 940,
+  "zoning": {
+   "null": 940
+  },
+  "streets": {
+   "WOOD STORK DR": 146,
+   "FAIRWAY LN": 134,
+   "SANCTUARY BLVD": 76,
+   "WHOOPING CRANE DR": 76,
+   "null": 72,
+   "WIGEON DR": 50,
+   "TEE SHOT DR": 48,
+   "SPOONBILL DR": 31,
+   "GLOSSY IBIS DR": 30,
+   "BROOK PARK PL": 29,
+   "MACCOA DR": 22,
+   "MUSCOVY PL": 20,
+   "HARDWOOD CT": 20,
+   "CLAMOUR CT": 18,
+   "WILLET CV": 18,
+   "BLACK SKIMMER DR": 17,
+   "BARRINGTON WAY": 17,
+   "POCHARD DR": 16,
+   "DOWITCHER  DR": 16,
+   "LIMPKIN DR": 14,
+   "NODDY CT": 9,
+   "GALLINULE DR": 9,
+   "STILT CT": 7,
+   "MUSKEG CT": 7,
+   "WILD WING BLVD": 6,
+   "BROOD CT": 6,
+   "BUFFLEHEAD DR": 6,
+   "WHIMBREL CT": 5,
+   "MURRELET CT": 4,
+   "GADWALL CT": 4,
+   "GREBE CT": 2,
+   "MOORHEN CT": 2,
+   "ANHINGA CT": 1,
+   "TURNSTONE DR": 1,
+   "SOUTHERN TRL": 1
+  }
+ },
+ "detached": {
+  "parcels": 756,
+  "houses": 673,
+  "vacant_lots": 74,
+  "lot_sqft": {
+   "n": 673,
+   "min": 5495,
+   "q1": 10629.5,
+   "median": 16386,
+   "q3": 21197.0,
+   "max": 125893
+  },
+  "house_footprint_sqft": {
+   "n": 522,
+   "min": 1931,
+   "q1": 3064.0,
+   "median": 3441.5,
+   "q3": 3834.0,
+   "max": 7404
+  },
+  "county_value": {
+   "n": 673,
+   "min": 239476.0,
+   "q1": 447917.5,
+   "median": 550963.0,
+   "q3": 649567.0,
+   "max": 1598023.0
+  },
+  "pools": 42,
+  "golf_lots": 189,
+  "lake_lots": 46,
+  "owner_mailing_out_of_state": 49,
+  "assessed_at_4pct_legal_residence": 578,
+  "assessed_at_6pct": 95,
+  "in_city_limits": 756,
+  "zoning": {
+   "null": 756
+  },
+  "streets": {
+   "WOOD STORK DR": 146,
+   "SANCTUARY BLVD": 76,
+   "WHOOPING CRANE DR": 76,
+   "null": 70,
+   "WIGEON DR": 50,
+   "SPOONBILL DR": 31,
+   "GLOSSY IBIS DR": 30,
+   "BROOK PARK PL": 29,
+   "MACCOA DR": 22,
+   "MUSCOVY PL": 20,
+   "HARDWOOD CT": 20,
+   "CLAMOUR CT": 18,
+   "WILLET CV": 18,
+   "BLACK SKIMMER DR": 17,
+   "BARRINGTON WAY": 17,
+   "POCHARD DR": 16,
+   "DOWITCHER  DR": 16,
+   "LIMPKIN DR": 14,
+   "NODDY CT": 9,
+   "GALLINULE DR": 9,
+   "STILT CT": 7,
+   "MUSKEG CT": 7,
+   "WILD WING BLVD": 6,
+   "BROOD CT": 6,
+   "BUFFLEHEAD DR": 6,
+   "WHIMBREL CT": 5,
+   "MURRELET CT": 4,
+   "GADWALL CT": 4,
+   "GREBE CT": 2,
+   "MOORHEN CT": 2,
+   "ANHINGA CT": 1,
+   "TURNSTONE DR": 1,
+   "SOUTHERN TRL": 1
+  }
+ },
+ "sanctuary": {
+  "parcels": 71,
+  "houses": 70,
+  "vacant_lots": 0,
+  "lot_sqft": {
+   "n": 70,
+   "min": 6999,
+   "q1": 7646.25,
+   "median": 9170.0,
+   "q3": 12029.75,
+   "max": 21514
+  },
+  "house_footprint_sqft": {
+   "n": 70,
+   "min": 2257,
+   "q1": 2605.75,
+   "median": 2931.5,
+   "q3": 3115.0,
+   "max": 3966
+  },
+  "county_value": {
+   "n": 70,
+   "min": 299886.0,
+   "q1": 345281.25,
+   "median": 376464.5,
+   "q3": 405872.75,
+   "max": 614053.0
+  },
+  "pools": 1,
+  "golf_lots": 41,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 3,
+  "assessed_at_4pct_legal_residence": 60,
+  "assessed_at_6pct": 10,
+  "in_city_limits": 71,
+  "zoning": {
+   "null": 71
+  },
+  "streets": {
+   "SANCTUARY BLVD": 53,
+   "WILLET CV": 18
+  }
+ },
+ "fairways": {
+  "parcels": 184,
+  "houses": 179,
+  "vacant_lots": 0,
+  "lot_sqft": {
+   "n": 179,
+   "min": 1964,
+   "q1": 2572.0,
+   "median": 2611,
+   "q3": 3600.0,
+   "max": 7353
+  },
+  "house_footprint_sqft": {
+   "n": 0
+  },
+  "county_value": {
+   "n": 179,
+   "min": 207000.0,
+   "q1": 228459.0,
+   "median": 244318.0,
+   "q3": 252095.0,
+   "max": 299794.0
+  },
+  "pools": 0,
+  "golf_lots": 0,
+  "lake_lots": 0,
+  "owner_mailing_out_of_state": 45,
+  "assessed_at_4pct_legal_residence": 86,
+  "assessed_at_6pct": 93,
+  "in_city_limits": 184,
+  "zoning": {
+   "null": 184
+  },
+  "streets": {
+   "FAIRWAY LN": 134,
+   "TEE SHOT DR": 48,
+   "null": 2
+  }
+ },
+ "golf_parcels": [
+  [
+   "FOUNDERS WILD WING LLC ",
+   "394",
+   "WILD WING; PAR A",
+   220.2
+  ],
+  [
+   "FOUNDERS WILD WING LLC ",
+   "394",
+   "WILD WING PLANTATION; PAR V",
+   65.2
+  ]
+ ],
+ "sections": {
+  "SANC @ WILD WING PH 2-A": 71,
+  "WILD WING PLANTATION": 355,
+  "FAIRWAYS @WILDWING PLTN": 183,
+  "FAIRWAYS @WILDWING PLNT": 1,
+  "WILD WING PH 2-B": 14,
+  "WILD WING PLNTN PH II": 101,
+  "WILD WING PLNTN PH III": 93,
+  "WILD WING PLNTN PH 2-A": 1,
+  "WILD WING PLNTN": 1,
+  "WILD WING PLANTATION PH 1B": 4,
+  "WILD WING PLANTATION PH 1": 1,
+  "WILD WING PLANTATION PH 5B": 48,
+  "WILD WING PLANTATION PH 5A": 67
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "houses_detached": {
+   "count": 42,
+   "prices": {
+    "n": 42,
+    "min": 340000.0,
+    "q1": 418750.0,
+    "median": 505000.0,
+    "q3": 621250.0,
+    "max": 975000.0
+   },
+   "by_month": {
+    "2025/11": 6,
+    "2025/12": 9,
+    "2026/01": 2,
+    "2026/02": 3,
+    "2026/03": 6,
+    "2026/04": 2,
+    "2026/06": 3,
+    "2026/07": 4,
+    "2026/08": 1,
+    "2026/09": 3,
+    "2026/10": 3
+   }
+  },
+  "houses_sanctuary": {
+   "count": 2,
+   "prices": {
+    "n": 2,
+    "min": 340000.0,
+    "q1": 331250.0,
+    "median": 357500.0,
+    "q3": 383750.0,
+    "max": 375000.0
+   },
+   "by_month": {
+    "2026/07": 2
+   }
+  },
+  "houses_fairways": {
+   "count": 22,
+   "prices": {
+    "n": 22,
+    "min": 170000.0,
+    "q1": 200000.0,
+    "median": 214450.0,
+    "q3": 224250.0,
+    "max": 241000.0
+   },
+   "by_month": {
+    "2025/11": 2,
+    "2025/12": 1,
+    "2026/01": 1,
+    "2026/02": 3,
+    "2026/03": 3,
+    "2026/05": 2,
+    "2026/06": 4,
+    "2026/07": 2,
+    "2026/09": 1,
+    "2026/10": 3
+   }
+  },
+  "houses_golf": {
+   "count": 10,
+   "prices": {
+    "n": 10,
+    "min": 340000.0,
+    "q1": 393750.0,
+    "median": 552500.0,
+    "q3": 665000.0,
+    "max": 975000.0
+   },
+   "by_month": {
+    "2025/11": 1,
+    "2026/03": 2,
+    "2026/04": 2,
+    "2026/06": 1,
+    "2026/07": 2,
+    "2026/09": 1,
+    "2026/10": 1
+   }
+  },
+  "lots_detached": {
+   "count": 14,
+   "prices": {
+    "n": 14,
+    "min": 50000.0,
+    "q1": 143750.0,
+    "median": 164000.0,
+    "q3": 219250.0,
+    "max": 975000.0
+   },
+   "by_month": {
+    "2025/11": 1,
+    "2025/12": 2,
+    "2026/01": 1,
+    "2026/04": 1,
+    "2026/05": 1,
+    "2026/06": 2,
+    "2026/07": 1,
+    "2026/08": 1,
+    "2026/09": 2,
+    "2026/10": 2
+   }
+  }
+ },
+ "center": [
+  33.79551,
+  -78.97888
+ ],
+ "center_fairways": [
+  33.78721,
+  -78.98625
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "pulled": "2026-11-14T19:35:11.094768+00:00",
+ "refreshedAt": "2026-11-14T19:31:21.806Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 7,
+ "at_prince": 7,
+ "beds": {
+  "1": 5,
+  "2": 2
+ },
+ "asking": {
+  "all": {
+   "median": 237500,
+   "min": 194500,
+   "max": 350000
+  },
+  "1": {
+   "n": 5,
+   "median": 229900,
+   "min": 194500,
+   "max": 249900,
+   "sqft_median": 740,
+   "sqft_range": [
+    522,
+    740
+   ]
+  },
+  "2": {
+   "n": 2,
+   "median": 334000.0,
+   "min": 318000,
+   "max": 350000,
+   "sqft_median": 1063.0,
+   "sqft_range": [
+    1051,
+    1075
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 2,
+  "all": {
+   "n": 5,
+   "median_at_or_under": 1000,
+   "lowest_at_or_under": 750,
+   "highest_at_or_under": 1050,
+   "middle_half": null
+  },
+  "zero_or_blank": 0,
+  "1": {
+   "n": 5,
+   "median_at_or_under": 1000,
+   "lowest_at_or_under": 750,
+   "highest_at_or_under": 1050,
+   "middle_half": null
+  },
+  "2": {
+   "n": 0,
+   "median_at_or_under": null,
+   "lowest_at_or_under": null,
+   "highest_at_or_under": null,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 7,
+  "rentals_allowed": 7,
+  "long_term_rental_allowed": 6,
+  "vacation_rental_program": 6,
+  "has_rental_income": 6,
+  "furnished": 7,
+  "pets_allowed": 0,
+  "oceanfront_unit": 3,
+  "ocean_view": 6,
+  "oceanfront_building": 4,
+  "high_floor_unit": 5,
+  "low_floor_unit": 1,
+  "top_floor": 0,
+  "balcony": 7,
+  "parking_garage": 6,
+  "covered_parking": 6,
+  "indoor_pool": 2,
+  "sauna": 0,
+  "elevator_building": 7,
+  "flood_zone": 1,
+  "hoa_includes_trash": 7,
+  "hoa_includes_utilities": 7,
+  "hoa_includes_water_sewer": 7,
+  "hoa_includes_insurance": 7,
+  "hoa_includes_internet": 7,
+  "hoa_includes_pest": 6,
+  "hoa_includes_cable": 3,
+  "hoa_includes_electric": 7,
+  "security_service": 3
+ },
+ "year_built": {
+  "2006": 5,
+  "2007": 2
+ },
+ "flood_zone_field": {
+  "None": 7
+ },
+ "subdivision_field": {
+  "Prince Resort - Phase I - Cherry Grove": 4,
+  "Prince Resort - Phase II - Cherry Grove": 3
+ }
+}

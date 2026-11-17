@@ -1,0 +1,104 @@
+{
+ "pulled": "2026-11-14T20:37:22.795621+00:00",
+ "rule": "Drive times from the middle of Willbrook Plantation (the mean of the core houses' centre points, findings.json \"center_core\") by the OSRM public router\n(driving, no traffic), plus the foot route to the beach. Beach: the 10 public accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces by OpenStreetMap Nominatim (Brookgreen Gardens, Murrells Inlet MarshWalk, Tidelands Waccamaw Community Hospital) and the airport terminal (as in the Plantation Point folder).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "start": [
+  33.48923,
+  -79.12668
+ ],
+ "drives": {
+  "Myrtle Beach International Airport terminal": {
+   "minutes": 36.8,
+   "miles": 23.05,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-78.922789,33.681467?overview=false"
+  },
+  "Brookgreen Gardens": {
+   "minutes": 17.0,
+   "miles": 6.39,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.0921611,33.5211073?overview=false"
+  },
+  "Murrells Inlet MarshWalk": {
+   "minutes": 18.1,
+   "miles": 9.37,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.0318225,33.5578779?overview=false"
+  },
+  "Tidelands Waccamaw Community Hospital": {
+   "minutes": 17.0,
+   "miles": 8.74,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.0433811,33.5605964?overview=false"
+  },
+  "Willbrook Plantation Golf Club clubhouse (Nominatim point)": {
+   "minutes": 5.9,
+   "miles": 1.79,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.1168333,33.4951539?overview=false"
+  },
+  "Willbrook Boulevard at US 17 (entrance)": {
+   "minutes": 6.7,
+   "miles": 2.49,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.0968,33.4855?overview=false"
+  },
+  "nearest public beach access": {
+   "minutes": 8.8,
+   "miles": 4.03,
+   "url": "https://router.project-osrm.org/route/v1/driving/-79.12668,33.48923;-79.0972705301801,33.46837256892079?overview=false",
+   "name": "LITCHFIELD BEACH 7",
+   "admin": "GEORGETOWN COUNTY"
+  },
+  "beach accesses routed": [
+   [
+    "LITCHFIELD BEACH 7",
+    8.8,
+    4.03
+   ],
+   [
+    "LITCHFIELD BEACH 6",
+    8.9,
+    4.07
+   ],
+   [
+    "LITCHFIELD BEACH 5",
+    9.0,
+    4.14
+   ],
+   [
+    "LITCHFIELD BEACH 4",
+    9.2,
+    4.22
+   ],
+   [
+    "LITCHFIELD BEACH 3",
+    9.4,
+    4.29
+   ],
+   [
+    "LITCHFIELD BEACH 2",
+    9.6,
+    4.37
+   ],
+   [
+    "LITCHFIELD BEACH 1",
+    9.7,
+    4.41
+   ],
+   [
+    "LITCHFIELD BEACH 8",
+    11.0,
+    4.03
+   ],
+   [
+    "LITCHFIELD BEACH 9",
+    10.5,
+    3.9
+   ],
+   [
+    "LITCHFIELD BEACH 10",
+    10.3,
+    3.83
+   ]
+  ],
+  "walk to that access": {
+   "minutes": 80.3,
+   "miles": 3.74,
+   "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-79.12668,33.48923;-79.0972705301801,33.46837256892079?overview=false"
+  }
+ }
+}

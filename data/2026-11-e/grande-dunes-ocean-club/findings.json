@@ -1,0 +1,112 @@
+{
+ "made": "2026-11-15",
+ "rule": "Findings for /submarkets/myrtle-beach/grande-dunes/ from the parcels whose county legal description names GRANDE DUNES (raw/gd-parcels.json),\nthe county Municipalities layer, FEMA's NFHL and the county deed index (SALES = deeds-co.json, AcclaimWeb DEED 2025-11-01..2026-10-31, names blanked).\nHome = parcel with land use 101, 109 or 126 and a county building value over $0. Counts, medians, ranges only; no PIN, owner, address, deed book or page.\nTax: AssessedProp / TaxableProp = 0.04 is the legal-residence ratio, 0.06 every other home. Sale = a deed on such a parcel, price over $10,000, one parcel per deed.\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>",
+ "parcels_named_grande_dunes": 1118,
+ "homes": 633,
+ "homes_by_use": {
+  "101": 433,
+  "109": 125,
+  "126": 75
+ },
+ "empty_lots_101_109_126": 147,
+ "county_value": {
+  "n": 633,
+  "median": 582829.0,
+  "min": 267793.0,
+  "max": 5393009.0,
+  "q1": 365643.0,
+  "q3": 1059819.0
+ },
+ "assessed_at_4pct_legal_residence": 392,
+ "assessed_at_6pct": 241,
+ "owner_mailing_out_of_state": 149,
+ "town": {
+  "MYRTLE BEACH": 246,
+  "NORTH MYRTLE BEACH": 387
+ },
+ "tax_district": {
+  "880": 198,
+  "550": 385,
+  "882": 48,
+  "500": 2
+ },
+ "town_by_tax_district": {
+  "500": {
+   "NORTH MYRTLE BEACH": 2
+  },
+  "550": {
+   "NORTH MYRTLE BEACH": 385
+  },
+  "880": {
+   "MYRTLE BEACH": 198
+  },
+  "882": {
+   "MYRTLE BEACH": 48
+  }
+ },
+ "flood_zone_at_inside_point": {
+  "X": 633
+ },
+ "homes_touching_high_risk": 39,
+ "fema_zones_in_frame": {
+  "AE": 20,
+  "VE": 3,
+  "X": 8
+ },
+ "sections": {
+  "GRANDE DUNES THE VLGS": 96,
+  "GRANDE DUNES NORTH PH 3": 85,
+  "GRANDE DUNES N PH 11A": 76,
+  "GRANDE DUNES N PH 2": 54,
+  "VILLAGE @ GRANDE DUNES": 38,
+  "GRANDE DUNES BAL HARBOR": 38,
+  "GRANDE DUNES N PH 10A": 35,
+  "GRANDE DUNES N PH 10B": 29,
+  "GRANDE DUNES N PH 9A": 28,
+  "GRANDE DUNES N PH 11B": 26,
+  "VILLA VENEZIA @ GRANDE DUNES": 25,
+  "SUBDIVISION E/S GRANDE DUNES BLVD": 25,
+  "PROMENADE GRANDE DUNES": 23,
+  "GRANDE DUNES NORTH PH 1": 22,
+  "GRANDE DUNES N PH 3": 18,
+  "GRANDE DUNES N PH 9B": 14,
+  "SEVILLE @ GRANDE DUNES": 1
+ },
+ "center": [
+  33.78041,
+  -78.80236
+ ],
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "all": {
+   "n": 127,
+   "median": 533625.0,
+   "min": 299990.0,
+   "max": 1845000.0,
+   "q1": 354660.0,
+   "q3": 660330.0
+  },
+  "by_town": {
+   "NORTH MYRTLE BEACH": {
+    "n": 79,
+    "median": 365000.0,
+    "min": 299990.0,
+    "max": 714090.0,
+    "q1": 342500.0,
+    "q3": 455585.0
+   },
+   "MYRTLE BEACH": {
+    "n": 48,
+    "median": 678500.0,
+    "min": 530000.0,
+    "max": 1845000.0,
+    "q1": 615000.0,
+    "q3": 875000.0
+   }
+  },
+  "multi_parcel_deeds_dropped": 0
+ }
+}

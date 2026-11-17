@@ -1,0 +1,165 @@
+{
+ "pulled": "2026-11-14T19:47:46.606558+00:00",
+ "refreshedAt": "2026-11-14T19:40:52.285Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 47,
+ "at_caravelle": 47,
+ "tower_6900_vs_7000": {
+  "tower_subdivision_pins": 6,
+  "resort_subdivision_pins": 41
+ },
+ "by_building": {
+  "resort": {
+   "n": 41,
+   "beds": {
+    "1": 29,
+    "0": 12
+   },
+   "asking": {
+    "median": 144900,
+    "min": 114999,
+    "max": 214000
+   },
+   "sqft_range": [
+    350,
+    627
+   ]
+  },
+  "tower": {
+   "n": 6,
+   "beds": {
+    "1": 4,
+    "0": 2
+   },
+   "asking": {
+    "median": 117950.0,
+    "min": 95000,
+    "max": 135000
+   },
+   "sqft_range": [
+    386,
+    681
+   ]
+  }
+ },
+ "beds": {
+  "0": 14,
+  "1": 33
+ },
+ "asking": {
+  "all": {
+   "median": 135000,
+   "min": 95000,
+   "max": 214000
+  },
+  "0": {
+   "n": 14,
+   "median": 122000.0,
+   "min": 95000,
+   "max": 167000,
+   "sqft_median": 449.5,
+   "sqft_range": [
+    350,
+    575
+   ]
+  },
+  "1": {
+   "n": 33,
+   "median": 145000,
+   "min": 105000,
+   "max": 214000,
+   "sqft_median": 519,
+   "sqft_range": [
+    501,
+    681
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 47,
+   "median_at_or_under": 750,
+   "lowest_at_or_under": 600,
+   "highest_at_or_under": 950,
+   "middle_half": [
+    700.0,
+    900.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 14,
+   "median_at_or_under": 675.0,
+   "lowest_at_or_under": 600,
+   "highest_at_or_under": 900,
+   "middle_half": [
+    650.0,
+    718.75
+   ]
+  },
+  "1": {
+   "n": 33,
+   "median_at_or_under": 750,
+   "lowest_at_or_under": 650,
+   "highest_at_or_under": 950,
+   "middle_half": [
+    750.0,
+    900.0
+   ]
+  }
+ },
+ "flags": {
+  "lazy_river": 18,
+  "outdoor_pool": 44,
+  "lock_out": 0,
+  "walk_to_beach": 47,
+  "elevator": 45,
+  "water_ocean": 44,
+  "str_allowed": 43,
+  "rentals_allowed": 43,
+  "long_term_rental_allowed": 40,
+  "vacation_rental_program": 46,
+  "has_rental_income": 46,
+  "furnished": 47,
+  "pets_allowed": 8,
+  "oceanfront_unit": 18,
+  "ocean_view": 47,
+  "oceanfront_building": 41,
+  "high_floor_unit": 38,
+  "low_floor_unit": 8,
+  "top_floor": 2,
+  "balcony": 45,
+  "parking_garage": 37,
+  "covered_parking": 41,
+  "indoor_pool": 44,
+  "sauna": 0,
+  "elevator_building": 45,
+  "flood_zone": 10,
+  "hoa_includes_trash": 46,
+  "hoa_includes_utilities": 47,
+  "hoa_includes_water_sewer": 47,
+  "hoa_includes_insurance": 44,
+  "hoa_includes_internet": 40,
+  "hoa_includes_pest": 39,
+  "hoa_includes_cable": 24,
+  "hoa_includes_electric": 40,
+  "security_service": 22
+ },
+ "year_built": {
+  "1960": 35,
+  "1982": 8,
+  "1992": 1,
+  "2006": 1,
+  "1985": 1,
+  "1984": 1
+ },
+ "flood_zone_field": {
+  "None": 47
+ },
+ "subdivision_field": {
+  "Caravelle Resort": 41,
+  "Caravelle Tower": 6
+ }
+}

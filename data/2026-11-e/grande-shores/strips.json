@@ -1,0 +1,47 @@
+{
+ "read": "2026-11-14T19:31:01.841073+00:00",
+ "strips": [
+  {
+   "title_idea": "Grande Shores condos for sale",
+   "search": "subdivision=Grande+Shores",
+   "ok": true,
+   "total": 10,
+   "link": "/homes/?subdivision=Grande+Shores"
+  },
+  {
+   "title_idea": "Grande Shores, two bedrooms and up",
+   "search": "subdivision=Grande+Shores&beds=2",
+   "ok": true,
+   "total": 6,
+   "link": "/homes/?beds=2&subdivision=Grande+Shores"
+  },
+  {
+   "title_idea": "Grande Shores, three bedrooms",
+   "search": "subdivision=Grande+Shores&beds=3",
+   "ok": true,
+   "total": 3,
+   "link": "/homes/?beds=3&subdivision=Grande+Shores"
+  },
+  {
+   "title_idea": "Grande Shores for $160,000 or less",
+   "search": "subdivision=Grande+Shores&max=160000",
+   "ok": true,
+   "total": 4,
+   "link": "/homes/?max=160000&subdivision=Grande+Shores"
+  },
+  {
+   "title_idea": "Oceanfront condos within a mile",
+   "search": "type=condo&near=33.7438,-78.8142&miles=1&has=water_ocean",
+   "ok": true,
+   "total": 199,
+   "link": "/homes/?type=condo&near=33.743800%2C-78.814200&miles=1&has=water_ocean"
+  },
+  {
+   "title_idea": "Condos with a lazy river within a mile",
+   "search": "type=condo&near=33.7438,-78.8142&miles=1&has=lazy_river",
+   "ok": true,
+   "total": 94,
+   "link": "/homes/?type=condo&near=33.743800%2C-78.814200&miles=1&has=lazy_river"
+  }
+ ]
+}

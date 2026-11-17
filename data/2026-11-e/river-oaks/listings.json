@@ -1,0 +1,470 @@
+{
+ "pulled": "2026-11-14T21:27:39.436340+00:00",
+ "refreshedAt": "2026-11-14T21:20:42.310Z",
+ "rule": "Homes for sale now in River Oaks (Carolina Forest), in aggregate, from the site public map API (https://chapter3realty.com/homes/api/map, CCMLS) and the\npublic listing card (/homes/api/lookup). A home counts when its map point is inside the community outline (county parcels of pull_county.py, buffered 60 m)\nand its MLS subdivision name is one of: RIVER OAKS CONDOS, The Fairways At River Oaks, Landing at River Oaks, Oakmont at River Oaks, River Oaks Cottages.\n(River Oaks Estates, Pawleys Island, is another place and is left out by its city. One RIVER OAKS CONDOS listing, on White River Dr, has a map point at 33.689,-78.887, outside the outline; the street is in River Oaks, so it is kept.)\nKept: counts, list-price median and range, beds, size, year built, the card's monthly HOA fee (counts of listings with a fee and its range), tax if the card has it.\nNo MLS number, address, firm or photo is kept. Run: RAW=<scratch> python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "groups": {
+  "Landing at River Oaks": {
+   "for_sale": 9,
+   "types": [
+    "Detached"
+   ],
+   "list_price": {
+    "median": 492390,
+    "min": 419660,
+    "max": 548490,
+    "q1": 462832.5,
+    "q3": 505595.0
+   },
+   "year_built": [
+    2026,
+    2026
+   ],
+   "sqft": {
+    "median": 2351,
+    "min": 1590,
+    "max": 3273
+   },
+   "beds": {
+    "3": 4,
+    "4": 4,
+    "5": 1
+   },
+   "hoa_monthly_listed_n": 0,
+   "hoa_monthly": [],
+   "tax_annual_listed": [],
+   "new_construction": 0,
+   "waterfront": 6
+  },
+  "Oakmont at River Oaks": {
+   "for_sale": 1,
+   "types": [
+    "Detached"
+   ],
+   "list_price": {
+    "median": 329999,
+    "min": 329999,
+    "max": 329999,
+    "q1": null,
+    "q3": null
+   },
+   "year_built": [
+    1996,
+    1996
+   ],
+   "sqft": {
+    "median": 1950,
+    "min": 1950,
+    "max": 1950
+   },
+   "beds": {
+    "3": 1
+   },
+   "hoa_monthly_listed_n": 0,
+   "hoa_monthly": [],
+   "tax_annual_listed": [],
+   "new_construction": 0,
+   "waterfront": 0
+  },
+  "RIVER OAKS CONDOS": {
+   "for_sale": 30,
+   "types": [
+    "Condominium"
+   ],
+   "list_price": {
+    "median": 149950.0,
+    "min": 109900,
+    "max": 189000,
+    "q1": 136175.0,
+    "q3": 168846.25
+   },
+   "year_built": [
+    1994,
+    1999
+   ],
+   "sqft": {
+    "median": 894.0,
+    "min": 594,
+    "max": 1040
+   },
+   "beds": {
+    "1": 7,
+    "2": 23
+   },
+   "hoa_monthly_listed_n": 0,
+   "hoa_monthly": [],
+   "tax_annual_listed": [],
+   "new_construction": 0,
+   "waterfront": 2
+  },
+  "River Oaks Cottages": {
+   "for_sale": 1,
+   "types": [
+    "Detached"
+   ],
+   "list_price": {
+    "median": 279999,
+    "min": 279999,
+    "max": 279999,
+    "q1": null,
+    "q3": null
+   },
+   "year_built": [
+    2012,
+    2012
+   ],
+   "sqft": {
+    "median": 1288,
+    "min": 1288,
+    "max": 1288
+   },
+   "beds": {
+    "3": 1
+   },
+   "hoa_monthly_listed_n": 0,
+   "hoa_monthly": [],
+   "tax_annual_listed": [],
+   "new_construction": 0,
+   "waterfront": 0
+  },
+  "The Fairways At River Oaks": {
+   "for_sale": 7,
+   "types": [
+    "Condominium"
+   ],
+   "list_price": {
+    "median": 159900,
+    "min": 139900,
+    "max": 189000,
+    "q1": 147500.0,
+    "q3": 174900.0
+   },
+   "year_built": [
+    1999,
+    2004
+   ],
+   "sqft": {
+    "median": 1312,
+    "min": 606,
+    "max": 1312
+   },
+   "beds": {
+    "1": 1,
+    "2": 2,
+    "3": 4
+   },
+   "hoa_monthly_listed_n": 0,
+   "hoa_monthly": [],
+   "tax_annual_listed": [],
+   "new_construction": 0,
+   "waterfront": 0
+  }
+ },
+ "all": {
+  "for_sale": 48,
+  "types": [
+   "Condominium",
+   "Detached"
+  ],
+  "list_price": {
+   "median": 159000.0,
+   "min": 109900,
+   "max": 548490,
+   "q1": 146300.0,
+   "q3": 189000.0
+  },
+  "year_built": [
+   1994,
+   2026
+  ],
+  "sqft": {
+   "median": 894.0,
+   "min": 594,
+   "max": 3273
+  },
+  "beds": {
+   "1": 8,
+   "2": 25,
+   "3": 10,
+   "4": 4,
+   "5": 1
+  },
+  "hoa_monthly_listed_n": 0,
+  "hoa_monthly": [],
+  "tax_annual_listed": [],
+  "new_construction": 0,
+  "waterfront": 8
+ },
+ "condos": {
+  "for_sale": 37,
+  "types": [
+   "Condominium"
+  ],
+  "list_price": {
+   "median": 150000,
+   "min": 109900,
+   "max": 189000,
+   "q1": 139950.0,
+   "q3": 169000.0
+  },
+  "year_built": [
+   1994,
+   2004
+  ],
+  "sqft": {
+   "median": 894,
+   "min": 594,
+   "max": 1312
+  },
+  "beds": {
+   "1": 8,
+   "2": 25,
+   "3": 4
+  },
+  "hoa_monthly_listed_n": 0,
+  "hoa_monthly": [],
+  "tax_annual_listed": [],
+  "new_construction": 0,
+  "waterfront": 2
+ },
+ "houses": {
+  "for_sale": 11,
+  "types": [
+   "Detached"
+  ],
+  "list_price": {
+   "median": 487245,
+   "min": 279999,
+   "max": 548490,
+   "q1": 419660.0,
+   "q3": 501855.0
+  },
+  "year_built": [
+   1996,
+   2026
+  ],
+  "sqft": {
+   "median": 2351,
+   "min": 1288,
+   "max": 3273
+  },
+  "beds": {
+   "3": 6,
+   "4": 4,
+   "5": 1
+  },
+  "hoa_monthly_listed_n": 0,
+  "hoa_monthly": [],
+  "tax_annual_listed": [],
+  "new_construction": 0,
+  "waterfront": 6
+ },
+ "fee_exact": {
+  "read": "2026-11-14T21:28:51.387087+00:00",
+  "groups": {
+   "Oakmont at River Oaks": {
+    "n": 1,
+    "lowest": 0,
+    "highest": 0,
+    "says_no_hoa": 1
+   },
+   "Landing at River Oaks": {
+    "n": 9,
+    "lowest": 80,
+    "highest": 81,
+    "says_no_hoa": 0
+   },
+   "RIVER OAKS CONDOS": {
+    "n": 30,
+    "lowest": 330,
+    "highest": 455,
+    "says_no_hoa": 0
+   },
+   "River Oaks Cottages": {
+    "n": 1,
+    "lowest": 34,
+    "highest": 34,
+    "says_no_hoa": 0
+   },
+   "The Fairways At River Oaks": {
+    "n": 7,
+    "lowest": 368,
+    "highest": 425,
+    "says_no_hoa": 0
+   },
+   "condos (River Oaks Condos + Fairways)": {
+    "n": 37,
+    "lowest": 330,
+    "highest": 455,
+    "says_no_hoa": 0
+   }
+  },
+  "calls": [
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=124",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=61",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=30",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=14",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=6",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=2",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=124",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=61",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=30",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=14",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=6",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=2",
+   "https://chapter3realty.com/homes/api/map?subdivision=Oakmont&hoaMax=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=124",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=61",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=92",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=76",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=84",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=80",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=78",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=79",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=1039",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=559",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=319",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=199",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=139",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=109",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=94",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=86",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=82",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=80",
+   "https://chapter3realty.com/homes/api/map?subdivision=Landing+at+River+Oaks&hoaMax=81",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=374",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=311",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=342",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=326",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=334",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=330",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=328",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=329",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=1164",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=746",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=537",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=433",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=485",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=459",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=446",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=452",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=455",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=453",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=454",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=124",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=61",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=30",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=45",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=37",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=33",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=35",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=34",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=1016",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=524",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=278",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=155",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=94",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=63",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=48",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=40",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=36",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Cottages&hoaMax=34",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=374",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=311",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=342",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=358",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=366",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=370",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=368",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=367",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=1183",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=775",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=571",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=469",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=418",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=443",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=430",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=424",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=427",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=425",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks&hoa=0",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=2000",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=999",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=499",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=249",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=374",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=374",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=311",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=311",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=342",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=342",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=326",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=326",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=334",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=334",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=330",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=330",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=328",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=328",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=329",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=329",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=1164",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=1164",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=746",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=746",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=537",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=537",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=433",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=433",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=485",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=485",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=459",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=459",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=446",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=446",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=452",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=452",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=455",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=455",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=453",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=453",
+   "https://chapter3realty.com/homes/api/map?subdivision=River+Oaks+Condos&hoaMax=454",
+   "https://chapter3realty.com/homes/api/map?subdivision=Fairways+At+River+Oaks&hoaMax=454"
+  ]
+ }
+}

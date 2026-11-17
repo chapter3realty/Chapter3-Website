@@ -1,0 +1,112 @@
+{
+ "pulled": "2026-11-14T19:49:39.329871+00:00",
+ "refreshedAt": "2026-11-14T19:40:52.285Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 15,
+ "at_1605": 15,
+ "beds": {
+  "1": 8,
+  "2": 7
+ },
+ "asking": {
+  "all": {
+   "median": 219000,
+   "min": 163900,
+   "max": 359900
+  },
+  "1": {
+   "n": 8,
+   "median": 187450.0,
+   "min": 163900,
+   "max": 219000,
+   "sqft_median": 681.5,
+   "sqft_range": [
+    652,
+    711
+   ]
+  },
+  "2": {
+   "n": 7,
+   "median": 309900,
+   "min": 269000,
+   "max": 359900,
+   "sqft_median": 1002,
+   "sqft_range": [
+    995,
+    1100
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 15,
+   "median_at_or_under": 1000,
+   "lowest_at_or_under": 875,
+   "highest_at_or_under": 1450,
+   "middle_half": [
+    900.0,
+    1350.0
+   ]
+  },
+  "zero_or_blank": 0,
+  "1": {
+   "n": 8,
+   "median_at_or_under": 950.0,
+   "lowest_at_or_under": 875,
+   "highest_at_or_under": 1000,
+   "middle_half": [
+    900.0,
+    1000.0
+   ]
+  },
+  "2": {
+   "n": 7,
+   "median_at_or_under": 1350,
+   "lowest_at_or_under": 1350,
+   "highest_at_or_under": 1450,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 13,
+  "rentals_allowed": 13,
+  "long_term_rental_allowed": 12,
+  "vacation_rental_program": 13,
+  "has_rental_income": 13,
+  "furnished": 15,
+  "pets_allowed": 2,
+  "oceanfront_unit": 7,
+  "ocean_view": 13,
+  "oceanfront_building": 13,
+  "high_floor_unit": 12,
+  "low_floor_unit": 2,
+  "top_floor": 0,
+  "balcony": 12,
+  "parking_garage": 12,
+  "covered_parking": 15,
+  "indoor_pool": 13,
+  "sauna": 0,
+  "elevator_building": 12,
+  "flood_zone": 4,
+  "hoa_includes_trash": 13,
+  "hoa_includes_utilities": 13,
+  "hoa_includes_water_sewer": 12,
+  "hoa_includes_insurance": 12,
+  "hoa_includes_internet": 12,
+  "hoa_includes_pest": 10,
+  "hoa_includes_cable": 6,
+  "hoa_includes_electric": 12,
+  "security_service": 5
+ },
+ "year_built": {
+  "2007": 15
+ },
+ "flood_zone_field": {
+  "None": 15
+ },
+ "subdivision_field": {
+  "Holiday Sands": 15
+ }
+}

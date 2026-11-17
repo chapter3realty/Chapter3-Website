@@ -1,0 +1,19 @@
+nty GIS layer 24 (AssessedProp, TaxableProp, MarketProp).\nKept: for units taxed at the 6 percent rate, the count and the median and quartiles of TaxableProp and of MarketProp, and the\nimplied yearly tax (AssessedProp, which is 6 percent of TaxableProp, x 254.6 / 1000, before any credit or fee on the bill). No unit's own record.\nRun: python3 -I pull_tax.py <this dir>. Writes tax.json.",
+ "units_at_6pct": 138,
+ "taxable_value": {
+  "median": 123107.5,
+  "p25": 97750.0,
+  "p75": 165268.75
+ },
+ "market_value": {
+  "median": 199500.0,
+  "p25": 172900.0,
+  "p75": 215000.0
+ },
+ "implied_tax_city_millage": {
+  "median": 1881,
+  "p25": 1495,
+  "p75": 2524
+ },
+ "taxable_below_market_share": 0.761
+}

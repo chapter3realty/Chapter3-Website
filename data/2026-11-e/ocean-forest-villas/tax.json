@@ -1,0 +1,35 @@
+{
+ "read": "2026-11-14T21:10:33.454660+00:00",
+ "rule": "Ocean Forest Villas: the county's taxable assessment per unit, in aggregate, and the tax it implies at the 2026 City of Myrtle Beach\nmillage (254.6 mills; ledger CON row 21). Units chosen as in pull_county.py. Source: Horry County GIS layer 24 (AssessedProp, TaxableProp, MarketProp).\nKept: for units taxed at the 6 percent rate, the count and the median and quartiles of TaxableProp and of MarketProp, and the\nimplied yearly tax (AssessedProp, which is 6 percent of TaxableProp, x 254.6 / 1000, before any credit or fee on the bill). No unit's own record.\nRun: python3 -I pull_tax.py <this dir>. Writes tax.json.",
+ "units_at_6pct": 221,
+ "taxable_value": {
+  "median": 172500.0,
+  "p25": 155250.0,
+  "p75": 317500.0
+ },
+ "market_value": {
+  "median": 324000.0,
+  "p25": 324000.0,
+  "p75": 345000.0
+ },
+ "implied_tax_city_millage": {
+  "median": 2635,
+  "p25": 2373,
+  "p75": 4850
+ },
+ "by_county_value_group_n5_plus": {
+  "324000": {
+   "n": 147,
+   "implied_tax_median": 2373,
+   "lowest": 2243,
+   "highest": 4949
+  },
+  "370000": {
+   "n": 48,
+   "implied_tax_median": 2986,
+   "lowest": 2444,
+   "highest": 5652
+  }
+ },
+ "taxable_below_market_share": 0.769
+}

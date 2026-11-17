@@ -1,0 +1,33 @@
+{
+ "read": "2026-11-14",
+ "fema_source": "https://hazards.fema.gov/arcgis/rest/services/public/NFHL/MapServer/28/query",
+ "fema_nfhl": {
+  "lots_by_zone_at_inside_point": {
+   "X": 172,
+   "AE": 16
+  },
+  "lots_touching_high_risk": 38,
+  "polygons": {
+   "AE bfe=-9999.0": 7,
+   "X bfe=-9999.0": 6
+  }
+ },
+ "fema_subtypes": {
+  "('AE', None, '45051C')": 6,
+  "('AE', 'FLOODWAY', '45051C')": 1,
+  "('X', '0.2 PCT ANNUAL CHANCE FLOOD HAZARD', '45051C')": 5,
+  "('X', 'AREA OF MINIMAL FLOOD HAZARD', '45051C')": 1
+ },
+ "county_layer19": {
+  "lots_by_zone_at_inside_point": {
+   "X (outside mapped hazard areas)": 145,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": 27,
+   "AE": 16
+  },
+  "lots_touching_high_risk": 38,
+  "polygons": {
+   "AE bfe=-9999.0": 8,
+   "0.2 PCT ANNUAL CHANCE FLOOD HAZARD bfe=-9999.0": 4
+  }
+ }
+}

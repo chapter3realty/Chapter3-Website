@@ -1,0 +1,156 @@
+{
+ "read": "2026-11-14T21:09:50.981053+00:00",
+ "source": "https://www.horrycounty.org/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query?",
+ "rule": "Ocean Forest Villas (5601 N Ocean Blvd) in Horry County's public records, in aggregate.\nThe county files the five buildings (A to E, units numbered by floor and door) under the old names \"A PLACE AT THE BEACH\" and \"OCEAN FOREST\"\n(not the MLS name, and not the separate Shore Dr community \"A Place at the Beach\"). Parcels are therefore chosen by place AND name:\nGIS layer 24, envelope lat 33.7278 to 33.7310, lon -78.8375 to -78.8325, LegalDescr starting \"A PLACE AT TH\", \"A PLACE AT BCH\", \"PLACE AT B\" or \"OCEAN FOREST;\",\nland use starting 1. Building letter = the A-E in the legal description. Kept: units per building, county value groups (counts), last-deed year (counts),\nowner mailing state (counts), units taxed at the 4 percent owner-occupant rate. Never kept: a PIN, an owner, a unit's own record.\nSales: deed index rows (data/2026-11-n/buyers-builders/raw/deeds-co.json, 2025-11-01 to 2026-10-31) whose Comments hold \"PLACE AT\" and \"OCEAN FOREST\" but not \"PLAZA\", consideration over $1,000.\nRun: python3 -I pull_county.py <this dir> <website root>. Writes county.json.",
+ "units": 241,
+ "common_area_or_unlettered_parcels": 0,
+ "units_per_building": {
+  "A": 54,
+  "B": 48,
+  "C": 43,
+  "D": 48,
+  "E": 48
+ },
+ "county_market_value_groups": [
+  [
+   324000.0,
+   162
+  ],
+  [
+   370000.0,
+   50
+  ],
+  [
+   340000.0,
+   5
+  ],
+  [
+   285000.0,
+   3
+  ],
+  [
+   337500.0,
+   3
+  ],
+  [
+   390000.0,
+   3
+  ]
+ ],
+ "last_sale_year": {
+  "1987": 2,
+  "1989": 2,
+  "1991": 1,
+  "1992": 2,
+  "1994": 2,
+  "1995": 1,
+  "1997": 1,
+  "1998": 2,
+  "1999": 2,
+  "2000": 4,
+  "2001": 2,
+  "2003": 2,
+  "2004": 2,
+  "2006": 5,
+  "2008": 3,
+  "2009": 3,
+  "2010": 1,
+  "2011": 5,
+  "2012": 1,
+  "2013": 5,
+  "2014": 3,
+  "2015": 10,
+  "2016": 9,
+  "2017": 9,
+  "2018": 11,
+  "2019": 16,
+  "2020": 20,
+  "2021": 11,
+  "2022": 15,
+  "2023": 21,
+  "2024": 25,
+  "2025": 19,
+  "2026": 20,
+  "None": 4
+ },
+ "owner_state_top": [
+  [
+   "SC",
+   64
+  ],
+  [
+   "NC",
+   50
+  ],
+  [
+   "PA",
+   19
+  ],
+  [
+   "OH",
+   18
+  ],
+  [
+   "NY",
+   14
+  ],
+  [
+   "NJ",
+   12
+  ],
+  [
+   "VA",
+   10
+  ],
+  [
+   "CT",
+   6
+  ]
+ ],
+ "owner_out_of_sc": 177,
+ "taxed_as_home_4pct": 20,
+ "footprint_center": [
+  33.729033,
+  -78.834815
+ ],
+ "sales": {
+  "window": "2025-11-01 to 2026-10-31",
+  "deed_rows_matched": 24,
+  "all": {
+   "n": 16,
+   "median": 280000.0,
+   "p25": 268500.0,
+   "p75": 313750.0,
+   "min": 250000.0,
+   "max": 345000.0
+  },
+  "by_building_n": {
+   "C": 2,
+   "E": 5,
+   "D": 3,
+   "null": 1,
+   "A": 2,
+   "B": 3
+  },
+  "zero_or_under_1000": 8,
+  "by_half": {
+   "2025-11 to 2026-04": {
+    "n": 9,
+    "median": 285000.0,
+    "p25": 270000.0,
+    "p75": 326200.0,
+    "min": 250000.0,
+    "max": 345000.0
+   },
+   "2026-05 to 2026-10": {
+    "n": 7,
+    "median": 275000.0,
+    "p25": 263000.0,
+    "p75": 310000.0,
+    "min": 259900.0,
+    "max": 317500.0
+   }
+  },
+  "note": "Consideration as indexed; a deed under $1,000 is a transfer, not a sale"
+ }
+}

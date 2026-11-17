@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-139/data/2026-11-e/ocean-forest-villas/pull_fee_exact.py", line 26, in <module>
+    n = L["beds"][b]
+        ~~~~~~~~~^^^
+KeyError: '1'

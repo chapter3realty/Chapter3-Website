@@ -1,0 +1,109 @@
+{
+ "pulled": "2026-11-14T20:42:32.930172+00:00",
+ "refreshedAt": "2026-11-14T20:40:11.897Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 10,
+ "at_1605": 10,
+ "beds": {
+  "0": 5,
+  "1": 5
+ },
+ "asking": {
+  "all": {
+   "median": 197249.5,
+   "min": 179900,
+   "max": 275000
+  },
+  "0": {
+   "n": 5,
+   "median": 184999,
+   "min": 179900,
+   "max": 210000,
+   "sqft_median": 393,
+   "sqft_range": [
+    360,
+    425
+   ]
+  },
+  "1": {
+   "n": 5,
+   "median": 214000,
+   "min": 194500,
+   "max": 275000,
+   "sqft_median": 620,
+   "sqft_range": [
+    520,
+    692
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 10,
+   "median_at_or_under": 900.0,
+   "lowest_at_or_under": 650,
+   "highest_at_or_under": 1325,
+   "middle_half": [
+    725.0,
+    1137.5
+   ]
+  },
+  "zero_or_blank": 0,
+  "0": {
+   "n": 5,
+   "median_at_or_under": 725,
+   "lowest_at_or_under": 650,
+   "highest_at_or_under": 825,
+   "middle_half": null
+  },
+  "1": {
+   "n": 5,
+   "median_at_or_under": 1075,
+   "lowest_at_or_under": 975,
+   "highest_at_or_under": 1325,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 9,
+  "rentals_allowed": 10,
+  "long_term_rental_allowed": 10,
+  "vacation_rental_program": 10,
+  "has_rental_income": 10,
+  "furnished": 10,
+  "pets_allowed": 10,
+  "oceanfront_unit": 4,
+  "ocean_view": 9,
+  "oceanfront_building": 9,
+  "high_floor_unit": 5,
+  "low_floor_unit": 1,
+  "top_floor": 0,
+  "balcony": 8,
+  "parking_garage": 9,
+  "covered_parking": 10,
+  "indoor_pool": 8,
+  "sauna": 0,
+  "elevator_building": 10,
+  "flood_zone": 4,
+  "hoa_includes_trash": 9,
+  "hoa_includes_utilities": 10,
+  "hoa_includes_water_sewer": 10,
+  "hoa_includes_insurance": 10,
+  "hoa_includes_internet": 10,
+  "hoa_includes_pest": 9,
+  "hoa_includes_cable": 8,
+  "hoa_includes_electric": 9,
+  "security_service": 4
+ },
+ "year_built": {
+  "1989": 10
+ },
+ "flood_zone_field": {
+  "None": 10
+ },
+ "subdivision_field": {
+  "Patricia Grand I": 10
+ }
+}

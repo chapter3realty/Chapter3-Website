@@ -1,0 +1,61 @@
+{
+ "read": "2026-11-14T21:15:14.498486+00:00",
+ "rule": "Ocean Forest Villas, listings by building (A to E), in aggregate. Each listing pin is assigned to the nearest building center (zoning.json), then each pin's fee is bracketed\nby hoaMax calls at $1 steps near the two fee levels found by pull_fee_exact.py (450 to 749) using bisection on the sorted fee levels. Kept per building: count, asking middle/min/max, fee range, count with an ocean view (has=ocean_view),\ncount in a rental program (has=vacation_rental_program). No MLS number, unit or single-listing price is kept.\nRun: python3 -I pull_by_building.py <this dir>. Writes by_building.json.",
+ "thresholds_fee_at_or_under": [
+  450,
+  460,
+  475,
+  500,
+  525,
+  550,
+  575,
+  600,
+  650,
+  700,
+  749,
+  760
+ ],
+ "buildings": {
+  "A": {
+   "n": 2,
+   "asking_median": 364950.0,
+   "asking_min": 345000,
+   "asking_max": 384900,
+   "fee_bracket_counts": {
+    "475": 2
+   },
+   "ocean_view": 2,
+   "oceanfront_unit": 0,
+   "rental_program": 2,
+   "str_allowed": 2
+  },
+  "C": {
+   "n": 14,
+   "asking_median": 322450.0,
+   "asking_min": 249000,
+   "asking_max": 404999,
+   "fee_bracket_counts": {
+    "749": 5,
+    "450": 2,
+    "475": 7
+   },
+   "ocean_view": 11,
+   "oceanfront_unit": 2,
+   "rental_program": 10,
+   "str_allowed": 11
+  },
+  "E": {
+   "n": 1,
+   "asking_median": 324000,
+   "asking_min": 324000,
+   "asking_max": 324000,
+   "fee_bracket_counts": {
+    "475": 1
+   },
+   "ocean_view": 1,
+   "oceanfront_unit": 0,
+   "rental_program": 0,
+   "str_allowed": 1
+  }
+ }
+}

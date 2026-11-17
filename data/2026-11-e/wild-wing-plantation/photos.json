@@ -1,0 +1,70 @@
+{
+ "rule": "Photo records for /submarkets/conway/wild-wing-plantation/ (tools/photos.js format).",
+ "photos": [
+  {
+   "slug": "wild-wing-plantation",
+   "file": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-1200w.webp",
+   "variants": {
+    "600": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-600w.webp",
+    "1200": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-1200w.webp"
+   },
+   "width": 1200,
+   "height": 900,
+   "title": "Wild Wing Plantation from above",
+   "what": "Wild Wing Plantation from above (USDA NAIP aerial photo, 2023): curving streets of houses along fairways and greens, with dark lakes between the street loops. Some houses have a bright blue in-ground pool.",
+   "caption": "Part of Wild Wing Plantation from the air: houses along the fairways, with greens and lakes between the streets.",
+   "alt": "Aerial photo of part of Wild Wing Plantation in Conway: curving streets of houses beside golf fairways and greens, with dark lakes between the street loops",
+   "place": {
+    "city": "Conway",
+    "sublocation": "Wild Wing Plantation"
+   },
+   "source": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "source_name": "The National Map (USGS)",
+   "author": "USDA Farm Service Agency, NAIP",
+   "author_type": "Organization",
+   "license": "Public domain",
+   "license_url": "https://www.fsa.usda.gov/help/policies-and-links/",
+   "provenance": "U.S. government aerial photo: USDA National Agriculture Imagery Program (NAIP), South Carolina 2023 (flight tile m_3307809_sw_17_060_20230410), natural color, 60 cm. Exported by Chapter3 from the USGS National Map NAIP image service (exportImage, Web Mercator, cubic resampling) on 2026-11-14; the exact request is in source_request. The image service identify call at the frame returns the 2023 tile.",
+   "license_note": "Same source and terms as the NAIP records of /submarkets/garden-city/ (data/2026-11-a/submarkets-garden-city/photos.json): The National Map offers free downloads of public domain NAIP orthoimagery; the USDA FSA policy page says public domain information may be freely distributed or copied, with credit requested.",
+   "terms_urls": [
+    "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+    "https://www.fsa.usda.gov/help/policies-and-links/"
+   ],
+   "taken": "2023",
+   "display_credit": "U.S. government aerial photo",
+   "credit": "Photo: USDA Farm Service Agency, NAIP, public domain, via The National Map (USGS).",
+   "digital_source_type": "composite",
+   "changes": "Chapter3 Realty cut this view from the NAIP service (4:3)",
+   "source_request": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-8792363.4%2C4000772.0%2C-8791222.4%2C4001627.8&bboxSR=3857&imageSR=3857&size=1800%2C1350&format=jpg&interpolation=RSP_CubicConvolution&f=image&bandIds=0%2C1%2C2",
+   "frame": {
+    "bbox_wgs84": [
+     -78.98314,
+     33.79099,
+     -78.97289,
+     33.79738
+    ],
+    "ground_m_per_px_1200w": 0.95
+   },
+   "original_size": "1800x1350 (NAIP export), then resized",
+   "subject_check": "Looked at full size by the writer of /submarkets/conway/wild-wing-plantation/ on 2026-11-14. Every house outline in the frame (157 on the county's map of buildings) is on a Wild Wing Plantation lot. No person; no readable sign, plate or house number at page size.",
+   "crops": {
+    "1x1": {
+     "path": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-1x1.webp",
+     "width": 1200,
+     "height": 1200
+    },
+    "4x3": {
+     "path": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-4x3.webp",
+     "width": 1200,
+     "height": 900
+    },
+    "16x9": {
+     "path": "images/2026-11-e/wild-wing-plantation/wild-wing-plantation-golf-and-lakes-from-above-16x9.webp",
+     "width": 1200,
+     "height": 675
+    }
+   },
+   "crop_note": "The 1x1, 4x3 and 16x9 share crops are center crops of the same 1800x1350 export."
+  }
+ ]
+}

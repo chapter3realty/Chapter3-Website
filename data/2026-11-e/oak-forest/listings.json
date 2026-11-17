@@ -1,0 +1,58 @@
+{
+ "pulled": "2026-11-14T21:10:43.224911+00:00",
+ "refreshedAt": "2026-11-14T21:00:25.964Z",
+ "rule": "Homes for sale now in Oak Forest, in aggregate, from the site's public map API (https://chapter3realty.com/homes/api/map, CCMLS active\nlistings) and the public listing card (/homes/api/lookup). MLS subdivision name: \"Oak Forest\" (the word search also matched nothing else:\ntotal 3, all pins on Temperance Dr and Morlynn Dr). HOA fee bracket: the site's own filter hoaMax=T. Saved: counts, price median and range,\nbeds, size, year built, fee brackets. No MLS number, address, firm or photo is saved. Run: python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "for_sale": 3,
+ "subdivision_names": [
+  "Oak Forest"
+ ],
+ "types": [
+  "Detached"
+ ],
+ "list_price": {
+  "median": 260000,
+  "min": 242500,
+  "max": 275000
+ },
+ "beds": [
+  3,
+  3,
+  4
+ ],
+ "baths": [
+  2,
+  2,
+  2
+ ],
+ "sqft": [
+  1204,
+  1323,
+  1501
+ ],
+ "year_built": [
+  1998,
+  1999,
+  2014
+ ],
+ "lot_acres": [
+  0.14,
+  0.15,
+  0.16
+ ],
+ "hoa_monthly_listed": [
+  null,
+  null,
+  null
+ ],
+ "homes_at_or_under_fee": {
+  "0": 0,
+  "25": 0,
+  "30": 3,
+  "50": 3
+ },
+ "strips": {
+  "oak_forest": 3,
+  "within_1_mile": 58,
+  "under_300k_within_2_miles": 120
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "read": "2026-11-14T19:56:55.730632+00:00",
+ "source": "https://chapter3realty.com/homes/api/strip",
+ "strips": [
+  {
+   "title_idea": "Holiday Sands South condos for sale",
+   "search": "subdivision=Holiday+Sands",
+   "ok": true,
+   "total": 15,
+   "link": "/homes/?subdivision=Holiday+Sands"
+  },
+  {
+   "title_idea": "Holiday Sands South, two bedrooms and up",
+   "search": "subdivision=Holiday+Sands&beds=2",
+   "ok": true,
+   "total": 7,
+   "link": "/homes/?subdivision=Holiday+Sands&beds=2"
+  },
+  {
+   "title_idea": "Holiday Sands South, oceanfront units",
+   "search": "subdivision=Holiday+Sands&has=oceanfront_unit",
+   "ok": true,
+   "total": 7,
+   "link": "/homes/?subdivision=Holiday+Sands&has=oceanfront_unit"
+  },
+  {
+   "title_idea": "Holiday Sands South for $200,000 or less",
+   "search": "subdivision=Holiday+Sands&max=200000",
+   "ok": true,
+   "total": 7,
+   "link": "/homes/?subdivision=Holiday+Sands&max=200000"
+  },
+  {
+   "title_idea": "Holiday Sands South, in the rental program",
+   "search": "subdivision=Holiday+Sands&has=vacation_rental_program",
+   "ok": true,
+   "total": 13,
+   "link": "/homes/?subdivision=Holiday+Sands&has=vacation_rental_program"
+  },
+  {
+   "title_idea": "Holiday Sands South, ocean-view units",
+   "search": "subdivision=Holiday+Sands&has=ocean_view",
+   "ok": true,
+   "total": 13,
+   "link": "/homes/?subdivision=Holiday+Sands&has=ocean_view"
+  }
+ ]
+}

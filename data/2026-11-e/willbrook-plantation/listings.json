@@ -1,0 +1,146 @@
+{
+ "pulled": "2026-11-14T20:38:03.867135+00:00",
+ "api": "https://chapter3realty.com/homes/api/map",
+ "rule": "Homes for sale now in Willbrook Plantation (MLS subdivision \"Willbrook Plantation\") and in Tradition (MLS name \"Tradition\", the Tradition Club at Willbrook part), in aggregate, from the\nsite's public map API (https://chapter3realty.com/homes/api/map, CCMLS active listings through the CRM) and the listing card (/homes/api/lookup).\nA home counts when its card's subdivision is the name and its map point is inside the community outline (county parcels, buffered 40 m). \"Tradition\" also matches other places by name: the near= filter and the outline keep only this one.\nHOA fee: bracketed with the site's filter hoaMax=T (T = 0, 25, 50 ... 1000); hoa=0 = the listing says there is no HOA. Saved: counts, list-price median and range, beds, size, lot, year built, fee brackets, and each strip's live count. No MLS number, address, listing firm or photo is saved.\nRun: RAW=<scratch> python3 -I pull_listings.py <this dir>. Writes listings.json.",
+ "groups": {
+  "Willbrook Plantation": {
+   "for_sale": 4,
+   "types": [
+    "Detached",
+    "Residential"
+   ],
+   "listing_says_no_hoa": 0,
+   "fee_at_or_under": {
+    "0": 0,
+    "25": 0,
+    "50": 0,
+    "75": 0,
+    "100": 0,
+    "125": 0,
+    "150": 0,
+    "175": 0,
+    "200": 0,
+    "225": 0,
+    "250": 1,
+    "275": 1,
+    "300": 1,
+    "325": 1,
+    "350": 4
+   },
+   "list_price": {
+    "median": 1162000.0,
+    "min": 365000,
+    "max": 1425000
+   },
+   "prices": [
+    365000,
+    1149000,
+    1175000,
+    1425000
+   ],
+   "year_built": [
+    1998,
+    2002,
+    2003
+   ],
+   "sqft": [
+    3276,
+    3984,
+    4681
+   ],
+   "lot_acres": [
+    0.52,
+    0.62,
+    0.62,
+    0.65
+   ],
+   "beds": [
+    4,
+    5,
+    5
+   ],
+   "hoa_monthly_listed": [],
+   "waterfront_flag": 0
+  },
+  "Tradition Club at Willbrook (MLS: Tradition)": {
+   "for_sale": 1,
+   "types": [
+    "Detached"
+   ],
+   "listing_says_no_hoa": 0,
+   "fee_at_or_under": {
+    "0": 0,
+    "25": 0,
+    "50": 0,
+    "75": 0,
+    "100": 0,
+    "125": 0,
+    "150": 0,
+    "175": 0,
+    "200": 0,
+    "225": 1
+   },
+   "list_price": {
+    "median": 585000,
+    "min": 585000,
+    "max": 585000
+   },
+   "prices": [
+    585000
+   ],
+   "year_built": [
+    1996
+   ],
+   "sqft": [
+    1680
+   ],
+   "lot_acres": [
+    0.21
+   ],
+   "beds": [
+    3
+   ],
+   "hoa_monthly_listed": [],
+   "waterfront_flag": 0
+  }
+ },
+ "strips": {
+  "Willbrook Plantation (all)": {
+   "query": "subdivision=Willbrook+Plantation",
+   "ok": true,
+   "total": 4,
+   "link": "/homes/?subdivision=Willbrook+Plantation"
+  },
+  "Willbrook Plantation over $1 million": {
+   "query": "subdivision=Willbrook+Plantation&min=1000000",
+   "ok": true,
+   "total": 3,
+   "link": "/homes/?min=1000000&subdivision=Willbrook+Plantation"
+  },
+  "Tradition Club at Willbrook": {
+   "query": "subdivision=Tradition&near=33.4885,-79.1125&miles=1.5",
+   "ok": true,
+   "total": 5,
+   "link": "/homes/?near=33.488500%2C-79.112500&miles=1.5&subdivision=Tradition"
+  },
+  "Within a mile of Willbrook Plantation": {
+   "query": "near=33.48923,-79.12668&miles=1",
+   "ok": true,
+   "total": 15,
+   "link": "/homes/?near=33.489230%2C-79.126680&miles=1"
+  },
+  "Golf communities within a mile": {
+   "query": "near=33.48923,-79.12668&miles=1&has=golf_community",
+   "ok": true,
+   "total": 12,
+   "link": "/homes/?near=33.489230%2C-79.126680&miles=1&has=golf_community"
+  },
+  "Houses with 4 or more bedrooms within a mile": {
+   "query": "near=33.48923,-79.12668&miles=1&type=Detached&beds=4",
+   "ok": true,
+   "total": 8,
+   "link": "/homes/?beds=4&near=33.489230%2C-79.126680&miles=1"
+  }
+ },
+ "refreshedAt": "2026-11-14T20:30:41.852Z"
+}

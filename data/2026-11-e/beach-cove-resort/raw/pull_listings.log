@@ -1,0 +1,113 @@
+{
+ "pulled": "2026-11-14T20:22:01.379976+00:00",
+ "refreshedAt": "2026-11-14T20:20:41.462Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 28,
+ "at_4800": 28,
+ "beds": {
+  "1": 21,
+  "2": 7
+ },
+ "asking": {
+  "all": {
+   "median": 216000.0,
+   "min": 170000,
+   "max": 375500
+  },
+  "1": {
+   "n": 21,
+   "median": 214900,
+   "min": 170000,
+   "max": 297000,
+   "sqft_median": 637,
+   "sqft_range": [
+    637,
+    637
+   ]
+  },
+  "2": {
+   "n": 7,
+   "median": 369900,
+   "min": 348000,
+   "max": 375500,
+   "sqft_median": 897,
+   "sqft_range": [
+    897,
+    897
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 28,
+   "median_at_or_under": 800.0,
+   "lowest_at_or_under": 800,
+   "highest_at_or_under": 1125,
+   "middle_half": [
+    800.0,
+    1093.75
+   ]
+  },
+  "zero_or_blank": 0,
+  "1": {
+   "n": 21,
+   "median_at_or_under": 800,
+   "lowest_at_or_under": 800,
+   "highest_at_or_under": 1075,
+   "middle_half": [
+    800.0,
+    812.5
+   ]
+  },
+  "2": {
+   "n": 7,
+   "median_at_or_under": 1125,
+   "lowest_at_or_under": 1100,
+   "highest_at_or_under": 1125,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 25,
+  "rentals_allowed": 25,
+  "long_term_rental_allowed": 25,
+  "vacation_rental_program": 28,
+  "has_rental_income": 28,
+  "furnished": 28,
+  "pets_allowed": 16,
+  "oceanfront_unit": 27,
+  "ocean_view": 27,
+  "oceanfront_building": 26,
+  "high_floor_unit": 16,
+  "low_floor_unit": 4,
+  "top_floor": 1,
+  "balcony": 25,
+  "parking_garage": 26,
+  "covered_parking": 28,
+  "indoor_pool": 24,
+  "sauna": 0,
+  "elevator_building": 27,
+  "flood_zone": 5,
+  "hoa_includes_trash": 27,
+  "hoa_includes_utilities": 27,
+  "hoa_includes_water_sewer": 27,
+  "hoa_includes_insurance": 7,
+  "hoa_includes_internet": 21,
+  "hoa_includes_pest": 19,
+  "hoa_includes_cable": 13,
+  "hoa_includes_electric": 20,
+  "security_service": 15
+ },
+ "year_built": {
+  "1985": 21,
+  "1996": 7
+ },
+ "flood_zone_field": {
+  "None": 28
+ },
+ "subdivision_field": {
+  "Beach Cove": 28
+ }
+}

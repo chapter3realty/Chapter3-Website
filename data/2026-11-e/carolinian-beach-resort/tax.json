@@ -1,0 +1,21 @@
+{
+ "read": "2026-11-14T20:11:17.040674+00:00",
+ "rule": "The Carolinian: the county's taxable assessment per unit, in aggregate, and the tax it implies at the 2026 City of Myrtle Beach\nmillage (254.6 mills; ledger CON row 21). Source: Horry County GIS layer 24 (AssessedProp, TaxableProp, MarketProp).\nKept: for units taxed at the 6 percent rate, the count and the median and quartiles of TaxableProp and of MarketProp, and the\nimplied yearly tax (AssessedProp, which is 6 percent of TaxableProp, x 254.6 / 1000, before any credit or fee on the bill). No unit's own record.\nRun: python3 -I pull_tax.py <this dir>. Writes tax.json.",
+ "units_at_6pct": 118,
+ "taxable_value": {
+  "median": 232000.0,
+  "p25": 158987.5,
+  "p75": 253000.0
+ },
+ "market_value": {
+  "median": 244900.0,
+  "p25": 199500.0,
+  "p75": 369900.0
+ },
+ "implied_tax_city_millage": {
+  "median": 3544,
+  "p25": 2429,
+  "p75": 3865
+ },
+ "taxable_below_market_share": 0.644
+}

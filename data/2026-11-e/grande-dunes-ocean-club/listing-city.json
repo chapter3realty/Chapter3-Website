@@ -1,0 +1,143 @@
+{
+ "rule": "Which city each for-sale Grande Dunes listing is inside: the listing's map pin (RAW/map.json, /homes/api/map?subdivision=Grande Dunes) tested against the county",
+ "by_subdivision_and_city": [
+  [
+   "Bal Harbor",
+   "MYRTLE BEACH",
+   3
+  ],
+  [
+   "Beach View",
+   "MYRTLE BEACH",
+   5
+  ],
+  [
+   "Calais",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Capri Village",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Castillo del Mar",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Cipriana Park",
+   "MYRTLE BEACH",
+   3
+  ],
+  [
+   "Del Webb",
+   "MYRTLE BEACH",
+   26
+  ],
+  [
+   "Dunes Ocean Front - Formerly Grande Dunes Oceanside",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Grande Dunes  - Villa Firenze",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "Grande Dunes \u2013 Villa Marbella",
+   "MYRTLE BEACH",
+   6
+  ],
+  [
+   "Islecrest",
+   "MYRTLE BEACH",
+   11
+  ],
+  [
+   "Living Dunes",
+   "MYRTLE BEACH",
+   10
+  ],
+  [
+   "Marina Inn",
+   "MYRTLE BEACH",
+   8
+  ],
+  [
+   "Members Club",
+   "MYRTLE BEACH",
+   3
+  ],
+  [
+   "Milano",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "North Village",
+   "NORTH MYRTLE BEACH",
+   9
+  ],
+  [
+   "Palermo",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "Promenade",
+   "MYRTLE BEACH",
+   8
+  ],
+  [
+   "Riviera Village",
+   "MYRTLE BEACH",
+   4
+  ],
+  [
+   "Seville",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Siena Park",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "Siena Park",
+   "outside the county GIS frame",
+   1
+  ],
+  [
+   "Tuscany Village",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "Villa Venezia",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Vista del Mar",
+   "MYRTLE BEACH",
+   1
+  ],
+  [
+   "Waterside Edge",
+   "MYRTLE BEACH",
+   2
+  ],
+  [
+   "Waterside Pointe",
+   "MYRTLE BEACH",
+   3
+  ]
+ ],
+ "north_village_in_north_myrtle_beach": 9,
+ "other_listings_in_myrtle_beach": 109,
+ "other_listings_outside_frame": 1
+}

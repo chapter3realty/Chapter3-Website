@@ -1,0 +1,773 @@
+{
+ "made": "2026-11-14",
+ "rule": "Findings for /submarkets/carolina-forest/river-oaks/ from the county cache (pull_county.py) and the county deed index.\nInputs: RAW/county.json; SALES = Horry County deeds recorded 2025-11-01 to 2026-10-31 (data/2026-11-n/buyers-builders/raw/deeds-co.json; person names blanked).\nGroups by the county legal description: waterway_village (WATERWAY VLG), resort_condos (RIVER OAKS G&T / G & T / GOLF&TENNIS / HPR / VILLAS / RSRT, GARDEN HOMES, all use 107),\nfairways (FAIRWAY(S) @/AT/& RIVER OAKS), cottages (RIVER OAKS COTTAGES), oakmont (OAKMONT), par4 (RIVER OAKS PAR 4 / PARCEL 4), landing (THE LANDING @ RIVER OAKS).\nUnit = parcel with county building value over $0 and land use not 300. A sale = a deed on a community parcel with a stated price over $10,000; a deed covering several parcels is dropped.\nTax: AssessedProp / TaxableProp = 0.04 (legal residence) or 0.06; implied yearly tax = AssessedProp x mills / 1000 + $89.40 flat fee, mills 201.0 (4% homes: 201.0 - 109.1 school operations; 0.04 rate already in AssessedProp).\nFormer course: parcels owned by CHRIS MANNING COMMUNITIES FOX AND OTTER LLC (county parcels layer 24, owner kept because a business). Near course = lot within 15 m of those parcels.\nRun: RAW=<scratch> SALES=<deeds-co.json> python3 -I analyze.py <this dir>. No PIN, owner or address is written.",
+ "county_read": "2026-11-14T21:20:29.677331+00:00",
+ "groups": {
+  "cottages": {
+   "parcels": 63,
+   "units": 60,
+   "no_building_value": 3,
+   "lot_sqft": {
+    "n": 60,
+    "min": 4405,
+    "q1": 7998.75,
+    "median": 9118.0,
+    "q3": 9583.75,
+    "max": 21844
+   },
+   "county_market_value": {
+    "n": 60,
+    "min": 253000.0,
+    "q1": 280782.75,
+    "median": 290111.0,
+    "q3": 300691.75,
+    "max": 361321.0
+   },
+   "taxable_value": {
+    "n": 60,
+    "min": 173512.0,
+    "q1": 197739.75,
+    "median": 231270.5,
+    "q3": 274437.0,
+    "max": 361321.0
+   },
+   "at_4pct_legal_residence": 39,
+   "at_6pct": 21,
+   "implied_tax_6pct": {
+    "n": 21,
+    "min": 2254,
+    "q1": 2625.0,
+    "median": 3141,
+    "q3": 3585.0,
+    "max": 4447
+   },
+   "implied_tax_4pct": {
+    "n": 39,
+    "min": 727,
+    "q1": 808.0,
+    "median": 916,
+    "q3": 1039.0,
+    "max": 1211
+   },
+   "owner_mail_out_of_state": 10,
+   "owner_mail_sc": 50,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 63
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 804,
+   "within_15m_of_former_course": 0,
+   "in_city_limits": 0,
+   "zoning": {
+    "GR-6": 63
+   },
+   "center": [
+    33.72364,
+    -78.92755
+   ]
+  },
+  "fairways": {
+   "parcels": 252,
+   "units": 252,
+   "no_building_value": 0,
+   "lot_sqft": {
+    "n": 252,
+    "min": 4059,
+    "q1": 4059.0,
+    "median": 4504.0,
+    "q3": 5417.0,
+    "max": 5417
+   },
+   "county_market_value": {
+    "n": 252,
+    "min": 100000.0,
+    "q1": 161250.0,
+    "median": 170000.0,
+    "q3": 220000.0,
+    "max": 220000.0
+   },
+   "taxable_value": {
+    "n": 252,
+    "min": 51578.0,
+    "q1": 104650.0,
+    "median": 132250.0,
+    "q3": 170000.0,
+    "max": 220000.0
+   },
+   "at_4pct_legal_residence": 52,
+   "at_6pct": 200,
+   "implied_tax_6pct": {
+    "n": 200,
+    "min": 710,
+    "q1": 1352.0,
+    "median": 1685.0,
+    "q3": 2140.0,
+    "max": 2743
+   },
+   "implied_tax_4pct": {
+    "n": 52,
+    "min": 279,
+    "q1": 457.0,
+    "median": 576.0,
+    "q3": 714.0,
+    "max": 898
+   },
+   "owner_mail_out_of_state": 131,
+   "owner_mail_sc": 121,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 252
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 459,
+   "within_15m_of_former_course": 0,
+   "in_city_limits": 0,
+   "zoning": {
+    "GR": 252
+   },
+   "center": [
+    33.73228,
+    -78.90238
+   ]
+  },
+  "landing": {
+   "parcels": 101,
+   "units": 0,
+   "no_building_value": 101,
+   "lot_sqft": null,
+   "county_market_value": null,
+   "taxable_value": null,
+   "at_4pct_legal_residence": 0,
+   "at_6pct": 0,
+   "implied_tax_6pct": null,
+   "implied_tax_4pct": null,
+   "owner_mail_out_of_state": 0,
+   "owner_mail_sc": 0,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 101
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 320,
+   "within_15m_of_former_course": 0,
+   "in_city_limits": 0,
+   "zoning": {
+    "PDD": 101
+   },
+   "center": [
+    33.73397,
+    -78.89737
+   ]
+  },
+  "oakmont": {
+   "parcels": 46,
+   "units": 44,
+   "no_building_value": 2,
+   "lot_sqft": {
+    "n": 44,
+    "min": 6129,
+    "q1": 7310.25,
+    "median": 8911.0,
+    "q3": 10638.25,
+    "max": 23873
+   },
+   "county_market_value": {
+    "n": 44,
+    "min": 255750.0,
+    "q1": 288716.25,
+    "median": 301741.0,
+    "q3": 325055.75,
+    "max": 373758.0
+   },
+   "taxable_value": {
+    "n": 44,
+    "min": 161001.0,
+    "q1": 181986.5,
+    "median": 207788.0,
+    "q3": 294266.5,
+    "max": 370976.0
+   },
+   "at_4pct_legal_residence": 32,
+   "at_6pct": 12,
+   "implied_tax_6pct": {
+    "n": 12,
+    "min": 2037,
+    "q1": 2218.75,
+    "median": 2519.5,
+    "q3": 3762.75,
+    "max": 4152
+   },
+   "implied_tax_4pct": {
+    "n": 32,
+    "min": 681,
+    "q1": 758.75,
+    "median": 857.0,
+    "q3": 1167.75,
+    "max": 1453
+   },
+   "owner_mail_out_of_state": 7,
+   "owner_mail_sc": 37,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 46
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 96,
+   "within_15m_of_former_course": 32,
+   "in_city_limits": 0,
+   "zoning": {
+    "PUD": 46
+   },
+   "center": [
+    33.72225,
+    -78.9179
+   ]
+  },
+  "par4": {
+   "parcels": 15,
+   "units": 14,
+   "no_building_value": 1,
+   "lot_sqft": {
+    "n": 14,
+    "min": 5946,
+    "q1": 6037.75,
+    "median": 6167.5,
+    "q3": 7059.75,
+    "max": 12989
+   },
+   "county_market_value": {
+    "n": 14,
+    "min": 263433.0,
+    "q1": 268604.5,
+    "median": 294382.5,
+    "q3": 302720.75,
+    "max": 334723.0
+   },
+   "taxable_value": {
+    "n": 14,
+    "min": 142936.0,
+    "q1": 153317.25,
+    "median": 177515.5,
+    "q3": 276074.5,
+    "max": 308166.0
+   },
+   "at_4pct_legal_residence": 10,
+   "at_6pct": 4,
+   "implied_tax_6pct": {
+    "n": 4,
+    "min": 1814,
+    "q1": 1826.5,
+    "median": 2039.0,
+    "q3": 3408.0,
+    "max": 3806
+   },
+   "implied_tax_4pct": {
+    "n": 10,
+    "min": 631,
+    "q1": 701.25,
+    "median": 757.5,
+    "q3": 1104.25,
+    "max": 1177
+   },
+   "owner_mail_out_of_state": 2,
+   "owner_mail_sc": 12,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 15
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 198,
+   "within_15m_of_former_course": 10,
+   "in_city_limits": 0,
+   "zoning": {
+    "PUD": 15
+   },
+   "center": [
+    33.72135,
+    -78.91835
+   ]
+  },
+  "resort_condos": {
+   "parcels": 672,
+   "units": 672,
+   "no_building_value": 0,
+   "lot_sqft": {
+    "n": 672,
+    "min": 3838,
+    "q1": 4422.0,
+    "median": 4422.0,
+    "q3": 4875.0,
+    "max": 8388
+   },
+   "county_market_value": {
+    "n": 672,
+    "min": 19450.0,
+    "q1": 174000.0,
+    "median": 194500.0,
+    "q3": 194500.0,
+    "max": 295000.0
+   },
+   "taxable_value": {
+    "n": 672,
+    "min": 19450.0,
+    "q1": 92575.0,
+    "median": 126960.0,
+    "q3": 180000.0,
+    "max": 295000.0
+   },
+   "at_4pct_legal_residence": 142,
+   "at_6pct": 530,
+   "implied_tax_6pct": {
+    "n": 530,
+    "min": 325,
+    "q1": 1205.0,
+    "median": 1703.0,
+    "q3": 2343.0,
+    "max": 3537
+   },
+   "implied_tax_4pct": {
+    "n": 142,
+    "min": 161,
+    "q1": 429.0,
+    "median": 512.0,
+    "q3": 730.0,
+    "max": 1174
+   },
+   "owner_mail_out_of_state": 349,
+   "owner_mail_sc": 323,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 672
+   },
+   "within_25m_of_waterway": 0,
+   "nearest_to_waterway_m": 230,
+   "within_15m_of_former_course": 270,
+   "in_city_limits": 0,
+   "zoning": {
+    "RC": 16,
+    "GR": 656
+   },
+   "center": [
+    33.72252,
+    -78.922
+   ]
+  },
+  "waterway_village": {
+   "parcels": 279,
+   "units": 279,
+   "no_building_value": 0,
+   "lot_sqft": {
+    "n": 279,
+    "min": 4399,
+    "q1": 4400.0,
+    "median": 4400,
+    "q3": 4400.0,
+    "max": 4400
+   },
+   "county_market_value": {
+    "n": 279,
+    "min": 140000.0,
+    "q1": 210000.0,
+    "median": 210000.0,
+    "q3": 254500.0,
+    "max": 254500.0
+   },
+   "taxable_value": {
+    "n": 279,
+    "min": 71415.0,
+    "q1": 110400.0,
+    "median": 151800.0,
+    "q3": 200000.0,
+    "max": 254500.0
+   },
+   "at_4pct_legal_residence": 79,
+   "at_6pct": 200,
+   "implied_tax_6pct": {
+    "n": 200,
+    "min": 950,
+    "q1": 1420.0,
+    "median": 2019.0,
+    "q3": 2614.0,
+    "max": 3159
+   },
+   "implied_tax_4pct": {
+    "n": 79,
+    "min": 352,
+    "q1": 496.0,
+    "median": 630,
+    "q3": 825.0,
+    "max": 1025
+   },
+   "owner_mail_out_of_state": 152,
+   "owner_mail_sc": 127,
+   "units_in_high_risk_flood_zone": 0,
+   "flood_zone_at_center": {
+    "outside mapped zones (X)": 279
+   },
+   "within_25m_of_waterway": 54,
+   "nearest_to_waterway_m": 16,
+   "within_15m_of_former_course": 108,
+   "in_city_limits": 0,
+   "zoning": {
+    "RC": 279
+   },
+   "center": [
+    33.72037,
+    -78.91607
+   ]
+  }
+ },
+ "sales_window": [
+  "2025-11-01",
+  "2026-10-31"
+ ],
+ "sales": {
+  "cottages": {
+   "count": 3,
+   "prices": {
+    "n": 3,
+    "values": [
+     280000.0,
+     319000.0,
+     330000.0
+    ]
+   },
+   "by_month": {
+    "2026/05": 1,
+    "2026/06": 1,
+    "2026/07": 1
+   }
+  },
+  "fairways": {
+   "count": 24,
+   "prices": {
+    "n": 24,
+    "min": 85000.0,
+    "q1": 108925.0,
+    "median": 150187.5,
+    "q3": 188000.0,
+    "max": 220000.0
+   },
+   "by_month": {
+    "2025/11": 3,
+    "2025/12": 3,
+    "2026/01": 4,
+    "2026/02": 1,
+    "2026/03": 4,
+    "2026/04": 2,
+    "2026/05": 1,
+    "2026/07": 2,
+    "2026/08": 1,
+    "2026/10": 3
+   }
+  },
+  "landing": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  },
+  "oakmont": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  },
+  "par4": {
+   "count": 0,
+   "prices": {},
+   "by_month": {}
+  },
+  "resort_condos": {
+   "count": 48,
+   "prices": {
+    "n": 48,
+    "min": 103000.0,
+    "q1": 125750.0,
+    "median": 147250.0,
+    "q3": 162250.0,
+    "max": 246900.0
+   },
+   "by_month": {
+    "2025/11": 4,
+    "2025/12": 5,
+    "2026/01": 3,
+    "2026/02": 2,
+    "2026/03": 4,
+    "2026/04": 4,
+    "2026/05": 4,
+    "2026/06": 6,
+    "2026/07": 4,
+    "2026/08": 4,
+    "2026/09": 2,
+    "2026/10": 6
+   }
+  },
+  "waterway_village": {
+   "count": 16,
+   "prices": {
+    "n": 16,
+    "min": 145000.0,
+    "q1": 176250.0,
+    "median": 205000.0,
+    "q3": 240625.0,
+    "max": 253000.0
+   },
+   "by_month": {
+    "2025/11": 1,
+    "2025/12": 1,
+    "2026/01": 3,
+    "2026/02": 1,
+    "2026/03": 1,
+    "2026/04": 4,
+    "2026/05": 1,
+    "2026/06": 1,
+    "2026/07": 2,
+    "2026/10": 1
+   }
+  },
+  "condos_all": {
+   "count": 88,
+   "prices": {
+    "n": 88,
+    "min": 85000.0,
+    "q1": 125750.0,
+    "median": 155000.0,
+    "q3": 180000.0,
+    "max": 253000.0
+   },
+   "by_month": {
+    "2025/11": 8,
+    "2025/12": 9,
+    "2026/01": 10,
+    "2026/02": 4,
+    "2026/03": 9,
+    "2026/04": 10,
+    "2026/05": 6,
+    "2026/06": 7,
+    "2026/07": 8,
+    "2026/08": 5,
+    "2026/09": 2,
+    "2026/10": 10
+   }
+  },
+  "houses_all": {
+   "count": 3,
+   "prices": {
+    "n": 3,
+    "values": [
+     280000.0,
+     319000.0,
+     330000.0
+    ]
+   },
+   "by_month": {
+    "2026/05": 1,
+    "2026/06": 1,
+    "2026/07": 1
+   }
+  }
+ },
+ "condos_all": {
+  "parcels": 1203,
+  "units": 1203,
+  "no_building_value": 0,
+  "lot_sqft": {
+   "n": 1203,
+   "min": 3838,
+   "q1": 4400.0,
+   "median": 4422,
+   "q3": 4875.0,
+   "max": 8388
+  },
+  "county_market_value": {
+   "n": 1203,
+   "min": 19450.0,
+   "q1": 170000.0,
+   "median": 194500.0,
+   "q3": 210000.0,
+   "max": 295000.0
+  },
+  "taxable_value": {
+   "n": 1203,
+   "min": 19450.0,
+   "q1": 96600.0,
+   "median": 133900.0,
+   "q3": 184000.0,
+   "max": 295000.0
+  },
+  "at_4pct_legal_residence": 273,
+  "at_6pct": 930,
+  "implied_tax_6pct": {
+   "n": 930,
+   "min": 325,
+   "q1": 1255.0,
+   "median": 1703.0,
+   "q3": 2335.0,
+   "max": 3537
+  },
+  "implied_tax_4pct": {
+   "n": 273,
+   "min": 161,
+   "q1": 457.0,
+   "median": 567,
+   "q3": 730.0,
+   "max": 1174
+  },
+  "owner_mail_out_of_state": 632,
+  "owner_mail_sc": 571,
+  "units_in_high_risk_flood_zone": 0,
+  "flood_zone_at_center": {
+   "outside mapped zones (X)": 1203
+  },
+  "within_25m_of_waterway": 54,
+  "nearest_to_waterway_m": 16,
+  "within_15m_of_former_course": 378,
+  "in_city_limits": 0,
+  "zoning": {
+   "RC": 295,
+   "GR": 908
+  },
+  "center": [
+   33.72407,
+   -78.91652
+  ]
+ },
+ "houses_all": {
+  "parcels": 124,
+  "units": 118,
+  "no_building_value": 6,
+  "lot_sqft": {
+   "n": 118,
+   "min": 4405,
+   "q1": 6830.0,
+   "median": 9000.0,
+   "q3": 9920.25,
+   "max": 23873
+  },
+  "county_market_value": {
+   "n": 118,
+   "min": 253000.0,
+   "q1": 280788.25,
+   "median": 295568.5,
+   "q3": 306465.5,
+   "max": 373758.0
+  },
+  "taxable_value": {
+   "n": 118,
+   "min": 142936.0,
+   "q1": 189389.5,
+   "median": 216470.5,
+   "q3": 283564.5,
+   "max": 370976.0
+  },
+  "at_4pct_legal_residence": 81,
+  "at_6pct": 37,
+  "implied_tax_6pct": {
+   "n": 37,
+   "min": 1814,
+   "q1": 2376.0,
+   "median": 2881,
+   "q3": 3633.0,
+   "max": 4447
+  },
+  "implied_tax_4pct": {
+   "n": 81,
+   "min": 631,
+   "q1": 783.0,
+   "median": 865,
+   "q3": 1090.5,
+   "max": 1453
+  },
+  "owner_mail_out_of_state": 19,
+  "owner_mail_sc": 99,
+  "units_in_high_risk_flood_zone": 0,
+  "flood_zone_at_center": {
+   "outside mapped zones (X)": 124
+  },
+  "within_25m_of_waterway": 0,
+  "nearest_to_waterway_m": 96,
+  "within_15m_of_former_course": 42,
+  "in_city_limits": 0,
+  "zoning": {
+   "PUD": 61,
+   "GR-6": 63
+  },
+  "center": [
+   33.72284,
+   -78.92286
+  ]
+ },
+ "all": {
+  "parcels": 1428,
+  "units": 1321,
+  "no_building_value": 107,
+  "lot_sqft": {
+   "n": 1321,
+   "min": 3838,
+   "q1": 4400.0,
+   "median": 4422,
+   "q3": 5417.0,
+   "max": 23873
+  },
+  "county_market_value": {
+   "n": 1321,
+   "min": 19450.0,
+   "q1": 174000.0,
+   "median": 194500.0,
+   "q3": 220000.0,
+   "max": 373758.0
+  },
+  "taxable_value": {
+   "n": 1321,
+   "min": 19450.0,
+   "q1": 100000.0,
+   "median": 147168.0,
+   "q3": 190785.0,
+   "max": 370976.0
+  },
+  "at_4pct_legal_residence": 354,
+  "at_6pct": 967,
+  "implied_tax_6pct": {
+   "n": 967,
+   "min": 325,
+   "q1": 1255.0,
+   "median": 1768,
+   "q3": 2369.0,
+   "max": 4447
+  },
+  "implied_tax_4pct": {
+   "n": 354,
+   "min": 161,
+   "q1": 488.0,
+   "median": 660.0,
+   "q3": 806.0,
+   "max": 1453
+  },
+  "owner_mail_out_of_state": 651,
+  "owner_mail_sc": 670,
+  "units_in_high_risk_flood_zone": 0,
+  "flood_zone_at_center": {
+   "outside mapped zones (X)": 1428
+  },
+  "within_25m_of_waterway": 54,
+  "nearest_to_waterway_m": 16,
+  "within_15m_of_former_course": 420,
+  "in_city_limits": 0,
+  "zoning": {
+   "RC": 295,
+   "PUD": 61,
+   "GR-6": 63,
+   "GR": 908,
+   "PDD": 101
+  },
+  "center": [
+   33.72466,
+   -78.91571
+  ]
+ },
+ "former_course_parcels_acres": [
+  79.7,
+  29.7,
+  28.7
+ ]
+}

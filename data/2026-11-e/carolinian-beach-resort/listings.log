@@ -1,0 +1,118 @@
+{
+ "pulled": "2026-11-14T20:11:13.833288+00:00",
+ "refreshedAt": "2026-11-14T20:00:52.784Z",
+ "source": "Coastal Carolinas Association of REALTORS\u00ae Multiple Listing Service (CCMLS)",
+ "api_total": 12,
+ "at_2504": 12,
+ "beds": {
+  "1": 8,
+  "2": 4
+ },
+ "asking": {
+  "all": {
+   "median": 216500.0,
+   "min": 174900,
+   "max": 409000
+  },
+  "1": {
+   "n": 8,
+   "median": 204950.0,
+   "min": 174900,
+   "max": 224900,
+   "sqft_median": 691.5,
+   "sqft_range": [
+    620,
+    783
+   ]
+  },
+  "2": {
+   "n": 4,
+   "median": 399900.0,
+   "min": 339000,
+   "max": 409000,
+   "sqft_median": 1103.0,
+   "sqft_range": [
+    1069,
+    1123
+   ]
+  }
+ },
+ "fee": {
+  "bracket_rule": "fee is at or under T and over T-25 (T=0: blank or zero)",
+  "no_bracket": 0,
+  "all": {
+   "n": 11,
+   "median_at_or_under": 750,
+   "lowest_at_or_under": 675,
+   "highest_at_or_under": 1150,
+   "middle_half": [
+    700.0,
+    1150.0
+   ]
+  },
+  "zero_or_blank": 1,
+  "1": {
+   "n": 8,
+   "median_at_or_under": 750.0,
+   "lowest_at_or_under": 675,
+   "highest_at_or_under": 750,
+   "middle_half": [
+    681.25,
+    750.0
+   ]
+  },
+  "2": {
+   "n": 3,
+   "median_at_or_under": 1150,
+   "lowest_at_or_under": 1150,
+   "highest_at_or_under": 1150,
+   "middle_half": null
+  }
+ },
+ "flags": {
+  "str_allowed": 11,
+  "rentals_allowed": 11,
+  "long_term_rental_allowed": 11,
+  "vacation_rental_program": 8,
+  "has_rental_income": 8,
+  "furnished": 11,
+  "pets_allowed": 3,
+  "oceanfront_unit": 4,
+  "ocean_view": 11,
+  "oceanfront_building": 11,
+  "high_floor_unit": 10,
+  "low_floor_unit": 1,
+  "top_floor": 0,
+  "balcony": 9,
+  "parking_garage": 10,
+  "covered_parking": 10,
+  "indoor_pool": 6,
+  "sauna": 0,
+  "elevator_building": 11,
+  "flood_zone": 1,
+  "hoa_includes_trash": 9,
+  "hoa_includes_utilities": 11,
+  "hoa_includes_water_sewer": 11,
+  "hoa_includes_insurance": 2,
+  "hoa_includes_internet": 10,
+  "hoa_includes_pest": 8,
+  "hoa_includes_cable": 5,
+  "hoa_includes_electric": 9,
+  "security_service": 2
+ },
+ "year_built": {
+  "2004": 11,
+  "2002": 1
+ },
+ "flood_zone_field": {
+  "None": 12
+ },
+ "subdivision_field": {
+  "Carolinian Beach Resort": 12
+ }
+}
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-user-Blog-Brain/6dac3d75-8af3-5045-bdd7-7ad0adf5395f/scratchpad/wt-139/data/2026-11-e/carolinian-beach-resort/pull_fee_exact.py", line 21, in <module>
+    n = L["fee"][b]["n"]; hi = int(L["fee"][b]["highest_at_or_under"]); lo = int(L["fee"][b]["lowest_at_or_under"]) - 25
+        ~~~~~~~~^^^
+KeyError: '0'

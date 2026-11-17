@@ -1,0 +1,23 @@
+{
+ "center": [
+  33.706333,
+  -78.862868
+ ],
+ "method": "Straight-line miles from the Patricia Grand parcel footprint centre (flood.json) to the OSM points in\ndata/2026-11-b/invest-condo-buildings/landmark-distances.json (CB row 26). Run: python3 -I pull_distances.py <this dir> <website root>",
+ "miles": {
+  "Myrtle Beach State Park": 5.5,
+  "Springmaid Pier": 4.67,
+  "Family Kingdom": 2.36,
+  "2nd Avenue Pier": 2.04,
+  "SkyWheel": 1.2,
+  "Pier 14": 1.08,
+  "Sea Captain's House": 0.2,
+  "Dunes Golf and Beach Club": 5.49,
+  "Hilton Myrtle Beach Resort": 6.66,
+  "Embassy Suites (Kingston Plantation)": 6.46,
+  "Tanger Outlets, Kings Road": 7.37,
+  "Barefoot Landing": 9.47,
+  "Main Street, ocean end": 13.42,
+  "Cherry Grove Pier": 15.7
+ }
+}

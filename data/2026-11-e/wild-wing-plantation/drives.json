@@ -1,0 +1,208 @@
+{
+ "pulled": "2026-11-14T20:38:59.696035+00:00",
+ "rule": "Drive times from the middle of Wild Wing Plantation (detached houses; mean of parcel centre points, findings.json \"center\") and the Fairways townhomes (\"center_fairways\"), by the OSRM public router (driving profile, no traffic), plus the foot route to the beach.\nBeach: the 10 public beach accesses in SC DES's Beach Access layer nearest in a straight line, each routed; the shortest is kept.\nPlaces: Nominatim (OpenStreetMap) points; the airport terminal is OSM way 308490784 (as in data/2026-11-n/submarkets-market-common).\nRun: python3 -I pull_drives.py <this dir>. Writes drives.json.",
+ "starts": {
+  "Wild Wing Plantation (middle of the detached houses)": [
+   33.79551,
+   -78.97888
+  ],
+  "Fairways at Wild Wing (middle)": [
+   33.78721,
+   -78.98625
+  ]
+ },
+ "drives": {
+  "Wild Wing Plantation (middle of the detached houses)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 23.1,
+    "miles": 11.11,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 21.5,
+    "miles": 11.01,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 20.3,
+    "miles": 9.79,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-78.9223169,33.7027515?overview=false"
+   },
+   "Downtown Conway (Main Street at 4th Avenue)": {
+    "minutes": 14.9,
+    "miles": 6.12,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-79.048,33.8355?overview=false"
+   },
+   "Conway Medical Center": {
+    "minutes": 15.2,
+    "miles": 5.06,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-79.0207,33.8332?overview=false"
+   },
+   "Avocet clubhouse (1000 Wild Wing Blvd)": {
+    "minutes": 2.2,
+    "miles": 0.52,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-78.984,33.7956?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 22.3,
+    "miles": 11.55,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.97888,33.79551;-78.87011425429033,33.701004122705456?overview=false",
+    "name": "MYRTLE BEACH 68",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 74",
+     22.9,
+     11.76
+    ],
+    [
+     "MYRTLE BEACH 73",
+     22.9,
+     11.75
+    ],
+    [
+     "MYRTLE BEACH 71",
+     22.5,
+     11.64
+    ],
+    [
+     "MYRTLE BEACH 70",
+     22.4,
+     11.58
+    ],
+    [
+     "MYRTLE BEACH 68",
+     22.3,
+     11.55
+    ],
+    [
+     "MYRTLE BEACH 69",
+     22.3,
+     11.57
+    ],
+    [
+     "MYRTLE BEACH 76",
+     23.6,
+     11.93
+    ],
+    [
+     "MYRTLE BEACH 77",
+     23.3,
+     11.9
+    ],
+    [
+     "MYRTLE BEACH 67",
+     22.4,
+     11.61
+    ],
+    [
+     "MYRTLE BEACH 78",
+     23.3,
+     11.91
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 367.5,
+    "miles": 17.11,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.97888,33.79551;-78.87011425429033,33.701004122705456?overview=false"
+   }
+  },
+  "Fairways at Wild Wing (middle)": {
+   "Myrtle Beach International Airport terminal": {
+    "minutes": 19.9,
+    "miles": 10.29,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-78.922789,33.681467?overview=false"
+   },
+   "Broadway at the Beach": {
+    "minutes": 18.3,
+    "miles": 10.2,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-78.8807609,33.7162695?overview=false"
+   },
+   "Coastal Grand Mall": {
+    "minutes": 17.1,
+    "miles": 8.98,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-78.9223169,33.7027515?overview=false"
+   },
+   "Downtown Conway (Main Street at 4th Avenue)": {
+    "minutes": 12.1,
+    "miles": 5.79,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-79.048,33.8355?overview=false"
+   },
+   "Conway Medical Center": {
+    "minutes": 12.4,
+    "miles": 4.73,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-79.0207,33.8332?overview=false"
+   },
+   "Avocet clubhouse (1000 Wild Wing Blvd)": {
+    "minutes": 4.3,
+    "miles": 1.03,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-78.984,33.7956?overview=false"
+   },
+   "nearest public beach access": {
+    "minutes": 18.9,
+    "miles": 10.44,
+    "url": "https://router.project-osrm.org/route/v1/driving/-78.98625,33.78721;-78.87309066640248,33.698238808563154?overview=false",
+    "name": "MYRTLE BEACH 59",
+    "parking": "No"
+   },
+   "beach accesses routed": [
+    [
+     "MYRTLE BEACH 68",
+     19.1,
+     10.73
+    ],
+    [
+     "MYRTLE BEACH 67",
+     19.2,
+     10.79
+    ],
+    [
+     "MYRTLE BEACH 65",
+     19.3,
+     10.54
+    ],
+    [
+     "MYRTLE BEACH 69",
+     19.1,
+     10.75
+    ],
+    [
+     "MYRTLE BEACH 66",
+     19.2,
+     10.55
+    ],
+    [
+     "MYRTLE BEACH 70",
+     19.2,
+     10.77
+    ],
+    [
+     "MYRTLE BEACH 71",
+     19.3,
+     10.82
+    ],
+    [
+     "MYRTLE BEACH 63",
+     19.1,
+     10.49
+    ],
+    [
+     "MYRTLE BEACH 59",
+     18.9,
+     10.44
+    ],
+    [
+     "MYRTLE BEACH 64",
+     19.4,
+     10.53
+    ]
+   ],
+   "walk to that access": {
+    "minutes": 356.2,
+    "miles": 16.58,
+    "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-78.98625,33.78721;-78.87309066640248,33.698238808563154?overview=false"
+   }
+  }
+ }
+}
