@@ -240,7 +240,7 @@ module.exports = G.page({
       h.p(`These are asking prices, not sale prices. In each area, half the tracts are listed for more than the middle price an acre, and half for less.`) },
 
     { h2: "Land around Loris and Aynor: river landings, longleaf pine and old farms", toc: "Loris and Aynor", id: "loris-aynor", html: () =>
-      h.p(`The country around Loris and Aynor has the lowest land prices we counted, and a long history as farm land.`) +
+      h.p(`Houses that come with an acre or more, for a small farm or a homestead, are on our ${h.a("/buyers/farms-and-acreage/", "farms and acreage")} page.`) + /* forsale-hub */ h.p(`The country around Loris and Aynor has the lowest land prices we counted, and a long history as farm land.`) +
       h.h3("Around Loris") +
       h.p(`By 1903, tobacco markets were thriving in Conway and Loris. By the 1920s, Horry grew more tobacco than any other county in South Carolina.`) +
       h.p(`West of Loris, between Green Sea and Nichols, ${h.ext(CARTWHEEL, "Cartwheel Bay Heritage Preserve")} has a 3.5-mile trail through longleaf and loblolly pine. Wild Venus flytraps, pitcher plants and orchids grow along it. It is open dawn to dusk, with no fee.`) +

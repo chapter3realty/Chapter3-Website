@@ -558,7 +558,7 @@ module.exports = G.page({
       DRIVE_MAP },
 
     { h2: "What do homes cost in North Myrtle Beach?", toc: "Prices", id: "prices", html: (bg) =>
-      h.p(`A typical resold house in North Myrtle Beach sold for about ${HOUSE} in the past year; half sold between about ${r5k(S.house_resale.p25)} and ${r5k(S.house_resale.p75)}. A condo sold for about ${CONDO}, and a new house from a builder for about ${NEW_HOUSE}.`) +
+      h.p(`Every condo for sale in North Myrtle Beach now is on our ${h.a("/submarkets/north-myrtle-beach/condos-for-sale/", "North Myrtle Beach condos for sale")} page. ${h.a("/submarkets/north-myrtle-beach/cherry-grove/", "Cherry Grove")} has a page of its own, with the homes for sale there.`) + /* forsale-hub */ h.p(`A typical resold house in North Myrtle Beach sold for about ${HOUSE} in the past year; half sold between about ${r5k(S.house_resale.p25)} and ${r5k(S.house_resale.p75)}. A condo sold for about ${CONDO}, and a new house from a builder for about ${NEW_HOUSE}.`) +
       h.p(`Condos sell for about the same in every part along the ocean, about $310,000 to $360,000. Houses differ by part far more. More than half the homes sold here in the past year went to a buyer whose tax bill goes to another state.`) +
       h.h3("Homes for sale now") +
       h.p(`${FORSALE} The homes for sale now in each part are under its entry in ${h.a("#parts", "the eight parts")}.`) +
@@ -610,7 +610,7 @@ module.exports = G.page({
       h.h3("Is North Myrtle Beach changing its rental rules?") +
       h.p(`The city has held workshops and public sessions on possible new short-term rental rules. Its rental page lists no new rental ordinance adopted, and the license rule is the one in force. Earlier tries, a moratorium on large rental houses and a draft ordinance, failed.`) +
       h.p(`Our pages on ${h.a("/invest/str-rules/", "short-term rental rules by town")}, ${h.a("/invest/accommodations-tax/", "filing the lodging taxes")} and ${h.a("/invest/airbnb-income/", "what a nightly rental earns")} go further.`) +
-      h.p(`Three oceanfront condo buildings here have a guide of their own, with fees by unit size and what units sold for: ${h.a("/invest/condo-buildings/beach-cove-resort/", "Beach Cove Resort")}, ${h.a("/invest/condo-buildings/mar-vista-grande/", "Mar Vista Grande")} and ${h.a("/invest/condo-buildings/prince-resort/", "Prince Resort")}. The small town just south of the city, ${h.a("/submarkets/north-myrtle-beach/briarcliffe-acres/", "Briarcliffe Acres")}, has one too.`) +
+      h.p(`Five oceanfront condo buildings here have a guide of their own: ${h.a("/invest/condo-buildings/beach-cove-resort/", "Beach Cove Resort")}, ${h.a("/invest/condo-buildings/bay-watch-resort/", "Bay Watch Resort")}, ${h.a("/invest/condo-buildings/mar-vista-grande/", "Mar Vista Grande")}, ${h.a("/invest/condo-buildings/towers-on-the-grove/", "Towers on the Grove")} and ${h.a("/invest/condo-buildings/prince-resort/", "Prince Resort")}. The small town just south of the city, ${h.a("/submarkets/north-myrtle-beach/briarcliffe-acres/", "Briarcliffe Acres")}, has one too.`) +
       h.cta("Know a building's rental rules before you offer", "Send us the condo or the house. We read the HOA's rules and the deed for rental limits, and count the parking spaces the city will ask for.", "Have us read the rental rules", "/contact/", bg) },
 
     { h2: "What are the pros and cons of living in North Myrtle Beach?", toc: "Pros and cons", id: "pros-and-cons", html: (bg) =>

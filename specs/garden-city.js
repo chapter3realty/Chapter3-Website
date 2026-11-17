@@ -487,7 +487,7 @@ module.exports = G.page({
       strip("gc-georgetown-end", "the Georgetown end of Garden City", "Homes for sale at the Georgetown end now", "Garden City's Georgetown end", "Get the homes for sale at Garden City's Georgetown end") },
 
     { h2: "What do homes in Garden City cost?", toc: "Home prices", id: "prices", html: (bg) =>
-      h.p(`The chart gives the middle sale price in each part over the past year, from Horry County's deed records. Houses cost the most on the marsh and the least west of Business 17.`) +
+      h.p(`Every Garden City home for sale now, houses and condos, is on our ${h.a("/submarkets/garden-city/homes-for-sale/", "Garden City homes for sale")} page. Two oceanfront towers here have a guide of their own: ${h.a("/invest/condo-buildings/surfmaster/", "Surfmaster by the Sea")} and ${h.a("/invest/condo-buildings/atalaya-towers/", "Atalaya Towers")}.`) + /* forsale-hub */ h.p(`The chart gives the middle sale price in each part over the past year, from Horry County's deed records. Houses cost the most on the marsh and the least west of Business 17.`) +
       PRICE_CHART +
       h.p(`Asking prices are usually higher than sale prices.`) +
       h.cta("Know what the Garden City home you like is worth", "Send us the address. We pull the recent sales in its building or on its street, and tell you what those sales say it is worth.", "Have us pull the sales for one home", "/contact/", bg) },

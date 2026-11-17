@@ -234,6 +234,8 @@ const PAGE = {
   "prince": "/invest/condo-buildings/prince-resort/", "maisons-sur-mer": "/invest/condo-buildings/maisons-sur-mer/",
   "carolinian": "/invest/condo-buildings/carolinian-beach-resort/", "patricia-grand": "/invest/condo-buildings/patricia-grand/",
   "mar-vista-grande": "/invest/condo-buildings/mar-vista-grande/", "holiday-sands": "/invest/condo-buildings/holiday-sands-south/",
+  "margate": "/invest/condo-buildings/margate-tower/", "bay-watch": "/invest/condo-buildings/bay-watch-resort/",
+  "towers-on-the-grove": "/invest/condo-buildings/towers-on-the-grove/",
 };
 const PAGE_LINE = (slug) => (PAGE[slug] && slug !== "palace" ? h.p(`For its fee by unit size, what it pays and the units that sold, see ${h.a(PAGE[slug], `${B(slug).name} condos for sale`)}.`) : "");
 const entry = (slug, head, paras) => `<h3 id="${id(slug)}" class="c3-cb-h3">${B(slug).name}</h3>` + paras.map((p) => h.p(p)).join("") + PAGE_LINE(slug) + strip(slug, head);
@@ -602,7 +604,7 @@ module.exports = G.page({
       /* Row 9 (VERIFIED), said once, here. */
       h.p(`A fee looks different next to the price. At ${go("coral-beach", "Coral Beach")}, a year of fees comes to about a fifth of what a unit sold for. At ${go("sea-mist", "Sea Mist")} and ${go("landmark", "Landmark")}, it is about a tenth or more. At ${go("margate", "Margate Tower")} and ${go("north-beach-towers", "North Beach Towers")}, it is about 2 in 100.`) +
       TABLE +
-      h.p(`Four more buildings have a page of their own: ${h.a("/invest/condo-buildings/grande-shores/", "Grande Shores")}, ${h.a("/invest/condo-buildings/paradise-resort/", "Paradise Resort")}, ${h.a("/invest/condo-buildings/grand-atlantic/", "the Grand Atlantic")} and ${h.a("/invest/condo-buildings/ocean-forest-villas/", "Ocean Forest Villas")}.`) +
+      h.p(`Ten more buildings have a page of their own. In Myrtle Beach: ${h.a("/invest/condo-buildings/grande-shores/", "Grande Shores")}, ${h.a("/invest/condo-buildings/paradise-resort/", "Paradise Resort")}, ${h.a("/invest/condo-buildings/grand-atlantic/", "the Grand Atlantic")}, ${h.a("/invest/condo-buildings/ocean-forest-villas/", "Ocean Forest Villas")}, ${h.a("/invest/condo-buildings/roxanne-towers/", "Roxanne Towers")}, ${h.a("/invest/condo-buildings/palms-resort/", "The Palms Resort")} and ${h.a("/invest/condo-buildings/regency-towers/", "Regency Towers")}. In Arcadian Shores, still being built: ${h.a("/invest/condo-buildings/margaritaville-vacation-residences/", "Margaritaville Vacation Residences")}. In Garden City Beach: ${h.a("/invest/condo-buildings/surfmaster/", "Surfmaster by the Sea")} and ${h.a("/invest/condo-buildings/atalaya-towers/", "Atalaya Towers")}.`) + h.p(`Every condo for sale now, by price and size: ${h.a("/submarkets/myrtle-beach/condos-for-sale/", "Myrtle Beach condos for sale")} and ${h.a("/submarkets/north-myrtle-beach/condos-for-sale/", "North Myrtle Beach condos for sale")}.`) +
       h.p(`The fee and the asking price are typical of the units for sale this week. "Fee pays power" and "Pets allowed" say how many of those units list it. The sale price is typical of the past year's one-unit sales. Myrtle Beach Resort and Ocean Creek record their towers under several names, so we do not count their sales.`) },
 
     { h2: "What does an oceanfront condo HOA fee pay for?", toc: "What fees pay", id: "what-fees-pay", html: (bg) =>

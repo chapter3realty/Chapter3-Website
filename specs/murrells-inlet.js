@@ -396,7 +396,7 @@ module.exports = G.page({
       MAP },
 
     { h2: "Where should you buy in Murrells Inlet?", toc: "Four parts", id: "parts", html: () =>
-      h.p(`Each of the four parts is a different way to live here. The numbers match the map above.`) +
+      h.p(`Every condo for sale in Murrells Inlet now is on our ${h.a("/submarkets/murrells-inlet/condos-for-sale/", "Murrells Inlet condos for sale")} page.`) + /* forsale-hub */ h.p(`Each of the four parts is a different way to live here. The numbers match the map above.`) +
 
       partH3(P1, "golf neighborhoods and most of the homes") +
       h.p(`Most Murrells Inlet homes are here, north of the county line and west of the US 17 bypass. The neighborhoods are ${h.a("/buyers/golf-communities/", "laid out around golf courses")} and ponds: the International Club, Blackmoor, the TPC of Myrtle Beach and Indigo Creek's course are all on this side.`) +

@@ -276,7 +276,7 @@ module.exports = G.page({
         + `</ul>` +
       h.p(`Our affiliated lender, BrickWood Mortgage, a separate company, can tell you which loans fit a unit in a building with a rental program. Our ${h.a("/invest/condotel-financing/", "condotel financing page")} has more.`) +
       STRIP_NEAR +
-      h.p(`To weigh Prince Resort against the other 46 buildings, ${h.a("/invest/condo-buildings/", "compare the oceanfront condo buildings")}. For the town around it, see ${h.a("/submarkets/north-myrtle-beach/", "North Myrtle Beach")}.`) + /* sibling-links */ h.p(`Down the beach to the south: ${h.a("/invest/condo-buildings/mar-vista-grande/", "Mar Vista Grande")} (about 3 miles) and ${h.a("/invest/condo-buildings/beach-cove-resort/", "Beach Cove Resort")} (about 6 miles). Farther south: ${h.a("/submarkets/myrtle-beach/kingston-plantation/", "Kingston Plantation")} (about 9 miles) and ${h.a("/invest/condo-buildings/maisons-sur-mer/", "Maisons Sur Mer")} (about 10 miles).`) /* end sibling-links */ },
+      h.p(`To weigh Prince Resort against the other 46 buildings, ${h.a("/invest/condo-buildings/", "compare the oceanfront condo buildings")}. For the town around it, see ${h.a("/submarkets/north-myrtle-beach/", "North Myrtle Beach")}.`) + /* sibling-links */ h.p(`Down the beach to the south: ${h.a("/invest/condo-buildings/towers-on-the-grove/", "Towers on the Grove")} (about half a mile) and ${h.a("/invest/condo-buildings/mar-vista-grande/", "Mar Vista Grande")} (about 3 miles). Farther south: ${h.a("/invest/condo-buildings/bay-watch-resort/", "Bay Watch Resort")} (about 5 miles) and ${h.a("/invest/condo-buildings/beach-cove-resort/", "Beach Cove Resort")} (about 6 miles).`) /* end sibling-links */ },
   ],
   faqTitle: "Prince Resort FAQ",
   faq: [

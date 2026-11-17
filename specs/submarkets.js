@@ -433,6 +433,7 @@ module.exports = G.page({
         + `<li>Each count of people uses the Census Bureau's outline of the place, which can differ a little from our guide's area. Garden City and Murrells Inlet cross the county line, and each count takes in one side only: Garden City's Horry side and Murrells Inlet's Georgetown side.</li>`
         + `<li>Two more towns sit on the beach without a guide here. Atlantic Beach is between Crescent Beach and Windy Hill, and Briarcliffe Acres is between North Myrtle Beach and Myrtle Beach.</li>`
         + `</ul>` +
+      h.p(`Inland to the north are ${h.a("/submarkets/longs/", "Longs")} and ${h.a("/submarkets/loris/", "Loris")}, with guides of their own. Every home for sale in the county, by town, is on ${h.a("/submarkets/homes-for-sale/", "Horry County homes for sale")}.`) +
       h.p(`Inside a city or town, the city adds its own tax, trash pickup and rules. Our 13-town comparison shows ${h.a("/buyers/relocating/which-town/#city-or-county", "what changes at the city line")}.`) },
 
     { h2: "How long is the Grand Strand?", toc: "How long", id: "how-long", html: () =>

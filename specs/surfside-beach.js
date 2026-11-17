@@ -479,7 +479,7 @@ module.exports = G.page({
         h.cta("Is the house you like on the rental side?", "Send us the listing or the address. We place it on the town's zoning map and tell you which rules apply before you offer.", "Send us the listing", "/contact/", bg)) },
 
     { h2: "What do homes cost in Surfside Beach?", toc: "Home prices", id: "prices", html: (bg) =>
-      h.p(`A house near the ocean costs about twice an inland house. In the past year, houses near the ocean sold for about $1 million at the middle, and inland houses for about ${r5k(R2H.median)} to ${r5k(R1H.median)}.`) +
+      h.p(`Every condo for sale in Surfside Beach now is on our ${h.a("/submarkets/surfside-beach/condos-for-sale/", "Surfside Beach condos for sale")} page.`) + /* forsale-hub */ h.p(`A house near the ocean costs about twice an inland house. In the past year, houses near the ocean sold for about $1 million at the middle, and inland houses for about ${r5k(R2H.median)} to ${r5k(R1H.median)}.`) +
       PRICE_CHART +
       h.p(`The two sides are built to different rules. Near the ocean, the town allows taller buildings on smaller lots:`) +
       compareCards([

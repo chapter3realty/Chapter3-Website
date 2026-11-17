@@ -660,7 +660,7 @@ module.exports = G.page({
       h.p(`South Carolina taxes a home you live in on 4 percent of its value, and a second home or rental on 6 percent, so the same house as a rental pays about ${TAX_RENT}. The owner must apply for the lower rate; our ${h.a("/buyers/property-taxes/", "property tax page")} shows how. Where there is an HOA, its fee comes on top, and we read its budget and rules with you. Our ${h.a("/buyers/coastal-insurance/", "coastal insurance page")} explains each policy.`) },
 
     { h2: "What do homes cost in Little River, SC?", toc: "Home prices", id: "home-prices", html: (bg) =>
-      h.p(`A resold house in Little River usually sold for about ${HOUSE} in the past year. Half sold for between about ${r1k(SZ.house_resale.q1)} and ${r1k(SZ.house_resale.q3)}. New houses from builders sold for less in the middle.`) +
+      h.p(`Every Little River home for sale now is on our ${h.a("/submarkets/little-river/homes-for-sale/", "Little River homes for sale")} page. Condos have a page of their own: ${h.a("/submarkets/little-river/condos-for-sale/", "Little River condos for sale")}.`) + /* forsale-hub */ h.p(`A resold house in Little River usually sold for about ${HOUSE} in the past year. Half sold for between about ${r1k(SZ.house_resale.q1)} and ${r1k(SZ.house_resale.q3)}. New houses from builders sold for less in the middle.`) +
       PRICE_CHART +
       h.h3("What kind of homes are here") +
       h.p(`About two in three homes in the Little River ZIP are houses, and more than a quarter are condos.`) +

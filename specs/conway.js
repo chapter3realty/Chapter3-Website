@@ -614,7 +614,7 @@ module.exports = G.page({
       h.cta("The yearly bills on one house, before you offer", "Pick a house. We work out its property tax at the rate you will pay and get you an insurance quote on it.", "Have us price the yearly bills", "/contact/", bg) },
 
     { h2: "What do homes cost in Conway, SC?", toc: "Home prices", id: "home-prices", html: () =>
-      h.p(`A house or townhouse that resold inside the city in the past year usually went for about ${HOME}. Half sold for between about ${Q1} and ${Q3}.`) +
+      h.p(`Every Conway home for sale now, by price and size, is on our ${h.a("/submarkets/conway/homes-for-sale/", "Conway homes for sale")} page. ${h.a("/submarkets/conway/shaftesbury-glen/", "Shaftesbury Glen")}, a neighborhood of new houses near Conway, has a page of its own.`) + /* forsale-hub */ h.p(`A house or townhouse that resold inside the city in the past year usually went for about ${HOME}. Half sold for between about ${Q1} and ${Q3}.`) +
       h.p(`At that price, a house in the city is usually three bedrooms and about ${BUYS_SQ} square feet. That is what we found among the houses for sale inside the city near that price at our last count, about 3 in 4 of them with three bedrooms. Some were new, built in the last two years.`) +
       h.p(`Builders sold about ${near(NEW.n, 10)} new homes in the city in the same year, for about ${r5k(NEW.median)} in the middle. Few resales were condos, and those went for about ${r5k(CONDO.median)}.`) +
       PRICE_CHART +
