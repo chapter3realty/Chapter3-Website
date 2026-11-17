@@ -1,0 +1,104 @@
+{
+ "Data": [
+  {
+   "TransactionItemId": 14107759,
+   "Consideration": 0.0,
+   "BookPage": "4480/704",
+   "NumericPage": 704.0,
+   "DocTypeDescription": "NOTICE OF TERMINATION",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 5404102,
+   "GUID": 1,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 14107773,
+   "Consideration": 0.0,
+   "BookPage": "4480/706",
+   "NumericPage": 706.0,
+   "DocTypeDescription": "SUBLEASE",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 5404102,
+   "GUID": 2,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 14095010,
+   "Consideration": 0.0,
+   "BookPage": "4480/707",
+   "NumericPage": 707.0,
+   "DocTypeDescription": "DEED (TIMESHARE)",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 5393224,
+   "GUID": 3,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 14107796,
+   "Consideration": 0.0,
+   "BookPage": "4480/712",
+   "NumericPage": 712.0,
+   "DocTypeDescription": "AFFIDAVIT",
+   "BookType": "D",
+   "ParcelNumber": "1",
+   "TransactionId": 5404130,
+   "GUID": 4,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 14107809,
+   "Consideration": 0.0,
+   "BookPage": "4480/713",
+   "NumericPage": 713.0,
+   "DocTypeDescription": "CERTIFICATE OF DEATH",
+   "BookType": "D",
+   "ParcelNumber": "1",
+   "TransactionId": 5404090,
+   "GUID": 5,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 14107817,
+   "Consideration": 0.0,
+   "BookPage": "4480/720",
+   "NumericPage": 720.0,
+   "DocTypeDescription": "CERTIFICATE OF DEATH",
+   "BookType": "D",
+   "ParcelNumber": "41913020042",
+   "TransactionId": 5377519,
+   "GUID": 6,
+   "RecordDate": "2021/11/02"
+  },
+  {
+   "TransactionItemId": 186867,
+   "Consideration": 127450.0,
+   "BookPage": "4480/704",
+   "NumericPage": 704.0,
+   "DocTypeDescription": "MORTGAGE",
+   "BookType": "MTG",
+   "ParcelNumber": null,
+   "TransactionId": null,
+   "GUID": 7,
+   "RecordDate": "2006/04/06"
+  },
+  {
+   "TransactionItemId": 14107879,
+   "Consideration": 0.0,
+   "BookPage": "4480/721",
+   "NumericPage": 721.0,
+   "DocTypeDescription": "POWER OF ATTORNEY",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 5404159,
+   "GUID": 8,
+   "RecordDate": "2021/11/02"
+  }
+ ],
+ "Total": 8,
+ "AggregateResults": null,
+ "Errors": null,
+ "_note": "AcclaimWeb book/page search 4480/720, read 2026-11-14 after the disclaimer step. Party names and memo text removed."
+}

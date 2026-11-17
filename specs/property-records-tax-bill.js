@@ -118,6 +118,9 @@ const LEAD = "/contact/";
 const SITE_ROOT = path.join(__dirname, "..", "chapter3realty");
 const live = (u) => fs.existsSync(path.join(SITE_ROOT, ...u.split("/").filter(Boolean), "index.html"));
 const sib = (u, text) => (live(u) ? h.a(u, text) : text);
+/* The free lookup (data/2026-11-d/property-records/tool.js), shared with the hub and the two other task pages:
+   at the top of this page, under the H1 and the byline, with a line that says what this page's reader gets. */
+const LK = require(path.join(__dirname, "..", "data", "2026-11-d", "property-records", "tool.js")).tool({ live, self: SELF, hero: true, leadIn: "Type an address to see its tax bill: the amount, whether it is paid and the rate." });
 const extNew = (u, t) => `<a href="${u}" style="color:var(--navy);text-decoration:underline" target="_blank" rel="noopener noreferrer">${t}</a>`;
 const tel = (n) => `<a href="tel:+1${n.replace(/\D/g, "")}" style="color:var(--navy);text-decoration:underline;white-space:nowrap">${n}</a>`;
 
@@ -320,6 +323,7 @@ module.exports = G.page({
   h1em: "Search by owner name or PIN, pay by e-check for free, and do it by January 15 to avoid a penalty.",
   sub: "The county's tax search needs no account. Three steps take you from an owner's name or a PIN to a paid bill.",
   heroCta: false,
+  heroMedia: "<style>" + LK.css + "</style>" + G.homesCss() + G.homesQScript() + LK.html,
   author: "devin",
   toc: false,
   shortAnswer: [
@@ -333,10 +337,10 @@ module.exports = G.page({
       + `<p class="tb-go-note">The site belongs to the Horry County Treasurer. Chapter3 is a real estate brokerage, not the county. Use Chrome or Edge: payments do not go through in Safari.</p>`
       + `<ol class="tb-steps">`
       + step("calendar", "Pick the bill type and the year.", `Choose Real Estate for a house, condo or lot, or Vehicle for a car or truck. The search holds about ten years of bills, paid and unpaid.`)
-      + step("tax", "Search by owner name, PIN, map number or notice number.", `Type the owner's last name first. There is no address search. The PIN is on the parcel card of the ${h.a("/buyers/property-records/gis-map/", "county GIS map")}.`)
+      + step("tax", "Search by owner name, PIN, map number or notice number.", `Type the owner's last name first. There is no address search. For the PIN, use the ${h.a("#lookup", "lookup at the top of this page")}.`)
       + step("dollar", "Open the bill and pay it.", `Pay by e-check or card. The county mails a receipt, and you can print a copy from the same site.`)
       + `</ol>`
-      + h.cta("Have only an address? We find the bill.", "Give us the address. We find the PIN and last year's bill, and send you both.", "Have us find the bill", LEAD, bg)
+      + h.cta("Want us to read the bill for you?", "Give us the address. We find the PIN and last year's bill, and tell you what changes when you buy.", "Have us find the bill", LEAD, bg)
       + h.p(`Deeds, the parcel map and the county's other records are in our ${sib("/buyers/property-records/", "Horry County property records guide")}. To find a deed, see our ${h.a("/buyers/property-records/deeds/", "deed search guide")}.`) },
 
     { h2: "How much does it cost to pay Horry County taxes online?", toc: "Fees", id: "fees", html: () =>
@@ -372,10 +376,10 @@ module.exports = G.page({
       h.p(`The county's tax search finds a bill by owner name, PIN, map number, notice number or tax ID. It has no address search.`)
       + `<ul class="tb-list">`
       + `<li><strong>Owner name:</strong> last name first, then the first name.</li>`
-      + `<li><strong>PIN:</strong> the 11-digit number every county office uses for a parcel. It is on the parcel card of the county map.</li>`
+      + `<li><strong>PIN:</strong> the 11-digit number every county office uses for a parcel. It is on the card of our ${h.a("#lookup", "lookup")} and on the county map's parcel card.</li>`
       + `<li><strong>Map number:</strong> the 10-digit tax map number, on the same card and on the bill.</li>`
       + `<li><strong>Notice number:</strong> printed on the bill. It finds that one bill.</li>`
-      + `<li><strong>Only an address?</strong> The county sends address searches to its Land Records map, which needs a county account. Our ${h.a("/buyers/property-records/gis-map/", "GIS map guide")} shows how to get in and find the PIN.</li>`
+      + `<li><strong>Only an address?</strong> Type it in our ${h.a("#lookup", "lookup")}. It gives the PIN and the bill, with no sign-in. The county sends address searches to its Land Records map, which needs a county account. Our ${h.a("/buyers/property-records/gis-map/", "GIS map guide")} shows how to get in.</li>`
       + `</ul>`
       + h.p(`Open a bill from the results to see its lines. The search needs no sign-in.`)
       + BILL

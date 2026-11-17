@@ -60,6 +60,12 @@ const rename = (j, from, to) => {
   ok("address shown in plain case", C.prNice("1101 N OCEAN BLVD, Myrtle Beach, SC, 29577") === "1101 N Ocean Blvd, Myrtle Beach, SC 29577", C.prNice("1101 N OCEAN BLVD, Myrtle Beach, SC, 29577"));
   ok("address: ordinals and no state", C.prNice("1301 2ND AVE, Conway, 29526") === "1301 2nd Ave, Conway, SC 29526", C.prNice("1301 2ND AVE, Conway, 29526"));
   ok("address: a capitals line is not left as it was (control)", C.prNice("4519 NORTH PLANTATION HARBOUR DR, Little River, SC, 29566") !== "4519 NORTH PLANTATION HARBOUR DR, Little River, SC, 29566");
+  const tx = JSON.parse(fs.readFileSync(path.join(__dirname, "raw", "tax", "api-41913020042.json"), "utf8"));
+  const tl = C.prTaxLines(tx);
+  ok("tax: the newest bill, paid or not, the rate and the county's value", tl && tl.main === "2026 tax bill: $2,492, not paid yet. It is due by January 15." && /legal residence rate/.test(tl.more.join(" ")) && /\$653,499\. It is not a market value/.test(tl.more.join(" ")), tl);
+  ok("tax: a 6% parcel says so (fires)", /Taxed at 6%/.test(C.prTaxLines(Object.assign({}, tx, { last: Object.assign({}, tx.last, { ratio: 6 }) })).more.join(" ")));
+  ok("tax: no bills, no line (fires)", C.prTaxLines({ ok: true, bills: [], last: null }) === null && C.prTaxLines(null) === null);
+  ok("tax: an older unpaid bill is named (fires)", /2025 bill also shows unpaid/.test(C.prTaxLines(Object.assign({}, tx, { bills: [tx.bills[0], Object.assign({}, tx.bills[1], { status: "unpaid" })] })).more.join(" ")));
   ok("address point: the point's PIN", C.prPointPin(fx("addresspoints-where-1301.json")) === "36800000016");
   ok("address point: none when the answer is empty", C.prPointPin({ features: [] }) === "");
 }
@@ -138,13 +144,34 @@ const rename = (j, from, to) => {
   ok("land: nothing when there is no area", C.prAcres(null, 0) === "");
 }
 
+/* Last sale (owner, 2026-11-14). */
+{
+  const dd = C.prDeed({ features: [{ attributes: { DeedBook: "5023", DeedPage: "0726", SaleDate: 1765411200000, Acreage: 0.3 } }] });
+  ok("sale: the county map's sale date is read as a date, without a time zone", dd.sold === "2025-12-11", dd);
+  ok("sale: no sale date gives none", C.prDeed({ features: [{ attributes: { DeedBook: "5023", DeedPage: "726" } }] }).sold === "");
+  ok("sale: a date as words", C.prDate("2025-12-11") === "December 11, 2025" && C.prDate("2026-04-05") === "April 5, 2026", C.prDate("2026-04-05"));
+  ok("sale: a bad date gives nothing (fires)", C.prDate("2026-13-01") === "" && C.prDate("") === "");
+  const priced = C.prSaleLines(dd, { ok: true, found: true, date: "2025-12-11", type: "deed", deed: true, price: 760182 });
+  ok("sale: a deed with a price", priced && priced.main === "Last deed recorded December 11, 2025. Price in the deed index: $760,182." && priced.more[0] === "Deed book 5023, page 726.", priced);
+  const nop = C.prSaleLines(dd, { ok: true, found: true, date: "2026-04-28", type: "deed", deed: true, price: null });
+  ok("sale: a deed with no price says so, and why it can be", nop && /lists no price/.test(nop.main) && /gift or an estate transfer/.test(nop.more[0]), nop);
+  const cod = C.prSaleLines(dd, { ok: true, found: true, date: "2021-11-02", type: "certificate of death", deed: false, price: null });
+  ok("sale: a paper that is not a deed is not called a sale, and its kind is never named", cod && /is not a sale/.test(cod.main) && !/certificate|death/i.test(cod.main + cod.more.join(" ")) && !/\$/.test(cod.main), cod);
+  const fb = C.prSaleLines(dd, null);
+  ok("sale: the map's sale date when the index does not answer", fb && fb.main === "The county's map lists the last sale as December 11, 2025." && fb.more[0] === "Deed book 5023, page 726.", fb);
+  ok("sale: the map's date when the index finds no row", C.prSaleLines(dd, { ok: true, found: false }).main.indexOf("map lists") > -1);
+  ok("sale: no deed and no date gives no line (fires)", C.prSaleLines({ book: "5023", page: "726", sold: "" }, null) === null && C.prSaleLines(null, null) === null && C.prSaleLines({ book: "", page: "", sold: "2025-12-11" }, null) === null);
+  ok("sale: a renamed SaleDate gives no date (fires)", C.prDeed(rename({ features: [{ attributes: { DeedBook: "5023", DeedPage: "726", SaleDate: 1765411200000 } }] }, "SaleDate", "Sold")).sold === "");
+}
+
 /* The homes link (R49). */
 ok("homes strip: the search the strip asks for", C.prHomesStripQ(-79.049153, 33.831893) === "near=33.83189,-79.04915&miles=1", C.prHomesStripQ(-79.049153, 33.831893));
 ok("homes strip: its search is a prefix of the fallback link", C.prHomesHref(-79.049153, 33.831893).indexOf(C.prHomesStripQ(-79.049153, 33.831893).split("&")[0].slice(0, 20)) > -1);
 ok("homes: near the point within a mile", C.prHomesHref(-79.049153, 33.831893) === "/homes/map/?near=33.83189,-79.04915&miles=1", C.prHomesHref(-79.049153, 33.831893));
 
 /* No owner, value or price field is ever asked for. */
-ok("fields: no owner, value or price field is asked of any source", !/owner|value|price|market|sale|mail/i.test(Object.values(C.PR_FIELDS).join(",")), C.PR_FIELDS);
+ok("fields: no owner, value or price field is asked of any source (SaleDate, the last sale's date, is the one allowed)", !/owner|value|price|market|sale|mail/i.test(Object.values(C.PR_FIELDS).join(",").replace(/\bSaleDate\b/g, "")), C.PR_FIELDS);
+ok("fields: SaleDate is asked of the deed layer only", Object.keys(C.PR_FIELDS).filter((k) => /SaleDate/.test(C.PR_FIELDS[k])).join() === "deeds", C.PR_FIELDS);
 
 /* curl, not fetch: Node's fetch ignores an HTTPS proxy, and curl ships with Windows 10 and later too. */
 function getJson(url) {

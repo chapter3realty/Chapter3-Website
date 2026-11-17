@@ -9,7 +9,9 @@
  *   R7, R8   FEMA first; the county's copy has no subtype, and stores shaded Zone X in FLD_ZONE.
  *   R13      a deed book and page only when both are digits; strip leading zeros from both.
  *   R15      the tax search opens with ?PIN=.
- * No owner name, value or sale price is asked of any source. Nothing is stored.
+ * No owner name or value is asked of any source. The last sale (owner, 2026-11-14) is the parcel layer's SaleDate, deed book
+ * and page, and the deed index's record date, type and price for that book and page (functions/api/lastsale.js).
+ * Nothing is stored.
  * Plain ES2017: the same text runs in node and in a browser. */
 
 var PR_SRC = {
@@ -25,7 +27,7 @@ var PR_SRC = {
   deeds: "https://www.horrycountysc.gov/parcelapp/rest/services/HorryCountyGISApp/MapServer/24/query"
 };
 
-/* The fields asked of each source. Layer 24 also holds owner names and values: ask for these four only. */
+/* The fields asked of each source. Layer 24 also holds owner names and values: ask for these five only. */
 var PR_FIELDS = {
   parcels: "PIN,TMS,LOT,SHAPE.STArea()",
   points: "PIN",
@@ -35,7 +37,7 @@ var PR_FIELDS = {
   countyFlood: "FLD_ZONE,SFHA_TF",
   supFlood: "OBJECTID",
   zoning: "ZoningCode",
-  deeds: "PIN,DeedBook,DeedPage,Acreage"
+  deeds: "PIN,DeedBook,DeedPage,SaleDate,Acreage"
 };
 
 /* The links on the card. */
@@ -185,7 +187,8 @@ function prDeed(j) {
   var a = (j.features[0] || {}).attributes || {};
   var b = String(a.DeedBook || "").trim(), p = String(a.DeedPage || "").trim();
   var ok = /^\d+$/.test(b) && /^\d+$/.test(p) && +b > 0 && +p > 0;
-  return { book: ok ? String(+b) : "", page: ok ? String(+p) : "", acres: +a.Acreage > 0 ? +a.Acreage : 0 };
+  var t = +a.SaleDate, sold = t > 0 ? new Date(t).toISOString().slice(0, 10) : "";
+  return { book: ok ? String(+b) : "", page: ok ? String(+p) : "", acres: +a.Acreage > 0 ? +a.Acreage : 0, sold: ok ? sold : "" };
 }
 
 /* The land line: the county's listed acreage when it has one, else the drawn area, rounded. */
@@ -222,7 +225,7 @@ function prRecordLinks(pin, deed) {
   var out = [];
   if (deed && deed.book) out.push({ label: "Deed record", href: PR_LINKS.deedJump + deed.book + "/" + deed.page });
   else out.push({ label: "Deed search", href: PR_LINKS.deedSearch });
-  out.push({ label: "Tax bill", href: pin ? PR_LINKS.tax + "?PIN=" + pin : PR_LINKS.tax });
+  out.push({ label: "Pay the bill (county site)", href: pin ? PR_LINKS.tax + "?PIN=" + pin : PR_LINKS.tax });
   out.push({ label: "Parcel map (county sign-in)", href: pin ? PR_LINKS.parcelMap + "/pin/" + pin : PR_LINKS.parcelMap });
   return out;
 }
@@ -243,6 +246,48 @@ function prNice(addr) {
   return zip ? out + (/, SC$/i.test(out) ? " " : ", SC ") + zip : out;
 }
 
+/* The tax lines (owner, 2026-11-14: "can we show tax amounts"), from GET /api/tax (functions/api/tax.js), which reads
+   the Treasurer's public payment site. Returns { main, more: [] } or null. The rates are the county's own words
+   (legal residence 4%, all other 6%; the 4% is applied for). Never a name. */
+function prMoney(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
+/* A date as words, from YYYY-MM-DD with no time zone in the way. */
+var PR_MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+function prDate(ymd) {
+  var m = /^(\d{4})-(\d\d)-(\d\d)$/.exec(String(ymd || ""));
+  return m && +m[2] >= 1 && +m[2] <= 12 ? PR_MONTHS[+m[2] - 1] + " " + +m[3] + ", " + m[1] : "";
+}
+/* The Last sale line. deed: prDeed's answer (book, page, the county map's sale date). j: GET /api/lastsale's answer, or null.
+   The deed index's record, when it has one, wins; the map's sale date is the fallback. A paper that is not a deed is not a sale. */
+function prSaleLines(deed, j) {
+  if (!deed || !deed.book) return null;
+  var bp = "Deed book " + deed.book + ", page " + deed.page + ".";
+  if (j && j.ok && j.found && prDate(j.date)) {
+    var when = prDate(j.date);
+    if (!j.deed) {
+      /* The paper's kind is not named: it can be personal (a death certificate, a divorce order). */
+      return { main: "The latest paper on file for this lot, recorded " + when + ", is not a sale. Ask us and we read the deed history for you.", more: [bp] };
+    }
+    if (typeof j.price === "number" && j.price > 0) return { main: "Last deed recorded " + when + ". Price in the deed index: " + prMoney(j.price) + ".", more: [bp] };
+    return { main: "Last deed recorded " + when + ". The deed index lists no price for it.", more: ["More than 1 in 3 recent deeds list no price, such as a gift or an estate transfer. " + bp] };
+  }
+  if (deed.sold && prDate(deed.sold)) return { main: "The county's map lists the last sale as " + prDate(deed.sold) + ".", more: [bp] };
+  return null;
+}
+function prTaxLines(j) {
+  if (!j || !j.ok || !Array.isArray(j.bills) || !j.bills.length) return null;
+  var b = j.bills[0];
+  if (typeof b.amount !== "number" || !b.year) return null;
+  var main = b.year + " tax bill: " + prMoney(b.amount) + (b.status === "paid" ? ", paid." : ", not paid yet. It is due by January 15.");
+  var more = [];
+  for (var i = 1; i < j.bills.length; i++) if (j.bills[i].status === "unpaid") { more.push("The " + j.bills[i].year + " bill also shows unpaid."); break; }
+  var d = j.last;
+  if (d && d.ratio === 4) more.push("Taxed at 4%, the legal residence rate an owner applies for. If you will not live there, your bill is figured at 6%, a larger bill.");
+  else if (d && d.ratio === 6) more.push("Taxed at 6%, the rate for a second home or rental. If you will live there, you can apply for the 4% rate.");
+  else if (d && typeof d.ratio === "string" && d.ratio) more.push("Taxed partly at 4% and partly at 6%.");
+  if (d && typeof d.appraisal === "number" && d.appraisal > 0) more.push("The county's value for taxes: " + prMoney(d.appraisal) + ". It is not a market value.");
+  return { main: main, more: more };
+}
+
 /* Our homes map near the point (R49). */
 function prHomesHref(x, y) {
   return "/homes/map/?near=" + (Math.round(y * 100000) / 100000) + "," + (Math.round(x * 100000) / 100000) + "&miles=1";
@@ -258,5 +303,5 @@ if (typeof module !== "undefined" && module.exports) module.exports = {
   PR_SRC: PR_SRC, PR_FIELDS: PR_FIELDS, PR_LINKS: PR_LINKS, prBad: prBad, prPointQuery: prPointQuery, prIsGeorgetown: prIsGeorgetown,
   prPickMatch: prPickMatch, prCityOf: prCityOf, prPin: prPin, prParcels: prParcels, prPointPin: prPointPin, prTown: prTown,
   prEvac: prEvac, prZoning: prZoning, prSupFlood: prSupFlood, prFlood: prFlood, prDeed: prDeed, prAcres: prAcres,
-  prTownText: prTownText, prEvacText: prEvacText, prRecordLinks: prRecordLinks, prHomesHref: prHomesHref, prHomesStripQ: prHomesStripQ, prNice: prNice
+  prTownText: prTownText, prEvacText: prEvacText, prRecordLinks: prRecordLinks, prHomesHref: prHomesHref, prHomesStripQ: prHomesStripQ, prNice: prNice, prTaxLines: prTaxLines, prMoney: prMoney, prDate: prDate, prSaleLines: prSaleLines
 };

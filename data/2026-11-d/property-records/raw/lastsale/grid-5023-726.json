@@ -1,0 +1,56 @@
+{
+ "Data": [
+  {
+   "TransactionItemId": 19240530,
+   "Consideration": 760182.06,
+   "BookPage": "5023/726",
+   "NumericPage": 726.0,
+   "DocTypeDescription": "DEED",
+   "BookType": "D",
+   "ParcelNumber": "41913020007",
+   "TransactionId": 8247313,
+   "GUID": 1,
+   "RecordDate": "2025/12/11"
+  },
+  {
+   "TransactionItemId": 19240561,
+   "Consideration": 152000.0,
+   "BookPage": "5023/731",
+   "NumericPage": 731.0,
+   "DocTypeDescription": "DEED",
+   "BookType": "D",
+   "ParcelNumber": "31306040095",
+   "TransactionId": 8247321,
+   "GUID": 2,
+   "RecordDate": "2025/12/11"
+  },
+  {
+   "TransactionItemId": 2830831,
+   "Consideration": 0.0,
+   "BookPage": "5023/726",
+   "NumericPage": 726.0,
+   "DocTypeDescription": "MORTGAGE SATISFACTION",
+   "BookType": "MTG",
+   "ParcelNumber": null,
+   "TransactionId": 179970,
+   "GUID": 3,
+   "RecordDate": "2008/01/24"
+  },
+  {
+   "TransactionItemId": 2830835,
+   "Consideration": 135200.0,
+   "BookPage": "5023/727",
+   "NumericPage": 727.0,
+   "DocTypeDescription": "MORTGAGE",
+   "BookType": "MTG",
+   "ParcelNumber": null,
+   "TransactionId": 179976,
+   "GUID": 4,
+   "RecordDate": "2008/01/24"
+  }
+ ],
+ "Total": 4,
+ "AggregateResults": null,
+ "Errors": null,
+ "_note": "AcclaimWeb book/page search 5023/726, read 2026-11-14 after the disclaimer step. Party names and memo text removed."
+}

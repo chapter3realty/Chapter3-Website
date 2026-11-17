@@ -1,0 +1,56 @@
+{
+ "Data": [
+  {
+   "TransactionItemId": 19983969,
+   "Consideration": 29795.0,
+   "BookPage": "5133/2698",
+   "NumericPage": 2698.0,
+   "DocTypeDescription": "DEED (TIMESHARE)",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 8501493,
+   "GUID": 1,
+   "RecordDate": "2026/10/05"
+  },
+  {
+   "TransactionItemId": 19983977,
+   "Consideration": 38490.0,
+   "BookPage": "5133/2704",
+   "NumericPage": 2704.0,
+   "DocTypeDescription": "DEED (TIMESHARE)",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 8501496,
+   "GUID": 2,
+   "RecordDate": "2026/10/05"
+  },
+  {
+   "TransactionItemId": 3288647,
+   "Consideration": 140000.0,
+   "BookPage": "5133/2693",
+   "NumericPage": 2693.0,
+   "DocTypeDescription": "MORTGAGE",
+   "BookType": "MTG",
+   "ParcelNumber": null,
+   "TransactionId": 301368,
+   "GUID": 3,
+   "RecordDate": "2008/12/29"
+  },
+  {
+   "TransactionItemId": 19983980,
+   "Consideration": 31490.0,
+   "BookPage": "5133/2710",
+   "NumericPage": 2710.0,
+   "DocTypeDescription": "DEED (TIMESHARE)",
+   "BookType": "D",
+   "ParcelNumber": null,
+   "TransactionId": 8501497,
+   "GUID": 4,
+   "RecordDate": "2026/10/05"
+  }
+ ],
+ "Total": 4,
+ "AggregateResults": null,
+ "Errors": null,
+ "_note": "AcclaimWeb book/page search 5133/2709, read 2026-11-14 after the disclaimer step. Party names and memo text removed."
+}

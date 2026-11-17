@@ -44,8 +44,8 @@
 
   /* ---------- The card ---------- */
   var seq = 0;
-  var ORDER = ["addr", "parcel", "land", "town", "zoning", "flood", "evac", "records", "homes"];
-  var LABEL = { addr: "Address", parcel: "Parcel", land: "Land", town: "Town", flood: "Flood", evac: "Hurricane", zoning: "Zoning", records: "Records", homes: "Homes", county: "County" };
+  var ORDER = ["addr", "parcel", "land", "town", "zoning", "flood", "evac", "tax", "sale", "records", "homes"];
+  var LABEL = { addr: "Address", parcel: "Parcel", land: "Land", town: "Town", flood: "Flood", evac: "Hurricane", zoning: "Zoning", records: "Records", homes: "Homes", county: "County", tax: "Tax", sale: "Last sale" };
   var rows = {};
 
   function start(keys) {
@@ -143,7 +143,7 @@
       var p = r[0], apin = r[1];
       if (p && p.n > 1) {
         set("parcel", line(p.n.toLocaleString("en-US") + " parcel numbers at this address: each unit in the building has its own."));
-        drop("land");
+        drop("land"); drop("sale");
         set("records", buttons(prRecordLinks("", null)));
         return;
       }
@@ -155,17 +155,41 @@
         if (!q || !q.pin) {
           set("parcel", link(PR_LINKS.parcelMap, "Find the lot on the county's map (county sign-in)", null, true));
           drop("land");
+          drop("tax");
+          drop("sale");
           set("records", buttons(prRecordLinks("", null)));
           return;
         }
         var pinLine = el("span", "pr-v"); pinLine.appendChild(document.createTextNode("PIN " + q.pin + " ")); pinLine.appendChild(copyBtn(q.pin));
         var extra = [q.tms ? "TMS " + q.tms : "", q.lot && !/^C\/A/i.test(q.lot) ? "Lot " + q.lot : ""].filter(Boolean).join(" · ");
         set("parcel", pinLine, extra ? el("span", "pr-more", extra) : null);
+        /* Tax (owner, 2026-11-14): the bill, the rate and the county's value, from our /api/tax. */
+        if (CFG.tax) fetch(CFG.tax + "?pin=" + q.pin, { credentials: "omit" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+          if (!live()) return;
+          var t = prTaxLines(j);
+          if (!t) { drop("tax"); return; }
+          var parts = [line(t.main)];
+          t.more.forEach(function (m) { parts.push(el("span", "pr-more", m)); });
+          if (CFG.taxGuide) parts.push(small(link(CFG.taxGuide, "Estimate your own bill")));
+          set.apply(null, ["tax"].concat(parts));
+        }, function () { if (live()) drop("tax"); });
+        else drop("tax");
         var pDeed = CFG.deedLayer ? where("deeds", "PIN=" + q.pin).then(prDeed, function () { return null; }) : Promise.resolve(null);
         pDeed.then(function (d) {
           if (!live()) return;
           var acres = prAcres(d, q.sqft);
           if (acres) set("land", acres); else drop("land");
+          /* Last sale (owner, 2026-11-14): the deed index's record for the parcel's deed book and page, from /api/lastsale. */
+          var showSale = function (s) {
+            if (!live()) return;
+            if (!s) { drop("sale"); return; }
+            var parts = [line(s.main)];
+            s.more.forEach(function (m) { parts.push(el("span", "pr-more", m)); });
+            set.apply(null, ["sale"].concat(parts));
+          };
+          if (d && d.book && CFG.lastSale) fetch(CFG.lastSale + "?pin=" + q.pin + "&book=" + d.book + "&page=" + d.page, { credentials: "omit" })
+            .then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { showSale(prSaleLines(d, j)); }, function () { showSale(prSaleLines(d, null)); });
+          else showSale(prSaleLines(d, null));
           var noBill = CFG.noBill && CFG.noBill[q.pin];
           set("records", buttons(prRecordLinks(q.pin, d)), noBill ? el("span", "pr-more", noBill) : null);
         });

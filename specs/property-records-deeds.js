@@ -28,6 +28,11 @@ const IC = require(path.join(BB, "tools", "icons.js"));
 const PK = require(path.join(BB, "tools", "page-kit.js"));
 
 const SELF = "/buyers/property-records/deeds/";
+/* The free lookup (data/2026-11-d/property-records/tool.js), shared with the hub and the two other task pages:
+   at the top of this page, under the H1 and the byline, with a line that says what this page's reader gets. */
+const SITE_ROOT = path.join(__dirname, "..", "chapter3realty");
+const live = (u) => fs.existsSync(path.join(SITE_ROOT, ...u.split("/").filter(Boolean), "index.html"));
+const LK = require(path.join(__dirname, "..", "data", "2026-11-d", "property-records", "tool.js")).tool({ live, self: SELF, hero: true, leadIn: "Type an address to see the lot's last recorded deed, with its date, its book and page and the price when the index has one." });
 const SLUG = "property-records-deeds";
 const DATA = path.join(__dirname, "..", "data", "2026-11-d", SLUG);
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
@@ -314,6 +319,7 @@ module.exports = G.page({
   h1em: "Deeds, mortgages and liens back to late 1979, free to search by name.",
   sub: "The Horry County land records search is free, needs no account and takes three steps. Reading the deed itself takes a trip to Conway or a copy.",
   heroCta: false,
+  heroMedia: "<style>" + LK.css + "</style>" + G.homesCss() + G.homesQScript() + LK.html,
   author: "devin",
   toc: false,
   shortAnswer: [
@@ -360,13 +366,13 @@ module.exports = G.page({
     { h2: "Can I search Horry County deeds by address?", toc: T["by-address"], id: "by-address", html: () =>
       h.p(`Go from the address to the owner's name or the deed's book and page first. A deed's index entry describes the land by its lot and subdivision, so two steps are quicker.`)
       + `<ol class="dd-steps">`
-      + nstep(1, "Find the lot on the county's parcel map.", `On the ${h.a("/buyers/property-records/gis-map/", "Horry County GIS map")}, search the address and click the lot. Its card shows the owner and the Deed Book and Deed Page. The map asks you to sign in with a county account.`)
-      + nstep(2, "Open the deed.", `Type the book and page into the ${h.a("#book-page", "box below")}, or search the owner's name in the deed search.`)
+      + nstep(1, "Look up the address.", `Type it in the ${h.a("#lookup", "lookup at the top of this page")}. The card gives the deed book and page for the lot, with no sign-in. The county map's parcel card has them too, after a county sign-in.`)
+      + nstep(2, "Open the deed.", `Tap Deed record on the card, or type the book and page into the ${h.a("#book-page", "box below")}.`)
       + `</ol>`
       + h.p(`To see every lot in a subdivision, use the ${h.ext(AW_MEMO, "Legal Description/Memo search")} and type the subdivision's name. Almost every deed, ${Math.round(ST.with_memo_pct * 10)} in 1,000, carries that short description of its lot.`) },
 
     { h2: "How do I look up a deed by book and page in Horry County?", toc: T["book-page"], id: "book-page", html: () =>
-      h.p(`Type the deed book and page below, and the county's page for that deed opens. A book and page is printed on the county map's parcel card and in the index entry of every paper.`)
+      h.p(`Type the deed book and page below, and the county's page for that deed opens. A book and page is printed on our lookup's card, on the county map's parcel card and in the index entry of every paper.`)
       + TOOL
       + h.p(`For a plat, mortgage or lien book, use the county's ${h.ext(AW_BOOK, "Book/Page search")}. Pick the book type there: D for deeds, MTG for mortgages, LN for liens and P for plats.`) },
 

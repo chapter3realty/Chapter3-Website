@@ -92,6 +92,10 @@ const LEAD = "/contact/";
 const SITE_ROOT = path.join(__dirname, "..", "chapter3realty");
 const live = (u) => fs.existsSync(path.join(SITE_ROOT, ...u.split("/").filter(Boolean), "index.html"));
 const sib = (u, text) => (live(u) ? h.a(u, text) : text);
+/* The free lookup (data/2026-11-d/property-records/tool.js), shared with the hub and the two other task pages:
+   at the top of this page, under the H1 and the byline, with a line that says what this page's reader gets. */
+const { tool } = require(path.join(__dirname, "..", "data", "2026-11-d", "property-records", "tool.js"));
+const T = tool({ live, self: SELF, hero: true, leadIn: "Type an address to see its lot number, size, zoning and town here, with no sign-in." });
 
 /* ---------------------------------------------------------------------------- */
 /* The one photo: a U.S. government aerial (USDA NAIP, public domain) of new streets cleared for houses,  */
@@ -271,8 +275,9 @@ module.exports = G.page({
   eyebrow: "Horry County property records",
   h1: "Horry County GIS map: find any parcel, its lines and its tax map number",
   h1em: "Every lot in the county, with its lines, its zoning and aerial photos back to 1998.",
-  sub: "The county's parcel map now opens on a sign-in screen. Three steps get you from that screen to a lot's lines, acreage and zoning.",
+  sub: "GIS is the county's online map of its lots, with their lines, size and number. It holds more than 300,000 parcels and now opens on a sign-in screen.",
   heroCta: false,
+  heroMedia: "<style>" + T.css + "</style>" + G.homesCss() + G.homesQScript() + T.html,
   author: "devin",
   toc: false,
   shortAnswer: [
@@ -281,12 +286,12 @@ module.exports = G.page({
   ],
   sections: [
     { h2: "How do I use the Horry County GIS map?", id: "steps", html: (bg) =>
-      CSS + G.homesCss() + G.homesQScript() +
+      CSS +
       `<p class="gm-cta-row"><a class="gm-go" href="${MAP}" target="_blank" rel="noopener">Open the county GIS map${arrowOut}</a></p>`
       + `<p class="gm-go-note">The map belongs to Horry County. Chapter3 is a real estate brokerage, not the county.</p>`
       + `<ol class="gm-steps">`
       + step("key", "Make a county account, then sign in.", `Choose ${h.ext(REGISTER, "Register")} on the sign-in screen. The form asks for your name, email, mailing address and phone, and it has no payment step. The sign-in may also ask for a code.`)
-      + step("pin", "Search by address, owner, PIN or TMS.", `Open the Search tab and pick one. The PIN works on every lot. About 1 in 4 lots has no TMS on the map.`)
+      + step("pin", "Search by address, owner, PIN or TMS.", `Open the Search tab and pick one. The PIN is the surest way to find a lot. About 1 in 4 lots has no TMS on the map.`)
       + step("home", "Click the lot.", `A card opens with the county's facts about that piece of land. Zoom in close to see the lengths of the lines.`)
       + `</ol>`
       + TOP_OFFER(bg)
@@ -334,11 +339,11 @@ module.exports = G.page({
         ["PIN", "11", "Every lot"],
         ["TMS, the tax map number", "10", "About 3 in 4 lots"],
       ])
-      + h.p(`For a lot with no TMS, search by PIN or address. The county's ${h.ext(ASSESSOR, "tax estimator")} asks for the PIN.`)
+      + h.p(`For a lot with no TMS, search by PIN or address. Our ${h.a("#lookup", "lookup")} shows the PIN, and the TMS when there is one. The county's ${h.ext(ASSESSOR, "tax estimator")} asks for the PIN.`)
       + h.p(`For what the tax on a home will be, use our ${h.a("/buyers/property-taxes/", "Horry County property tax guide")}. To find and pay a bill, see ${sib("/buyers/property-records/tax-bill/", "how to look up a tax bill")}.`) },
 
     { h2: "What do zoning codes like CFA, FA and SF 10 mean?", toc: "Zoning codes", id: "zoning", html: (bg) =>
-      h.p(`The zoning code on the parcel card tells you what the county allows on the lot and how far a house must stay from its lines. The table shows six codes you will see often on the county map.`)
+      h.p(`The zoning code on the parcel card tells you what the county allows on the lot and how far a house must stay from its lines. The table shows six codes you will see often on the county map. For one lot's code, type its address in the ${h.a("#lookup", "lookup at the top of the page")}.`)
       + table(["Code", "Name", "What it allows"], [
         ["CFA", "Commercial Forest Agriculture", "Farms, forestry, homes, businesses, churches and recreation"],
         ["FA", "Forest and Agriculture", "Farms, forestry, and homes, businesses and churches at low density"],
@@ -382,8 +387,8 @@ module.exports = G.page({
   ],
   faqTitle: "Horry County GIS map questions",
   faq: [
-    { q: "Do I need an account to use the Horry County GIS map?", a: "Yes. The parcel map asks for a sign-in with a county website account. Choose Register on the sign-in screen to make one. The same account opens the county's Land Records app." },
-    { q: "Does the county charge for a GIS map account?", a: "The sign-up form shows no fee and has no payment step. To skip the account, send us the address and we pull the parcel card for you." },
+    { q: "Do I need an account to use the Horry County GIS map?", a: "Yes. The parcel map asks for a sign-in with a county website account. Choose Register on the sign-in screen to make one. The same account opens the county's Land Records app. Our lookup at the top of this page needs no account." },
+    { q: "Does the county charge for a GIS map account?", a: "The sign-up form shows no fee and has no payment step. To skip the account, use the lookup at the top of this page, or send us the address and we pull the parcel card for you." },
     { q: "Can I search the Horry County GIS map by owner name?", a: "Yes. On the Search tab, choose Owner and type the name. The map matches every word you type anywhere in the owner's name, so the order of the words does not matter." },
     { q: "What if my parcel has no TMS number?", a: "Search by PIN or by address instead. About 1 in 4 parcels on the Horry County map shows no TMS, but every parcel has an 11-digit PIN." },
     { q: "Does the Horry County GIS map show what a house is worth?", a: "No. The parcel card shows who owns the lot, its size and its zoning, but no value for the home and no tax. An agent prices a home from recent sales of homes like it." },

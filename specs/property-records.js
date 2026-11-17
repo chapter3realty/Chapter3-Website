@@ -87,27 +87,11 @@ const GT_DEEDS = "https://www.georgetowndeeds.com/";
 const GT_TAX = "https://georgetowncountysctax.com/";
 
 /* ---------------------------------------------------------------------------- */
-/* The tool: the box in the hero, the card under it.                             */
-
-const CORE = fs.readFileSync(path.join(DATA, "lookup-core.js"), "utf8");
-const UI = fs.readFileSync(path.join(DATA, "lookup-ui.js"), "utf8");
-must(!/<\/script|<!--/i.test(CORE + UI), "the lookup's code must not close the script tag");
-/* In the page: the same code without its comments and indentation (the test runs the commented file). */
-const slim = (js) => js.replace(/\/\*[\s\S]*?\*\//g, "").split("\n").map((l) => l.trim()).filter(Boolean).join("\n");
-const CFG = {
-  lead: LEAD,
-  deedLayer: true, /* PLAN open question 1 (owner to approve): PIN, DeedBook, DeedPage and Acreage only. false opens the deed search instead. */
-  floodGuide: live(FLOODP) ? FLOODP : "",
-  flooded: "/buyers/undisclosed-flooding/",
-  zoningGuide: live(GISP) ? GISP + "#zoning" : "",
-  /* The example address is the courthouse, which is tax-exempt, so its Tax bill button finds no bill (VERIFY 15).
-     The card says so, so the demo does not look broken. */
-  noBill: { "36800000016": "The courthouse is tax-exempt, so the tax search finds no bill for it." },
-};
-const TRY = "1301 Second Ave, Conway";
+/* The tool: the box in the hero, the card under it. One module for all four pages.   */
+const { tool, CARD } = require(path.join(DATA, "tool.js"));
+const T = tool({ live, self: SELF });
 
 const S = "main#main", RULE = "1px solid rgba(28,32,40,.16)";
-const CARD = "border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.64));border:1px solid rgba(255,255,255,.85);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 14px 34px -24px rgba(28,32,40,.45)";
 const FLAT = "background:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important";
 const TBL = `${S} div[style^="overflow-x:auto;margin:1.2rem 0"]`;
 const CSS = "<style>"
@@ -117,39 +101,7 @@ const CSS = "<style>"
   + `@media (max-width:959px){${S} .detail-h1 em{color:var(--g-ink,#8a5226)!important}}`
   + `${S} .detail-h1{text-wrap:pretty}${S} h2{text-wrap:balance}${S} .btn{text-wrap:balance}`
   + `@media (min-width:980px) and (max-width:1099px){header nav.primary{gap:2.4rem!important}}`
-  /* The tool card. */
-  + `${S} .pr-tool{${CARD};padding:1.1rem 1.1rem 1.15rem;box-sizing:border-box;font-family:var(--sans)}`
-  + `${S} .pr-form{display:grid;grid-template-columns:1fr;gap:.6rem;margin:0}`
-  + `@media (min-width:600px){${S} .pr-form{grid-template-columns:minmax(0,1fr) auto}}`
-  + `${S} .pr-box{position:relative;min-width:0}`
-  + `${S} .pr-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}`
-  + `${S} #prQ{display:block;width:100%;box-sizing:border-box;min-height:56px;margin:0;padding:.8rem 1rem;font-family:var(--sans);font-size:1.125rem;color:var(--navy);background:#fff;border:1px solid rgba(28,32,40,.3);border-radius:12px;-webkit-appearance:none;appearance:none}`
-  + `${S} #prQ:focus{outline:3px solid rgba(196,120,58,.45);outline-offset:1px;border-color:var(--brass)}`
-  + `${S} #prQ::placeholder{color:#6b7080}`
-  + `${S} .pr-form .btn{min-height:56px;width:100%;justify-content:center;margin:0;font-size:1.0625rem}`
-  + `@media (min-width:600px){${S} .pr-form .btn{width:auto;padding-left:1.6rem;padding-right:1.6rem}}`
-  + `${S} #prSug{position:absolute;left:0;right:0;top:100%;z-index:30;margin:.3rem 0 0;padding:.3rem 0;list-style:none;background:#fff;border:1px solid rgba(28,32,40,.18);border-radius:12px;box-shadow:0 18px 40px -20px rgba(28,32,40,.5)}`
-  + `${S} #prSug[hidden]{display:none}`
-  + `${S} .pr-opt{margin:0;padding:.75rem 1rem;cursor:pointer;font-size:1.0625rem;line-height:1.35;color:var(--navy)}`
-  + `${S} .pr-opt[aria-selected=true],${S} .pr-opt:hover{background:rgba(196,120,58,.12)}`
-  + `${S} .pr-info,${S} .pr-note{font-size:1rem;color:var(--muted);line-height:1.5;margin:.75rem 0 0}`
-  + `${S} .pr-try{background:none;border:0;padding:0;margin:0;font:inherit;color:var(--navy);text-decoration:underline;text-underline-offset:.18em;cursor:pointer}`
-  + `${S} #prOut{margin-top:1rem;border-top:2px solid var(--navy)}${S} #prOut[hidden]{display:none}`
-  + `${S} .pr-dl{margin:0}`
-  + `${S} .pr-r{display:grid;grid-template-columns:6.4rem minmax(0,1fr);column-gap:.9rem;padding:.8rem 0;border-bottom:1px solid rgba(28,32,40,.1)}`
-  + `${S} .pr-r dt{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.3rem}`
-  + `${S} .pr-r dd{margin:0;min-width:0;font-size:1.125rem;line-height:1.5;color:var(--navy)}`
-  + `${S} .pr-v{display:block}${S} .pr-more{display:block;font-size:1rem;color:var(--muted);margin-top:.3rem;line-height:1.5}`
-  + `${S} .pr-r dd a{color:var(--navy);text-decoration:underline;text-underline-offset:.18em}`
-  + `@media (max-width:420px){${S} .pr-r{grid-template-columns:1fr;row-gap:.15rem}${S} .pr-r dt{padding-top:0}}`
-  + `${S} .pr-load{display:block;height:4px;width:60%;margin:.7rem 0 .5rem;border-radius:2px;background:linear-gradient(90deg,rgba(196,120,58,.12),rgba(196,120,58,.55),rgba(196,120,58,.12));background-size:200% 100%;animation:prl 1.2s linear infinite}`
-  + `@keyframes prl{from{background-position:200% 0}to{background-position:0 0}}@media (prefers-reduced-motion:reduce){${S} .pr-load{animation:none}}`
-  + `${S} .pr-btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.1rem}`
-  + `${S} .pr-r dd a.pr-b{text-decoration:none!important;display:inline-flex;align-items:center;min-height:44px;padding:.45rem 1rem;box-sizing:border-box;border-radius:999px;border:1px solid rgba(28,32,40,.28);background:#fff;font-weight:600;font-size:1rem;text-decoration:none;line-height:1.3}`
-  + `${S} .pr-r dd a.pr-b:hover{border-color:var(--navy)}`
-  + `${S} .pr-copy{margin-left:.4rem;min-height:36px;padding:.2rem .8rem;border-radius:999px;border:1px solid rgba(28,32,40,.28);background:#fff;color:var(--navy);font:600 .9rem var(--sans);cursor:pointer;vertical-align:.1rem}`
-  + `${S} .pr-offer{margin-top:1rem;padding:1rem 1.05rem;border-radius:14px;background:rgba(196,120,58,.1)}`
-  + `${S} .pr-offer p{margin:0 0 .75rem;color:var(--navy);font-weight:600;font-size:1.0625rem;line-height:1.45}${S} .pr-offer .btn{min-height:48px}`
+  + T.css
   /* Lists and the table plain, under thin rules; one block width. */
   + `${S} ul.pr-list{list-style:none;margin:.6rem 0 1.3rem;padding:0;max-width:720px}`
   + `${S} ul.pr-list>li{margin:0;padding:.8rem 0;border-top:${RULE};color:var(--muted);line-height:1.65;font-size:var(--read,1.0625rem)}`
@@ -171,17 +123,6 @@ const CSS = "<style>"
   + `${S} .pr-quiet{font-size:1rem;color:var(--muted);line-height:1.6;max-width:720px;margin:.2rem 0 1.2rem}`
   + "</style>";
 
-const TOOL = `<div class="pr-tool" id="lookup">`
-  + `<form class="pr-form" id="prForm" role="search" action="https://www.horrycountysc.gov/gis/parcels" autocomplete="off">`
-  + `<div class="pr-box"><label class="pr-lbl" for="prQ">Address in Horry County</label>`
-  + `<input id="prQ" name="q" type="text" inputmode="search" enterkeyhint="search" spellcheck="false" placeholder="Type an address" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="prSug">`
-  + `<ul id="prSug" role="listbox" aria-label="Matching addresses" hidden></ul></div>`
-  + `<button type="submit" class="btn btn-brass">Look it up</button></form>`
-  + `<div id="prOut" aria-live="polite" hidden></div>`
-  + `<div class="pr-foot"><p class="pr-info">Public records from Horry County and FEMA, read live for each address. Chapter3 is not the county. <button type="button" class="pr-try" id="prTry" data-q="${TRY}">Try ${TRY}</button>, the county courthouse.</p></div>`
-  + `<noscript><p class="pr-note">The lookup needs JavaScript. The county's own map is at horrycountysc.gov/gis/parcels.</p></noscript>`
-  + `</div>`
-  + `<script>(function(){window.PR_CFG=${JSON.stringify(CFG)};\n${slim(CORE)}\n${slim(UI)}\n})();</script>`;
 
 /* ---------------------------------------------------------------------------- */
 /* V1: the chart (R18, R19). One message in the title, and the bars measure the title's word, "outside".
@@ -236,10 +177,10 @@ module.exports = G.page({
   crumb: "Property Records",
   eyebrow: "Horry County property records",
   h1: "Horry County property records: look up any address",
-  h1em: "The parcel, the flood zone, the deed and the tax bill, in one box.",
-  sub: "Type an address. The card shows Horry County's and FEMA's public records for it, line by line, with no sign-in.",
+  h1em: "The lot, flood zone, tax bill and last sale, in one box.",
+  sub: "Free and live from Horry County and FEMA. No sign-in.",
   heroCta: false,
-  heroMedia: CSS + G.homesCss() + G.homesQScript() + TOOL,
+  heroMedia: CSS + G.homesCss() + G.homesQScript() + T.html,
   author: "devin",
   toc: false,
   shortAnswer: [
@@ -256,9 +197,9 @@ module.exports = G.page({
     { h2: "Where are Horry County property records kept?", toc: "Where records are", id: "where", html: (bg) =>
       h.p(`Each county office keeps its own records, and each has its own search.`)
       + table(["What you want", "Where Horry County keeps it", "Our guide"], [
-        ["The deed, a mortgage, a lien or a plat (a surveyor's drawing of the lots)", "The Register of Deeds. Its index is online; the documents are not.", sib(DEEDS, "Horry County land records")],
-        ["The lot lines, zoning code and aerial photos", "The county's online map, after you sign in with a county account", sib(GISP, "Horry County GIS map")],
-        ["The tax bill, or paying it", "The Treasurer's tax search, with no sign-in", sib(TAXP, "Horry County tax bills")],
+        ["The deed, a mortgage, a lien or a plat (a surveyor's drawing of the lots)", "The Register of Deeds. Its index is online; the documents are not. Our lookup gives the deed's book and page.", sib(DEEDS, "Horry County land records")],
+        ["The lot lines and aerial photos", "The county's online map, after you sign in with a county account. Our lookup shows the lot's size and zoning.", sib(GISP, "Horry County GIS map")],
+        ["The tax bill, or paying it", "Our lookup shows the bill and whether it is paid. The Treasurer's tax site takes the payment, with no sign-in.", sib(TAXP, "Horry County tax bills")],
         ["The flood zone and what it means", "FEMA's flood map. Our lookup reads it for any Horry County address.", live(FLOODP) ? h.a(FLOODP, "Flood zone check") : h.a("/buyers/undisclosed-flooding/", "Did this house flood?")],
         ["What the home would sell for", "Not a county record", h.a("/sell/home-value/", "What homes sold for, by area")],
       ])
